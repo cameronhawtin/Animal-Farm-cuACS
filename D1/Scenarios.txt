@@ -1,0 +1,124 @@
+Scenarios
+
+------------------------------------------------------------------------------------
+Scenario name: addAnimal
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1. From the main program view after login, Bob clicks on the Add Animal button which prompts him with the add animal interface
+2. Bob fills out the text boxes and clicks on the save button
+3. Bob receives confirmation of his animal addition
+
+------------------------------------------------------------------------------------
+Scenario name: addClient
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1. From the main program view after login, Bob clicks on the Add Client button which prompts him with the add client interface
+2. Bob fills out the text boxes and clicks on the save button
+3. Bob receives confirmation of his client addition
+
+------------------------------------------------------------------------------------
+Scenario name: viewAnimalProfile
+
+Participating actor instances: bob:Staff, mary:client
+
+Flow of events: 
+1. From the main program view after login, Bob/Mary clicks on the View Animals button which prompts them with the view animals interface
+2. Bob/Mary selects the animal they choose to view
+3. The animal information page is displayed
+
+------------------------------------------------------------------------------------
+Scenario name: editAnimalProfile
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1.From the main program view after login, Bob clicks on the View Animals button which prompts him with the view animals interface
+2. Bob selects the animal he chooses to edit
+3. Bob edits the text boxes and clicks on the save button
+4. Bob receives confirmation of his changes
+
+------------------------------------------------------------------------------------
+Scenario name: viewClientProfile
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1. From the main program view after login, Bob clicks on the View Clients button which prompts them with the view clients interface
+2. Bob selects the client he chooses to view
+3. The client information page is displayed
+
+------------------------------------------------------------------------------------
+Scenario name: editClientProfile
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1. From the main program view after login, Bob clicks on the View Clients button which prompts them with the view clients interface
+2. Bob selects the client he chooses to edit
+3. Bob edits the text boxes and clicks on the save button
+4. Bob receives confirmation of his changes
+
+------------------------------------------------------------------------------------
+Scenario name: viewOwnProfile
+
+Participating actor instances: mary:client
+
+Flow of events: 
+1. From the main program view after login, Mary clicks on the View Profile button
+2. Mary’s client profile is displayed
+
+------------------------------------------------------------------------------------
+Scenario name: viewAnimals
+
+Participating actor instances: bob:Staff, mary:Client
+
+Flow of events: 
+1. From the main program view after login, Bob/Mary clicks on the View Animals button 
+2. The view animals view is displayed
+
+------------------------------------------------------------------------------------
+Scenario name: viewClients
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1. From the main program view after login, Bob/Mary clicks on the View Clients button 
+2. The view clients view is displayed
+
+------------------------------------------------------------------------------------
+Scenario name: generateMatches
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1. From the main application screen, Bob clicks the generate matches button
+2. The ACM algorithm finds and displays the optimal matches
+
+------------------------------------------------------------------------------------
+Scenario name: createAccount
+
+Participating actor instances: bob:Staff
+
+Flow of events: 
+1. Bob selects the create account option from the main login screen
+2. Bob is prompted to enter a username
+3. Bob enters his username and clicks the create button
+4. Bob is receives confirmation of his account creation
+
+------------------------------------------------------------------------------------
+Scenario name: login
+
+Participating actor instances: bob:Staff, mary:Client
+
+Flow of events: 
+1. Bob/Mary enters his/her username in the username text box
+2. Bob/Mary clicks on the login button
+3. The main page for each user is displayed
+
+
+
+
