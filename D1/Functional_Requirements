@@ -1,4 +1,6 @@
-This is the first draft of functional reuirements. It covers mostly all the FRs from the project description. The goal now is to come up with the use cases, design their tables and diagrams, and then add the missing FRs.
+This is the first draft of functional reuirements. It covers mostly all the FRs from the project description. 
+
+The goal now is to come up with the use cases, design their tables and diagrams, and then add the missing FRs.
 
 FR-01 - Shelter staff can interact with animals
 FR-01-01 - Shelter staff can add animal
