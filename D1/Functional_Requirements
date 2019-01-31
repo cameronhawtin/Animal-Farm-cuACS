@@ -1,0 +1,45 @@
+This is the first draft of functional reuirements. It covers mostly all the FRs from the project description. 
+
+The goal now is to come up with the use cases, design their tables and diagrams, and then add the missing FRs.
+
+FR-01 - Shelter staff can interact with animals
+FR-01-01 - Shelter staff can add animal
+FR-01-02 - Shelter staff can view detailed profile of a selected animal
+FR-01-03 - Shelter staff can edit animal profiles
+
+FR-02 - Shelter staff can interact with clients
+FR-02-01 - Shelter staff add a new client
+FR-02-02 - Shelter staff view the detailed profile of a selected client
+
+FR-03 - Shelter staff control the ACM
+FR-03-01 - staff members can launch the execution of the ACM algorithm 
+FR-03-02 - staff members can view the resulting matches.
+
+FR-04 - Clients can view the detailed profile of a selected animal
+
+FR-05 - Clients can view their own client profile
+FR-05-01 - Clients can view their own personal information
+FR-05-02 - Clients can view their own matching preferences
+
+FR-06 - Clients can edit their own client profile
+FR-06-01 - Clients can edit their own personal information
+FR-06-02 - Clients can edit their own matching preferences
+
+FR-07 - ACM algorithm generates an optimal set of match results
+	FR-07-01 - match results must contain a summary of matches
+	FR-07-02 - match results must contain details of a selected match
+
+FR-08 - ACM algorithm provides a summary of results
+	FR-08-01 - must indicate the names of the matched pairs of animals and clients
+	FR-08-01 - must specify the exact rules that were used to compute that match
+	FR-08-03 - must specify data supporting how and why that specific match was computed
+
+FR-09 - User can log in 
+FR-10-01 - If username does not exist, error prompt 
+FR-10-02 - If username does exist, login to that user’s profile
+FR-10-03 - Check whether user is shelter staff or client
+
+FR-10 - Shelter staff can create their account
+	FR-10-01 - verify the username is available
+	FR-10-02 - on success, bring back the user to the login screen
+
