@@ -1,4 +1,4 @@
-##Group meeting two -- Jan 24th 2019
+## Group meeting two -- Jan 24th 2019
 
 The purpose of this meeting was to simply bring all the team memebers on the same page and finalize what needs to be done for the first
 deliverable. 
