@@ -15,6 +15,15 @@ public:
     explicit PostLoginStaff(QWidget *parent = nullptr);
     ~PostLoginStaff();
 
+private slots:
+    void on_AddAnimalButton_clicked();
+
+    void on_ViewAnimalsButton_clicked();
+
+    void on_AddClientButton_clicked();
+
+    void on_ViewClientsButton_clicked();
+
 private:
     Ui::PostLoginStaff *ui;
 };

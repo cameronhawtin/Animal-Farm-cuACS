@@ -12,3 +12,23 @@ PostLoginStaff::~PostLoginStaff()
 {
     delete ui;
 }
+
+void PostLoginStaff::on_AddAnimalButton_clicked()
+{
+    //open add an animal interface
+}
+
+void PostLoginStaff::on_ViewAnimalsButton_clicked()
+{
+    //open view animals interface
+}
+
+void PostLoginStaff::on_AddClientButton_clicked()
+{
+    //open add a client interface
+}
+
+void PostLoginStaff::on_ViewClientsButton_clicked()
+{
+    //open view clients interface
+}
