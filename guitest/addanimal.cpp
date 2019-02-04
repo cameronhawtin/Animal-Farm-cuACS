@@ -6,6 +6,9 @@ AddAnimal::AddAnimal(QWidget *parent) :
     ui(new Ui::AddAnimal)
 {
     ui->setupUi(this);
+    QString s = ui->typeComboBox->currentText();
+    qDebug(qUtf8Printable(s));
+
 }
 
 AddAnimal::~AddAnimal()
