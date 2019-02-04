@@ -1,0 +1,11 @@
+debug/main.o
+debug/mainwindow.o
+debug/postloginstaff.o
+debug/postloginclient.o
+debug/viewanimals.o
+debug/addanimal.o
+debug/moc_mainwindow.o
+debug/moc_postloginstaff.o
+debug/moc_postloginclient.o
+debug/moc_viewanimals.o
+debug/moc_addanimal.o
