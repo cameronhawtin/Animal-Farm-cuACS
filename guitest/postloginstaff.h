@@ -2,6 +2,7 @@
 #define POSTLOGINSTAFF_H
 
 #include <QDialog>
+#include "viewanimals.h"
 
 namespace Ui {
 class PostLoginStaff;
@@ -26,6 +27,7 @@ private slots:
 
 private:
     Ui::PostLoginStaff *ui;
+    ViewAnimals *viewAnimals;
 };
 
 #endif // POSTLOGINSTAFF_H

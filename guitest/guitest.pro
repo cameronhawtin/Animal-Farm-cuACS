@@ -28,17 +28,20 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     postloginstaff.cpp \
-    postloginclient.cpp
+    postloginclient.cpp \
+    viewanimals.cpp
 
 HEADERS += \
         mainwindow.h \
     postloginstaff.h \
-    postloginclient.h
+    postloginclient.h \
+    viewanimals.h
 
 FORMS += \
         mainwindow.ui \
     postloginstaff.ui \
-    postloginclient.ui
+    postloginclient.ui \
+    viewanimals.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
