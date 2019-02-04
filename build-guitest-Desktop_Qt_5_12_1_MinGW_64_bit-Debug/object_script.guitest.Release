@@ -1,0 +1,11 @@
+release/main.o
+release/mainwindow.o
+release/postloginstaff.o
+release/postloginclient.o
+release/viewanimals.o
+release/addanimal.o
+release/moc_mainwindow.o
+release/moc_postloginstaff.o
+release/moc_postloginclient.o
+release/moc_viewanimals.o
+release/moc_addanimal.o

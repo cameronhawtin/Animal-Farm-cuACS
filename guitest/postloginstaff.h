@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "viewanimals.h"
+#include "addanimal.h"
 
 namespace Ui {
 class PostLoginStaff;
@@ -28,6 +29,7 @@ private slots:
 private:
     Ui::PostLoginStaff *ui;
     ViewAnimals *viewAnimals;
+    AddAnimal *addAnimal;
 };
 
 #endif // POSTLOGINSTAFF_H

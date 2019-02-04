@@ -16,6 +16,8 @@ PostLoginStaff::~PostLoginStaff()
 void PostLoginStaff::on_AddAnimalButton_clicked()
 {
     //open add an animal interface
+    addAnimal = new AddAnimal(this);
+    addAnimal->show();
 }
 
 void PostLoginStaff::on_ViewAnimalsButton_clicked()
