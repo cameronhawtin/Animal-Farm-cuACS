@@ -3,9 +3,7 @@
 
 #define NULLPTR 0
 
-/*
-This class is meant to prevent writing duplicate code for the customerlist and vehicle list classes
-*/
+
 template<class T>
 class LinkedList
 {
