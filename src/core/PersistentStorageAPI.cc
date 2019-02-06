@@ -7,13 +7,13 @@
 #include "Animal.h"
 #include <vector>
 
-void PersistentStorageAPI::storeProfiles(Profile* p, string profileType)
+void PersistentStorageAPI::storeProfile(Profile* p, string profileType)
 {
   vector<string>* state;
   Serializer s;
   StorageAdapter sa = FileStorageManager();
   string dirPath = getDirectory(profileType);
-  string filepath = "";
+  string filepath = ""; list<Profile> PersistentStorageAPI::retrieveProfiles(string profileType)
 
   state = p->getState();
   string fileContents = s.serializeVector(state);
