@@ -6,8 +6,10 @@ using namespace std;
 #include "Animal.h"
 
 //initializes the data members
-Animal::Animal(string animalType, string breed, int age, char gender)
+Animal::Animal(int id, string name, string animalType, string breed, int age, char gender)
 {
+	this->id = id;
+	this->name = name;
     this->animalType = animalType;
     this->breed = breed;
     this->age = age;
@@ -15,6 +17,10 @@ Animal::Animal(string animalType, string breed, int age, char gender)
 }
 
 //getters for private data memebers
+int Animal::getId() { return id; }
+
+String Animal::getName() { return name; }
+
 string Animal::getAnimalType() { return animalType; }
 
 string Animal::getBreed() { return breed; }
@@ -23,9 +29,9 @@ int Animal::getAge() { return age; }
 
 char Animal::getGender() { return gender; }
 
-LinkedList<string> Animal::getState()
+vector<string> Animal::getState()
 {
-  return new LinkedList<string>();
+	return new vector<string>();
 }
 
 int main() 
