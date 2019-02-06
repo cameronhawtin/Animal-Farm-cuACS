@@ -1,7 +1,10 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
-class Animal
+#include "cuacsActor.h"
+#include "LinkedList.h"
+
+class Animal : public cuacsActor
 {
     public:
         Animal(string animalType, string breed, int age, char gender);
@@ -9,6 +12,7 @@ class Animal
         string getBreed();
         int getAge();
         char getGender();
+	//LinkedList<string> getState();
 
     private:
         string animalType;

@@ -1,10 +1,12 @@
 #ifndef CUACSACTOR_H
 #define CUACSACTOR_H
 
+#include "LinkedList.h"
+
 class cuacsActor
 {
     public:
-        virtual List<String> getState() = 0;
+        virtual LinkedList<string> getState() = 0;
 };
 
 #endif

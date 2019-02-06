@@ -23,8 +23,13 @@ int Animal::getAge() { return age; }
 
 char Animal::getGender() { return gender; }
 
-int main()
+LinkedList<string> Animal::getState()
 {
-    cout << "Animal class." << endl;
-    return 0;
+  return new LinkedList<string>();
+}
+
+int main() 
+{
+    cout << "Animal class." << endl; 
+    return 0; 
 }
