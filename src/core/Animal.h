@@ -3,22 +3,19 @@
 
 #include "Profile.h"
 
-enum Gender {M, F};
-enum Size {SMALL, MEDIUM, LARGE};
-
 class Animal : public Profile
 {
     public:
-        Animal(int id, string name, string animalType, string breed, int age, Gender gender, string color, Size size);
+        Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size);
 		Animal(vector<string> state);
 		int getId();
 		string getName();
         string getAnimalType();
         string getBreed();
         int getAge();
-        Gender getGender();
+        string getGender();
 		string getColor();
-		Size getSize();
+		string getSize();
 
     private:
 		int id;
@@ -26,9 +23,9 @@ class Animal : public Profile
         string animalType;
         string breed;
         int age;
-        Gender gender;
+        string gender;
 		string color;
-		Size size;
+		string size;
 };
 
 #endif

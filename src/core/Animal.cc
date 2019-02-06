@@ -6,7 +6,7 @@ using namespace std;
 #include "Animal.h"
 
 //initializes the data members
-Animal::Animal(int id, string name, string animalType, string breed, int age, Gender gender, string color, Size size)
+Animal::Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size)
 {
 	this->id = id;
 	this->name = name;
@@ -50,7 +50,7 @@ Size Animal::getSize() { return size; }
 vector<string> Animal::getState()
 {
 	vector<string> state = new vector<string>();
-	state.push_back(to_string(id), name, animalType, breed, to_string(age), to_string(gender), color, to_string(size));
+	state.push_back(to_string(id), name, animalType, breed, to_string(age), gender, color, size);
 	return state;
 }
 

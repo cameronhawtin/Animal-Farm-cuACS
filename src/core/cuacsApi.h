@@ -1,6 +1,9 @@
 #ifndef CUACSAPI_H
 #define CUACSAPI_H
 
+#include "Profile.h"
+#include "PersistantStorageAPI.h"
+
 class cuacsApi
 {
 	public:

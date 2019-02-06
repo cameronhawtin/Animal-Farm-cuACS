@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "cuacsApi.h"
+#include "Profile.h"
 #include "PersistantStorageAPI.h"
 
 void cuacsApi::init()
@@ -22,7 +23,7 @@ vector<Animal> cuacsApi::getAnimals()
 	return shipAnimals;
 }
 
-bool cuacsApi::addAnimal(string name, string animalType, string breed, int age, char gender, string color, string size)
+bool cuacsApi::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size)
 {
 	storeProfile(new Animal(0, name, animalType, breed, age,gender, color, size), "Animal");
 }
