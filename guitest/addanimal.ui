@@ -116,13 +116,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="breedComboBox">
-      <item>
-       <property name="text">
-        <string>Please Select</string>
-       </property>
-      </item>
-     </widget>
+     <widget class="QComboBox" name="breedComboBox"/>
     </item>
     <item>
      <widget class="QLabel" name="sexLabel">
@@ -174,6 +168,26 @@
         <string>Please Select</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>White</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Brown</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Grey</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item>
@@ -188,6 +202,21 @@
       <item>
        <property name="text">
         <string>Please Select</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Small</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Medium</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Large</string>
        </property>
       </item>
      </widget>

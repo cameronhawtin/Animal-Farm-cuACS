@@ -2,6 +2,7 @@
 #define VIEWANIMALS_H
 
 #include <QDialog>
+#include <iostream>
 
 namespace Ui {
 class ViewAnimals;

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>852</width>
+    <height>478</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QListWidget" name="viewAnimalsListWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>60</y>
-     <width>256</width>
-     <height>192</height>
+     <x>30</x>
+     <y>30</y>
+     <width>281</width>
+     <height>411</height>
     </rect>
    </property>
   </widget>
