@@ -38,6 +38,9 @@
    <property name="text">
     <string>Add Animal</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="ViewAnimalsButton">
    <property name="geometry">
@@ -50,6 +53,9 @@
    </property>
    <property name="text">
     <string>View Animals</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="AddClientButton">
@@ -64,6 +70,9 @@
    <property name="text">
     <string>Add Client</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="ViewClientsButton">
    <property name="geometry">
@@ -76,6 +85,9 @@
    </property>
    <property name="text">
     <string>View Clients</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

@@ -9,7 +9,6 @@ AddAnimal::AddAnimal(QWidget *parent) :
 {
     ui->setupUi(this);
     QString s = ui->typeComboBox->currentText();
-    qDebug(qUtf8Printable(s)); //clean
 
 }
 
@@ -20,8 +19,11 @@ AddAnimal::~AddAnimal()
 
 void AddAnimal::on_buttonBox_accepted()
 {
+    QString name = ui->nameLineEdit->text();
+
     QString type = ui->typeComboBox->currentText();
     QString colour = ui->colourComboBox->currentText();
+
 
     //add more
 
