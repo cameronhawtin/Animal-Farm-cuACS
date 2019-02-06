@@ -22,3 +22,9 @@ string Animal::getBreed() { return breed; }
 int Animal::getAge() { return age; }
 
 char Animal::getGender() { return gender; }
+
+int main()
+{
+    cout << "Animal class." << endl;
+    return 0;
+}
