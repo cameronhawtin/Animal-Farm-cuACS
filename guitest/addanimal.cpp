@@ -25,10 +25,18 @@ void AddAnimal::on_buttonBox_accepted()
     string name = ui->nameLineEdit->text().toStdString();
     string type = ui->typeComboBox->currentText().toStdString();
     string breed = ui->breedComboBox->currentText().toStdString();
-    string sex = ui->sexComboBox->currentText().toStdString();
     int age = ui->ageLineEdit->text().toInt();
     string colour = ui->colourComboBox->currentText().toStdString();
-    string size = ui->sizeComboBox->currentText().toStdString();
+
+    sexes sex;
+    sizes size;
+
+    if (ui->sexComboBox->currentText().toStdString() == "Male") sex = MALE;
+    else if (ui->sexComboBox->currentText().toStdString() == "Female") sex = FEMALE;
+
+    if (ui->sexComboBox->currentText().toStdString() == "Small") size = SMALL;
+    else if (ui->sexComboBox->currentText().toStdString() == "Medium") size = MEDIUM;
+    else if (ui->sexComboBox->currentText().toStdString() == "Large") size = LARGE;
 
     //now give attributes to animal class
 

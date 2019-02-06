@@ -22,6 +22,8 @@ private slots:
 
 private:
     Ui::AddAnimal *ui;
+    enum sexes {MALE, FEMALE};
+    enum sizes {SMALL, MEDIUM, LARGE};
 };
 
 #endif // ADDANIMAL_H
