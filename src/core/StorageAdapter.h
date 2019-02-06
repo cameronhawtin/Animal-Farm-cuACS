@@ -1,6 +1,6 @@
 #ifndef STORAGEADAPTER_H
 #define STORAGEADAPTER_H
-using namespace std::string;
+using std::string;
 
 class StorageAdapter
 {

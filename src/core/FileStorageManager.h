@@ -1,7 +1,7 @@
 #ifndef FILESTORAGEMANAGER_H
 #define FILESTORAGEMANAGER_H
 #include "StorageAdapter.h"
-using namespace std::string;
+using std::string;
 
 class FileStorageManager : public StorageAdapter
 {

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <exception>
-using namespace std::string;
+using std::string;
 
 class FileOpenException: std::exception
 {
