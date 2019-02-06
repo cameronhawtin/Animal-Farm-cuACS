@@ -13,7 +13,7 @@ string Serializer::serializeVector(vector<string>* values)
 
 vector<string>* Serializer::deserializeVector(string serializedV)
 {
-  vector<string>* values = new vector<string>;
+  vector<string>* values = new vector<string>();
   string value = "";
   for (int i = 0; i < serializedV.length(); i++) {
     if(serializedV[i]=="\n"){
