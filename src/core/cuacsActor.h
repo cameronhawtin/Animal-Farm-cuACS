@@ -4,7 +4,7 @@
 class cuacsActor
 {
     public:
-        List<String> getState() = 0;
+        virtual List<String> getState() = 0;
 };
 
 #endif
