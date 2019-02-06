@@ -30,4 +30,6 @@ void AddAnimal::on_buttonBox_accepted()
     //change to std strings for storage
     string typeString = type.toUtf8().constData();
     string colourString = type.toUtf8().constData();
+
+    //printf("%s\n%s\n", typeString, colourString);
 }

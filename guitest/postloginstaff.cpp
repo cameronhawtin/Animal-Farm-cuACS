@@ -23,7 +23,6 @@ void PostLoginStaff::on_AddAnimalButton_clicked()
 void PostLoginStaff::on_ViewAnimalsButton_clicked()
 {
     //open view animals interface
-    hide();
     viewAnimals = new ViewAnimals(this);
     viewAnimals->show();
 }

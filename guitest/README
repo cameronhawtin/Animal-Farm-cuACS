@@ -1,0 +1,4 @@
+We are using QT 5.12.0
+
+I needed to do the following to build on linux:
+sudo apt install libgl1-mesa-dev
