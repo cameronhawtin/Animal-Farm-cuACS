@@ -18,28 +18,19 @@ AddAnimal::~AddAnimal()
     delete ui;
 }
 
+
 void AddAnimal::on_buttonBox_accepted()
 {
-
     //get attributes from ui
     string name = ui->nameLineEdit->text().toStdString();
     string type = ui->typeComboBox->currentText().toStdString();
     string breed = ui->breedComboBox->currentText().toStdString();
+    string sex = ui->sexComboBox->currentText().toStdString();;
     int age = ui->ageLineEdit->text().toInt();
     string colour = ui->colourComboBox->currentText().toStdString();
-
-    sexes sex;
-    sizes size;
-
-    if (ui->sexComboBox->currentText().toStdString() == "Male") sex = MALE;
-    else if (ui->sexComboBox->currentText().toStdString() == "Female") sex = FEMALE;
-
-    if (ui->sexComboBox->currentText().toStdString() == "Small") size = SMALL;
-    else if (ui->sexComboBox->currentText().toStdString() == "Medium") size = MEDIUM;
-    else if (ui->sexComboBox->currentText().toStdString() == "Large") size = LARGE;
+    string size = ui->sizeComboBox->currentText().toStdString();;
 
     //now give attributes to animal class
-
 }
 
 void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
