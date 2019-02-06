@@ -4,6 +4,7 @@
 #include "StorageAdapter.h"
 #include "FileStorageManager.h"
 #include "Profile.h"
+#include "Animal.h"
 #include <vector>
 
 void PersistentStorageAPI::storeProfiles(Profile* p, string profileType)
@@ -41,7 +42,11 @@ list<Profile> PersistentStorageAPI::retrieveProfiles(string profileType)
   for(string filepath : pf.getAllFilesInDir(dirPath)){
     string data = sa.load(filepath);
     state = s.deserializeVector(data);
-    //make from state
+    if(profileType == "Animal"){
+      p = new Animal(state);
+    } else if(profileType == "Human"){
+      //do nothing for now
+    }
     delete state;
     result->push_back(p);
   }
