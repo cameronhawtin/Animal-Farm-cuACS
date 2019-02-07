@@ -4,8 +4,8 @@ main: Animal.o cuacsApi.o FileOpenException.o FileStorageManager.o PathFinder.o 
 Animal: Animal.h Profile.h Animal.cc
 	g++ -c Animal.cc
 	
-cuAcsApi: cuAcsApi.h Profile.h PersistantStorageAPI.h cuAcsApi.cc
-	g++ -c cuAcsApi.cc
+cuacsApi: cuacsApi.h Profile.h PersistentStorageAPI.h cuacsApi.cc
+	g++ -c cuacsApi.cc
 	
 FileOpenException: FileOpenException.h FileOpenException.cc
 	g++ -c FileOpenException.cc

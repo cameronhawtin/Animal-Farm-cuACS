@@ -5,7 +5,6 @@ using namespace std;
 
 #include "cuacsApi.h"
 #include "Profile.h"
-#include "PersistantStorageAPI.h"
 
 void cuacsApi::init()
 {
