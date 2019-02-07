@@ -12,4 +12,5 @@ public:
   list<Profile> retrieveProfiles(string);
 private:
   string getDirectory(string);
-}
+};
+#endif

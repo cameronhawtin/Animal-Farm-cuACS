@@ -13,9 +13,9 @@ class FileOpenException: std::exception
 
     virtual const char* what() const throw()
     {
-      return "Could not open file at: " + filePath
+      return "Could not open file at: " + filePath;
     }
 
   private:
     string filePath;
-}
+};

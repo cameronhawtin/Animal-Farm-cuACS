@@ -8,3 +8,4 @@ class StorageAdapter
        virtual int save(string, string) = 0;
        virtual string load(string) = 0;
 };
+#endif

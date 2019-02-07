@@ -10,4 +10,5 @@ public:
   vector<string>* getAllFilesInDir(string);
   string getAnimalDirectory();
   string getHumanDirectory();
-}
+};
+#endif

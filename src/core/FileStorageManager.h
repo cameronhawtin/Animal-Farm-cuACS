@@ -8,4 +8,5 @@ class FileStorageManager : public StorageAdapter
   public:
    void save(string, string);
    string load(string);
-}
+};
+#endif
