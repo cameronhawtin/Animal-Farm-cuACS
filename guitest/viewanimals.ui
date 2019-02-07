@@ -45,7 +45,7 @@
      <x>330</x>
      <y>50</y>
      <width>591</width>
-     <height>361</height>
+     <height>374</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -241,5 +241,38 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ViewAnimals</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>874</x>
+     <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>928</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ViewAnimals</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>792</x>
+     <y>448</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>393</x>
+     <y>448</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
