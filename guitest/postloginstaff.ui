@@ -7,30 +7,17 @@
     <x>0</x>
     <y>0</y>
     <width>341</width>
-    <height>260</height>
+    <height>202</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="WelcomeLabel">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>20</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Welcome to the Staff View</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="AddAnimalButton">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>170</y>
+     <y>110</y>
      <width>141</width>
      <height>71</height>
     </rect>
@@ -46,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>170</y>
+     <y>110</y>
      <width>141</width>
      <height>71</height>
     </rect>
@@ -62,7 +49,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>80</y>
+     <y>20</y>
      <width>141</width>
      <height>71</height>
     </rect>
@@ -78,7 +65,7 @@
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>80</y>
+     <y>20</y>
      <width>141</width>
      <height>71</height>
     </rect>
