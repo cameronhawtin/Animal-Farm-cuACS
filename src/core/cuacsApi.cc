@@ -9,7 +9,7 @@ using namespace std;
 void cuacsApi::init()
 {
 	PersistantStorageAPI persistantStorage = new PersistantStorageAPI();
-	animals = retrieveProfiles("Animal");
+i	animals = retrieveProfiles("Animal");
 }
 
 vector<Animal> cuacsApi::getAnimals()
@@ -17,7 +17,7 @@ vector<Animal> cuacsApi::getAnimals()
 	vector<Profile> shipAnimals = new vector<Animal>();
 	for(Animal* a: animals)
 	{
-		vector.push_back(a);
+		shipAnimals.push_back(a);
 	}
 	return shipAnimals;
 }
