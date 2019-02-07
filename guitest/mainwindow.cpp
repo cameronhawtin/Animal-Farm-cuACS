@@ -19,14 +19,12 @@ void MainWindow::on_loginButton_clicked()
    QString username = ui->usernameLineEdit->text();
 
    if (username == "Staff") {
-       //QMessageBox::information(this, "Login", "ur in");
        hide();
        postLoginStaff = new PostLoginStaff(this);
        postLoginStaff->show();
    }
 
    else if (username == "Client") {
-      //QMessageBox::information(this, "Login", "ur in");
       hide();
       postLoginClient = new PostLoginClient(this);
       postLoginClient->show();
