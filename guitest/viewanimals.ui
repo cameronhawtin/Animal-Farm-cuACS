@@ -57,7 +57,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="nameLineEdit"/>
+     <widget class="QLineEdit" name="nameLineEdit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="typeLabel">
@@ -68,6 +72,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="typeComboBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>
@@ -108,7 +115,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="breedComboBox"/>
+     <widget class="QComboBox" name="breedComboBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="sexLabel">
@@ -119,6 +130,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="sexComboBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>
@@ -144,7 +158,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ageLineEdit"/>
+     <widget class="QLineEdit" name="ageLineEdit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="labelColour">
@@ -155,6 +173,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="colourComboBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>
@@ -191,6 +212,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="sizeComboBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>
