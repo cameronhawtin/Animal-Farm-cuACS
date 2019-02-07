@@ -6,6 +6,7 @@ PostLoginStaff::PostLoginStaff(QWidget *parent) :
     ui(new Ui::PostLoginStaff)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Homepage - Staff");
 }
 
 PostLoginStaff::~PostLoginStaff()

@@ -9,6 +9,7 @@ AddAnimal::AddAnimal(QWidget *parent) :
     ui(new Ui::AddAnimal)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Add an Animal");
     QString s = ui->typeComboBox->currentText();
 
     updateOk();

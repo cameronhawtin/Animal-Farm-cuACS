@@ -6,6 +6,7 @@ PostLoginClient::PostLoginClient(QWidget *parent) :
     ui(new Ui::PostLoginClient)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Homepage - Clients");
 }
 
 PostLoginClient::~PostLoginClient()

@@ -16,6 +16,8 @@ public:
     explicit ViewAnimals(QWidget *parent = nullptr);
     ~ViewAnimals();
 
+private slots:
+
 private:
     Ui::ViewAnimals *ui;
 };
