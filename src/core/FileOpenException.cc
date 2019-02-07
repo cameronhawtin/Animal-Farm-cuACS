@@ -6,16 +6,10 @@ class FileOpenException: std::exception
 {
   public:
 
-    FileOpenException(string attemptedPath)
-    {
-      filePath = attemptedPath;
-    }
-
     virtual const char* what() const throw()
     {
-      return "Could not open file at: " + filePath;
+      return "Could not open file";
     }
 
-  private:
-    string filePath;
+
 };

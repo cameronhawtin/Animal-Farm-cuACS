@@ -1,6 +1,7 @@
 #include "FileStorageManager.h"
 #include "FileOpenException.cc"
-#include <stringstream>
+#include <string>
+#include <strstream>
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -11,7 +12,7 @@ void FileStorageManager::save(string fileContents, string filePath)
   if(fileObject.is_open()){
     fileObject << fileContents;
   } else {
-    throw FileOpenException(filePath);
+    throw FileOpenException();
   }
 
   fileObject.close();
@@ -19,12 +20,12 @@ void FileStorageManager::save(string fileContents, string filePath)
 
 string FileStorageManager::load(string filePath)
 {
+  strstream buffer;
   ifstream fileObject(filePath);
   if(fileObject.is_open()){
-    stringstream buffer;
     buffer << fileObject.rdbuf();
   } else {
-    throw FileOpenException(filePath);
+    throw FileOpenException();
   }
   fileObject.close();
   return buffer.str();
