@@ -2,17 +2,19 @@
 #define CUACSAPI_H
 
 #include "Profile.h"
-#include "PersistantStorageAPI.h"
+#include "Animal.h"
+#include "PersistentStorageAPI.h"
 
 class cuacsApi
 {
 	public:
-		void int();
-		list<Profile> getAnimals();
-		bool addAnimal(string name, string animalType, string breed, int age, Gender gender, string color, Size size);
+		void init();
+		vector<Animal> getAnimals();
+		bool addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size);
 		void end();
 
 
 	private:
 		list<Profile> animals;
 };
+#endif
