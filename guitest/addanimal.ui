@@ -50,7 +50,7 @@
     <string>Add Animal</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -142,6 +142,11 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <item>
+       <property name="text">
+        <string>Please Select a Type</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item>
