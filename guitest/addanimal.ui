@@ -14,6 +14,9 @@
    <string>Dialog</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -48,6 +51,9 @@
    </property>
   </widget>
   <widget class="QWidget" name="">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -59,16 +65,26 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QLabel" name="nameLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Name</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="nameLineEdit"/>
+     <widget class="QLineEdit" name="nameLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="typeLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Type</string>
       </property>
@@ -76,6 +92,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="typeComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>
@@ -110,16 +129,26 @@
     </item>
     <item>
      <widget class="QLabel" name="labelBreed">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Breed</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="breedComboBox"/>
+     <widget class="QComboBox" name="breedComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="sexLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Sex</string>
       </property>
@@ -127,6 +156,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="sexComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>
@@ -146,16 +178,26 @@
     </item>
     <item>
      <widget class="QLabel" name="ageLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Age</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ageLineEdit"/>
+     <widget class="QLineEdit" name="ageLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="labelColour">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Colour</string>
       </property>
@@ -163,6 +205,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="colourComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>
@@ -192,6 +237,9 @@
     </item>
     <item>
      <widget class="QLabel" name="sizeLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Size</string>
       </property>
@@ -199,6 +247,9 @@
     </item>
     <item>
      <widget class="QComboBox" name="sizeComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <item>
        <property name="text">
         <string>Please Select</string>

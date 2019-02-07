@@ -11,6 +11,18 @@ AddAnimal::AddAnimal(QWidget *parent) :
     ui->setupUi(this);
     QString s = ui->typeComboBox->currentText();
 
+    updateOk();
+}
+
+void AddAnimal::updateOk()
+{
+    if (ui->nameLineEdit->text().isEmpty() || ui->typeComboBox->currentText() == "Please Select"
+            || ui->breedComboBox->currentText() == "Please Select" || ui->sexComboBox->currentText() == "Please Select"
+            || ui->ageLineEdit->text().isEmpty() || ui->colourComboBox->currentText() == "Please Select"
+            || ui->sizeComboBox->currentText() == "Please Select")
+        ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+    else
+        ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 
 AddAnimal::~AddAnimal()
@@ -18,17 +30,16 @@ AddAnimal::~AddAnimal()
     delete ui;
 }
 
-
 void AddAnimal::on_buttonBox_accepted()
 {
     //get attributes from ui
     string name = ui->nameLineEdit->text().toStdString();
     string type = ui->typeComboBox->currentText().toStdString();
     string breed = ui->breedComboBox->currentText().toStdString();
-    string sex = ui->sexComboBox->currentText().toStdString();;
+    string sex = ui->sexComboBox->currentText().toStdString();
     int age = ui->ageLineEdit->text().toInt();
     string colour = ui->colourComboBox->currentText().toStdString();
-    string size = ui->sizeComboBox->currentText().toStdString();;
+    string size = ui->sizeComboBox->currentText().toStdString();
 
     //now give attributes to animal class
 }
@@ -51,4 +62,38 @@ void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
     ui->breedComboBox->clear();
     ui->breedComboBox->addItems(list);
 
+    updateOk();
+
 }
+
+void AddAnimal::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)
+{
+    updateOk();
+}
+
+void AddAnimal::on_breedComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddAnimal::on_sexComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddAnimal::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
+{
+    updateOk();
+}
+
+void AddAnimal::on_colourComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddAnimal::on_sizeComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+
