@@ -2,7 +2,7 @@ main: Animal.o cuacsApi.o FileOpenException.o FileStorageManager.o PathFinder.o 
 	g++ -o main Animal.o cuacsApi.o FileOpenException.o FileStorageManager.o PathFinder.o PersistantStorageAPI.o Profile.o Serializer.o
 
 Animal: Animal.h Profile.h Animal.cc
-	g++ -c Animal.cc
+	g++ -c -std=c++17 Animal.cc
 	
 cuacsApi: cuacsApi.h Profile.h Animal.h PersistentStorageAPI.h cuacsApi.cc
 	g++ -c -std=c++17 cuacsApi.cc

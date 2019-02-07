@@ -11,7 +11,7 @@ using namespace std;
 class Profile
 {
     public:
-        virtual vector<string> getState() = 0;
+        virtual vector<string>* getState() = 0;
 };
 
 #endif

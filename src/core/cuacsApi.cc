@@ -8,8 +8,8 @@ using namespace std;
 
 void cuacsApi::init()
 {
-	PersistantStorageAPI persistantStorage = new PersistantStorageAPI();
-i	animals = retrieveProfiles("Animal");
+	PersistentStorageAPI persistentStorage = new PersistentStorageAPI();
+	animals = retrieveProfiles("Animal");
 }
 
 vector<Animal> cuacsApi::getAnimals()

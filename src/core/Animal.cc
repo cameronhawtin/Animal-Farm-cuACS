@@ -20,11 +20,11 @@ Animal::Animal(int id, string name, string animalType, string breed, int age, st
 
 Animal::Animal(vector<string> state)
 {
-	this->id = std::stoi(state.at(0));
+        this->id = std::stoi(state.at(0));
 	this->name = state.at(1);
 	this->animalType= state.at(2);
 	this->breed = state.at(3);
-	this->age = state.at(4);
+	this->age = std::stoi(state.at(4));
 	this->gender = state.at(5);
 	this->color = state.at(6);
 	this->size = state.at(7);
@@ -47,10 +47,18 @@ string Animal::getColor() { return color; }
 
 string Animal::getSize() { return size; }
 
-vector<string> Animal::getState()
+vector<string>* Animal::getState()
 {
-	vector<string> state;
-	state.push_back(to_string(id), name, animalType, breed, to_string(age), gender, color, size);
+	vector<string>* state = new vector<string>();
+	state->push_back(std::to_string(id));
+	state->push_back(name);
+	state->push_back(animalType);
+	state->push_back(animalType);
+	state->push_back(breed);
+	state->push_back(std::to_string(age));
+	state->push_back(gender);
+	state->push_back(color);
+	state->push_back(size);
 	return state;
 }
 

@@ -16,7 +16,7 @@ class Animal: public Profile
         string getGender();
 		string getColor();
 		string getSize();
-    vector<string> getState();
+        vector<string>* getState();
 
     private:
 		int id;
