@@ -20,10 +20,10 @@ Animal::Animal(int id, string name, string animalType, string breed, int age, st
 
 Animal::Animal(vector<string> state)
 {
-	this->id = state.at(0);
+	this->id = std::stoi(state.at(0));
 	this->name = state.at(1);
 	this->animalType= state.at(2);
-	this->bread = state.at(3);
+	this->breed = state.at(3);
 	this->age = state.at(4);
 	this->gender = state.at(5);
 	this->color = state.at(6);
@@ -33,7 +33,7 @@ Animal::Animal(vector<string> state)
 //getters for private data memebers
 int Animal::getId() { return id; }
 
-String Animal::getName() { return name; }
+string Animal::getName() { return name; }
 
 string Animal::getAnimalType() { return animalType; }
 
@@ -41,21 +41,21 @@ string Animal::getBreed() { return breed; }
 
 int Animal::getAge() { return age; }
 
-Gender Animal::getGender() { return gender; }
+string Animal::getGender() { return gender; }
 
 string Animal::getColor() { return color; }
 
-Size Animal::getSize() { return size; }
+string Animal::getSize() { return size; }
 
 vector<string> Animal::getState()
 {
-	vector<string> state = new vector<string>();
+	vector<string> state;
 	state.push_back(to_string(id), name, animalType, breed, to_string(age), gender, color, size);
 	return state;
 }
 
-int main() 
+int main()
 {
-    cout << "Animal class." << endl; 
-    return 0; 
+    cout << "Animal class." << endl;
+    return 0;
 }

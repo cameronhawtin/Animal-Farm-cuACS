@@ -3,11 +3,11 @@
 
 #include "Profile.h"
 
-class Animal : public Profile
+class Animal: public Profile
 {
     public:
         Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size);
-		Animal(vector<string> state);
+		Animal(vector<string> statendife);
 		int getId();
 		string getName();
         string getAnimalType();
@@ -16,6 +16,7 @@ class Animal : public Profile
         string getGender();
 		string getColor();
 		string getSize();
+    vector<string> getState();
 
     private:
 		int id;
