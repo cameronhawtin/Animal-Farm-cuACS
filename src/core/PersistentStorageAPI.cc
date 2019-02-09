@@ -21,33 +21,34 @@ void PersistentStorageAPI::storeProfile(Profile* p, string profileType)
   state = p->getState();
   string fileContents = s.serializeVector(state);
   filepath = dirPath + state->at(0);
-  sa.save(fileContents, filepath);
+  sa->save(fileContents, filepath);
   delete state;
   delete sa;
 
 }
 
-void PersistentStorageAPI::storeProfiles(list<Profile> profiles, string profileType)
+void PersistentStorageAPI::storeProfiles(list<Profile*>* profiles, string profileType)
 {
-  for(Profile* p : profiles){
+  for(Profile* p : *profiles){
     storeProfile(p, profileType);
   }
 }
 
-list<Profile> PersistentStorageAPI::retrieveProfiles(string profileType)
+list<Profile*>* PersistentStorageAPI::retrieveProfiles(string profileType)
 {
-  list<Profile> result = new list<Profile>();
+  list<Profile*>* result = new list<Profile*>();
   vector<string>* state;
+  PathFinder pf;
   Profile* p;
   Serializer s;
-  StorageAdapter sa = FileStorageManager();
+  StorageAdapter* sa = new FileStorageManager();
   string dirPath = getDirectory(profileType);
 
-  for(string filepath : pf.getAllFilesInDir(dirPath)){
-    string data = sa.load(filepath);
+  for(string filepath : *pf.getAllFilesInDir(dirPath)){
+    string data = sa->load(filepath);
     state = s.deserializeVector(data);
     if(profileType == "Animal"){
-      p = new Animal(state);
+      p = new Animal(*state);
     } else if(profileType == "Human"){
       //do nothing for now
     }

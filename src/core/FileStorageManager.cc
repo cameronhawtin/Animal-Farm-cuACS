@@ -8,7 +8,8 @@ using namespace std;
 
 void FileStorageManager::save(string fileContents, string filePath)
 {
-  ofstream fileObject(filePath);
+  const char * fp = filePath.c_str();
+  ofstream fileObject(fp);
   if(fileObject.is_open()){
     fileObject << fileContents;
   } else {
@@ -20,8 +21,9 @@ void FileStorageManager::save(string fileContents, string filePath)
 
 string FileStorageManager::load(string filePath)
 {
+  const char * fp = filePath.c_str();
   strstream buffer;
-  ifstream fileObject(filePath);
+  ifstream fileObject(fp);
   if(fileObject.is_open()){
     buffer << fileObject.rdbuf();
   } else {

@@ -9,8 +9,8 @@ class PersistentStorageAPI
 {
 public:
   void storeProfile(Profile*, string);
-  void storeProfiles(list<Profile>, string);
-  list<Profile> retrieveProfiles(string);
+  void storeProfiles(list<Profile*>*, string);
+  list<Profile*>* retrieveProfiles(string);
 private:
   string getDirectory(string);
 };
