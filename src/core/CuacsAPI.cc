@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+
 using namespace std;
 
 #include "CuacsAPI.h"
@@ -24,15 +25,12 @@ vector<Animal*> CuacsAPI::getAnimals()
 
 void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size)
 {
-
 	ps.storeProfile(new Animal(0, name, animalType, breed, age,gender, color, size), "Animal");
 }
 
 void CuacsAPI::end()
 {
-
 	ps.storeProfiles(animals, "Animal");
-
 }
 
 int main(int argc, char const *argv[]) {
