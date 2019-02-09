@@ -1,20 +1,32 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
-class Animal
+#include "Profile.h"
+
+class Animal: public Profile
 {
     public:
-        Animal(string animalType, string breed, int age, char gender);
-        string getAnimalType();
-        string getBreed();
-        int getAge();
-        char getGender();
+      Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size);
+		  Animal(vector<string> statendife);
+	    int getId();
+		  string getName();
+      string getAnimalType();
+      string getBreed();
+      int getAge();
+      string getGender();
+		  string getColor();
+		  string getSize();
+      vector<string>* getState();
 
     private:
-        string animalType;
-        string breed;
-        int age;
-        char gender;
+		  int id;
+		  string name;
+      string animalType;
+      string breed;
+      int age;
+      string gender;
+		  string color;
+		  string size;
 };
 
 #endif
