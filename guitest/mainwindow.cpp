@@ -31,6 +31,6 @@ void MainWindow::on_loginButton_clicked()
 
    }
    else {
-       QMessageBox::warning(this, "Invalid Login", "Username does not exist.");
+       QMessageBox::warning(this, "Invalid Login", "The provided username does not exist");
    }
 }
