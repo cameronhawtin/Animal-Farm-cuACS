@@ -61,9 +61,9 @@ vector<string>* Animal::getState()
 	state->push_back(size);
 	return state;
 }
-
-int main()
-{
-    cout << "Animal class." << endl;
-    return 0;
-}
+//
+//int main()
+//{
+//    cout << "Animal class." << endl;
+//    return 0;
+//}

@@ -1,5 +1,5 @@
-main: Animal.o CuacsAPI.o FileOpenException.o FileStorageManager.o PathFinder.o PersistentStorageAPI.o Serializer.o
-	g++ -o -lstdc++fs -std=c++17 main Animal.o CuacsAPI.o FileOpenException.o FileStorageManager.o PathFinder.o PersistentStorageAPI.o Serializer.o
+adopt: Animal.o CuacsAPI.o FileOpenException.o FileStorageManager.o PathFinder.o PersistentStorageAPI.o Serializer.o
+	g++ -std=c++17 -o adopt Animal.o CuacsAPI.o FileOpenException.o FileStorageManager.o PathFinder.o PersistentStorageAPI.o Serializer.o -lstdc++fs
 
 CXXFLAGS = -lstdc++fs -std=c++17
 
@@ -9,7 +9,7 @@ Animal: Animal.h Profile.h Animal.cc
 CuacsAPI: CuacsAPI.h Profile.h Animal.h PersistentStorageAPI.h CuacsAPI.cc
 	g++ -c -lstdc++fs -std=c++17 CuacsAPI.cc
 
-FileOpenException: FileOpenException.h FileOpenException.cc
+FileOpenException: FileOpenException.cc
 	g++ -c -lstdc++fs -std=c++17 FileOpenException.cc
 
 FileStorageManager: FileStorageManager.h FileOpenException.cc FileStorageManager.cc

@@ -2,6 +2,8 @@
 #define PATHFINDER_H
 #include <vector>
 #include <string>
+#include <experimental/filesystem>
+
 using namespace std;
 
 class PathFinder
