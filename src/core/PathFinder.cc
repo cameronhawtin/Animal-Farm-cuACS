@@ -16,10 +16,10 @@ vector<string>* PathFinder::getAllFilesInDir(string path)
 
 string PathFinder::getAnimalDirectory()
 {
-        return "/Animal/";
+        return "./Animal/";
 }
 
 string PathFinder::getHumanDirectory()
 {
-        return "/Human/";
+        return "./Human/";
 }
