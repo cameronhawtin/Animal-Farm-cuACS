@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>341</width>
-    <height>202</height>
+    <height>254</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -75,6 +75,19 @@
    </property>
    <property name="autoDefault">
     <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="generateACMButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>301</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Generate Matches</string>
    </property>
   </widget>
  </widget>
