@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+
 using namespace std;
 
 #include "Animal.h"
@@ -10,17 +11,18 @@ Animal::Animal(int id, string name, string animalType, string breed, int age, st
 {
 	this->id = id;
 	this->name = name;
-  this->animalType = animalType;
-  this->breed = breed;
-  this->age = age;
-  this->gender = gender;
+	this->animalType = animalType;
+	this->breed = breed;
+	this->age = age;
+	this->gender = gender;
 	this->color = color;
 	this->size = size;
 }
 
+//constructor to set state
 Animal::Animal(vector<string> state)
 {
-  this->id = stoi(state.at(0));
+	this->id = stoi(state.at(0));
 	this->name = state.at(1);
 	this->animalType= state.at(2);
 	this->breed = state.at(3);
@@ -47,6 +49,7 @@ string Animal::getColor() { return color; }
 
 string Animal::getSize() { return size; }
 
+//returns the state of the Animal in a vector of string
 vector<string>* Animal::getState()
 {
 	vector<string>* state = new vector<string>();
@@ -61,9 +64,3 @@ vector<string>* Animal::getState()
 	state->push_back(size);
 	return state;
 }
-//
-//int main()
-//{
-//    cout << "Animal class." << endl;
-//    return 0;
-//}
