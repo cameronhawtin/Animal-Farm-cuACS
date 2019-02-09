@@ -12,10 +12,10 @@ class CuacsAPI
 		vector<Animal*> getAnimals();
 		void addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size);
 		void end();
-
-
+	
 	private:
 		list<Profile*>* animals;
 		PersistentStorageAPI ps;
 };
+
 #endif
