@@ -4,8 +4,6 @@
 #include <QMainWindow>
 #include "postloginstaff.h"
 #include "postloginclient.h"
-#include "CuacsAPI.h"
-
 namespace Ui {
 class MainWindow;
 }
@@ -15,7 +13,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    CuacsAPI * capi;
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
