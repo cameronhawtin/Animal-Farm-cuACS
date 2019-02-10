@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "viewanimals.h"
 #include "addanimal.h"
+#include "CuacsAPI.h"
 
 namespace Ui {
 class PostLoginStaff;
@@ -14,6 +15,7 @@ class PostLoginStaff : public QDialog
     Q_OBJECT
 
 public:
+    CuacsAPI * capi;
     explicit PostLoginStaff(QWidget *parent = nullptr);
     ~PostLoginStaff();
 
