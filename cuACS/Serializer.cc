@@ -9,7 +9,6 @@ string Serializer::serializeVector(vector<string>* values)
         for(const string &value : *values){
                 serializedV += value + "\n";
         }
-        serializedV.pop_back();//remove trailing newline
         return serializedV;
 }
 
@@ -20,6 +19,7 @@ vector<string>* Serializer::deserializeVector(string serializedV)
         for (int i = 0; i < serializedV.length(); i++){
                 if(serializedV[i]=='\n'){
                         values->push_back(value);
+                        value = "";
                 } else {
                         value += serializedV[i];
                 }

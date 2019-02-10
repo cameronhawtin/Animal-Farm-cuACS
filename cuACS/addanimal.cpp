@@ -1,5 +1,7 @@
 #include "addanimal.h"
 #include "ui_addanimal.h"
+#include "CuacsAPI.h"
+#include "mainwindow.h"
 #include <iostream>
 
 using namespace std;
@@ -43,6 +45,11 @@ void AddAnimal::on_buttonBox_accepted()
     string size = ui->sizeComboBox->currentText().toStdString();
 
     //now give attributes to animal class
+    CuacsAPI capi;
+    capi.init();
+
+    capi.addAnimal(name, type, breed, age, sex, colour, size);
+    capi.end();
 }
 
 void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
@@ -98,3 +105,8 @@ void AddAnimal::on_sizeComboBox_currentIndexChanged(const QString &arg1)
 }
 
 
+
+void AddAnimal::on_buttonBox_rejected()
+{
+    capi->end();
+}

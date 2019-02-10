@@ -56,11 +56,11 @@ vector<string>* Animal::getState()
 	state->push_back(to_string(id));
 	state->push_back(name);
 	state->push_back(animalType);
-	state->push_back(animalType);
 	state->push_back(breed);
 	state->push_back(to_string(age));
 	state->push_back(gender);
 	state->push_back(color);
 	state->push_back(size);
+
 	return state;
 }
