@@ -4,7 +4,6 @@
 #include <QApplication>
 #include <QLabel>
 
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -15,10 +14,3 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
-
-//CuacsAPI capi;
-//capi.init();
-//vector<Animal*> vec = capi.getAnimals();
-//cout << vec.size() << endl;
-//cout << vec.at(0)->getSize() << endl;
-//return 0;

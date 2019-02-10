@@ -1,7 +1,6 @@
 #include "viewanimals.h"
 #include "ui_viewanimals.h"
 
-
 using namespace std;
 
 ViewAnimals::ViewAnimals(QWidget *parent) :
@@ -96,8 +95,12 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     ui->sizeComboBox->setCurrentIndex(tempIndex);
 }
 
+void ViewAnimals::on_buttonBox_accepted()
+{
+    capi->end();
+}
 
-
-
-
-
+void ViewAnimals::on_buttonBox_rejected()
+{
+    capi->end();
+}
