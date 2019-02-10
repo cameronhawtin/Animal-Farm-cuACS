@@ -68,6 +68,23 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     ui->nameLineEdit->setText(QString::fromStdString(name));
     tempIndex = ui->typeComboBox->findText(QString::fromStdString(type));
     ui->typeComboBox->setCurrentIndex(tempIndex);
+
+    QStringList list = QStringList();
+
+    if (ui->typeComboBox->currentText().toStdString() == "Cat")
+        list << "Please Select" << "Tabby" << "Siamese" << "Persian";
+    else if (ui->typeComboBox->currentText().toStdString() == "Dog")
+        list << "Please Select" << "Golden Retriever" << "Poodle" << "Bulldog";
+    else if (ui->typeComboBox->currentText().toStdString() == "Hamster")
+        list << "Please Select" << "Dwarf" << "Winter White" << "Chinese";
+    else if (ui->typeComboBox->currentText().toStdString() == "Fish")
+        list << "Please Select" << "Common Carp" << "Guppy" << "Goldfish";
+    else if (ui->typeComboBox->currentText().toStdString() == "Snake")
+        list << "Please Select" << "Anaconda" << "Viper" << "Python";
+
+    ui->breedComboBox->clear();
+    ui->breedComboBox->addItems(list);
+
     tempIndex = ui->breedComboBox->findText(QString::fromStdString(breed));
     ui->breedComboBox->setCurrentIndex(tempIndex);
     ui->ageLineEdit->setText(QString::number(age));
