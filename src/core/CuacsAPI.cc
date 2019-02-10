@@ -11,6 +11,7 @@ void CuacsAPI::init()
 {
 	ps = PersistentStorageAPI();
 	animals = ps.retrieveProfiles("Animal");
+    availableId = animals->size();
 }
 
 vector<Animal*> CuacsAPI::getAnimals()
@@ -25,7 +26,8 @@ vector<Animal*> CuacsAPI::getAnimals()
 
 void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size)
 {
-	ps.storeProfile(new Animal(0, name, animalType, breed, age,gender, color, size), "Animal");
+    availableId = availableId + 1;
+	ps.storeProfile(new Animal(availableId, name, animalType, breed, age,gender, color, size), "Animal");
 }
 
 void CuacsAPI::end()
@@ -36,5 +38,8 @@ void CuacsAPI::end()
 int main(int argc, char const *argv[]) {
 	CuacsAPI capi;
 	capi.init();
-	return 0;
+    vector<Animal*> vec = capi.getAnimals();
+    cout << vec.size() << endl;
+	cout << vec.at(1)->getSize() << endl;
+    return 0;
 }
