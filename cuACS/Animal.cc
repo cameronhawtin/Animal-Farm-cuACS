@@ -61,6 +61,5 @@ vector<string>* Animal::getState()
 	state->push_back(gender);
 	state->push_back(color);
 	state->push_back(size);
-    state->push_back("");
 	return state;
 }
