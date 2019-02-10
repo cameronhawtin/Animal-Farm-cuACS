@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <iostream>
 #include "CuacsAPI.h"
+#include <QListWidget>
+#include <sstream>
 
 namespace Ui {
 class ViewAnimals;
@@ -20,8 +22,11 @@ public:
 
 private slots:
 
+    void on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+
 private:
     Ui::ViewAnimals *ui;
+    QList<Animal*> myList;
 };
 
 #endif // VIEWANIMALS_H

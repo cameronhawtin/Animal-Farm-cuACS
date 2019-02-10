@@ -5,8 +5,8 @@
 
 class Animal: public Profile
 {
-	public:
-		Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size);
+    public:
+        Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size);
 		Animal(vector<string> statendife);
 		int getId();
 		string getName();

@@ -19,6 +19,7 @@ vector<string>* Serializer::deserializeVector(string serializedV)
         for (int i = 0; i < serializedV.length(); i++){
                 if(serializedV[i]=='\n'){
                         values->push_back(value);
+                        value = "";
                 } else {
                         value += serializedV[i];
                 }
