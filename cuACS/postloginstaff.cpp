@@ -18,6 +18,7 @@ void PostLoginStaff::on_AddAnimalButton_clicked()
 {
     //open add an animal interface
     addAnimal = new AddAnimal(this);
+    addAnimal->capi = this->capi;
     addAnimal->show();
 }
 
@@ -25,6 +26,7 @@ void PostLoginStaff::on_ViewAnimalsButton_clicked()
 {
     //open view animals interface
     viewAnimals = new ViewAnimals(this);
+    viewAnimals->capi = capi;
     viewAnimals->show();
 }
 

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <iostream>
+#include "CuacsAPI.h"
 
 namespace Ui {
 class ViewAnimals;
@@ -13,6 +14,7 @@ class ViewAnimals : public QDialog
     Q_OBJECT
 
 public:
+    CuacsAPI * capi;
     explicit ViewAnimals(QWidget *parent = nullptr);
     ~ViewAnimals();
 

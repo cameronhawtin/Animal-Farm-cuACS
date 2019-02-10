@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QPushButton>
+#include "CuacsAPI.h"
 
 namespace Ui {
 class AddAnimal;
@@ -13,6 +14,7 @@ class AddAnimal : public QDialog
     Q_OBJECT
 
 public:
+    CuacsAPI * capi;
     explicit AddAnimal(QWidget *parent = nullptr);
     ~AddAnimal();
 

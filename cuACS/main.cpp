@@ -1,14 +1,9 @@
 #include "mainwindow.h"
 #include "CuacsAPI.h"
+#include "addanimal.h"
 #include <QApplication>
 #include <QLabel>
 
-
-//int main(int argc, char const *argv[]) {
-//	CuacsAPI capi;
-//	capi.init();
-//	return 0;
-//}
 
 int main(int argc, char *argv[])
 {
