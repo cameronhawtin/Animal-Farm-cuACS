@@ -1,5 +1,7 @@
 #include "viewanimals.h"
 #include "ui_viewanimals.h"
+#include <QList>
+
 
 using namespace std;
 
@@ -18,6 +20,9 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     cout << animalsVec.size() << endl;
     cout << animalsVec.at(0)->getSize() << endl;
 
+    //QList<T> myList;
+    //myList.reserve(vector.size());
+    //std::copy(vector.begin(), vector.end(), std::back_inserter(myList));
 
 //    for (unsigned int i = 0; i < animalList.size(); i++)
 //        cout << "asdsadsa";
