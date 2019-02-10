@@ -11,7 +11,13 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("View Animals");
 
-    vector<Animal*> animalList = capi->getAnimals();
+    CuacsAPI capi;
+    capi.init();
+
+    vector<Animal*> animalsVec = capi.getAnimals();
+    cout << animalsVec.size() << endl;
+    cout << animalsVec.at(0)->getSize() << endl;
+
 
 //    for (unsigned int i = 0; i < animalList.size(); i++)
 //        cout << "asdsadsa";

@@ -45,7 +45,10 @@ void AddAnimal::on_buttonBox_accepted()
     string size = ui->sizeComboBox->currentText().toStdString();
 
     //now give attributes to animal class
-    capi->addAnimal(name, type, breed, age, sex, colour, size);
+    CuacsAPI capi;
+    capi.init();
+
+    capi.addAnimal(name, type, breed, age, sex, colour, size);
 
 }
 

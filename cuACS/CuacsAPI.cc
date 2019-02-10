@@ -35,11 +35,11 @@ void CuacsAPI::end()
 	ps.storeProfiles(animals, "Animal");
 }
 
-int main(int argc, char const *argv[]) {
-	CuacsAPI capi;
-	capi.init();
-    vector<Animal*> vec = capi.getAnimals();
-    cout << vec.size() << endl;
-	cout << vec.at(1)->getSize() << endl;
-    return 0;
-}
+//int main(int argc, char const *argv[]) {
+//    CuacsAPI capi;
+//    capi.init();
+//    vector<Animal*> vec = capi.getAnimals();
+//    cout << vec.size() << endl;
+//    cout << vec.at(0)->getSize() << endl;
+//    return 0;
+//}
