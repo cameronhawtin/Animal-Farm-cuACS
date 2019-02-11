@@ -98,10 +98,5 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     ui->sizeComboBox->setCurrentIndex(tempIndex);
 }
 
-void ViewAnimals::on_buttonBox_accepted()
-{
-    if (animalsVec->size() != 0)
-        capi->end();
-}
 
 

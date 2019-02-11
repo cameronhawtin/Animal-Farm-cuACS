@@ -24,8 +24,6 @@ private slots:
 
     void on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
-    void on_buttonBox_accepted();
-
 private:
     Ui::ViewAnimals *ui;
     QList<Animal*> myList;
