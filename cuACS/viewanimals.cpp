@@ -14,16 +14,19 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     CuacsAPI capi;
     capi.init();
 
-    vector<Animal*> animalsVec = capi.getAnimals();
-    cout << "Number of Animals: "<< animalsVec.size() << endl;
-    cout << animalsVec.at(0)->getAnimalType() << endl;
+    *animalsVec = capi.getAnimals();
 
-    //Make QList from vector
-    myList.reserve(animalsVec.size());
-    std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(myList));
+    if (animalsVec->size() != 0) {
+        cout << "Number of Animals: "<< animalsVec->size() << endl;
+        cout << animalsVec->at(0)->getAnimalType() << endl;
 
-    for (int i = 0; i < animalsVec.size(); i++){
-        ui->viewAnimalsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
+        //Make QList from vector
+        myList.reserve(animalsVec->size());
+        std::copy(animalsVec->begin(), animalsVec->end(), std::back_inserter(myList));
+
+        for (int i = 0; i < animalsVec->size(); i++){
+            ui->viewAnimalsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
+        }
     }
 }
 
@@ -97,7 +100,8 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
 
 void ViewAnimals::on_buttonBox_accepted()
 {
-    capi->end();
+    if (animalsVec->size() != 0)
+        capi->end();
 }
 
 

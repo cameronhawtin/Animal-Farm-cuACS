@@ -49,7 +49,6 @@ void AddAnimal::on_buttonBox_accepted()
     capi.init();
 
     capi.addAnimal(name, type, breed, age, sex, colour, size);
-    capi.end();
 }
 
 void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
