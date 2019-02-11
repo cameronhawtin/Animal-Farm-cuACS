@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ViewAnimals_t {
-    QByteArrayData data[8];
-    char stringdata0[135];
+    QByteArrayData data[7];
+    char stringdata0[113];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,13 +37,12 @@ QT_MOC_LITERAL(2, 56, 0), // ""
 QT_MOC_LITERAL(3, 57, 16), // "QListWidgetItem*"
 QT_MOC_LITERAL(4, 74, 7), // "current"
 QT_MOC_LITERAL(5, 82, 8), // "previous"
-QT_MOC_LITERAL(6, 91, 21), // "on_buttonBox_accepted"
-QT_MOC_LITERAL(7, 113, 21) // "on_buttonBox_rejected"
+QT_MOC_LITERAL(6, 91, 21) // "on_buttonBox_accepted"
 
     },
     "ViewAnimals\0on_viewAnimalsListWidget_currentItemChanged\0"
     "\0QListWidgetItem*\0current\0previous\0"
-    "on_buttonBox_accepted\0on_buttonBox_rejected"
+    "on_buttonBox_accepted"
 };
 #undef QT_MOC_LITERAL
 
@@ -53,7 +52,7 @@ static const uint qt_meta_data_ViewAnimals[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -61,13 +60,11 @@ static const uint qt_meta_data_ViewAnimals[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    2,   29,    2, 0x08 /* Private */,
-       6,    0,   34,    2, 0x08 /* Private */,
-       7,    0,   35,    2, 0x08 /* Private */,
+       1,    2,   24,    2, 0x08 /* Private */,
+       6,    0,   29,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 3,    4,    5,
-    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -81,7 +78,6 @@ void ViewAnimals::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         switch (_id) {
         case 0: _t->on_viewAnimalsListWidget_currentItemChanged((*reinterpret_cast< QListWidgetItem*(*)>(_a[1])),(*reinterpret_cast< QListWidgetItem*(*)>(_a[2]))); break;
         case 1: _t->on_buttonBox_accepted(); break;
-        case 2: _t->on_buttonBox_rejected(); break;
         default: ;
         }
     }
@@ -116,13 +112,13 @@ int ViewAnimals::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 2;
     }
     return _id;
 }

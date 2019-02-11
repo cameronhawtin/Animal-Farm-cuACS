@@ -29,9 +29,6 @@ private slots:
     void on_colourComboBox_currentIndexChanged(const QString &arg1);
     void on_sizeComboBox_currentIndexChanged(const QString &arg1);
 
-
-    void on_buttonBox_rejected();
-
 private:
     Ui::AddAnimal *ui;
 };

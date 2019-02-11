@@ -103,10 +103,3 @@ void AddAnimal::on_sizeComboBox_currentIndexChanged(const QString &arg1)
 {
     updateOk();
 }
-
-
-
-void AddAnimal::on_buttonBox_rejected()
-{
-    capi->end();
-}

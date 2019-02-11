@@ -100,7 +100,4 @@ void ViewAnimals::on_buttonBox_accepted()
     capi->end();
 }
 
-void ViewAnimals::on_buttonBox_rejected()
-{
-    capi->end();
-}
+
