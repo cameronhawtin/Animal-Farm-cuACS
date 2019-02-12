@@ -9,11 +9,13 @@ PostLoginStaff::PostLoginStaff(QWidget *parent) :
     this->setWindowTitle("Homepage - Staff");
 }
 
+// PostLoginStaff Destructor
 PostLoginStaff::~PostLoginStaff()
 {
     delete ui;
 }
 
+// This function is called when the close window button is clicked (top right)
 void PostLoginStaff::reject()
 {
     QMessageBox::StandardButton resBtn = QMessageBox::Yes;
@@ -29,6 +31,7 @@ void PostLoginStaff::reject()
     }
 }
 
+// This function is called when the addAnimalButton is clicked
 void PostLoginStaff::on_AddAnimalButton_clicked()
 {
     //open add an animal interface
@@ -36,6 +39,8 @@ void PostLoginStaff::on_AddAnimalButton_clicked()
     addAnimal->show();
 }
 
+
+// This function is called when the viewAnimalsButton is clicked
 void PostLoginStaff::on_ViewAnimalsButton_clicked()
 {
     //open view animals interface
@@ -43,11 +48,13 @@ void PostLoginStaff::on_ViewAnimalsButton_clicked()
     viewAnimals->show();
 }
 
+// This function is called when the addClientButton is clicked
 void PostLoginStaff::on_AddClientButton_clicked()
 {
     //open add a client interface
 }
 
+// This function is called when the viewClientsButton is clicked
 void PostLoginStaff::on_ViewClientsButton_clicked()
 {
     //open view clients interface
