@@ -14,7 +14,6 @@ class AddAnimal : public QDialog
     Q_OBJECT
 
 public:
-    CuacsAPI * capi;
     explicit AddAnimal(QWidget *parent = nullptr);
     ~AddAnimal();
 
@@ -30,6 +29,7 @@ private slots:
     void on_sizeComboBox_currentIndexChanged(const QString &arg1);
 
 private:
+    CuacsAPI *capi;
     Ui::AddAnimal *ui;
 };
 

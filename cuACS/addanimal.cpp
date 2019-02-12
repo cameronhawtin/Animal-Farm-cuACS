@@ -30,6 +30,7 @@ void AddAnimal::updateOk()
 
 AddAnimal::~AddAnimal()
 {
+    delete capi;
     delete ui;
 }
 
@@ -44,11 +45,13 @@ void AddAnimal::on_buttonBox_accepted()
     string colour = ui->colourComboBox->currentText().toStdString();
     string size = ui->sizeComboBox->currentText().toStdString();
 
-    //now give attributes to animal class
     CuacsAPI capi;
     capi.init();
 
+    //now give attributes to animal class
     capi.addAnimal(name, type, breed, age, sex, colour, size);
+
+    capi.end();
 }
 
 void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)

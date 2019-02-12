@@ -15,7 +15,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    CuacsAPI * capi;
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 

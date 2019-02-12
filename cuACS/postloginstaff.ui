@@ -46,6 +46,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="AddClientButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -62,6 +65,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="ViewClientsButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -78,6 +84,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="generateACMButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>

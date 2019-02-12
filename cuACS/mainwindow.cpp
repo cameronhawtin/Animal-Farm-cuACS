@@ -21,7 +21,7 @@ void MainWindow::on_loginButton_clicked()
    if (username == "Staff") {
        hide();
        postLoginStaff = new PostLoginStaff(this);
-       postLoginStaff->show();
+       postLoginStaff->exec();
    }
 
    else if (username == "Client") {
@@ -30,7 +30,5 @@ void MainWindow::on_loginButton_clicked()
       postLoginClient->show();
 
    }
-   else {
-       QMessageBox::warning(this, "Invalid Login", "The provided username does not exist");
-   }
+   else QMessageBox::warning(this, "Invalid Login", "The provided username does not exist");
 }
