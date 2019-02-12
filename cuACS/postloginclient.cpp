@@ -9,11 +9,13 @@ PostLoginClient::PostLoginClient(QWidget *parent) :
     this->setWindowTitle("Homepage - Clients");
 }
 
+// PostLoginClient destructor
 PostLoginClient::~PostLoginClient()
 {
     delete ui;
 }
 
+// This function is called when the close window button is clicked (top right)
 void PostLoginClient::reject()
 {
     QMessageBox::StandardButton resBtn = QMessageBox::Yes;
