@@ -15,7 +15,7 @@ class CuacsAPI
 
 	private:
 		list<Profile*>* animals;
-        int availableId;
+        	int availableId;
 		PersistentStorageAPI ps;
 };
 

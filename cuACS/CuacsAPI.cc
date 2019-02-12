@@ -9,17 +9,19 @@ CuacsAPI::CuacsAPI()
 {
 	ps = PersistentStorageAPI();
 	animals = ps.retrieveProfiles("Animal");
-    availableId = animals->size();
+    	availableId = animals->size();
 }
 
 vector<Animal*> CuacsAPI::getAnimals()
 {
-	vector<Animal*> shipAnimals = vector<Animal*>();
-	for(Profile* a: animals)
+	vector<Animal*>* shipAnimals = new vector<Animal*>();
+	for(Profile* a: *animals)
 	{
-		shipAnimals.push_back(dynamic_cast<Animal*>(a));
+		shipAnimals->push_back(dynamic_cast<Animal*>(a));
 	}
-	return shipAnimals;
+	vector<Animal*> ret = *shipAnimals;
+	delete shipAnimals;
+	return ret;
 }
 
 void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size)
@@ -31,7 +33,9 @@ void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, 
 CuacsAPI::~CuacsAPI()
 {
 	while(animals->size() > 0){
-		delete animals->pop_front();
+		Profile* temp = animals->front();
+		animals->pop_front();
+		delete temp;
 	}
 	delete animals;
 }
