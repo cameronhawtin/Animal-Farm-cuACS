@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 
+//MainWindow class constructor
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -9,11 +10,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
+//MainWindow class destructor
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+//This function is called when the login button is clicked
 void MainWindow::on_loginButton_clicked()
 {
    QString username = ui->usernameLineEdit->text();

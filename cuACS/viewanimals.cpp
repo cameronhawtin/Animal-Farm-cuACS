@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Constructor for ViewAnimals class
 ViewAnimals::ViewAnimals(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ViewAnimals)
@@ -33,13 +34,14 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     }
 }
 
+//Destructor for ViewAnimals class
 ViewAnimals::~ViewAnimals()
 {
     delete capi;
     delete ui;
 }
 
-
+//This function updates the fields on the right hand side when the user clicks on an animal in the list widget
 void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
 {
     string selectedString = current->text().toStdString();
