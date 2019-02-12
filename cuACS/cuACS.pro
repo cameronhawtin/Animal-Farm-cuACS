@@ -77,3 +77,6 @@ DISTFILES += \
     cuACS.pro.user \
     cuACS.pro.user.50df91b.20 \
     README
+
+RESOURCES += \
+    egyptfont.qrc
