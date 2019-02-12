@@ -48,13 +48,10 @@ void AddAnimal::on_buttonBox_accepted()
     string colour = ui->colourComboBox->currentText().toStdString();
     string size = ui->sizeComboBox->currentText().toStdString();
 
-    CuacsAPI capi;
-    capi.init();
+    capi = new CuacsAPI();
 
     //now give attributes to animal class
-    capi.addAnimal(name, type, breed, age, sex, colour, size);
-
-    capi.end();
+    capi->addAnimal(name, type, breed, age, sex, colour, size);
 }
 
 // This function is called when a comboBox selection is changed
