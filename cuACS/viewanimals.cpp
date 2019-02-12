@@ -19,10 +19,9 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     ui->colourLineEdit->setReadOnly(true);
     ui->sizeLineEdit->setReadOnly(true);
 
-    CuacsAPI capi;
-    capi.init();
+    capi = new CuacsAPI();
 
-    vector<Animal*> animalsVec = capi.getAnimals();
+    vector<Animal*> animalsVec = capi->getAnimals();
 
     if (animalsVec.size() != 0) {
         //Make QList from vector
@@ -36,7 +35,7 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
 
 ViewAnimals::~ViewAnimals()
 {
-  //delete capi;
+    delete capi;
     delete ui;
 }
 
