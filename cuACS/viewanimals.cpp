@@ -22,22 +22,21 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     CuacsAPI capi;
     capi.init();
 
-    *animalsVec = capi.getAnimals();
+    vector<Animal*> animalsVec = capi.getAnimals();
 
-    if (animalsVec->size() != 0) {
+    if (animalsVec.size() != 0) {
         //Make QList from vector
-        myList.reserve(animalsVec->size());
-        std::copy(animalsVec->begin(), animalsVec->end(), std::back_inserter(myList));
+        myList.reserve(animalsVec.size());
+        std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(myList));
 
-        for (int i = 0; i < animalsVec->size(); i++)
+        for (int i = 0; i < animalsVec.size(); i++)
             ui->viewAnimalsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
     }
 }
 
 ViewAnimals::~ViewAnimals()
 {
-    delete capi;
-    delete animalsVec;
+  //delete capi;
     delete ui;
 }
 

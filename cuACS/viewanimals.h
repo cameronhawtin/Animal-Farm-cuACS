@@ -27,7 +27,6 @@ private:
     Ui::ViewAnimals *ui;
     CuacsAPI *capi;
     QList<Animal*> myList;
-    vector<Animal*> *animalsVec = new vector<Animal*>;
 };
 
 #endif // VIEWANIMALS_H
