@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QPalette>
 
 //MainWindow class constructor
 MainWindow::MainWindow(QWidget *parent) :
@@ -8,8 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(300, 120));
+    //QColor cuRED = QColor(200, 16, 46);
 }
-
 //MainWindow class destructor
 MainWindow::~MainWindow()
 {

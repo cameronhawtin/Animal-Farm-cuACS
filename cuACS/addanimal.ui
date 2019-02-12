@@ -10,6 +10,11 @@
     <height>432</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Egyptienne F</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -41,7 +46,7 @@
      <x>10</x>
      <y>10</y>
      <width>591</width>
-     <height>361</height>
+     <height>374</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
