@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void CuacsAPI::init()
+CuacsAPI::CuacsAPI()
 {
 	ps = PersistentStorageAPI();
 	animals = ps.retrieveProfiles("Animal");
@@ -14,12 +14,12 @@ void CuacsAPI::init()
 
 vector<Animal*> CuacsAPI::getAnimals()
 {
-	vector<Animal*>* shipAnimals = new vector<Animal*>();
-	for(Profile* a: *animals)
+	vector<Animal*> shipAnimals = vector<Animal*>();
+	for(Profile* a: animals)
 	{
-		shipAnimals->push_back(dynamic_cast<Animal*>(a));
+		shipAnimals.push_back(dynamic_cast<Animal*>(a));
 	}
-	return *shipAnimals;
+	return shipAnimals;
 }
 
 void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size)
@@ -28,7 +28,10 @@ void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, 
 	ps.storeProfile(new Animal(availableId, name, animalType, breed, age,gender, color, size), "Animal");
 }
 
-void CuacsAPI::end()
+CuacsAPI::~CuacsAPI()
 {
-	ps.storeProfiles(animals, "Animal");
+	while(animals->size() > 0){
+		delete animals->pop_front();
+	}
+	delete animals;
 }
