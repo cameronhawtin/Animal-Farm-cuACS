@@ -7,10 +7,9 @@
 
 int main(int argc, char *argv[])
 {
-    QFontDatabase::addApplicationFont(":/cuACS/EgyptienneRoman.ttf");
-    QFont font = QFont("EgyptienneRoman", 10, 1);
-
     QApplication a(argc, argv);
+    QFontDatabase database;
+    database.addApplicationFont(":/fonts/EgyptienneRoman.ttf");
 
     MainWindow w;
     w.setWindowTitle("cuACS");

@@ -7,6 +7,7 @@ PostLoginClient::PostLoginClient(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Homepage - Clients");
+    //ui->label->setFont(font);
 }
 
 // PostLoginClient destructor
