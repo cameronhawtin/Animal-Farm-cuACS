@@ -1,17 +1,15 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include "CuacsAPI.h"
 
 using namespace std;
 
-#include "CuacsAPI.h"
-#include "Profile.h"
-
-void CuacsAPI::init()
+CuacsAPI::CuacsAPI()
 {
 	ps = PersistentStorageAPI();
 	animals = ps.retrieveProfiles("Animal");
-    availableId = animals->size();
+    	availableId = animals->size();
 }
 
 vector<Animal*> CuacsAPI::getAnimals()
@@ -21,7 +19,9 @@ vector<Animal*> CuacsAPI::getAnimals()
 	{
 		shipAnimals->push_back(dynamic_cast<Animal*>(a));
 	}
-	return *shipAnimals;
+	vector<Animal*> ret = *shipAnimals;
+	delete shipAnimals;
+	return ret;
 }
 
 void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size)
@@ -30,16 +30,12 @@ void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, 
 	ps.storeProfile(new Animal(availableId, name, animalType, breed, age,gender, color, size), "Animal");
 }
 
-void CuacsAPI::end()
+CuacsAPI::~CuacsAPI()
 {
-	ps.storeProfiles(animals, "Animal");
+	while(animals->size() > 0){
+		Profile* temp = animals->front();
+		animals->pop_front();
+		delete temp;
+	}
+	delete animals;
 }
-
-//int main(int argc, char const *argv[]) {
-//    CuacsAPI capi;
-//    capi.init();
-//    vector<Animal*> vec = capi.getAnimals();
-//    cout << vec.size() << endl;
-//    cout << vec.at(0)->getSize() << endl;
-//    return 0;
-//}

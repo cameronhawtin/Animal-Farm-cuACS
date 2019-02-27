@@ -17,6 +17,7 @@ AddAnimal::AddAnimal(QWidget *parent) :
     updateOk();
 }
 
+// Checks for all info to be filled to enable the "OK" button
 void AddAnimal::updateOk()
 {
     if (ui->nameLineEdit->text().isEmpty() || ui->typeComboBox->currentText() == "Please Select"
@@ -28,11 +29,14 @@ void AddAnimal::updateOk()
         ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 
+// AddAnimal Destructor
 AddAnimal::~AddAnimal()
 {
+    delete capi;
     delete ui;
 }
 
+// This function is called when the user presses the "OK" button
 void AddAnimal::on_buttonBox_accepted()
 {
     //get attributes from ui
@@ -44,13 +48,13 @@ void AddAnimal::on_buttonBox_accepted()
     string colour = ui->colourComboBox->currentText().toStdString();
     string size = ui->sizeComboBox->currentText().toStdString();
 
-    //now give attributes to animal class
-    CuacsAPI capi;
-    capi.init();
+    capi = new CuacsAPI();
 
-    capi.addAnimal(name, type, breed, age, sex, colour, size);
+    //now give attributes to animal class
+    capi->addAnimal(name, type, breed, age, sex, colour, size);
 }
 
+// This function is called when a comboBox selection is changed
 void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
 {
     QStringList list = QStringList();

@@ -16,7 +16,6 @@ class ViewAnimals : public QDialog
     Q_OBJECT
 
 public:
-    CuacsAPI * capi;
     explicit ViewAnimals(QWidget *parent = nullptr);
     ~ViewAnimals();
 
@@ -26,8 +25,8 @@ private slots:
 
 private:
     Ui::ViewAnimals *ui;
+    CuacsAPI *capi;
     QList<Animal*> myList;
-    vector<Animal*> *animalsVec = new vector<Animal*>;
 };
 
 #endif // VIEWANIMALS_H

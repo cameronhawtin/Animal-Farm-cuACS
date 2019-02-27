@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>EgyptienneRoman.ttf</file>
+    </qresource>
+</RCC>

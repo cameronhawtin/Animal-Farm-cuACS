@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Constructor for ViewAnimals class
 ViewAnimals::ViewAnimals(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ViewAnimals)
@@ -11,32 +12,36 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("View Animals");
 
-    CuacsAPI capi;
-    capi.init();
+    ui->nameLineEdit->setReadOnly(true);
+    ui->typeLineEdit->setReadOnly(true);
+    ui->breedLineEdit->setReadOnly(true);
+    ui->ageLineEdit->setReadOnly(true);
+    ui->sexLineEdit->setReadOnly(true);
+    ui->colourLineEdit->setReadOnly(true);
+    ui->sizeLineEdit->setReadOnly(true);
 
-    *animalsVec = capi.getAnimals();
+    capi = new CuacsAPI();
 
-    if (animalsVec->size() != 0) {
-        cout << "Number of Animals: "<< animalsVec->size() << endl;
-        cout << animalsVec->at(0)->getAnimalType() << endl;
+    vector<Animal*> animalsVec = capi->getAnimals();
 
+    if (animalsVec.size() != 0) {
         //Make QList from vector
-        myList.reserve(animalsVec->size());
-        std::copy(animalsVec->begin(), animalsVec->end(), std::back_inserter(myList));
+        myList.reserve(animalsVec.size());
+        std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(myList));
 
-        for (int i = 0; i < animalsVec->size(); i++){
+        for (int i = 0; i < animalsVec.size(); i++)
             ui->viewAnimalsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
-        }
     }
 }
 
+//Destructor for ViewAnimals class
 ViewAnimals::~ViewAnimals()
 {
+    delete capi;
     delete ui;
 }
 
-
-
+//This function updates the fields on the right hand side when the user clicks on an animal in the list widget
 void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
 {
     string selectedString = current->text().toStdString();
@@ -68,34 +73,12 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     }
     int tempIndex;
     ui->nameLineEdit->setText(QString::fromStdString(name));
-    tempIndex = ui->typeComboBox->findText(QString::fromStdString(type));
-    ui->typeComboBox->setCurrentIndex(tempIndex);
-
-    QStringList list = QStringList();
-
-    if (ui->typeComboBox->currentText().toStdString() == "Cat")
-        list << "Please Select" << "Tabby" << "Siamese" << "Persian";
-    else if (ui->typeComboBox->currentText().toStdString() == "Dog")
-        list << "Please Select" << "Golden Retriever" << "Poodle" << "Bulldog";
-    else if (ui->typeComboBox->currentText().toStdString() == "Hamster")
-        list << "Please Select" << "Dwarf" << "Winter White" << "Chinese";
-    else if (ui->typeComboBox->currentText().toStdString() == "Fish")
-        list << "Please Select" << "Common Carp" << "Guppy" << "Goldfish";
-    else if (ui->typeComboBox->currentText().toStdString() == "Snake")
-        list << "Please Select" << "Anaconda" << "Viper" << "Python";
-
-    ui->breedComboBox->clear();
-    ui->breedComboBox->addItems(list);
-
-    tempIndex = ui->breedComboBox->findText(QString::fromStdString(breed));
-    ui->breedComboBox->setCurrentIndex(tempIndex);
+    ui->typeLineEdit->setText(QString::fromStdString(type));
+    ui->breedLineEdit->setText(QString::fromStdString(breed));
     ui->ageLineEdit->setText(QString::number(age));
-    tempIndex = ui->sexComboBox->findText(QString::fromStdString(sex));
-    ui->sexComboBox->setCurrentIndex(tempIndex);
-    tempIndex = ui->colourComboBox->findText(QString::fromStdString(colour));
-    ui->colourComboBox->setCurrentIndex(tempIndex);
-    tempIndex = ui->sizeComboBox->findText(QString::fromStdString(size));
-    ui->sizeComboBox->setCurrentIndex(tempIndex);
+    ui->sexLineEdit->setText(QString::fromStdString(sex));
+    ui->colourLineEdit->setText(QString::fromStdString(colour));
+    ui->sizeLineEdit->setText(QString::fromStdString(size));
 }
 
 

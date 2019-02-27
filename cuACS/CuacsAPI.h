@@ -8,14 +8,14 @@
 class CuacsAPI
 {
 	public:
-		void init();
+		CuacsAPI();
 		vector<Animal*> getAnimals();
 		void addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size);
-		void end();
-	
+		~CuacsAPI();
+
 	private:
 		list<Profile*>* animals;
-        int availableId;
+        	int availableId;
 		PersistentStorageAPI ps;
 };
 

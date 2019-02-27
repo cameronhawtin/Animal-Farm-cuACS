@@ -10,20 +10,25 @@
     <height>364</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Egyptienne F</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>70</x>
      <y>100</y>
-     <width>401</width>
+     <width>251</width>
      <height>161</height>
     </rect>
    </property>
    <property name="text">
-    <string>This is the client window. Not yet implemented for deliverable 1.</string>
+    <string>Not yet implemented for deliverable 1</string>
    </property>
   </widget>
  </widget>

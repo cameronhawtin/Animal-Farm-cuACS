@@ -2,9 +2,11 @@
 #define POSTLOGINSTAFF_H
 
 #include <QDialog>
+#include <QMessageBox>
 #include "viewanimals.h"
 #include "addanimal.h"
 #include "CuacsAPI.h"
+
 
 namespace Ui {
 class PostLoginStaff;
@@ -27,6 +29,8 @@ private slots:
     void on_AddClientButton_clicked();
 
     void on_ViewClientsButton_clicked();
+
+    void reject();
 
 private:
     Ui::PostLoginStaff *ui;

@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = guitest
+TARGET = cuACS
 TEMPLATE = app
 
 CONFIG += c++17
@@ -71,9 +71,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SUBDIRS += \
-    guitest.pro
+    cuACS.pro
 
 DISTFILES += \
-    guitest.pro.user \
-    guitest.pro.user.50df91b.20 \
+    cuACS.pro.user \
+    cuACS.pro.user.50df91b.20 \
     README
+
+RESOURCES += \
+    egyptfont.qrc
