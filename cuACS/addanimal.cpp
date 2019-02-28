@@ -25,11 +25,10 @@ void AddAnimal::updateOk()
             || ui->ageLineEdit->text().isEmpty() || ui->colourComboBox->currentText() == "Please Select"
             || ui->sizeComboBox->currentText() == "Please Select"
             || ui->aggressionLineEdit->text().isEmpty() || ui->attachmentLineEdit->text().isEmpty()
-            || ui->obedienceLineEdit->text().isEmpty() || ui->energyLineEdit->text().isEmpty()
-            || ui->energyLineEdit->text().isEmpty() || ui->childrenComfortLineEdit->text().isEmpty()
+            || ui->obedienceLineEdit->text().isEmpty() || ui->cleanlinessLineEdit->text().isEmpty()
+            || ui->energyComboBox->currentText() == "Please Select" || ui->childrenComfortLineEdit->text().isEmpty()
             || ui->loudnessLineEdit->text().isEmpty() || ui->costLineEdit->text().isEmpty()
             || ui->costPerYearLineEdit->text().isEmpty() || ui->intelligenceLineEdit->text().isEmpty()
-            || ui->cleanlinessLineEdit->text().isEmpty()
             || (ui->isCrateTrainedRadioButtonYES->isChecked() == false && ui->isCrateTrainedRadioButtonNO->isChecked() == false)
             || (ui->isHypoallergenicRadioButtonYES->isChecked() == false && ui->isHypoallergenicRadioButtonNO->isChecked() == false)
             || (ui->isNeuteredRadioButtonYES->isChecked() == false && ui->isNeuteredRadioButtonNO->isChecked() == false))
@@ -60,7 +59,7 @@ void AddAnimal::on_buttonBox_accepted()
     int aggression = ui->aggressionLineEdit->text().toInt();
     int attachment = ui->attachmentLineEdit->text().toInt();
     int obedience = ui->obedienceLineEdit->text().toInt();
-    string energy = ui->energyLineEdit->text().toStdString();
+    string energy = ui->energyComboBox->currentText().toStdString();
     int childrenComfort = ui->childrenComfortLineEdit->text().toInt();
     int loudness = ui->loudnessLineEdit->text().toInt();
     float cost = ui->costLineEdit->text().toFloat();
@@ -154,6 +153,11 @@ void AddAnimal::on_costPerYearLineEdit_cursorPositionChanged(int arg1, int arg2)
     updateOk();
 }
 
+void AddAnimal::on_energyComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
 
 // Slider functionality
 void AddAnimal::on_aggressionSlider_valueChanged(int value)
@@ -176,12 +180,7 @@ void AddAnimal::on_obedienceSlider_valueChanged(int value)
     ui->obedienceLineEdit->setText(s);
     updateOk();
 }
-void AddAnimal::on_energySlider_valueChanged(int value)
-{
-    QString s = QString::number(value);
-    ui->energyLineEdit->setText(s);
-    updateOk();
-}
+
 void AddAnimal::on_childrenComfortSlider_valueChanged(int value)
 {
     QString s = QString::number(value);

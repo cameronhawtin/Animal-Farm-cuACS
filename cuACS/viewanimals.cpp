@@ -26,6 +26,8 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
 
     if (animalsVec.size() != 0) {
         //Make QList from vector
+        std::cout << animalsVec.at(0)->getCostPerYear() << flush;
+
         myList.reserve(animalsVec.size());
         std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(myList));
 
@@ -56,8 +58,11 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
         stringstream(temp) >> id;
     }
     string stringId = to_string(id);
-    string name, type, breed, sex, colour, size;
-    int age;
+    string name, type, breed, sex, colour, size, energy;
+    int age, aggression, attachment, obedience, childrenComfort, loudness, intelligence, cleanliness;
+    bool isCrateTrained, isHypoallergenic, isNeutered;
+    float cost, costPerYear;
+
 
     for (int i = 0; i < myList.size(); i++){
         if (to_string(myList.at(i)->getId()).find(stringId) != string::npos) {
@@ -68,10 +73,30 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
             sex = myList.at(i)->getGender();
             colour = myList.at(i)->getColor();
             size = myList.at(i)->getSize();
+
+            energy = myList.at(i)->getEnergy();
+            aggression = myList.at(i)->getAggression();
+            attachment = myList.at(i)->getAttachment();
+            obedience = myList.at(i)->getObedience();
+            childrenComfort = myList.at(i)->getChildrenComfort();
+            loudness = myList.at(i)->getLoudness();
+            intelligence = myList.at(i)->getIntelligence();
+            cleanliness = myList.at(i)->getCleanliness();
+            isCrateTrained = myList.at(i)->getIsCrateTrained();
+            isHypoallergenic = myList.at(i)->getIsHypoallergenic();
+            isNeutered = myList.at(i)->getIsNeutered();
+            cost = myList.at(i)->getCost();
+            costPerYear = myList.at(i)->getCostPerYear();
+
+            std::cout << myList.at(i)->getCostPerYear() << flush;
+
+
             i = myList.size();
         }
     }
-    int tempIndex;
+
+    string title = name + " the " + breed;
+    ui->titleLabel->setText(QString::fromStdString(title));
     ui->nameLineEdit->setText(QString::fromStdString(name));
     ui->typeLineEdit->setText(QString::fromStdString(type));
     ui->breedLineEdit->setText(QString::fromStdString(breed));
@@ -79,6 +104,20 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     ui->sexLineEdit->setText(QString::fromStdString(sex));
     ui->colourLineEdit->setText(QString::fromStdString(colour));
     ui->sizeLineEdit->setText(QString::fromStdString(size));
+
+    ui->energyLineEdit->setText(QString::fromStdString(energy));
+    ui->aggressionLineEdit->setText(QString::number(aggression));
+    ui->attachmentLineEdit->setText(QString::number(attachment));
+    ui->obedienceLineEdit->setText(QString::number(obedience));
+    ui->childrenComfortLineEdit->setText(QString::number(childrenComfort));
+    ui->loudnessLineEdit->setText(QString::number(loudness));
+    ui->intelligenceLineEdit->setText(QString::number(intelligence));
+    ui->cleanlinessLineEdit->setText(QString::number(cleanliness));
+    ui->isCrateTrainedLineEdit->setText(QString::number(isCrateTrained));
+    ui->isHypoallergenicLineEdit->setText(QString::number(isHypoallergenic));
+    ui->isNeuteredLineEdit->setText(QString::number(isNeutered));
+    ui->costLineEdit->setText(QString::number(cost));
+    ui->costPerYearLineEdit->setText(QString::number(costPerYear));
 }
 
 

@@ -27,13 +27,13 @@ private slots:
     void on_ageLineEdit_cursorPositionChanged(int arg1, int arg2);
     void on_colourComboBox_currentIndexChanged(const QString &arg1);
     void on_sizeComboBox_currentIndexChanged(const QString &arg1);
+    void on_energyComboBox_currentIndexChanged(const QString &arg1);
 
     void on_costLineEdit_cursorPositionChanged(int arg1, int arg2);
     void on_costPerYearLineEdit_cursorPositionChanged(int arg1, int arg2);
     void on_aggressionSlider_valueChanged(int value);
     void on_attachmentSlider_valueChanged(int value);
     void on_obedienceSlider_valueChanged(int value);
-    void on_energySlider_valueChanged(int value);
     void on_childrenComfortSlider_valueChanged(int value);
     void on_loudnessSlider_valueChanged(int value);
     void on_intelligenceSlider_valueChanged(int value);
