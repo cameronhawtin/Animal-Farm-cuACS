@@ -42,6 +42,8 @@ SOURCES += \
     PathFinder.cc \
     PersistentStorageAPI.cc \
     Serializer.cc \
+    Human.cpp \
+    addclient.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -57,6 +59,22 @@ HEADERS += \
     Profile.h \
     Serializer.h \
     StorageAdapter.h \
+    Human.h \
+    addanimal.h \
+    Animal.h \
+    CuacsAPI.h \
+    FileStorageManager.h \
+    Human.h \
+    mainwindow.h \
+    PathFinder.h \
+    PersistentStorageAPI.h \
+    postloginclient.h \
+    postloginstaff.h \
+    Profile.h \
+    Serializer.h \
+    StorageAdapter.h \
+    viewanimals.h \
+    addclient.h
 
 FORMS += \
         mainwindow.ui \
@@ -64,6 +82,7 @@ FORMS += \
     postloginclient.ui \
     viewanimals.ui \
     addanimal.ui \
+    addclient.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

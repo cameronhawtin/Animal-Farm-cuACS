@@ -30,6 +30,11 @@ void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, 
 	ps.storeProfile(new Animal(availableId, name, animalType, breed, age,gender, color, size), "Animal");
 }
 
+void CuacsAPI::addHuman(string name, int age)
+{
+    ps.storeProfile(new Human(name, age), "Human");
+}
+
 CuacsAPI::~CuacsAPI()
 {
 	while(animals->size() > 0){

@@ -51,7 +51,8 @@ void PostLoginStaff::on_ViewAnimalsButton_clicked()
 // This function is called when the addClientButton is clicked
 void PostLoginStaff::on_AddClientButton_clicked()
 {
-    //open add a client interface
+    addClient = new AddClient(this);
+    addClient->show();
 }
 
 // This function is called when the viewClientsButton is clicked

@@ -61,12 +61,15 @@ SOURCES       = main.cpp \
 		FileStorageManager.cc \
 		PathFinder.cc \
 		PersistentStorageAPI.cc \
-		Serializer.cc qrc_egyptfont.cpp \
+		Serializer.cc \
+		Human.cpp \
+		addclient.cpp qrc_egyptfont.cpp \
 		moc_mainwindow.cpp \
 		moc_postloginstaff.cpp \
 		moc_postloginclient.cpp \
 		moc_viewanimals.cpp \
-		moc_addanimal.cpp
+		moc_addanimal.cpp \
+		moc_addclient.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		postloginstaff.o \
@@ -79,12 +82,15 @@ OBJECTS       = main.o \
 		PathFinder.o \
 		PersistentStorageAPI.o \
 		Serializer.o \
+		Human.o \
+		addclient.o \
 		qrc_egyptfont.o \
 		moc_mainwindow.o \
 		moc_postloginstaff.o \
 		moc_postloginclient.o \
 		moc_viewanimals.o \
-		moc_addanimal.o
+		moc_addanimal.o \
+		moc_addclient.o
 DIST          = cuACS.pro.user \
 		cuACS.pro.user.50df91b.20 \
 		README \
@@ -189,7 +195,23 @@ DIST          = cuACS.pro.user \
 		PersistentStorageAPI.h \
 		Profile.h \
 		Serializer.h \
-		StorageAdapter.h main.cpp \
+		StorageAdapter.h \
+		Human.h \
+		addanimal.h \
+		Animal.h \
+		CuacsAPI.h \
+		FileStorageManager.h \
+		Human.h \
+		mainwindow.h \
+		PathFinder.h \
+		PersistentStorageAPI.h \
+		postloginclient.h \
+		postloginstaff.h \
+		Profile.h \
+		Serializer.h \
+		StorageAdapter.h \
+		viewanimals.h \
+		addclient.h main.cpp \
 		mainwindow.cpp \
 		postloginstaff.cpp \
 		postloginclient.cpp \
@@ -200,7 +222,9 @@ DIST          = cuACS.pro.user \
 		FileStorageManager.cc \
 		PathFinder.cc \
 		PersistentStorageAPI.cc \
-		Serializer.cc
+		Serializer.cc \
+		Human.cpp \
+		addclient.cpp
 QMAKE_TARGET  = cuACS
 DESTDIR       = 
 TARGET        = cuACS
@@ -209,7 +233,7 @@ TARGET        = cuACS
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -417,9 +441,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents egyptfont.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc CuacsAPI.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h Human.h mainwindow.h PathFinder.h PersistentStorageAPI.h postloginclient.h postloginstaff.h Profile.h Serializer.h StorageAdapter.h viewanimals.h addclient.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc CuacsAPI.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp addclient.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui addclient.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -457,16 +481,18 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp moc_addanimal.cpp moc_mainwindow.cpp moc_postloginclient.cpp moc_postloginstaff.cpp moc_viewanimals.cpp moc_addclient.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp moc_addanimal.cpp moc_mainwindow.cpp moc_postloginclient.cpp moc_postloginstaff.cpp moc_viewanimals.cpp moc_addclient.cpp
 moc_mainwindow.cpp: postloginstaff.h \
 		viewanimals.h \
 		CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		addanimal.h \
+		addclient.h \
 		postloginclient.h \
 		mainwindow.h \
 		moc_predefs.h \
@@ -477,8 +503,10 @@ moc_postloginstaff.cpp: viewanimals.h \
 		CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		addanimal.h \
+		addclient.h \
 		postloginstaff.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -492,6 +520,7 @@ moc_postloginclient.cpp: postloginclient.h \
 moc_viewanimals.cpp: CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		viewanimals.h \
 		moc_predefs.h \
@@ -501,17 +530,81 @@ moc_viewanimals.cpp: CuacsAPI.h \
 moc_addanimal.cpp: CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		addanimal.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include addanimal.h -o moc_addanimal.cpp
 
+moc_addanimal.cpp: CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		addanimal.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include addanimal.h -o moc_addanimal.cpp
+
+moc_mainwindow.cpp: postloginstaff.h \
+		viewanimals.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		addanimal.h \
+		addclient.h \
+		postloginclient.h \
+		mainwindow.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+
+moc_postloginclient.cpp: postloginclient.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include postloginclient.h -o moc_postloginclient.cpp
+
+moc_postloginstaff.cpp: viewanimals.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		addanimal.h \
+		addclient.h \
+		postloginstaff.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include postloginstaff.h -o moc_postloginstaff.cpp
+
+moc_viewanimals.cpp: CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		viewanimals.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include viewanimals.h -o moc_viewanimals.cpp
+
+moc_addclient.cpp: CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		addclient.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include addclient.h -o moc_addclient.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h
+compiler_uic_make_all: ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h
+	-$(DEL_FILE) ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h
 ui_mainwindow.h: mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic mainwindow.ui -o ui_mainwindow.h
@@ -532,6 +625,10 @@ ui_addanimal.h: addanimal.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic addanimal.ui -o ui_addanimal.h
 
+ui_addclient.h: addclient.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic addclient.ui -o ui_addclient.h
+
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:
@@ -548,8 +645,10 @@ main.o: main.cpp mainwindow.h \
 		CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		addanimal.h \
+		addclient.h \
 		postloginclient.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
@@ -559,8 +658,10 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		addanimal.h \
+		addclient.h \
 		postloginclient.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
@@ -570,8 +671,10 @@ postloginstaff.o: postloginstaff.cpp postloginstaff.h \
 		CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		addanimal.h \
+		addclient.h \
 		ui_postloginstaff.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o postloginstaff.o postloginstaff.cpp
 
@@ -583,6 +686,7 @@ viewanimals.o: viewanimals.cpp viewanimals.h \
 		CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		ui_viewanimals.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewanimals.o viewanimals.cpp
@@ -591,11 +695,13 @@ addanimal.o: addanimal.cpp addanimal.h \
 		CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h \
 		ui_addanimal.h \
 		mainwindow.h \
 		postloginstaff.h \
 		viewanimals.h \
+		addclient.h \
 		postloginclient.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addanimal.o addanimal.cpp
 
@@ -606,6 +712,7 @@ Animal.o: Animal.cc Animal.h \
 CuacsAPI.o: CuacsAPI.cc CuacsAPI.h \
 		Profile.h \
 		Animal.h \
+		Human.h \
 		PersistentStorageAPI.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CuacsAPI.o CuacsAPI.cc
 
@@ -623,11 +730,30 @@ PersistentStorageAPI.o: PersistentStorageAPI.cc PersistentStorageAPI.h \
 		PathFinder.h \
 		StorageAdapter.h \
 		FileStorageManager.h \
-		Animal.h
+		Animal.h \
+		Human.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PersistentStorageAPI.o PersistentStorageAPI.cc
 
 Serializer.o: Serializer.cc Serializer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Serializer.o Serializer.cc
+
+Human.o: Human.cpp Human.h \
+		Profile.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Human.o Human.cpp
+
+addclient.o: addclient.cpp addclient.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		ui_addclient.h \
+		mainwindow.h \
+		postloginstaff.h \
+		viewanimals.h \
+		addanimal.h \
+		postloginclient.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addclient.o addclient.cpp
 
 qrc_egyptfont.o: qrc_egyptfont.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_egyptfont.o qrc_egyptfont.cpp
@@ -646,6 +772,9 @@ moc_viewanimals.o: moc_viewanimals.cpp
 
 moc_addanimal.o: moc_addanimal.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_addanimal.o moc_addanimal.cpp
+
+moc_addclient.o: moc_addclient.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_addclient.o moc_addclient.cpp
 
 ####### Install
 

@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include "viewanimals.h"
 #include "addanimal.h"
+#include "addclient.h"
 #include "CuacsAPI.h"
 
 
@@ -36,6 +37,7 @@ private:
     Ui::PostLoginStaff *ui;
     ViewAnimals *viewAnimals;
     AddAnimal *addAnimal;
+    AddClient *addClient;
 };
 
 #endif // POSTLOGINSTAFF_H
