@@ -28,6 +28,24 @@ private slots:
     void on_colourComboBox_currentIndexChanged(const QString &arg1);
     void on_sizeComboBox_currentIndexChanged(const QString &arg1);
 
+    void on_costLineEdit_cursorPositionChanged(int arg1, int arg2);
+    void on_costPerYearLineEdit_cursorPositionChanged(int arg1, int arg2);
+    void on_aggressionSlider_valueChanged(int value);
+    void on_attachmentSlider_valueChanged(int value);
+    void on_obedienceSlider_valueChanged(int value);
+    void on_energySlider_valueChanged(int value);
+    void on_childrenComfortSlider_valueChanged(int value);
+    void on_loudnessSlider_valueChanged(int value);
+    void on_intelligenceSlider_valueChanged(int value);
+    void on_cleanlinessSlider_valueChanged(int value);
+
+    void on_isCrateTrainedRadioButtonYES_toggled(bool checked);
+    void on_isCrateTrainedRadioButtonNO_toggled(bool checked);
+    void on_isHypoallergenicRadioButtonYES_toggled(bool checked);
+    void on_isHypoallergenicRadioButtonNO_toggled(bool checked);
+    void on_isNeuteredRadioButtonYES_toggled(bool checked);
+    void on_isNeuteredRadioButtonNO_toggled(bool checked);
+
 private:
     CuacsAPI *capi;
     Ui::AddAnimal *ui;

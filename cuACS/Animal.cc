@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -52,16 +53,16 @@ Animal::Animal(vector<string> state)
     this->obedience = std::stoi(state.at(10));
 
     this->energy = state.at(11);
-   // this->isCrateTrained = isCrateTrained;
-  //  this->isHypoallergenic = isHypoallergenic;
-  //  this->isNeutered = isNeutered;
+    std::istringstream(state.at(12)) >> this->isCrateTrained;
+    std::istringstream(state.at(13)) >> this->isHypoallergenic;
+    std::istringstream(state.at(14)) >> this->isNeutered;
 
-    this->childrenComfort = std::stoi(state.at(12));
-    this->loudness = std::stoi(state.at(13));
-    this->cost = std::stof(state.at(14));
-    this->costPerYear = std::stof(state.at(15));
-    this->intelligence = std::stoi(state.at(16));
-    this->cleanliness = std::stoi(state.at(17));
+    this->childrenComfort = std::stoi(state.at(13));
+    this->loudness = std::stoi(state.at(14));
+    this->cost = std::stof(state.at(15));
+    this->costPerYear = std::stof(state.at(16));
+    this->intelligence = std::stoi(state.at(17));
+    this->cleanliness = std::stoi(state.at(18));
 }
 
 //getters for private data memebers
