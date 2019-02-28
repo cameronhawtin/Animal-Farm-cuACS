@@ -7,8 +7,9 @@ using namespace std;
 #include "Human.h"
 
 //initializes the data members
-Human::Human(string name, int age)
+Human::Human(int id, string name, int age)
 {
+        this->id = id;
         this->name = name;
         this->age = age;
 }
@@ -16,11 +17,14 @@ Human::Human(string name, int age)
 //constructor to set state
 Human::Human(vector<string> state)
 {
-        this->name = state.at(0);
-        this->age = std::stoi(state.at(1));
+        this->id = std::stoi(state.at(0));
+        this->name = state.at(1);
+        this->age = std::stoi(state.at(2));
 }
 
 //getters for private data members
+int Human::getId() { return id; }
+
 string Human::getName() { return name; }
 
 int Human::getAge() { return age; }
@@ -29,6 +33,7 @@ int Human::getAge() { return age; }
 vector<string>* Human::getState()
 {
         vector<string>* state = new vector<string>();
+        state->push_back(to_string(id));
         state->push_back(name);
         state->push_back(to_string(age));
 

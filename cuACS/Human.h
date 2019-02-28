@@ -6,14 +6,16 @@
 class Human: public Profile
 {
     public:
-        Human(string name, int age);
+        Human(int id, string name, int age);
         Human(vector<string> statendife);
+        int getId();
         string getName();
         int getAge();
 
         vector<string>* getState();
 
     private:
+        int id;
         string name;
         int age;
 };
