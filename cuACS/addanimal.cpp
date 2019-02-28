@@ -48,19 +48,19 @@ void AddAnimal::on_buttonBox_accepted()
     string colour = ui->colourComboBox->currentText().toStdString();
     string size = ui->sizeComboBox->currentText().toStdString();
 
-    int aggression;
-    int attachment;
-    int obedience;
-    string energy;
-    bool isCrateTrained;
-    bool isHypoallergenic;
-    bool isNeutered;
-    int childrenComfort;
-    int loudness;
-    int cost;
-    int costPerYear;
-    int intelligence;
-    int cleanliness;
+    int aggression = ui->aggressionLineEdit->text().toInt();
+    int attachment = ui->attachmentLineEdit->text().toInt();
+    int obedience = ui->obedienceLineEdit->text().toInt();
+    string energy = ui->energyLineEdit->text().toStdString();
+    bool isCrateTrained = false;
+    bool isHypoallergenic = true;
+    bool isNeutered = true;
+    int childrenComfort = ui->childrenComfortLineEdit->text().toInt();
+    int loudness = ui->loudnessLineEdit->text().toInt();
+    int cost = ui->costLineEdit->text().toInt();
+    int costPerYear = ui->costPerYearLineEdit->text().toInt();
+    int intelligence = ui->intelligenceLineEdit->text().toInt();
+    int cleanliness = ui->cleanlinessLineEdit->text().toInt();
 
     capi = new CuacsAPI();
 
