@@ -57,12 +57,12 @@ Animal::Animal(vector<string> state)
     std::istringstream(state.at(13)) >> this->isHypoallergenic;
     std::istringstream(state.at(14)) >> this->isNeutered;
 
-    this->childrenComfort = std::stoi(state.at(13));
-    this->loudness = std::stoi(state.at(14));
-    this->cost = std::stof(state.at(15));
-    this->costPerYear = std::stof(state.at(16));
-    this->intelligence = std::stoi(state.at(17));
-    this->cleanliness = std::stoi(state.at(18));
+    this->childrenComfort = std::stoi(state.at(15));
+    this->loudness = std::stoi(state.at(16));
+    this->cost = std::stof(state.at(17));
+    this->costPerYear = std::stof(state.at(18));
+    this->intelligence = std::stoi(state.at(19));
+    this->cleanliness = std::stoi(state.at(20));
 }
 
 //getters for private data memebers

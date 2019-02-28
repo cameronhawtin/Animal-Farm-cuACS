@@ -83,11 +83,13 @@ void AddAnimal::on_buttonBox_accepted()
     else if (ui->isNeuteredRadioButtonNO->isChecked())
         isNeutered = false;
 
+
     capi = new CuacsAPI();
 
     //now give attributes to animal class
     capi->addAnimal(name, type, breed, age, sex, colour, size, aggression, attachment, obedience, energy,
                     isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness);
+
 }
 
 // This function is called when a comboBox selection is changed

@@ -26,8 +26,6 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
 
     if (animalsVec.size() != 0) {
         //Make QList from vector
-        std::cout << animalsVec.at(0)->getCostPerYear() << flush;
-
         myList.reserve(animalsVec.size());
         std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(myList));
 
