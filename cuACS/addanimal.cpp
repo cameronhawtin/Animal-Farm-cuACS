@@ -57,8 +57,8 @@ void AddAnimal::on_buttonBox_accepted()
     bool isNeutered = true;
     int childrenComfort = ui->childrenComfortLineEdit->text().toInt();
     int loudness = ui->loudnessLineEdit->text().toInt();
-    int cost = ui->costLineEdit->text().toInt();
-    int costPerYear = ui->costPerYearLineEdit->text().toInt();
+    float cost = ui->costLineEdit->text().toFloat();
+    float costPerYear = ui->costPerYearLineEdit->text().toFloat();
     int intelligence = ui->intelligenceLineEdit->text().toInt();
     int cleanliness = ui->cleanlinessLineEdit->text().toInt();
 

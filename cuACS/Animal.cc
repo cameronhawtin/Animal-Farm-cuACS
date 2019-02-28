@@ -9,7 +9,7 @@ using namespace std;
 //initializes the data members
 Animal::Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size,
                int aggression, int attachment, int obedience, string energy, bool isCrateTrained, bool isHypoallergenic,
-               bool isNeutered, int childrenComfort, int loudness, int cost, int costPerYear, int intelligence, int cleanliness)
+               bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness)
 {
 	this->id = id;
 	this->name = name;
@@ -58,8 +58,8 @@ Animal::Animal(vector<string> state)
 
     this->childrenComfort = std::stoi(state.at(12));
     this->loudness = std::stoi(state.at(13));
-    this->cost = std::stoi(state.at(14));
-    this->costPerYear = std::stoi(state.at(15));
+    this->cost = std::stof(state.at(14));
+    this->costPerYear = std::stof(state.at(15));
     this->intelligence = std::stoi(state.at(16));
     this->cleanliness = std::stoi(state.at(17));
 }
@@ -83,8 +83,8 @@ bool Animal::getIsHypoallergenic() { return isHypoallergenic; }
 bool Animal::getIsNeutered() { return isNeutered; }
 int Animal::getChildrenComfort() { return childrenComfort; }
 int Animal::getLoudness() { return loudness; }
-int Animal::getCost() { return cost; }
-int Animal::getCostPerYear() { return costPerYear; }
+float Animal::getCost() { return cost; }
+float Animal::getCostPerYear() { return costPerYear; }
 int Animal::getIntelligence() { return intelligence; }
 int Animal::getCleanliness() { return cleanliness; }
 
