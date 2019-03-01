@@ -43,8 +43,8 @@ SOURCES += \
     PersistentStorageAPI.cc \
     Serializer.cc \
     Human.cpp \
-    addclient.cpp \
-    viewclients.cpp
+    viewclients.cpp \
+    addclient.cpp
 
 HEADERS += \
         mainwindow.h \
