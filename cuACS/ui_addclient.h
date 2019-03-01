@@ -33,15 +33,23 @@ public:
     QDialogButtonBox *buttonBox;
     QWidget *layoutWidget_4;
     QVBoxLayout *verticalLayout_5;
-    QLabel *budgetLabel;
-    QLineEdit *budgetLineEdit;
-    QLabel *freeTimeLabel;
-    QComboBox *freeTimeComboBox;
+    QLabel *irritationLabel;
+    QHBoxLayout *horizontalLayout_7;
+    QSlider *irritationSlider;
+    QLineEdit *irritationLineEdit;
+    QLabel *labelPatience;
+    QHBoxLayout *horizontalLayout_8;
+    QSlider *patienceSlider;
+    QLineEdit *patienceLineEdit;
+    QLabel *attachmentLabel;
+    QHBoxLayout *horizontalLayout_9;
+    QSlider *attachmentSlider;
+    QLineEdit *attachmentLineEdit;
     QLabel *allergicLabel;
     QHBoxLayout *horizontalLayout_2;
     QRadioButton *isAllergicRadioButtonYES;
     QRadioButton *isAllergicRadioButtonNO;
-    QLabel *sizeLabel_2;
+    QLabel *requireLabel;
     QHBoxLayout *horizontalLayout_3;
     QRadioButton *isNeuteredRadioButtonYES;
     QRadioButton *isNeuteredRadioButtonNO;
@@ -63,28 +71,20 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *purposeLabel;
     QComboBox *purposeComboBox;
-    QLabel *attachmentLabel;
-    QHBoxLayout *horizontalLayout_4;
-    QSlider *attachmentSlider;
-    QLineEdit *attachmentLineEdit;
-    QLabel *labelPatience;
-    QHBoxLayout *horizontalLayout_6;
-    QSlider *patienceSlider;
-    QLineEdit *obedienceLineEdit;
     QLabel *homeTypeLabel;
     QComboBox *homeTypeComboBox;
     QLabel *travelLabel;
     QComboBox *travelComboBox;
-    QLabel *irritationLabel;
-    QHBoxLayout *horizontalLayout_7;
-    QSlider *patienceSlider_2;
-    QLineEdit *obedienceLineEdit_2;
+    QLabel *freeTimeLabel;
+    QComboBox *freeTimeComboBox;
+    QLabel *budgetLabel;
+    QLineEdit *budgetLineEdit;
 
     void setupUi(QDialog *AddClient)
     {
         if (AddClient->objectName().isEmpty())
             AddClient->setObjectName(QStringLiteral("AddClient"));
-        AddClient->resize(791, 487);
+        AddClient->resize(807, 416);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -106,39 +106,99 @@ public:
         AddClient->setPalette(palette);
         buttonBox = new QDialogButtonBox(AddClient);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(390, 440, 341, 32));
+        buttonBox->setGeometry(QRect(430, 370, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         layoutWidget_4 = new QWidget(AddClient);
         layoutWidget_4->setObjectName(QStringLiteral("layoutWidget_4"));
         layoutWidget_4->setEnabled(true);
-        layoutWidget_4->setGeometry(QRect(520, 30, 241, 321));
+        layoutWidget_4->setGeometry(QRect(530, 30, 251, 321));
         verticalLayout_5 = new QVBoxLayout(layoutWidget_4);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        budgetLabel = new QLabel(layoutWidget_4);
-        budgetLabel->setObjectName(QStringLiteral("budgetLabel"));
-        budgetLabel->setEnabled(true);
+        irritationLabel = new QLabel(layoutWidget_4);
+        irritationLabel->setObjectName(QStringLiteral("irritationLabel"));
+        irritationLabel->setEnabled(true);
 
-        verticalLayout_5->addWidget(budgetLabel);
+        verticalLayout_5->addWidget(irritationLabel);
 
-        budgetLineEdit = new QLineEdit(layoutWidget_4);
-        budgetLineEdit->setObjectName(QStringLiteral("budgetLineEdit"));
-        budgetLineEdit->setEnabled(true);
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        irritationSlider = new QSlider(layoutWidget_4);
+        irritationSlider->setObjectName(QStringLiteral("irritationSlider"));
+        irritationSlider->setMaximum(10);
+        irritationSlider->setPageStep(2);
+        irritationSlider->setOrientation(Qt::Horizontal);
 
-        verticalLayout_5->addWidget(budgetLineEdit);
+        horizontalLayout_7->addWidget(irritationSlider);
 
-        freeTimeLabel = new QLabel(layoutWidget_4);
-        freeTimeLabel->setObjectName(QStringLiteral("freeTimeLabel"));
-        freeTimeLabel->setEnabled(true);
+        irritationLineEdit = new QLineEdit(layoutWidget_4);
+        irritationLineEdit->setObjectName(QStringLiteral("irritationLineEdit"));
+        irritationLineEdit->setEnabled(true);
+        irritationLineEdit->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_5->addWidget(freeTimeLabel);
+        horizontalLayout_7->addWidget(irritationLineEdit);
 
-        freeTimeComboBox = new QComboBox(layoutWidget_4);
-        freeTimeComboBox->setObjectName(QStringLiteral("freeTimeComboBox"));
-        freeTimeComboBox->setEnabled(true);
+        horizontalLayout_7->setStretch(0, 10);
+        horizontalLayout_7->setStretch(1, 2);
 
-        verticalLayout_5->addWidget(freeTimeComboBox);
+        verticalLayout_5->addLayout(horizontalLayout_7);
+
+        labelPatience = new QLabel(layoutWidget_4);
+        labelPatience->setObjectName(QStringLiteral("labelPatience"));
+        labelPatience->setEnabled(true);
+
+        verticalLayout_5->addWidget(labelPatience);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        patienceSlider = new QSlider(layoutWidget_4);
+        patienceSlider->setObjectName(QStringLiteral("patienceSlider"));
+        patienceSlider->setMaximum(10);
+        patienceSlider->setPageStep(2);
+        patienceSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_8->addWidget(patienceSlider);
+
+        patienceLineEdit = new QLineEdit(layoutWidget_4);
+        patienceLineEdit->setObjectName(QStringLiteral("patienceLineEdit"));
+        patienceLineEdit->setEnabled(true);
+        patienceLineEdit->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_8->addWidget(patienceLineEdit);
+
+        horizontalLayout_8->setStretch(0, 10);
+        horizontalLayout_8->setStretch(1, 2);
+
+        verticalLayout_5->addLayout(horizontalLayout_8);
+
+        attachmentLabel = new QLabel(layoutWidget_4);
+        attachmentLabel->setObjectName(QStringLiteral("attachmentLabel"));
+        attachmentLabel->setEnabled(true);
+
+        verticalLayout_5->addWidget(attachmentLabel);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        attachmentSlider = new QSlider(layoutWidget_4);
+        attachmentSlider->setObjectName(QStringLiteral("attachmentSlider"));
+        attachmentSlider->setMaximum(10);
+        attachmentSlider->setPageStep(2);
+        attachmentSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_9->addWidget(attachmentSlider);
+
+        attachmentLineEdit = new QLineEdit(layoutWidget_4);
+        attachmentLineEdit->setObjectName(QStringLiteral("attachmentLineEdit"));
+        attachmentLineEdit->setEnabled(true);
+        attachmentLineEdit->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_9->addWidget(attachmentLineEdit);
+
+        horizontalLayout_9->setStretch(0, 10);
+        horizontalLayout_9->setStretch(1, 2);
+
+        verticalLayout_5->addLayout(horizontalLayout_9);
 
         allergicLabel = new QLabel(layoutWidget_4);
         allergicLabel->setObjectName(QStringLiteral("allergicLabel"));
@@ -161,11 +221,11 @@ public:
 
         verticalLayout_5->addLayout(horizontalLayout_2);
 
-        sizeLabel_2 = new QLabel(layoutWidget_4);
-        sizeLabel_2->setObjectName(QStringLiteral("sizeLabel_2"));
-        sizeLabel_2->setEnabled(true);
+        requireLabel = new QLabel(layoutWidget_4);
+        requireLabel->setObjectName(QStringLiteral("requireLabel"));
+        requireLabel->setEnabled(true);
 
-        verticalLayout_5->addWidget(sizeLabel_2);
+        verticalLayout_5->addWidget(requireLabel);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -185,7 +245,7 @@ public:
         layoutWidget = new QWidget(AddClient);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setEnabled(true);
-        layoutWidget->setGeometry(QRect(10, 30, 211, 320));
+        layoutWidget->setGeometry(QRect(10, 30, 251, 320));
         verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -264,7 +324,7 @@ public:
         layoutWidget_2 = new QWidget(AddClient);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
         layoutWidget_2->setEnabled(true);
-        layoutWidget_2->setGeometry(QRect(240, 30, 254, 402));
+        layoutWidget_2->setGeometry(QRect(270, 30, 254, 321));
         verticalLayout_3 = new QVBoxLayout(layoutWidget_2);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -279,62 +339,6 @@ public:
         purposeComboBox->setEnabled(true);
 
         verticalLayout_3->addWidget(purposeComboBox);
-
-        attachmentLabel = new QLabel(layoutWidget_2);
-        attachmentLabel->setObjectName(QStringLiteral("attachmentLabel"));
-        attachmentLabel->setEnabled(true);
-
-        verticalLayout_3->addWidget(attachmentLabel);
-
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        attachmentSlider = new QSlider(layoutWidget_2);
-        attachmentSlider->setObjectName(QStringLiteral("attachmentSlider"));
-        attachmentSlider->setMaximum(10);
-        attachmentSlider->setPageStep(2);
-        attachmentSlider->setOrientation(Qt::Horizontal);
-
-        horizontalLayout_4->addWidget(attachmentSlider);
-
-        attachmentLineEdit = new QLineEdit(layoutWidget_2);
-        attachmentLineEdit->setObjectName(QStringLiteral("attachmentLineEdit"));
-        attachmentLineEdit->setEnabled(false);
-        attachmentLineEdit->setAlignment(Qt::AlignCenter);
-
-        horizontalLayout_4->addWidget(attachmentLineEdit);
-
-        horizontalLayout_4->setStretch(0, 10);
-        horizontalLayout_4->setStretch(1, 2);
-
-        verticalLayout_3->addLayout(horizontalLayout_4);
-
-        labelPatience = new QLabel(layoutWidget_2);
-        labelPatience->setObjectName(QStringLiteral("labelPatience"));
-        labelPatience->setEnabled(true);
-
-        verticalLayout_3->addWidget(labelPatience);
-
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        patienceSlider = new QSlider(layoutWidget_2);
-        patienceSlider->setObjectName(QStringLiteral("patienceSlider"));
-        patienceSlider->setMaximum(10);
-        patienceSlider->setPageStep(2);
-        patienceSlider->setOrientation(Qt::Horizontal);
-
-        horizontalLayout_6->addWidget(patienceSlider);
-
-        obedienceLineEdit = new QLineEdit(layoutWidget_2);
-        obedienceLineEdit->setObjectName(QStringLiteral("obedienceLineEdit"));
-        obedienceLineEdit->setEnabled(false);
-        obedienceLineEdit->setAlignment(Qt::AlignCenter);
-
-        horizontalLayout_6->addWidget(obedienceLineEdit);
-
-        horizontalLayout_6->setStretch(0, 10);
-        horizontalLayout_6->setStretch(1, 2);
-
-        verticalLayout_3->addLayout(horizontalLayout_6);
 
         homeTypeLabel = new QLabel(layoutWidget_2);
         homeTypeLabel->setObjectName(QStringLiteral("homeTypeLabel"));
@@ -360,33 +364,29 @@ public:
 
         verticalLayout_3->addWidget(travelComboBox);
 
-        irritationLabel = new QLabel(layoutWidget_2);
-        irritationLabel->setObjectName(QStringLiteral("irritationLabel"));
-        irritationLabel->setEnabled(true);
+        freeTimeLabel = new QLabel(layoutWidget_2);
+        freeTimeLabel->setObjectName(QStringLiteral("freeTimeLabel"));
+        freeTimeLabel->setEnabled(true);
 
-        verticalLayout_3->addWidget(irritationLabel);
+        verticalLayout_3->addWidget(freeTimeLabel);
 
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        patienceSlider_2 = new QSlider(layoutWidget_2);
-        patienceSlider_2->setObjectName(QStringLiteral("patienceSlider_2"));
-        patienceSlider_2->setMaximum(10);
-        patienceSlider_2->setPageStep(2);
-        patienceSlider_2->setOrientation(Qt::Horizontal);
+        freeTimeComboBox = new QComboBox(layoutWidget_2);
+        freeTimeComboBox->setObjectName(QStringLiteral("freeTimeComboBox"));
+        freeTimeComboBox->setEnabled(true);
 
-        horizontalLayout_7->addWidget(patienceSlider_2);
+        verticalLayout_3->addWidget(freeTimeComboBox);
 
-        obedienceLineEdit_2 = new QLineEdit(layoutWidget_2);
-        obedienceLineEdit_2->setObjectName(QStringLiteral("obedienceLineEdit_2"));
-        obedienceLineEdit_2->setEnabled(false);
-        obedienceLineEdit_2->setAlignment(Qt::AlignCenter);
+        budgetLabel = new QLabel(layoutWidget_2);
+        budgetLabel->setObjectName(QStringLiteral("budgetLabel"));
+        budgetLabel->setEnabled(true);
 
-        horizontalLayout_7->addWidget(obedienceLineEdit_2);
+        verticalLayout_3->addWidget(budgetLabel);
 
-        horizontalLayout_7->setStretch(0, 10);
-        horizontalLayout_7->setStretch(1, 2);
+        budgetLineEdit = new QLineEdit(layoutWidget_2);
+        budgetLineEdit->setObjectName(QStringLiteral("budgetLineEdit"));
+        budgetLineEdit->setEnabled(true);
 
-        verticalLayout_3->addLayout(horizontalLayout_7);
+        verticalLayout_3->addWidget(budgetLineEdit);
 
 
         retranslateUi(AddClient);
@@ -399,20 +399,13 @@ public:
     void retranslateUi(QDialog *AddClient)
     {
         AddClient->setWindowTitle(QApplication::translate("AddClient", "Dialog", Q_NULLPTR));
-        budgetLabel->setText(QApplication::translate("AddClient", "Budget", Q_NULLPTR));
-        freeTimeLabel->setText(QApplication::translate("AddClient", "Free Time per Day (hours)", Q_NULLPTR));
-        freeTimeComboBox->clear();
-        freeTimeComboBox->insertItems(0, QStringList()
-         << QApplication::translate("AddClient", "Please Select", Q_NULLPTR)
-         << QApplication::translate("AddClient", "0 - 1", Q_NULLPTR)
-         << QApplication::translate("AddClient", "1 - 2", Q_NULLPTR)
-         << QApplication::translate("AddClient", "3 - 4", Q_NULLPTR)
-         << QApplication::translate("AddClient", "5+", Q_NULLPTR)
-        );
+        irritationLabel->setText(QApplication::translate("AddClient", "<html><head/><body><p>Irritation to Noise (Out of 10)</p></body></html>", Q_NULLPTR));
+        labelPatience->setText(QApplication::translate("AddClient", "Patience (Out of 10)", Q_NULLPTR));
+        attachmentLabel->setText(QApplication::translate("AddClient", "Attachment Level (Out of 10)", Q_NULLPTR));
         allergicLabel->setText(QApplication::translate("AddClient", "Allergic", Q_NULLPTR));
         isAllergicRadioButtonYES->setText(QApplication::translate("AddClient", "Yes", Q_NULLPTR));
         isAllergicRadioButtonNO->setText(QApplication::translate("AddClient", "No", Q_NULLPTR));
-        sizeLabel_2->setText(QApplication::translate("AddClient", "<html><head/><body><p>Requires Animal to be Neutered/Spayed</p></body></html>", Q_NULLPTR));
+        requireLabel->setText(QApplication::translate("AddClient", "<html><head/><body><p>Requested Neutered/Spayed</p></body></html>", Q_NULLPTR));
         isNeuteredRadioButtonYES->setText(QApplication::translate("AddClient", "Yes", Q_NULLPTR));
         isNeuteredRadioButtonNO->setText(QApplication::translate("AddClient", "No", Q_NULLPTR));
         nameLabel->setText(QApplication::translate("AddClient", "Name", Q_NULLPTR));
@@ -458,8 +451,6 @@ public:
          << QApplication::translate("AddClient", "Breeding", Q_NULLPTR)
          << QApplication::translate("AddClient", "Disability", Q_NULLPTR)
         );
-        attachmentLabel->setText(QApplication::translate("AddClient", "Attachment Level (Out of 10)", Q_NULLPTR));
-        labelPatience->setText(QApplication::translate("AddClient", "Patience (Out of 10)", Q_NULLPTR));
         homeTypeLabel->setText(QApplication::translate("AddClient", "Home Type", Q_NULLPTR));
         homeTypeComboBox->clear();
         homeTypeComboBox->insertItems(0, QStringList()
@@ -482,7 +473,16 @@ public:
          << QApplication::translate("AddClient", "4 - 6 months", Q_NULLPTR)
          << QApplication::translate("AddClient", "Constant Travel", Q_NULLPTR)
         );
-        irritationLabel->setText(QApplication::translate("AddClient", "<html><head/><body><p>Irritation to Noise (Out of 10)</p></body></html>", Q_NULLPTR));
+        freeTimeLabel->setText(QApplication::translate("AddClient", "Free Time per Day (hours)", Q_NULLPTR));
+        freeTimeComboBox->clear();
+        freeTimeComboBox->insertItems(0, QStringList()
+         << QApplication::translate("AddClient", "Please Select", Q_NULLPTR)
+         << QApplication::translate("AddClient", "0 - 1", Q_NULLPTR)
+         << QApplication::translate("AddClient", "1 - 2", Q_NULLPTR)
+         << QApplication::translate("AddClient", "3 - 4", Q_NULLPTR)
+         << QApplication::translate("AddClient", "5+", Q_NULLPTR)
+        );
+        budgetLabel->setText(QApplication::translate("AddClient", "Budget", Q_NULLPTR));
     } // retranslateUi
 
 };

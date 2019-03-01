@@ -73,3 +73,99 @@ void AddClient::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
     updateOk();
 }
 
+
+void AddClient::on_patienceSlider_valueChanged(int value)
+{
+    QString s = QString::number(value);
+    ui->patienceLineEdit->setText(s);
+    updateOk();
+}
+
+void AddClient::on_irritationSlider_valueChanged(int value)
+{
+    QString s = QString::number(value);
+    ui->irritationLineEdit->setText(s);
+    updateOk();
+}
+
+void AddClient::on_attachmentSlider_valueChanged(int value)
+{
+    QString s = QString::number(value);
+    ui->attachmentLineEdit->setText(s);
+    updateOk();
+}
+
+void AddClient::on_isAllergicRadioButtonYES_toggled(bool checked)
+{
+    updateOk();
+}
+
+void AddClient::on_isAllergicRadioButtonNO_toggled(bool checked)
+{
+    updateOk();
+}
+
+void AddClient::on_isNeuteredRadioButtonYES_toggled(bool checked)
+{
+    updateOk();
+}
+
+void AddClient::on_isNeuteredRadioButtonNO_toggled(bool checked)
+{
+    updateOk();
+}
+
+void AddClient::on_budgetLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_childrenLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_ageLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_nameLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_typeComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_sexComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_salaryComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_purposeComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_homeTypeComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_travelComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_freeTimeComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}

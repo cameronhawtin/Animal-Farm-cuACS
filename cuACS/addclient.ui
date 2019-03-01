@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
-    <height>420</height>
+    <width>807</width>
+    <height>416</height>
    </rect>
   </property>
   <property name="palette">
@@ -107,7 +107,7 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>430</x>
      <y>370</y>
      <width>341</width>
      <height>32</height>
@@ -126,9 +126,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>530</x>
      <y>30</y>
-     <width>275</width>
+     <width>251</width>
      <height>321</height>
     </rect>
    </property>
@@ -146,7 +146,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="10,2">
       <item>
-       <widget class="QSlider" name="patienceSlider_2">
+       <widget class="QSlider" name="irritationSlider">
         <property name="maximum">
          <number>10</number>
         </property>
@@ -159,9 +159,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="obedienceLineEdit_2">
+       <widget class="QLineEdit" name="irritationLineEdit">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -181,7 +181,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="10,0">
+     <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="10,2">
       <item>
        <widget class="QSlider" name="patienceSlider">
         <property name="maximum">
@@ -196,9 +196,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="obedienceLineEdit">
+       <widget class="QLineEdit" name="patienceLineEdit">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -218,7 +218,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,2">
+     <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="10,2">
       <item>
        <widget class="QSlider" name="attachmentSlider">
         <property name="maximum">
@@ -235,7 +235,7 @@
       <item>
        <widget class="QLineEdit" name="attachmentLineEdit">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -310,7 +310,7 @@
     <rect>
      <x>10</x>
      <y>30</y>
-     <width>211</width>
+     <width>251</width>
      <height>320</height>
     </rect>
    </property>
@@ -510,7 +510,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>270</x>
      <y>30</y>
      <width>254</width>
      <height>321</height>
