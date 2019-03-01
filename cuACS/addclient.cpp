@@ -41,11 +41,26 @@ void AddClient::on_buttonBox_accepted()
     //get attributes from ui
     string name = ui->nameLineEdit->text().toStdString();
     int age = ui->ageLineEdit->text().toInt();
+    string gender;
+    string purpose;
+    int attachment;
+    int patience;
+    string homeType;
+    string travel;
+    string allergies;
+    int noiseTolerance;
+    bool needFertile;
+    int numChildren;
+    string salary;
+    float budget;
+    string freeTime;
 
     capi = new CuacsAPI();
 
     //now give attributes to Client class
-    capi->addHuman(name, age);
+    capi->addHuman(name, age, gender, purpose, attachment, patience, homeType,
+                   travel, allergies, noiseTolerance, needFertile, numChildren,
+                   salary, budget, freeTime);
 }
 
 void AddClient::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)

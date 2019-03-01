@@ -58,6 +58,7 @@ void PostLoginStaff::on_AddClientButton_clicked()
 // This function is called when the viewClientsButton is clicked
 void PostLoginStaff::on_ViewClientsButton_clicked()
 {
-    //open view clients interface
+    viewClients = new ViewClients(this);
+    viewClients->show();
 }
 

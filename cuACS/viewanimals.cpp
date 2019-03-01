@@ -20,6 +20,20 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
     ui->colourLineEdit->setReadOnly(true);
     ui->sizeLineEdit->setReadOnly(true);
 
+    ui->aggressionLineEdit->setReadOnly(true);
+    ui->attachmentLineEdit->setReadOnly(true);
+    ui->obedienceLineEdit->setReadOnly(true);
+    ui->cleanlinessLineEdit->setReadOnly(true);
+    ui->childrenComfortLineEdit->setReadOnly(true);
+    ui->loudnessLineEdit->setReadOnly(true);
+    ui->intelligenceLineEdit->setReadOnly(true);
+    ui->energyLineEdit->setReadOnly(true);
+    ui->costLineEdit->setReadOnly(true);
+    ui->costPerYearLineEdit->setReadOnly(true);
+    ui->isHypoallergenicLineEdit->setReadOnly(true);
+    ui->isCrateTrainedLineEdit->setReadOnly(true);
+    ui->isNeuteredLineEdit->setReadOnly(true);
+
     capi = new CuacsAPI();
 
     vector<Animal*> animalsVec = capi->getAnimals();

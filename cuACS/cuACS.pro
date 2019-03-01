@@ -43,7 +43,8 @@ SOURCES += \
     PersistentStorageAPI.cc \
     Serializer.cc \
     Human.cpp \
-    addclient.cpp
+    addclient.cpp \
+    viewclients.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -74,7 +75,8 @@ HEADERS += \
     Serializer.h \
     StorageAdapter.h \
     viewanimals.h \
-    addclient.h
+    addclient.h \
+    viewclients.h
 
 FORMS += \
         mainwindow.ui \
@@ -83,6 +85,7 @@ FORMS += \
     viewanimals.ui \
     addanimal.ui \
     addclient.ui \
+    viewclients.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
