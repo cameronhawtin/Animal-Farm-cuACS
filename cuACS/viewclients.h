@@ -2,7 +2,10 @@
 #define VIEWCLIENTS_H
 
 #include <QDialog>
+#include <iostream>
 #include "CuacsAPI.h"
+#include <QListWidget>
+#include <sstream>
 
 namespace Ui {
 class ViewClients;
@@ -13,7 +16,7 @@ class ViewClients : public QDialog
     Q_OBJECT
 
 public:
-    explicit ViewClients(QWidget *parent = 0);
+    explicit ViewClients(QWidget *parent = nullptr);
     ~ViewClients();
 
 private:

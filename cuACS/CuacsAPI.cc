@@ -10,6 +10,8 @@ CuacsAPI::CuacsAPI()
 	ps = PersistentStorageAPI();
 	animals = ps.retrieveProfiles("Animal");
     	availableId = animals->size();
+    humans = ps.retrieveProfiles("Human");
+        availableId = humans->size();
 }
 
 vector<Animal*> CuacsAPI::getAnimals()
@@ -63,4 +65,11 @@ CuacsAPI::~CuacsAPI()
 		delete temp;
 	}
 	delete animals;
+
+    while(humans->size() > 0){
+        Profile* temp = humans->front();
+        humans->pop_front();
+        delete temp;
+    }
+    delete humans;
 }
