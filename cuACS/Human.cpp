@@ -76,6 +76,19 @@ vector<string>* Human::getState()
         state->push_back(to_string(id));
         state->push_back(name);
         state->push_back(to_string(age));
+        state->push_back(gender);
+        state->push_back(purpose);
+        state->push_back(to_string(attachment));
+        state->push_back(to_string(patience));
+        state->push_back(homeType);
+        state->push_back(travel);
+        state->push_back(allergies);
+        state->push_back(to_string(noiseTolerance));
+        state->push_back(to_string(needFertile));
+        state->push_back(to_string(numChildren));
+        state->push_back(salary);
+        state->push_back(to_string(budget));
+        state->push_back(freeTime);
 
         return state;
 }
