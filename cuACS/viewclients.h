@@ -19,6 +19,9 @@ public:
     explicit ViewClients(QWidget *parent = nullptr);
     ~ViewClients();
 
+private slots:
+    void on_viewClientsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+
 private:
     CuacsAPI * capi;
     QList<Human*> myList;

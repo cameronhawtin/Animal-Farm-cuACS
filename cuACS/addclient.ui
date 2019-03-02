@@ -40,6 +40,15 @@
        </color>
       </brush>
      </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>200</red>
+        <green>16</green>
+        <blue>46</blue>
+       </color>
+      </brush>
+     </colorrole>
     </active>
     <inactive>
      <colorrole role="WindowText">
@@ -66,6 +75,15 @@
         <red>238</red>
         <green>238</green>
         <blue>238</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>200</red>
+        <green>16</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -98,8 +116,22 @@
        </color>
       </brush>
      </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>145</red>
+        <green>141</green>
+        <blue>126</blue>
+       </color>
+      </brush>
+     </colorrole>
     </disabled>
    </palette>
+  </property>
+  <property name="font">
+   <font>
+    <family>Egyptienne F</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -107,7 +139,7 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>440</x>
      <y>370</y>
      <width>341</width>
      <height>32</height>
@@ -134,10 +166,27 @@
      <x>530</x>
      <y>30</y>
      <width>251</width>
-     <height>291</height>
+     <height>331</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QLabel" name="budgetLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Budget</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="budgetLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QLabel" name="irritationLabel">
       <property name="enabled">
@@ -288,7 +337,7 @@
      <x>10</x>
      <y>30</y>
      <width>251</width>
-     <height>320</height>
+     <height>331</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -432,13 +481,28 @@
       </item>
      </widget>
     </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>30</y>
+     <width>254</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QLabel" name="allergicLabel">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Allergic</string>
+       <string>Allergies</string>
       </property>
      </widget>
     </item>
@@ -450,6 +514,11 @@
       <item>
        <property name="text">
         <string>Please Select</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>None</string>
        </property>
       </item>
       <item>
@@ -479,21 +548,6 @@
       </item>
      </widget>
     </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_2">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>30</y>
-     <width>254</width>
-     <height>321</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QLabel" name="purposeLabel">
       <property name="enabled">
@@ -690,23 +744,6 @@
         <string>5+</string>
        </property>
       </item>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="budgetLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Budget</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="budgetLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
      </widget>
     </item>
    </layout>

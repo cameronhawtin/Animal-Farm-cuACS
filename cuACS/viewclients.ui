@@ -40,6 +40,15 @@
        </color>
       </brush>
      </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>200</red>
+        <green>16</green>
+        <blue>46</blue>
+       </color>
+      </brush>
+     </colorrole>
     </active>
     <inactive>
      <colorrole role="WindowText">
@@ -66,6 +75,15 @@
         <red>238</red>
         <green>238</green>
         <blue>238</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>200</red>
+        <green>16</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -98,8 +116,22 @@
        </color>
       </brush>
      </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>145</red>
+        <green>141</green>
+        <blue>126</blue>
+       </color>
+      </brush>
+     </colorrole>
     </disabled>
    </palette>
+  </property>
+  <property name="font">
+   <font>
+    <family>Egyptienne F</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -123,8 +155,8 @@
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>30</y>
+     <x>420</x>
+     <y>40</y>
      <width>581</width>
      <height>41</height>
     </rect>
@@ -346,7 +378,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Allergic</string>
+       <string>Allergies</string>
       </property>
      </widget>
     </item>
