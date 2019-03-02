@@ -28,10 +28,6 @@ private slots:
 
     void on_attachmentSlider_valueChanged(int value);
 
-    void on_isAllergicRadioButtonYES_toggled(bool checked);
-
-    void on_isAllergicRadioButtonNO_toggled(bool checked);
-
     void on_isNeuteredRadioButtonYES_toggled(bool checked);
 
     void on_isNeuteredRadioButtonNO_toggled(bool checked);
@@ -44,8 +40,6 @@ private slots:
 
     void on_nameLineEdit_textChanged(const QString &arg1);
 
-    void on_typeComboBox_currentIndexChanged(const QString &arg1);
-
     void on_sexComboBox_currentIndexChanged(const QString &arg1);
 
     void on_salaryComboBox_currentIndexChanged(const QString &arg1);
@@ -57,6 +51,8 @@ private slots:
     void on_travelComboBox_currentIndexChanged(const QString &arg1);
 
     void on_freeTimeComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_allergicComboBox_currentTextChanged(const QString &arg1);
 
 private:
     CuacsAPI *capi;

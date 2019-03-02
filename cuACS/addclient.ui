@@ -113,6 +113,11 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Egyptienne F</family>
+    </font>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -129,7 +134,7 @@
      <x>530</x>
      <y>30</y>
      <width>251</width>
-     <height>321</height>
+     <height>291</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -245,34 +250,6 @@
      </layout>
     </item>
     <item>
-     <widget class="QLabel" name="allergicLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Allergic</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QRadioButton" name="isAllergicRadioButtonYES">
-        <property name="text">
-         <string>Yes</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="isAllergicRadioButtonNO">
-        <property name="text">
-         <string>No</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
      <widget class="QLabel" name="requireLabel">
       <property name="enabled">
        <bool>true</bool>
@@ -330,53 +307,6 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="typeLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Type</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="typeComboBox">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>Please Select</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Cat</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Dog</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Hamster</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Fish</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Snake</string>
-       </property>
-      </item>
      </widget>
     </item>
     <item>
@@ -498,6 +428,53 @@
       <item>
        <property name="text">
         <string>130+</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="allergicLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Allergic</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="allergicComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Please Select</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dog</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Hamster</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fish</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Snake</string>
        </property>
       </item>
      </widget>

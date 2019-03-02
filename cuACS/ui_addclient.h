@@ -45,10 +45,6 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QSlider *attachmentSlider;
     QLineEdit *attachmentLineEdit;
-    QLabel *allergicLabel;
-    QHBoxLayout *horizontalLayout_2;
-    QRadioButton *isAllergicRadioButtonYES;
-    QRadioButton *isAllergicRadioButtonNO;
     QLabel *requireLabel;
     QHBoxLayout *horizontalLayout_3;
     QRadioButton *isNeuteredRadioButtonYES;
@@ -57,8 +53,6 @@ public:
     QVBoxLayout *verticalLayout_2;
     QLabel *nameLabel;
     QLineEdit *nameLineEdit;
-    QLabel *typeLabel;
-    QComboBox *typeComboBox;
     QLabel *sexLabel;
     QComboBox *sexComboBox;
     QLabel *ageLabel;
@@ -67,6 +61,8 @@ public:
     QLineEdit *childrenLineEdit;
     QLabel *salaryLabel;
     QComboBox *salaryComboBox;
+    QLabel *allergicLabel;
+    QComboBox *allergicComboBox;
     QWidget *layoutWidget_2;
     QVBoxLayout *verticalLayout_3;
     QLabel *purposeLabel;
@@ -112,7 +108,7 @@ public:
         layoutWidget_4 = new QWidget(AddClient);
         layoutWidget_4->setObjectName(QStringLiteral("layoutWidget_4"));
         layoutWidget_4->setEnabled(true);
-        layoutWidget_4->setGeometry(QRect(530, 30, 251, 321));
+        layoutWidget_4->setGeometry(QRect(530, 30, 251, 291));
         verticalLayout_5 = new QVBoxLayout(layoutWidget_4);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -200,27 +196,6 @@ public:
 
         verticalLayout_5->addLayout(horizontalLayout_9);
 
-        allergicLabel = new QLabel(layoutWidget_4);
-        allergicLabel->setObjectName(QStringLiteral("allergicLabel"));
-        allergicLabel->setEnabled(true);
-
-        verticalLayout_5->addWidget(allergicLabel);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        isAllergicRadioButtonYES = new QRadioButton(layoutWidget_4);
-        isAllergicRadioButtonYES->setObjectName(QStringLiteral("isAllergicRadioButtonYES"));
-
-        horizontalLayout_2->addWidget(isAllergicRadioButtonYES);
-
-        isAllergicRadioButtonNO = new QRadioButton(layoutWidget_4);
-        isAllergicRadioButtonNO->setObjectName(QStringLiteral("isAllergicRadioButtonNO"));
-
-        horizontalLayout_2->addWidget(isAllergicRadioButtonNO);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_2);
-
         requireLabel = new QLabel(layoutWidget_4);
         requireLabel->setObjectName(QStringLiteral("requireLabel"));
         requireLabel->setEnabled(true);
@@ -260,18 +235,6 @@ public:
         nameLineEdit->setEnabled(true);
 
         verticalLayout_2->addWidget(nameLineEdit);
-
-        typeLabel = new QLabel(layoutWidget);
-        typeLabel->setObjectName(QStringLiteral("typeLabel"));
-        typeLabel->setEnabled(true);
-
-        verticalLayout_2->addWidget(typeLabel);
-
-        typeComboBox = new QComboBox(layoutWidget);
-        typeComboBox->setObjectName(QStringLiteral("typeComboBox"));
-        typeComboBox->setEnabled(true);
-
-        verticalLayout_2->addWidget(typeComboBox);
 
         sexLabel = new QLabel(layoutWidget);
         sexLabel->setObjectName(QStringLiteral("sexLabel"));
@@ -320,6 +283,18 @@ public:
         salaryComboBox->setEnabled(true);
 
         verticalLayout_2->addWidget(salaryComboBox);
+
+        allergicLabel = new QLabel(layoutWidget);
+        allergicLabel->setObjectName(QStringLiteral("allergicLabel"));
+        allergicLabel->setEnabled(true);
+
+        verticalLayout_2->addWidget(allergicLabel);
+
+        allergicComboBox = new QComboBox(layoutWidget);
+        allergicComboBox->setObjectName(QStringLiteral("allergicComboBox"));
+        allergicComboBox->setEnabled(true);
+
+        verticalLayout_2->addWidget(allergicComboBox);
 
         layoutWidget_2 = new QWidget(AddClient);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
@@ -402,23 +377,10 @@ public:
         irritationLabel->setText(QApplication::translate("AddClient", "<html><head/><body><p>Irritation to Noise (Out of 10)</p></body></html>", Q_NULLPTR));
         labelPatience->setText(QApplication::translate("AddClient", "Patience (Out of 10)", Q_NULLPTR));
         attachmentLabel->setText(QApplication::translate("AddClient", "Attachment Level (Out of 10)", Q_NULLPTR));
-        allergicLabel->setText(QApplication::translate("AddClient", "Allergic", Q_NULLPTR));
-        isAllergicRadioButtonYES->setText(QApplication::translate("AddClient", "Yes", Q_NULLPTR));
-        isAllergicRadioButtonNO->setText(QApplication::translate("AddClient", "No", Q_NULLPTR));
         requireLabel->setText(QApplication::translate("AddClient", "<html><head/><body><p>Requested Neutered/Spayed</p></body></html>", Q_NULLPTR));
         isNeuteredRadioButtonYES->setText(QApplication::translate("AddClient", "Yes", Q_NULLPTR));
         isNeuteredRadioButtonNO->setText(QApplication::translate("AddClient", "No", Q_NULLPTR));
         nameLabel->setText(QApplication::translate("AddClient", "Name", Q_NULLPTR));
-        typeLabel->setText(QApplication::translate("AddClient", "Type", Q_NULLPTR));
-        typeComboBox->clear();
-        typeComboBox->insertItems(0, QStringList()
-         << QApplication::translate("AddClient", "Please Select", Q_NULLPTR)
-         << QApplication::translate("AddClient", "Cat", Q_NULLPTR)
-         << QApplication::translate("AddClient", "Dog", Q_NULLPTR)
-         << QApplication::translate("AddClient", "Hamster", Q_NULLPTR)
-         << QApplication::translate("AddClient", "Fish", Q_NULLPTR)
-         << QApplication::translate("AddClient", "Snake", Q_NULLPTR)
-        );
         sexLabel->setText(QApplication::translate("AddClient", "Sex", Q_NULLPTR));
         sexComboBox->clear();
         sexComboBox->insertItems(0, QStringList()
@@ -439,6 +401,16 @@ public:
          << QApplication::translate("AddClient", "90 - 110", Q_NULLPTR)
          << QApplication::translate("AddClient", "110 - 130", Q_NULLPTR)
          << QApplication::translate("AddClient", "130+", Q_NULLPTR)
+        );
+        allergicLabel->setText(QApplication::translate("AddClient", "Allergic", Q_NULLPTR));
+        allergicComboBox->clear();
+        allergicComboBox->insertItems(0, QStringList()
+         << QApplication::translate("AddClient", "Please Select", Q_NULLPTR)
+         << QApplication::translate("AddClient", "Cat", Q_NULLPTR)
+         << QApplication::translate("AddClient", "Dog", Q_NULLPTR)
+         << QApplication::translate("AddClient", "Hamster", Q_NULLPTR)
+         << QApplication::translate("AddClient", "Fish", Q_NULLPTR)
+         << QApplication::translate("AddClient", "Snake", Q_NULLPTR)
         );
         purposeLabel->setText(QApplication::translate("AddClient", "Purpose", Q_NULLPTR));
         purposeComboBox->clear();
