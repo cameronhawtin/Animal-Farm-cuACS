@@ -103,6 +103,9 @@ public:
         buttonBox = new QDialogButtonBox(AddClient);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(430, 370, 341, 32));
+        QFont font;
+        font.setFamily(QStringLiteral("Egyptienne F"));
+        buttonBox->setFont(font);
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         layoutWidget_4 = new QWidget(AddClient);

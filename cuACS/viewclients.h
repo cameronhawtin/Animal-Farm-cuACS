@@ -2,6 +2,7 @@
 #define VIEWCLIENTS_H
 
 #include <QDialog>
+#include "CuacsAPI.h"
 
 namespace Ui {
 class ViewClients;
@@ -16,6 +17,8 @@ public:
     ~ViewClients();
 
 private:
+    CuacsAPI * capi;
+    QList<Human*> myList;
     Ui::ViewClients *ui;
 };
 
