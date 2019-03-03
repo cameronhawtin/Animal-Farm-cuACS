@@ -101,9 +101,6 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
             cost = myList.at(i)->getCost();
             costPerYear = myList.at(i)->getCostPerYear();
 
-            std::cout << myList.at(i)->getCostPerYear() << flush;
-
-
             i = myList.size();
         }
     }
