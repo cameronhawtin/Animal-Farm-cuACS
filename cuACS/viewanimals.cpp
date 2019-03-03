@@ -45,6 +45,7 @@ ViewAnimals::ViewAnimals(QWidget *parent) :
 
         for (int i = 0; i < animalsVec.size(); i++)
             ui->viewAnimalsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
+            ui->viewAnimalsListWidget->setCurrentRow(0);
     }
 }
 

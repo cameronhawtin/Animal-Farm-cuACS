@@ -26,7 +26,7 @@ ViewClients::ViewClients(QWidget *parent) :
 
     capi = new CuacsAPI();
 
-    vector<Human*> humansVec = capi->getHumans(); //THIS LINE CRASHES
+    vector<Human*> humansVec = capi->getHumans();
 
     if (humansVec.size() != 0) {
         //Make QList from vector
@@ -35,6 +35,7 @@ ViewClients::ViewClients(QWidget *parent) :
 
         for (int i = 0; i < humansVec.size(); i++)
             ui->viewClientsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
+            ui->viewClientsListWidget->setCurrentRow(0);
     }
 
 }
