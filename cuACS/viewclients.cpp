@@ -16,7 +16,7 @@ ViewClients::ViewClients(QWidget *parent) :
     ui->sexLineEdit_2->setReadOnly(true);
     ui->childrenLineEdit->setReadOnly(true);
     ui->salaryLineEdit->setReadOnly(true);
-    ui->allergyLineEdit->setReadOnly(true);
+    //ui->allergyLineEdit->setReadOnly(true);
     ui->purposeLineEdit->setReadOnly(true);
     ui->homeLineEdit->setReadOnly(true);
     ui->travelLineEdit->setReadOnly(true);
@@ -109,7 +109,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     ui->sexLineEdit_2->setText(QString::fromStdString(gender));
     ui->childrenLineEdit->setText(QString::number(numChildren));
     ui->salaryLineEdit->setText(QString::fromStdString(salary));
-    ui->allergyLineEdit->setText(QString::fromStdString(allergies));
+    //ui->allergyLineEdit->setText(QString::fromStdString(allergies));
     ui->purposeLineEdit->setText(QString::fromStdString(purpose));
     ui->homeLineEdit->setText(QString::fromStdString(homeType));
     ui->travelLineEdit->setText(QString::fromStdString(travel));
@@ -124,4 +124,17 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
         ui->neuteredLineEdit->setText("Yes");
     else
         ui->neuteredLineEdit->setText("No");
+
+    if (allergies.find("Cat")!=std::string::npos) ui->catAllergyCheckBox->setChecked(true);
+    else ui->catAllergyCheckBox->setChecked(false);
+    if (allergies.find("Dog")!=std::string::npos) ui->dogAllergyCheckBox->setChecked(true);
+    else ui->dogAllergyCheckBox->setChecked(false);
+    if (allergies.find("Bird")!=std::string::npos) ui->birdAllergyCheckBox->setChecked(true);
+    else ui->birdAllergyCheckBox->setChecked(false);
+    if (allergies.find("Hamster")!=std::string::npos) ui->hamsterAllergyCheckBox->setChecked(true);
+    else ui->hamsterAllergyCheckBox->setChecked(false);
+    if (allergies.find("Mouse")!=std::string::npos) ui->mouseAllergyCheckBox->setChecked(true);
+    else ui->mouseAllergyCheckBox->setChecked(false);
+    if (allergies.find("Guineapig")!=std::string::npos) ui->guineapigAllergyCheckBox->setChecked(true);
+    else ui->guineapigAllergyCheckBox->setChecked(false);
 }
