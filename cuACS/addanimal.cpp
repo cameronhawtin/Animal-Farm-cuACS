@@ -103,10 +103,12 @@ void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
         list << "Please Select" << "Golden Retriever" << "Poodle" << "Bulldog";
     else if (arg1.toLatin1() == "Hamster")
         list << "Please Select" << "Dwarf" << "Winter White" << "Chinese";
-    else if (arg1.toLatin1() == "Fish")
-        list << "Please Select" << "Common Carp" << "Guppy" << "Goldfish";
-    else if (arg1.toLatin1() == "Snake")
-        list << "Please Select" << "Anaconda" << "Viper" << "Python";
+    else if (arg1.toLatin1() == "Bird")
+        list << "Please Select" << "Parrot" << "Robin" << "Finch";
+    else if (arg1.toLatin1() == "Mouse")
+        list << "Please Select" << "Wood" << "Deer" << "Albino";
+    else if (arg1.toLatin1() == "Guinea Pig")
+        list << "Please Select" << "American" << "Texel" << "Peruvian";
 
     ui->breedComboBox->clear();
     ui->breedComboBox->addItems(list);

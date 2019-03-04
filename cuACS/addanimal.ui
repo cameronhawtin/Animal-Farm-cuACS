@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>730</width>
-    <height>461</height>
+    <width>755</width>
+    <height>468</height>
    </rect>
   </property>
   <property name="palette">
@@ -169,7 +169,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>390</x>
      <y>420</y>
      <width>341</width>
      <height>32</height>
@@ -249,12 +249,17 @@
       </item>
       <item>
        <property name="text">
-        <string>Fish</string>
+        <string>Bird</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Snake</string>
+        <string>Mouse</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Guinea Pig</string>
        </property>
       </item>
      </widget>
@@ -419,8 +424,8 @@
     <rect>
      <x>250</x>
      <y>10</y>
-     <width>216</width>
-     <height>401</height>
+     <width>241</width>
+     <height>402</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -691,7 +696,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>490</x>
+     <x>520</x>
      <y>10</y>
      <width>220</width>
      <height>401</height>
@@ -910,8 +915,8 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
