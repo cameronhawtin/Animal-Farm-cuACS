@@ -49,12 +49,12 @@ void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, 
 
 void CuacsAPI::addHuman(string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
                         string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
-                        string salary, float budget, string freeTime)
+                        string salary, float budget, string freeTime, string email, string address, string phone)
 {
     availableHumanId = availableHumanId + 1;
     ps.storeProfile(new Human(availableHumanId, name, age, gender, purpose, attachment, patience, homeType,
                               travel, allergies, noiseTolerance, needFertile, numChildren,
-                              salary, budget, freeTime), "Human");
+                              salary, budget, freeTime, email, address, phone), "Human");
 }
 
 CuacsAPI::~CuacsAPI()

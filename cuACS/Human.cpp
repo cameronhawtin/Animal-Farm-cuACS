@@ -9,7 +9,7 @@ using namespace std;
 //initializes the data members
 Human::Human(int id, string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
              string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
-             string salary, float budget, string freeTime)
+             string salary, float budget, string freeTime, string email, string address, string phone)
 {
     this->id = id;
     this->name = name;
@@ -27,6 +27,9 @@ Human::Human(int id, string name, int age, string gender, string purpose, int at
     this->salary = salary;
     this->budget = budget;
     this->freeTime = freeTime;
+    this->email = email;
+    this->address = address;
+    this->phone = phone;
 }
 
 //constructor to set state
@@ -48,6 +51,9 @@ Human::Human(vector<string> state)
     this->salary = state.at(13);
     this->budget = std::stof(state.at(14));
     this->freeTime = state.at(15);
+    this->email = state.at(16);
+    this->address = state.at(17);
+    this->phone = state.at(18);
 }
 
 //getters for private data members
@@ -67,6 +73,9 @@ int Human::getNumChildren() { return numChildren; }
 string Human::getSalary() { return salary; }
 float Human::getBudget() { return budget; }
 string Human::getFreeTime() { return freeTime; }
+string Human::getEmail() { return email; }
+string Human::getAddress() { return address; }
+string Human::getPhoneNumber() { return phone; }
 
 
 //returns the state of the Human in a vector of string
@@ -89,6 +98,9 @@ vector<string>* Human::getState()
         state->push_back(salary);
         state->push_back(to_string(budget));
         state->push_back(freeTime);
+        state->push_back(email);
+        state->push_back(address);
+        state->push_back(phone);
 
         return state;
 }

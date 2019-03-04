@@ -33,7 +33,10 @@ void AddClient::updateOk()
             ui->childrenLineEdit->text().isEmpty() ||
             ui->salaryComboBox->currentText() == "Please Select" ||
             ui->budgetLineEdit->text().isEmpty() ||
-            ui->freeTimeComboBox->currentText() == "Please Select")
+            ui->freeTimeComboBox->currentText() == "Please Select" ||
+            ui->emailLineEdit->text().isEmpty() ||
+            ui->phoneLineEdit->text().isEmpty() ||
+            ui->addressLineEdit->text().isEmpty())
                 ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
         else
             ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
@@ -65,13 +68,16 @@ void AddClient::on_buttonBox_accepted()
     string salary = ui->salaryComboBox->currentText().toStdString();
     float budget = ui->budgetLineEdit->text().toFloat();
     string freeTime = ui->freeTimeComboBox->currentText().toStdString();
+    string email = ui->emailLineEdit->text().toStdString();
+    string phone = ui->phoneLineEdit->text().toStdString();
+    string address = ui->addressLineEdit->text().toStdString();
 
     capi = new CuacsAPI();
 
     //now give attributes to Client class
     capi->addHuman(name, age, gender, purpose, attachment, patience, homeType,
                    travel, allergies, noiseTolerance, needFertile, numChildren,
-                   salary, budget, freeTime);
+                   salary, budget, freeTime, email, phone, address);
 }
 
 void AddClient::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)

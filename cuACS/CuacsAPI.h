@@ -17,7 +17,7 @@ class CuacsAPI
                        bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness);
         void addHuman(string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
                       string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
-                      string salary, float budget, string freeTime);
+                      string salary, float budget, string freeTime, string email, string address, string phone);
 		~CuacsAPI();
 
 	private:

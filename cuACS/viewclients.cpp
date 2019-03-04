@@ -8,7 +8,10 @@ ViewClients::ViewClients(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("View Clients");
 
-    ui->nameLineEdit_2->setReadOnly(true);
+    ui->nameLineEdit->setReadOnly(true);
+    ui->addressLineEdit->setReadOnly(true);
+    ui->phoneLineEdit->setReadOnly(true);
+    ui->emailLineEdit->setReadOnly(true);
     ui->ageLineEdit_2->setReadOnly(true);
     ui->sexLineEdit_2->setReadOnly(true);
     ui->childrenLineEdit->setReadOnly(true);
@@ -64,7 +67,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     string stringId = to_string(id);
 
 
-    string name, gender, purpose, homeType, travel, allergies, salary, freeTime;
+    string name, gender, purpose, homeType, travel, allergies, salary, freeTime, email, address, phone;
     int age, attachment, patience, noiseTolerance, numChildren;
     bool needFertile;
     float budget;
@@ -80,6 +83,9 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
             allergies = myList.at(i)->getAllergies();
             salary = myList.at(i)->getSalary();
             freeTime = myList.at(i)->getFreeTime();
+            email = myList.at(i)->getEmail();
+            address = myList.at(i)->getAddress();
+            phone = myList.at(i)->getPhoneNumber();
 
             age = myList.at(i)->getAge();
             attachment = myList.at(i)->getAttachment();
@@ -97,8 +103,9 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     string title = name;
     ui->titleLabel->setText(QString::fromStdString(title));
 
-    ui->nameLineEdit_2->setText(QString::fromStdString(name));
-    ui->ageLineEdit_2->setText(QString::fromStdString(name));
+    ui->nameLineEdit->setText(QString::fromStdString(name));
+    ui->emailLineEdit->setText(QString::fromStdString(email));
+    ui->ageLineEdit_2->setText(QString::number(age));
     ui->sexLineEdit_2->setText(QString::fromStdString(gender));
     ui->childrenLineEdit->setText(QString::number(numChildren));
     ui->salaryLineEdit->setText(QString::fromStdString(salary));
@@ -111,6 +118,8 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     ui->irritationLineEdit->setText(QString::number(noiseTolerance));
     ui->patienceLineEdit->setText(QString::number(patience));
     ui->attachmentLineEdit_2->setText(QString::number(attachment));
+    ui->addressLineEdit->setText(QString::fromStdString(address));
+    ui->phoneLineEdit->setText(QString::fromStdString(phone));
     if (needFertile)
         ui->neuteredLineEdit->setText("Yes");
     else
