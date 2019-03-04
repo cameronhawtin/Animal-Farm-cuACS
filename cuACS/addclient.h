@@ -52,8 +52,6 @@ private slots:
 
     void on_freeTimeComboBox_currentIndexChanged(const QString &arg1);
 
-    void on_allergicComboBox_currentTextChanged(const QString &arg1);
-
 private:
     CuacsAPI *capi;
     Ui::AddClient *ui;

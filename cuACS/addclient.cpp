@@ -187,7 +187,3 @@ void AddClient::on_freeTimeComboBox_currentIndexChanged(const QString &arg1)
     updateOk();
 }
 
-void AddClient::on_allergicComboBox_currentTextChanged(const QString &arg1)
-{
-    updateOk();
-}
