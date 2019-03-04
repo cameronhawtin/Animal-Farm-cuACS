@@ -27,7 +27,7 @@ void AddClient::updateOk()
             ui->patienceLineEdit->text().isEmpty() ||
             ui->homeTypeComboBox->currentText() == "Please Select" ||
             ui->travelComboBox->currentText() == "Please Select" ||
-            ui->allergicComboBox->currentText() == "Please Select" ||
+            //ui->allergicComboBox->currentText() == "Please Select" ||
             ui->irritationLineEdit->text().isEmpty() ||
             (!ui->isNeuteredRadioButtonYES->isChecked() && !ui->isNeuteredRadioButtonNO->isChecked()) ||
             ui->childrenLineEdit->text().isEmpty() ||
@@ -52,6 +52,21 @@ AddClient::~AddClient()
 // This function is called when the user presses the "OK" button
 void AddClient::on_buttonBox_accepted()
 {
+    //create a string containing all alergies selected
+    string allergies = "";
+    if (ui->catAllergyCheckBox->isChecked() == true)
+        allergies+="Cat";
+    if (ui->dogAllergyCheckBox->isChecked() == true)
+        allergies+="Dog";
+    if (ui->birdAllergyCheckBox->isChecked() == true)
+        allergies+="Bird";
+    if (ui->hamsterAllergyCheckBox->isChecked() == true)
+        allergies+="Hamster";
+    if (ui->mouseAllergyCheckBox->isChecked() == true)
+        allergies+="Mouse";
+    if (ui->guineapigAllergyCheckBox->isChecked() == true)
+        allergies+="Guineapig";
+
     //get attributes from ui
     string name = ui->nameLineEdit->text().toStdString();
     int age = ui->ageLineEdit->text().toInt();
@@ -61,7 +76,7 @@ void AddClient::on_buttonBox_accepted()
     int patience = ui->patienceLineEdit->text().toInt();
     string homeType = ui->homeTypeComboBox->currentText().toStdString();
     string travel = ui->travelComboBox->currentText().toStdString();
-    string allergies = ui->allergicComboBox->currentText().toStdString();
+    //string allergies = ui->allergicComboBox->currentText().toStdString();
     int noiseTolerance = ui->irritationLineEdit->text().toInt();
     bool needFertile = ui->isNeuteredRadioButtonYES->isChecked();
     int numChildren = ui->childrenLineEdit->text().toInt();

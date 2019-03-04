@@ -83,7 +83,6 @@ void AddAnimal::on_buttonBox_accepted()
     else if (ui->isNeuteredRadioButtonNO->isChecked())
         isNeutered = false;
 
-
     capi = new CuacsAPI();
 
     //now give attributes to animal class

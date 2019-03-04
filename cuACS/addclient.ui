@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>807</width>
-    <height>433</height>
+    <width>910</width>
+    <height>417</height>
    </rect>
   </property>
   <property name="palette">
@@ -166,8 +166,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>390</y>
+     <x>550</x>
+     <y>370</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -588,58 +588,6 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="allergicLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Allergies</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="allergicComboBox">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>Please Select</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>None</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Cat</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Dog</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Hamster</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Fish</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Snake</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item>
      <widget class="QLabel" name="purposeLabel">
       <property name="enabled">
        <bool>true</bool>
@@ -813,6 +761,76 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>50</y>
+     <width>91</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QCheckBox" name="catAllergyCheckBox">
+      <property name="text">
+       <string>Cat</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="dogAllergyCheckBox">
+      <property name="text">
+       <string>Dog</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="birdAllergyCheckBox">
+      <property name="text">
+       <string>Bird</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="hamsterAllergyCheckBox">
+      <property name="text">
+       <string>Hamster</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="mouseAllergyCheckBox">
+      <property name="text">
+       <string>Mouse</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="guineapigAllergyCheckBox">
+      <property name="text">
+       <string>Guinea Pig</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="allergicLabel">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>30</y>
+     <width>252</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Allergies</string>
+   </property>
   </widget>
  </widget>
  <resources/>
