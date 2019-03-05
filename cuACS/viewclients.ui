@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1176</width>
-    <height>478</height>
+    <width>1112</width>
+    <height>509</height>
    </rect>
   </property>
   <property name="palette">
@@ -166,8 +166,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>440</y>
+     <x>750</x>
+     <y>460</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -210,33 +210,20 @@
     </rect>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
+  <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>100</y>
-     <width>251</width>
-     <height>332</height>
+     <y>80</y>
+     <width>772</width>
+     <height>364</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
-    <item>
-     <widget class="QLabel" name="nameLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="nameLineEdit"/>
-    </item>
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="horizontalSpacing">
+     <number>12</number>
+    </property>
+    <item row="2" column="0">
      <widget class="QLabel" name="nameLabel_4">
       <property name="enabled">
        <bool>true</bool>
@@ -246,128 +233,23 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="emailLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="purposeLineEdit"/>
     </item>
-    <item>
-     <widget class="QLabel" name="addressLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Address</string>
-      </property>
-     </widget>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="salaryLineEdit"/>
     </item>
-    <item>
-     <widget class="QLineEdit" name="addressLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="phoneLabel">
+    <item row="4" column="1">
+     <widget class="QLabel" name="purposeLabel">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Phone Number</string>
+       <string>Purpose</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="phoneLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="sexLabel_4">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Sex</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="sexLineEdit_2"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="ageLabel_7">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Age</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="ageLineEdit_2">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_4">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>860</x>
-     <y>100</y>
-     <width>301</width>
-     <height>331</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_6">
-    <item>
-     <widget class="QLabel" name="budgetLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Budget</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="budgetLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="irritationLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Irritation to Noise (Out of 10)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="irritationLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="labelPatience">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Patience (Out of 10)</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="patienceLineEdit"/>
-    </item>
-    <item>
+    <item row="6" column="2">
      <widget class="QLabel" name="attachmentLabel">
       <property name="enabled">
        <bool>true</bool>
@@ -377,10 +259,110 @@
       </property>
      </widget>
     </item>
-    <item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="irritationLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Irritation to Noise (Out of 10)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="sexLabel_4">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Sex</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
      <widget class="QLineEdit" name="attachmentLineEdit_2"/>
     </item>
-    <item>
+    <item row="11" column="0">
+     <widget class="QLineEdit" name="ageLineEdit_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLabel" name="freeTimeLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Free Time per Day (hours)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLabel" name="labelPatience">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Patience (Out of 10)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="irritationLineEdit"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="budgetLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="freeTimeLineEdit"/>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="phoneLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Phone Number</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLabel" name="homeTypeLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Home Type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="childrenLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Number of Children</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="budgetLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Budget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2">
      <widget class="QLabel" name="requireLabel">
       <property name="enabled">
        <bool>true</bool>
@@ -390,20 +372,20 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="neuteredLineEdit"/>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="homeLineEdit"/>
     </item>
-    <item>
-     <widget class="QLabel" name="allergicLabel_2">
+    <item row="4" column="0">
+     <widget class="QLabel" name="addressLabel">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Allergies</string>
+       <string>Address</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="11" column="2">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QCheckBox" name="catAllergyCheckBox">
@@ -437,7 +419,92 @@
       </item>
      </layout>
     </item>
-    <item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="travelLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Amount of Travel Each Year&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QLineEdit" name="neuteredLineEdit"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="salaryLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salary (thousands/year)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QLabel" name="allergicLabel_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Allergies</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QLineEdit" name="travelLineEdit"/>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLineEdit" name="phoneLineEdit"/>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="ageLabel_7">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Age</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="childrenLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLineEdit" name="emailLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLineEdit" name="patienceLineEdit"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="nameLineEdit"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLineEdit" name="addressLineEdit"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="nameLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLineEdit" name="sexLineEdit_2"/>
+    </item>
+    <item row="12" column="2">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QCheckBox" name="hamsterAllergyCheckBox">
@@ -470,103 +537,6 @@
        </widget>
       </item>
      </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_2">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>100</y>
-     <width>254</width>
-     <height>332</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_7">
-    <item>
-     <widget class="QLabel" name="childrenLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Number of Children</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="childrenLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="salaryLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salary (thousands/year)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="salaryLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="purposeLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Purpose</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="purposeLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="homeTypeLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Home Type</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="homeLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="travelLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Amount of Travel Each Year&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="travelLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="freeTimeLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Free Time per Day (hours)</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="freeTimeLineEdit"/>
     </item>
    </layout>
   </widget>

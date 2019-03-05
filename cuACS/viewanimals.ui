@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1071</width>
-    <height>533</height>
+    <width>1014</width>
+    <height>540</height>
    </rect>
   </property>
   <property name="palette">
@@ -149,112 +149,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>490</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>80</y>
-     <width>161</width>
-     <height>391</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QLabel" name="nameLabel">
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="nameLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="typeLabel">
-      <property name="text">
-       <string>Type</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="typeLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="labelBreed">
-      <property name="text">
-       <string>Breed</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="breedLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="sexLabel">
-      <property name="text">
-       <string>Sex</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="sexLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="ageLabel">
-      <property name="text">
-       <string>Age</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="ageLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="labelColour">
-      <property name="text">
-       <string>Colour</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="colourLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="sizeLabel">
-      <property name="text">
-       <string>Size</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="sizeLineEdit"/>
-    </item>
-   </layout>
-  </widget>
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
@@ -276,180 +170,249 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget_2">
+  <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>320</x>
      <y>80</y>
-     <width>241</width>
+     <width>671</width>
      <height>391</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="horizontalSpacing">
+     <number>12</number>
+    </property>
+    <item row="1" column="1">
      <widget class="QLabel" name="nameLabel_2">
       <property name="text">
        <string>Aggression Level (Out of 10)</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="aggressionLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
+    <item row="6" column="0">
+     <widget class="QLineEdit" name="breedLineEdit"/>
     </item>
-    <item>
+    <item row="14" column="1">
+     <widget class="QLineEdit" name="intelligenceLineEdit"/>
+    </item>
+    <item row="3" column="1">
      <widget class="QLabel" name="typeLabel_2">
       <property name="text">
        <string>Attachment Level (Out of 10)</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="attachmentLineEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="labelBreed_2">
-      <property name="text">
-       <string>Obedience Level (Out of 10)</string>
-      </property>
-     </widget>
-    </item>
-    <item>
+    <item row="6" column="1">
      <widget class="QLineEdit" name="obedienceLineEdit"/>
     </item>
-    <item>
-     <widget class="QLabel" name="sexLabel_2">
-      <property name="text">
-       <string>Cleanliness Level (Out of 10)</string>
+    <item row="14" column="0">
+     <widget class="QLineEdit" name="sizeLineEdit"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="aggressionLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="cleanlinessLineEdit"/>
+    <item row="13" column="0">
+     <widget class="QLabel" name="sizeLabel">
+      <property name="text">
+       <string>Size</string>
+      </property>
+     </widget>
     </item>
-    <item>
+    <item row="10" column="0">
+     <widget class="QLineEdit" name="ageLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
      <widget class="QLabel" name="ageLabel_6">
       <property name="text">
        <string>Comfort with Children (Out of 10)</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="childrenComfortLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
+    <item row="9" column="0">
+     <widget class="QLabel" name="ageLabel">
+      <property name="text">
+       <string>Age</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="labelColour">
+      <property name="text">
+       <string>Colour</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="cleanlinessLineEdit"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLineEdit" name="typeLineEdit"/>
+    </item>
+    <item row="11" column="1">
      <widget class="QLabel" name="ageLabel_2">
       <property name="text">
        <string>Loudness Level (Out of 10)</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="12" column="1">
      <widget class="QLineEdit" name="loudnessLineEdit">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="7" column="1">
+     <widget class="QLabel" name="sexLabel_2">
+      <property name="text">
+       <string>Cleanliness Level (Out of 10)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="typeLabel">
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="nameLabel">
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLineEdit" name="sexLineEdit"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="labelBreed">
+      <property name="text">
+       <string>Breed</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLabel" name="labelBreed_2">
+      <property name="text">
+       <string>Obedience Level (Out of 10)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLineEdit" name="colourLineEdit"/>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="attachmentLineEdit"/>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="sexLabel">
+      <property name="text">
+       <string>Sex</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLineEdit" name="nameLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLineEdit" name="childrenComfortLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
      <widget class="QLabel" name="typeLabel_3">
       <property name="text">
        <string>Intelligence Level (Out of 10)</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLineEdit" name="intelligenceLineEdit"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>800</x>
-     <y>80</y>
-     <width>241</width>
-     <height>391</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4">
-    <item>
+    <item row="1" column="2">
      <widget class="QLabel" name="nameLabel_3">
       <property name="text">
        <string>Energy Level</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="2" column="2">
      <widget class="QLineEdit" name="energyLineEdit">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="3" column="2">
      <widget class="QLabel" name="labelBreed_3">
       <property name="text">
        <string>Flat Cost</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="4" column="2">
      <widget class="QLineEdit" name="costLineEdit"/>
     </item>
-    <item>
+    <item row="5" column="2">
      <widget class="QLabel" name="sexLabel_3">
       <property name="text">
        <string>Cost Per Year</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="6" column="2">
      <widget class="QLineEdit" name="costPerYearLineEdit"/>
     </item>
-    <item>
+    <item row="7" column="2">
      <widget class="QLabel" name="ageLabel_3">
       <property name="text">
        <string>Hypoallergenic</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="8" column="2">
      <widget class="QLineEdit" name="isHypoallergenicLineEdit">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="9" column="2">
      <widget class="QLabel" name="ageLabel_4">
       <property name="text">
        <string>Crate Trained</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="10" column="2">
      <widget class="QLineEdit" name="isCrateTrainedLineEdit">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="11" column="2">
      <widget class="QLabel" name="ageLabel_5">
       <property name="text">
        <string>Neutered/Spayed</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="12" column="2">
      <widget class="QLineEdit" name="isNeuteredLineEdit">
       <property name="enabled">
        <bool>true</bool>
@@ -457,6 +420,22 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>490</y>
+     <width>209</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
   </widget>
  </widget>
  <resources/>
