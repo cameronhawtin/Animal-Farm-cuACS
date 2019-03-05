@@ -25,6 +25,8 @@ private:
     Ui::MainWindow *ui;
     PostLoginStaff *postLoginStaff;
     PostLoginClient *postLoginClient;
+    CuacsAPI *capi;
+    QList<Human*> myList;
 };
 
 #endif // MAINWINDOW_H

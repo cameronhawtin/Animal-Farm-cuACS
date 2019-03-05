@@ -38,7 +38,7 @@ ViewClients::ViewClients(QWidget *parent) :
 
         for (int i = 0; i < humansVec.size(); i++)
             ui->viewClientsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
-            ui->viewClientsListWidget->setCurrentRow(0);
+        ui->viewClientsListWidget->setCurrentRow(0);
     }
 
 }
