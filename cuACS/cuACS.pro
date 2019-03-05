@@ -98,7 +98,10 @@ SUBDIRS += \
 DISTFILES += \
     cuACS.pro.user \
     cuACS.pro.user.50df91b.20 \
-    README
+    README \
+    logo.png \
+    logo.png
 
 RESOURCES += \
-    egyptfont.qrc
+    egyptfont.qrc \
+    logo.qrc

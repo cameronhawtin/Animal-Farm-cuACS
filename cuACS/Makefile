@@ -65,6 +65,7 @@ SOURCES       = main.cpp \
 		Human.cpp \
 		viewclients.cpp \
 		addclient.cpp qrc_egyptfont.cpp \
+		qrc_logo.cpp \
 		moc_mainwindow.cpp \
 		moc_postloginstaff.cpp \
 		moc_postloginclient.cpp \
@@ -88,6 +89,7 @@ OBJECTS       = main.o \
 		viewclients.o \
 		addclient.o \
 		qrc_egyptfont.o \
+		qrc_logo.o \
 		moc_mainwindow.o \
 		moc_postloginstaff.o \
 		moc_postloginclient.o \
@@ -98,6 +100,8 @@ OBJECTS       = main.o \
 DIST          = cuACS.pro.user \
 		cuACS.pro.user.50df91b.20 \
 		README \
+		logo.png \
+		logo.png \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -301,6 +305,7 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		cuACS.pro \
 		egyptfont.qrc \
+		logo.qrc \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Core.prl
@@ -380,6 +385,7 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf:
 cuACS.pro:
 egyptfont.qrc:
+logo.qrc:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
@@ -397,7 +403,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents egyptfont.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents egyptfont.qrc logo.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h Human.h mainwindow.h PathFinder.h PersistentStorageAPI.h postloginclient.h postloginstaff.h Profile.h Serializer.h StorageAdapter.h viewanimals.h addclient.h viewclients.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc CuacsAPI.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp viewclients.cpp addclient.cpp $(DISTDIR)/
@@ -425,13 +431,18 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all: qrc_egyptfont.cpp
+compiler_rcc_make_all: qrc_egyptfont.cpp qrc_logo.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_egyptfont.cpp
+	-$(DEL_FILE) qrc_egyptfont.cpp qrc_logo.cpp
 qrc_egyptfont.cpp: egyptfont.qrc \
 		/usr/lib/qt5/bin/rcc \
 		EgyptienneRoman.ttf
 	/usr/lib/qt5/bin/rcc -name egyptfont egyptfont.qrc -o qrc_egyptfont.cpp
+
+qrc_logo.cpp: logo.qrc \
+		/usr/lib/qt5/bin/rcc \
+		logo.png
+	/usr/lib/qt5/bin/rcc -name logo logo.qrc -o qrc_logo.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
@@ -747,6 +758,9 @@ addclient.o: addclient.cpp addclient.h \
 
 qrc_egyptfont.o: qrc_egyptfont.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_egyptfont.o qrc_egyptfont.cpp
+
+qrc_logo.o: qrc_logo.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_logo.o qrc_logo.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
