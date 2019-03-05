@@ -9,7 +9,9 @@ CuacsAPI::CuacsAPI()
 {
 	ps = PersistentStorageAPI();
 	animals = ps.retrieveProfiles("Animal");
-    	availableId = animals->size();
+        availableAnimalId = animals->size();
+    humans = ps.retrieveProfiles("Human");
+        availableHumanId = humans->size();
 }
 
 vector<Animal*> CuacsAPI::getAnimals()
@@ -24,10 +26,35 @@ vector<Animal*> CuacsAPI::getAnimals()
 	return ret;
 }
 
-void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size)
+vector<Human*> CuacsAPI::getHumans()
 {
-    availableId = availableId + 1;
-	ps.storeProfile(new Animal(availableId, name, animalType, breed, age,gender, color, size), "Animal");
+    vector<Human*>* shipHumans = new vector<Human*>();
+    for(Profile* a: *humans)
+    {
+        shipHumans->push_back(dynamic_cast<Human*>(a));
+    }
+    vector<Human*> ret = *shipHumans;
+    delete shipHumans;
+    return ret;
+}
+
+void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, string gender, string color, string size,
+                         int aggression, int attachment, int obedience, string energy, bool isCrateTrained, bool isHypoallergenic,
+                         bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness)
+{
+    availableAnimalId = availableAnimalId + 1;
+    ps.storeProfile(new Animal(availableAnimalId, name, animalType, breed, age, gender, color, size, aggression, attachment, obedience, energy,
+                               isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness), "Animal");
+}
+
+void CuacsAPI::addHuman(string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
+                        string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
+                        string salary, float budget, string freeTime, string email, string address, string phone)
+{
+    availableHumanId = availableHumanId + 1;
+    ps.storeProfile(new Human(availableHumanId, name, age, gender, purpose, attachment, patience, homeType,
+                              travel, allergies, noiseTolerance, needFertile, numChildren,
+                              salary, budget, freeTime, email, address, phone), "Human");
 }
 
 CuacsAPI::~CuacsAPI()
@@ -38,4 +65,11 @@ CuacsAPI::~CuacsAPI()
 		delete temp;
 	}
 	delete animals;
+
+    while(humans->size() > 0){
+        Profile* temp = humans->front();
+        humans->pop_front();
+        delete temp;
+    }
+    delete humans;
 }

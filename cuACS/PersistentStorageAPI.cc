@@ -5,6 +5,7 @@
 #include "FileStorageManager.h"
 #include "Profile.h"
 #include "Animal.h"
+#include "Human.h"
 #include <vector>
 #include <string>
 
@@ -49,7 +50,7 @@ list<Profile*>* PersistentStorageAPI::retrieveProfiles(string profileType)
                 if(profileType == "Animal"){
                         p = new Animal(*state);
                 } else if(profileType == "Human"){
-                        //do nothing for now
+                        p = new Human(*state);
                 }
                 delete state;
                 result->push_back(p);

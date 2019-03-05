@@ -4,7 +4,9 @@
 #include <QDialog>
 #include <QMessageBox>
 #include "viewanimals.h"
+#include "viewclients.h"
 #include "addanimal.h"
+#include "addclient.h"
 #include "CuacsAPI.h"
 
 
@@ -35,7 +37,9 @@ private slots:
 private:
     Ui::PostLoginStaff *ui;
     ViewAnimals *viewAnimals;
+    ViewClients *viewClients;
     AddAnimal *addAnimal;
+    AddClient *addClient;
 };
 
 #endif // POSTLOGINSTAFF_H

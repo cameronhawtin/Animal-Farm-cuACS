@@ -42,6 +42,9 @@ SOURCES += \
     PathFinder.cc \
     PersistentStorageAPI.cc \
     Serializer.cc \
+    Human.cpp \
+    viewclients.cpp \
+    addclient.cpp \
 
 HEADERS += \
         mainwindow.h \
@@ -57,6 +60,12 @@ HEADERS += \
     Profile.h \
     Serializer.h \
     StorageAdapter.h \
+    Human.h \
+    CuacsAPI.h \
+    Profile.h \
+    Serializer.h \
+    addclient.h \
+    viewclients.h
 
 FORMS += \
         mainwindow.ui \
@@ -64,6 +73,8 @@ FORMS += \
     postloginclient.ui \
     viewanimals.ui \
     addanimal.ui \
+    addclient.ui \
+    viewclients.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -76,7 +87,10 @@ SUBDIRS += \
 DISTFILES += \
     cuACS.pro.user \
     cuACS.pro.user.50df91b.20 \
-    README
+    README \
+    logo.png \
+    logo.png
 
 RESOURCES += \
-    egyptfont.qrc
+    egyptfont.qrc \
+    logo.qrc
