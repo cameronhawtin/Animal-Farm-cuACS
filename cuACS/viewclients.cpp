@@ -74,7 +74,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
 
 
     for (int i = 0; i < myList.size(); i++){
-        if (to_string(myList.at(i)->getId()).find(stringId) != string::npos) {
+        if (to_string(myList.at(i)->getId()).compare(stringId) == 0) {
             name = myList.at(i)->getName();
             gender = myList.at(i)->getGender();
             purpose = myList.at(i)->getPurpose();

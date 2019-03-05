@@ -71,14 +71,14 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
         stringstream(temp) >> id;
     }
     string stringId = to_string(id);
+
     string name, type, breed, sex, colour, size, energy;
     int age, aggression, attachment, obedience, childrenComfort, loudness, intelligence, cleanliness;
     bool isCrateTrained, isHypoallergenic, isNeutered;
     float cost, costPerYear;
 
-
     for (int i = 0; i < myList.size(); i++){
-        if (to_string(myList.at(i)->getId()).find(stringId) != string::npos) {
+        if (to_string(myList.at(i)->getId()).compare(stringId) == 0) {
             name = myList.at(i)->getName();
             type = myList.at(i)->getAnimalType();
             breed = myList.at(i)->getBreed();
@@ -123,9 +123,9 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     ui->loudnessLineEdit->setText(QString::number(loudness));
     ui->intelligenceLineEdit->setText(QString::number(intelligence));
     ui->cleanlinessLineEdit->setText(QString::number(cleanliness));
-    ui->isCrateTrainedLineEdit->setText(QString::number(isCrateTrained));
-    ui->isHypoallergenicLineEdit->setText(QString::number(isHypoallergenic));
-    ui->isNeuteredLineEdit->setText(QString::number(isNeutered));
+    if (isCrateTrained == true) ui->isCrateTrainedLineEdit->setText("Yes"); else ui->isCrateTrainedLineEdit->setText("No");
+    if (isHypoallergenic == true) ui->isHypoallergenicLineEdit->setText("Yes"); else ui->isHypoallergenicLineEdit->setText("No");
+    if (isNeutered == true) ui->isNeuteredLineEdit->setText("Yes"); else ui->isNeuteredLineEdit->setText("No");
     ui->costLineEdit->setText(QString::number(cost));
     ui->costPerYearLineEdit->setText(QString::number(costPerYear));
 }

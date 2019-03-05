@@ -44,7 +44,7 @@ SOURCES += \
     Serializer.cc \
     Human.cpp \
     viewclients.cpp \
-    addclient.cpp
+    addclient.cpp \
 
 HEADERS += \
         mainwindow.h \
@@ -61,20 +61,9 @@ HEADERS += \
     Serializer.h \
     StorageAdapter.h \
     Human.h \
-    addanimal.h \
-    Animal.h \
     CuacsAPI.h \
-    FileStorageManager.h \
-    Human.h \
-    mainwindow.h \
-    PathFinder.h \
-    PersistentStorageAPI.h \
-    postloginclient.h \
-    postloginstaff.h \
     Profile.h \
     Serializer.h \
-    StorageAdapter.h \
-    viewanimals.h \
     addclient.h \
     viewclients.h
 
