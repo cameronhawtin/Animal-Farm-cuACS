@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(300, 120));
+    //this->setFixedSize(QSize(600, 240));
     //QColor cuRED = QColor(200, 16, 46);
 
     capi = new CuacsAPI();
