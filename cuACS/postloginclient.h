@@ -2,6 +2,7 @@
 #define POSTLOGINCLIENT_H
 #include <QMessageBox>
 #include <QDialog>
+#include <viewanimals.h>
 
 namespace Ui {
 class PostLoginClient;
@@ -16,10 +17,13 @@ public:
     ~PostLoginClient();
 
 private slots:
+    void on_ViewAnimalsButton_clicked();
+
     void reject();
 
 private:
     Ui::PostLoginClient *ui;
+    ViewAnimals *viewAnimals;
 };
 
 #endif // POSTLOGINCLIENT_H

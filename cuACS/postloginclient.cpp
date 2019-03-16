@@ -30,3 +30,11 @@ void PostLoginClient::reject()
         parent->show();
     }
 }
+
+// This function is called when the viewAnimalsButton is clicked
+void PostLoginClient::on_ViewAnimalsButton_clicked()
+{
+    //open view animals interface
+    viewAnimals = new ViewAnimals(this);
+    viewAnimals->show();
+}
