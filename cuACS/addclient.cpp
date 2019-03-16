@@ -33,7 +33,7 @@ void AddClient::updateOk()
     bool userAvailable = true;
     for (int i = 0; i < myList.size(); i++){
             if (ui->nameLineEdit->text().toStdString() == myList.at(i)->getName()) {
-                std::cout << "The chosen username is already taken" << flush;
+                std::cout << "The chosen username is already taken\n" << flush;
                 userAvailable = false;
             }
     }

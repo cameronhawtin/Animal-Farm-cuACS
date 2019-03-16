@@ -14,3 +14,8 @@ ViewProfile::~ViewProfile()
 }
 
 
+
+
+void ViewProfile::setData(const QString &labelText) {
+    ui->nameLineEdit_25->setText(labelText);
+}

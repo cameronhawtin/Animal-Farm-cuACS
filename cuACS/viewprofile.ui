@@ -38,9 +38,9 @@
      <height>61</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_10">
+   <layout class="QHBoxLayout" name="horizontalLayout_70">
     <item>
-     <widget class="QLabel" name="titleLabel_4">
+     <widget class="QLabel" name="titleLabel_24">
       <property name="font">
        <font>
         <pointsize>24</pointsize>
@@ -65,12 +65,12 @@
      <height>364</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,1,2">
+   <layout class="QGridLayout" name="gridLayout_24" columnstretch="1,1,2">
     <property name="horizontalSpacing">
      <number>12</number>
     </property>
     <item row="2" column="0">
-     <widget class="QLabel" name="nameLabel_7">
+     <widget class="QLabel" name="nameLabel_47">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -80,13 +80,13 @@
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QLineEdit" name="purposeLineEdit_4"/>
+     <widget class="QLineEdit" name="purposeLineEdit_24"/>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="salaryLineEdit_4"/>
+     <widget class="QLineEdit" name="salaryLineEdit_24"/>
     </item>
     <item row="4" column="1">
-     <widget class="QLabel" name="purposeLabel_4">
+     <widget class="QLabel" name="purposeLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -96,7 +96,7 @@
      </widget>
     </item>
     <item row="6" column="2">
-     <widget class="QLabel" name="attachmentLabel_4">
+     <widget class="QLabel" name="attachmentLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -106,7 +106,7 @@
      </widget>
     </item>
     <item row="2" column="2">
-     <widget class="QLabel" name="irritationLabel_4">
+     <widget class="QLabel" name="irritationLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -116,7 +116,7 @@
      </widget>
     </item>
     <item row="8" column="0">
-     <widget class="QLabel" name="sexLabel_7">
+     <widget class="QLabel" name="sexLabel_27">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -126,17 +126,17 @@
      </widget>
     </item>
     <item row="7" column="2">
-     <widget class="QLineEdit" name="attachmentLineEdit_5"/>
+     <widget class="QLineEdit" name="attachmentLineEdit_25"/>
     </item>
     <item row="11" column="0">
-     <widget class="QLineEdit" name="ageLineEdit_5">
+     <widget class="QLineEdit" name="ageLineEdit_25">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
     <item row="10" column="1">
-     <widget class="QLabel" name="freeTimeLabel_4">
+     <widget class="QLabel" name="freeTimeLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -146,7 +146,7 @@
      </widget>
     </item>
     <item row="4" column="2">
-     <widget class="QLabel" name="labelPatience_4">
+     <widget class="QLabel" name="labelPatience_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -156,20 +156,20 @@
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QLineEdit" name="irritationLineEdit_4"/>
+     <widget class="QLineEdit" name="irritationLineEdit_24"/>
     </item>
     <item row="1" column="2">
-     <widget class="QLineEdit" name="budgetLineEdit_4">
+     <widget class="QLineEdit" name="budgetLineEdit_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
     <item row="11" column="1">
-     <widget class="QLineEdit" name="freeTimeLineEdit_4"/>
+     <widget class="QLineEdit" name="freeTimeLineEdit_24"/>
     </item>
     <item row="6" column="0">
-     <widget class="QLabel" name="phoneLabel_4">
+     <widget class="QLabel" name="phoneLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -179,7 +179,7 @@
      </widget>
     </item>
     <item row="6" column="1">
-     <widget class="QLabel" name="homeTypeLabel_4">
+     <widget class="QLabel" name="homeTypeLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -189,7 +189,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLabel" name="childrenLabel_4">
+     <widget class="QLabel" name="childrenLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -199,7 +199,7 @@
      </widget>
     </item>
     <item row="0" column="2">
-     <widget class="QLabel" name="budgetLabel_4">
+     <widget class="QLabel" name="budgetLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -209,7 +209,7 @@
      </widget>
     </item>
     <item row="8" column="2">
-     <widget class="QLabel" name="requireLabel_4">
+     <widget class="QLabel" name="requireLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -219,10 +219,10 @@
      </widget>
     </item>
     <item row="7" column="1">
-     <widget class="QLineEdit" name="homeLineEdit_4"/>
+     <widget class="QLineEdit" name="homeLineEdit_24"/>
     </item>
     <item row="4" column="0">
-     <widget class="QLabel" name="addressLabel_4">
+     <widget class="QLabel" name="addressLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -232,9 +232,9 @@
      </widget>
     </item>
     <item row="11" column="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_11">
+     <layout class="QHBoxLayout" name="horizontalLayout_71">
       <item>
-       <widget class="QCheckBox" name="catAllergyCheckBox_4">
+       <widget class="QCheckBox" name="catAllergyCheckBox_24">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -244,7 +244,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="dogAllergyCheckBox_4">
+       <widget class="QCheckBox" name="dogAllergyCheckBox_24">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -254,7 +254,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="birdAllergyCheckBox_4">
+       <widget class="QCheckBox" name="birdAllergyCheckBox_24">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -266,7 +266,7 @@
      </layout>
     </item>
     <item row="8" column="1">
-     <widget class="QLabel" name="travelLabel_4">
+     <widget class="QLabel" name="travelLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -276,10 +276,10 @@
      </widget>
     </item>
     <item row="9" column="2">
-     <widget class="QLineEdit" name="neuteredLineEdit_4"/>
+     <widget class="QLineEdit" name="neuteredLineEdit_24"/>
     </item>
     <item row="2" column="1">
-     <widget class="QLabel" name="salaryLabel_4">
+     <widget class="QLabel" name="salaryLabel_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -289,7 +289,7 @@
      </widget>
     </item>
     <item row="10" column="2">
-     <widget class="QLabel" name="allergicLabel_5">
+     <widget class="QLabel" name="allergicLabel_25">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -299,13 +299,13 @@
      </widget>
     </item>
     <item row="9" column="1">
-     <widget class="QLineEdit" name="travelLineEdit_4"/>
+     <widget class="QLineEdit" name="travelLineEdit_24"/>
     </item>
     <item row="7" column="0">
-     <widget class="QLineEdit" name="phoneLineEdit_4"/>
+     <widget class="QLineEdit" name="phoneLineEdit_24"/>
     </item>
     <item row="10" column="0">
-     <widget class="QLabel" name="ageLabel_10">
+     <widget class="QLabel" name="ageLabel_30">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -315,30 +315,30 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="childrenLineEdit_4">
+     <widget class="QLineEdit" name="childrenLineEdit_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QLineEdit" name="emailLineEdit_4">
+     <widget class="QLineEdit" name="emailLineEdit_24">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
     <item row="5" column="2">
-     <widget class="QLineEdit" name="patienceLineEdit_4"/>
+     <widget class="QLineEdit" name="patienceLineEdit_24"/>
     </item>
     <item row="1" column="0">
-     <widget class="QLineEdit" name="nameLineEdit_4"/>
+     <widget class="QLineEdit" name="nameLineEdit_25"/>
     </item>
     <item row="5" column="0">
-     <widget class="QLineEdit" name="addressLineEdit_4"/>
+     <widget class="QLineEdit" name="addressLineEdit_24"/>
     </item>
     <item row="0" column="0">
-     <widget class="QLabel" name="nameLabel_8">
+     <widget class="QLabel" name="nameLabel_48">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -348,12 +348,12 @@
      </widget>
     </item>
     <item row="9" column="0">
-     <widget class="QLineEdit" name="sexLineEdit_5"/>
+     <widget class="QLineEdit" name="sexLineEdit_25"/>
     </item>
     <item row="12" column="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_12">
+     <layout class="QHBoxLayout" name="horizontalLayout_72">
       <item>
-       <widget class="QCheckBox" name="hamsterAllergyCheckBox_4">
+       <widget class="QCheckBox" name="hamsterAllergyCheckBox_24">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -363,7 +363,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="mouseAllergyCheckBox_4">
+       <widget class="QCheckBox" name="mouseAllergyCheckBox_24">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -373,7 +373,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="guineapigAllergyCheckBox_4">
+       <widget class="QCheckBox" name="guineapigAllergyCheckBox_24">
         <property name="enabled">
          <bool>false</bool>
         </property>

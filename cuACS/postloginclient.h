@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QDialog>
 #include <viewanimals.h>
+#include <viewprofile.h>
 
 namespace Ui {
 class PostLoginClient;
@@ -21,8 +22,11 @@ private slots:
     void on_ViewAnimalsButton_clicked();
 
     void reject();
+    void on_ViewProfileButton_clicked();
+
 private:
     Ui::PostLoginClient *ui;
+    ViewProfile *viewProfile;
     ViewAnimals *viewAnimals;
 };
 

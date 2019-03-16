@@ -30,7 +30,7 @@ void PostLoginClient::reject()
     }
 }
 
-// This function is called when the viewAnimalsButton is clicked
+// This function is called when the viewAnimals Button is clicked
 void PostLoginClient::on_ViewAnimalsButton_clicked()
 {
     //open view animals interface
@@ -38,6 +38,15 @@ void PostLoginClient::on_ViewAnimalsButton_clicked()
     viewAnimals->show();
 }
 
+// This function is called when the viewProfile Button is clicked
+void PostLoginClient::on_ViewProfileButton_clicked()
+{
+    //open view animals interface
+    viewProfile = new ViewProfile(this);
+    viewProfile->setData(ui->nameLabel->text());
+    viewProfile->show();
+}
+
 void PostLoginClient::setData(const QString &labelText) {
-    ui->tempLine->setText(labelText);
+    ui->nameLabel->setText(labelText);
 }

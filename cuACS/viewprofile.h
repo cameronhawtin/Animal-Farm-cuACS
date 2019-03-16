@@ -13,6 +13,7 @@ class ViewProfile : public QDialog
 
 public:
     explicit ViewProfile(QWidget *parent = nullptr);
+    void setData(const QString &labelText);
     ~ViewProfile();
 
 private:
