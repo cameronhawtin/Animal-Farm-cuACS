@@ -12,7 +12,7 @@ AddAnimal::AddAnimal(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Add an Animal");
-    QString s = ui->typeComboBox->currentText();
+    ui->ageLineEdit->setValidator(new QIntValidator(0, 999, this));
 
     updateOk();
 }

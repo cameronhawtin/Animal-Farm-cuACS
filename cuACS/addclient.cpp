@@ -12,6 +12,7 @@ AddClient::AddClient(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Add a Client");
+    ui->ageLineEdit->setValidator(new QIntValidator(0, 999, this));
 
     updateOk();
 }
