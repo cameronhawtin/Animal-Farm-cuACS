@@ -25,6 +25,7 @@ private slots:
     void on_ViewProfileButton_clicked();
 
 private:
+    QString passedData;
     Ui::PostLoginClient *ui;
     ViewProfile *viewProfile;
     ViewAnimals *viewAnimals;

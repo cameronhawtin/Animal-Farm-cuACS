@@ -43,10 +43,10 @@ void PostLoginClient::on_ViewProfileButton_clicked()
 {
     //open view animals interface
     viewProfile = new ViewProfile(this);
-    viewProfile->setData(ui->nameLabel->text());
+    viewProfile->setData(passedData);
     viewProfile->show();
 }
 
 void PostLoginClient::setData(const QString &labelText) {
-    ui->nameLabel->setText(labelText);
+    passedData = labelText;
 }

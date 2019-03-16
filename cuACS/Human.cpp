@@ -52,8 +52,8 @@ Human::Human(vector<string> state)
     this->budget = std::stof(state.at(14));
     this->freeTime = state.at(15);
     this->email = state.at(16);
-    this->address = state.at(17);
-    this->phone = state.at(18);
+    this->phone = state.at(17);
+    this->address = state.at(18);
 }
 
 //getters for private data members
