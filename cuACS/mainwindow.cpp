@@ -44,7 +44,6 @@ void MainWindow::on_loginButton_clicked()
                postLoginClient = new PostLoginClient(this);
                postLoginClient->show();
            }
-           i = myList.size();
    }
 
    if (loggedIn == false) {
