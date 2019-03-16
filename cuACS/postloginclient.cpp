@@ -7,7 +7,6 @@ PostLoginClient::PostLoginClient(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Homepage - Clients");
-    //ui->label->setFont(font);
 }
 
 // PostLoginClient destructor
@@ -37,4 +36,8 @@ void PostLoginClient::on_ViewAnimalsButton_clicked()
     //open view animals interface
     viewAnimals = new ViewAnimals(this);
     viewAnimals->show();
+}
+
+void PostLoginClient::setData(const QString &labelText) {
+    ui->tempLine->setText(labelText);
 }

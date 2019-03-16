@@ -55,6 +55,7 @@ private slots:
 private:
     CuacsAPI *capi;
     Ui::AddClient *ui;
+    QList<Human*> myList;
 };
 
 #endif // ADDCLIENT_H

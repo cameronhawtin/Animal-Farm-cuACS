@@ -14,13 +14,13 @@ class PostLoginClient : public QDialog
 
 public:
     explicit PostLoginClient(QWidget *parent = nullptr);
+    void setData(const QString &labelText);
     ~PostLoginClient();
 
 private slots:
     void on_ViewAnimalsButton_clicked();
 
     void reject();
-
 private:
     Ui::PostLoginClient *ui;
     ViewAnimals *viewAnimals;

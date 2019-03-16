@@ -14,13 +14,33 @@ AddClient::AddClient(QWidget *parent) :
     this->setWindowTitle("Add a Client");
     ui->ageLineEdit->setValidator(new QIntValidator(0, 999, this));
 
+    capi = new CuacsAPI();
+    vector<Human*> humansVec = capi->getHumans();
+
+    if (humansVec.size() != 0) {
+        //Make QList from vector
+        myList.reserve(humansVec.size());
+        std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
+    }
+
     updateOk();
 }
 
 // Checks for all info to be filled to enable the "OK" button
 void AddClient::updateOk()
 {
-    if (ui->nameLineEdit->text().isEmpty() ||
+    // checks too see if username is taken
+    bool userAvailable = true;
+    for (int i = 0; i < myList.size(); i++){
+            if (ui->nameLineEdit->text().toStdString() == myList.at(i)->getName()) {
+                std::cout << "The chosen username is already taken" << flush;
+                userAvailable = false;
+            }
+    }
+
+    // checks to see if the form is completely filled
+    if (    userAvailable == false ||
+            ui->nameLineEdit->text().isEmpty() ||
             ui->ageLineEdit->text().isEmpty() ||
             ui->sexComboBox->currentText() == "Please Select" ||
             ui->purposeComboBox->currentText() == "Please Select" ||
@@ -88,7 +108,7 @@ void AddClient::on_buttonBox_accepted()
     string phone = ui->phoneLineEdit->text().toStdString();
     string address = ui->addressLineEdit->text().toStdString();
 
-    capi = new CuacsAPI();
+    //capi = new CuacsAPI();
 
     //now give attributes to Client class
     capi->addHuman(name, age, gender, purpose, attachment, patience, homeType,
