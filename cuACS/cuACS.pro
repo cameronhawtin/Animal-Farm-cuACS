@@ -45,7 +45,8 @@ SOURCES += \
     Human.cpp \
     viewclients.cpp \
     addclient.cpp \
-    viewprofile.cpp
+    viewprofile.cpp \
+    editprofile.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -67,7 +68,8 @@ HEADERS += \
     Serializer.h \
     addclient.h \
     viewclients.h \
-    viewprofile.h
+    viewprofile.h \
+    editprofile.h
 
 FORMS += \
         mainwindow.ui \
@@ -77,7 +79,8 @@ FORMS += \
     addanimal.ui \
     addclient.ui \
     viewclients.ui \
-    viewprofile.ui
+    viewprofile.ui \
+    editprofile.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

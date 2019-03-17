@@ -23,19 +23,26 @@ AddClient::AddClient(QWidget *parent) :
         std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
     }
 
+    //make a vector of currently existing usernames
+    for (int i = 0; i < myList.size(); i++){
+        users.push_back(myList.at(i)->getName());
+    }
+
     updateOk();
 }
 
 // Checks for all info to be filled to enable the "OK" button
 void AddClient::updateOk()
 {
-    // checks too see if username is taken
-    bool userAvailable = true;
-    for (int i = 0; i < myList.size(); i++){
-            if (ui->nameLineEdit->text().toStdString() == myList.at(i)->getName()) {
-                std::cout << "The chosen username is already taken\n" << flush;
-                userAvailable = false;
-            }
+    // checks to see if username is taken
+    bool userAvailable;
+
+    std::vector<std::string>::iterator i;
+    i = std::find(users.begin(), users.end(), ui->nameLineEdit->text().toStdString());
+
+    if (i!=users.end()) userAvailable = false;
+    else {
+        userAvailable = true;
     }
 
     // checks to see if the form is completely filled

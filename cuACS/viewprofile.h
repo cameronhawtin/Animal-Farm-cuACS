@@ -17,7 +17,6 @@ public:
     explicit ViewProfile(QWidget *parent = nullptr);
     void setData(int &labelText);
     ~ViewProfile();
-private slots:
 
 private:
     Ui::ViewProfile *ui;

@@ -41,10 +41,18 @@ void PostLoginClient::on_ViewAnimalsButton_clicked()
 // This function is called when the viewProfile Button is clicked
 void PostLoginClient::on_ViewProfileButton_clicked()
 {
-    //open view animals interface
+    //open view profile interface
     viewProfile = new ViewProfile(this);
     viewProfile->setData(passedData);
     viewProfile->show();
+}
+
+void PostLoginClient::on_editProfileButton_clicked()
+{
+    //open edit profile interface
+    editProfile = new EditProfile(this);
+    editProfile->setData(passedData);
+    editProfile->show();
 }
 
 void PostLoginClient::setData(int labelText) {

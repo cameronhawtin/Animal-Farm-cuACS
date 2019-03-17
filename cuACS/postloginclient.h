@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <viewanimals.h>
 #include <viewprofile.h>
+#include <editprofile.h>
 
 namespace Ui {
 class PostLoginClient;
@@ -24,11 +25,14 @@ private slots:
     void reject();
     void on_ViewProfileButton_clicked();
 
+    void on_editProfileButton_clicked();
+
 private:
     int passedData;
     Ui::PostLoginClient *ui;
     ViewProfile *viewProfile;
     ViewAnimals *viewAnimals;
+    EditProfile *editProfile;
 };
 
 #endif // POSTLOGINCLIENT_H
