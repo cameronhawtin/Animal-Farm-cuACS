@@ -145,7 +145,6 @@ void ViewAnimals::on_editAnimal_clicked()
         stringstream(temp) >> id;
     }
 
-    hide();
     editAnimal = new EditAnimal(this);
     editAnimal->setData(id);
     editAnimal->show();

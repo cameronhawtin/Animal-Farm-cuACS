@@ -8,7 +8,7 @@ EditProfile::EditProfile(QWidget *parent) :
     ui->setupUi(this);
 
     capi = new CuacsAPI();
-    //updateOk();
+    updateOk();
 }
 
 EditProfile::~EditProfile()
@@ -73,6 +73,8 @@ void EditProfile::setData(int &labelText) {
             else ui->mouseAllergyCheckBox->setChecked(false);
             if (myList.at(i)->getAllergies().find("Guineapig")!=std::string::npos) ui->guineapigAllergyCheckBox->setChecked(true);
             else ui->guineapigAllergyCheckBox->setChecked(false);
+
+            i=myList.size();
         }
     }
     //make a vector of currently existing usernames
