@@ -148,4 +148,9 @@ void ViewAnimals::on_editAnimal_clicked()
     editAnimal = new EditAnimal(this);
     editAnimal->setData(id);
     editAnimal->show();
+
+    //this->hide();
+    //EditAnimal editAnimal;
+    //editAnimal.setData(id);
+    //editAnimal.exec();
 }

@@ -1,11 +1,13 @@
 #include "editanimal.h"
 #include "ui_editanimal.h"
+#include <viewanimals.h>
 
 EditAnimal::EditAnimal(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::EditAnimal)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Edit an Animal");
 
     capi = new CuacsAPI();
     updateOk();
@@ -30,9 +32,6 @@ void EditAnimal::setData(int &labelText) {
 
     int id = passedData;
     for (int i = 0; i < myList.size(); i++){
-        cout << "id found: "<< to_string(myList.at(i)->getId()) << "\n" <<flush;
-        cout << "id looking for: " << to_string(id) << "\n" <<flush;
-
         if (to_string(myList.at(i)->getId()).compare(to_string(id)) == 0) {
             //string title = name + " the " + breed;
             //ui->titleLabel->setText(QString::fromStdString(title));
@@ -76,7 +75,12 @@ void EditAnimal::setData(int &labelText) {
 
 }
 
-
+//void EditAnimal::reject() {
+//    this->hide();
+//    ViewAnimals t;
+//    t.setModal(false);
+//    t.exec();
+//}
 
 void EditAnimal::on_buttonBox_accepted()
 {
@@ -120,6 +124,9 @@ void EditAnimal::on_buttonBox_accepted()
     capi->editAnimal(passedData, name, type, breed, age, sex, colour, size, aggression, attachment, obedience, energy,
                     isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness);
 
+    //ViewAnimals t;
+    //t.setModal(false);
+    //t.exec();
 }
 
 void EditAnimal::updateOk()

@@ -6,6 +6,7 @@ EditProfile::EditProfile(QWidget *parent) :
     ui(new Ui::EditProfile)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Edit Your Profile");
 
     capi = new CuacsAPI();
     updateOk();

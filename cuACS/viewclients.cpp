@@ -49,7 +49,6 @@ ViewClients::~ViewClients()
     delete ui;
 }
 
-
 void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
 {
     string selectedString = current->text().toStdString();

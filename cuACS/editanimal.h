@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <CuacsAPI.h>
 
+
 namespace Ui {
 class EditAnimal;
 }
@@ -22,6 +23,7 @@ public:
 
     void updateOk();
 
+    //void reject();
 private slots:
 
 
