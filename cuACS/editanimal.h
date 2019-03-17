@@ -15,8 +15,10 @@ public:
     explicit EditAnimal(QWidget *parent = nullptr);
     ~EditAnimal();
 
+    void setData(int &labelText);
 private:
     Ui::EditAnimal *ui;
+    int passedData;
 };
 
 #endif // EDITANIMAL_H

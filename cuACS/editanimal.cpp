@@ -12,3 +12,7 @@ EditAnimal::~EditAnimal()
 {
     delete ui;
 }
+
+void EditAnimal::setData(int &labelText) {
+    passedData = labelText;
+}

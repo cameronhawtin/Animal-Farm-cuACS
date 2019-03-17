@@ -130,5 +130,23 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     ui->costPerYearLineEdit->setText(QString::number(costPerYear));
 }
 
+void ViewAnimals::on_editAnimal_clicked()
+{
+    QListWidgetItem *current = ui->viewAnimalsListWidget->currentItem();
+    string selectedString = current->text().toStdString();
 
+    stringstream ss;
+    ss << selectedString;
 
+    string temp;
+    int id = -1;
+    while (!ss.eof()) {
+        ss >> temp;
+        stringstream(temp) >> id;
+    }
+
+    hide();
+    editAnimal = new EditAnimal(this);
+    editAnimal->setData(id);
+    editAnimal->show();
+}

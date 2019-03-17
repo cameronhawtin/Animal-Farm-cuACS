@@ -6,6 +6,7 @@
 #include "CuacsAPI.h"
 #include <QListWidget>
 #include <sstream>
+#include <editanimal.h>
 
 namespace Ui {
 class ViewAnimals;
@@ -23,10 +24,13 @@ private slots:
 
     void on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
+    void on_editAnimal_clicked();
+
 private:
     Ui::ViewAnimals *ui;
     CuacsAPI *capi;
     QList<Animal*> myList;
+    EditAnimal *editAnimal;
 };
 
 #endif // VIEWANIMALS_H
