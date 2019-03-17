@@ -57,6 +57,14 @@ void CuacsAPI::addHuman(string name, int age, string gender, string purpose, int
                               salary, budget, freeTime, email, address, phone), "Human");
 }
 
+void CuacsAPI::editAnimal(int id, string name, string animalType, string breed, int age, string gender, string color, string size,
+                         int aggression, int attachment, int obedience, string energy, bool isCrateTrained, bool isHypoallergenic,
+                         bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness)
+{
+    ps.storeProfile(new Animal(id, name, animalType, breed, age, gender, color, size, aggression, attachment, obedience, energy,
+                               isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness), "Animal");
+}
+
 void CuacsAPI::editHuman(int id, string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
                         string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
                         string salary, float budget, string freeTime, string email, string address, string phone)
