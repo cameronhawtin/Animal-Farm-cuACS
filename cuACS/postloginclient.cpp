@@ -47,6 +47,6 @@ void PostLoginClient::on_ViewProfileButton_clicked()
     viewProfile->show();
 }
 
-void PostLoginClient::setData(const QString &labelText) {
+void PostLoginClient::setData(int labelText) {
     passedData = labelText;
 }

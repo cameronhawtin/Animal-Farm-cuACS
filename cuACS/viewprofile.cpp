@@ -6,6 +6,26 @@ ViewProfile::ViewProfile(QWidget *parent) :
     ui(new Ui::ViewProfile)
 {
     ui->setupUi(this);
+
+    ui->nameLineEdit->setReadOnly(true);
+    ui->addressLineEdit->setReadOnly(true);
+    ui->phoneLineEdit->setReadOnly(true);
+    ui->emailLineEdit->setReadOnly(true);
+    ui->ageLineEdit->setReadOnly(true);
+    ui->sexLineEdit->setReadOnly(true);
+    ui->childrenLineEdit->setReadOnly(true);
+    ui->salaryLineEdit->setReadOnly(true);
+    //ui->allergyLineEdit->setReadOnly(true);
+    ui->purposeLineEdit->setReadOnly(true);
+    ui->homeLineEdit->setReadOnly(true);
+    ui->travelLineEdit->setReadOnly(true);
+    ui->freeTimeLineEdit->setReadOnly(true);
+    ui->budgetLineEdit->setReadOnly(true);
+    ui->irritationLineEdit->setReadOnly(true);
+    ui->patienceLineEdit->setReadOnly(true);
+    ui->attachmentLineEdit->setReadOnly(true);
+    ui->neuteredLineEdit->setReadOnly(true);
+
 }
 
 ViewProfile::~ViewProfile()
@@ -15,8 +35,8 @@ ViewProfile::~ViewProfile()
 }
 
 
-void ViewProfile::setData(const QString &labelText) {
-    ui->nameLineEdit->setText(labelText);
+void ViewProfile::setData(int &labelText) {
+    passedData = labelText;
 
     capi = new CuacsAPI();
     vector<Human*> humansVec = capi->getHumans();
@@ -29,13 +49,15 @@ void ViewProfile::setData(const QString &labelText) {
         std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
     }
 
-    string name = labelText.toStdString();
+    int id = passedData;
 
     for (int i = 0; i < myList.size(); i++){
-        if (name == myList.at(i)->getName()) {
-            string title = name;
-            ui->titleLabel->setText(QString::fromStdString(title));
+        if (to_string(myList.at(i)->getId()).compare(to_string(id)) == 0) {
 
+            string title =  myList.at(i)->getName() + " (ID: " + to_string(id) + ")";
+
+            ui->titleLabel->setText(QString::fromStdString(title));
+            ui->nameLineEdit->setText(QString::fromStdString(myList.at(i)->getName()));
             ui->emailLineEdit->setText(QString::fromStdString(myList.at(i)->getEmail()));
             ui->ageLineEdit->setText(QString::number(myList.at(i)->getAge()));
             ui->sexLineEdit->setText(QString::fromStdString(myList.at(i)->getGender()));

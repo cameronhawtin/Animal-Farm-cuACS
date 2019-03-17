@@ -57,6 +57,15 @@ void CuacsAPI::addHuman(string name, int age, string gender, string purpose, int
                               salary, budget, freeTime, email, address, phone), "Human");
 }
 
+void CuacsAPI::editHuman(int id, string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
+                        string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
+                        string salary, float budget, string freeTime, string email, string address, string phone)
+{
+    ps.storeProfile(new Human(id, name, age, gender, purpose, attachment, patience, homeType,
+                              travel, allergies, noiseTolerance, needFertile, numChildren,
+                              salary, budget, freeTime, email, address, phone), "Human");
+}
+
 CuacsAPI::~CuacsAPI()
 {
 	while(animals->size() > 0){

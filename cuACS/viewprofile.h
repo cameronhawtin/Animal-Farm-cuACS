@@ -15,7 +15,7 @@ class ViewProfile : public QDialog
 
 public:
     explicit ViewProfile(QWidget *parent = nullptr);
-    void setData(const QString &labelText);
+    void setData(int &labelText);
     ~ViewProfile();
 private slots:
 
@@ -23,6 +23,7 @@ private:
     Ui::ViewProfile *ui;
     CuacsAPI *capi;
     QList<Human*> myList;
+    int passedData;
 };
 
 #endif // VIEWPROFILE_H
