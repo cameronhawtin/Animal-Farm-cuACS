@@ -42,7 +42,6 @@ void MainWindow::on_loginButton_clicked()
                loggedIn = true;
                hide();
                postLoginClient = new PostLoginClient(this);
-               viewProfile = new ViewProfile(this);
                postLoginClient->setData(myList.at(i)->getId());
                postLoginClient->show();
            }
