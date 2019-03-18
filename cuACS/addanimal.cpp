@@ -12,7 +12,14 @@ AddAnimal::AddAnimal(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Add an Animal");
-    ui->ageLineEdit->setValidator(new QIntValidator(0, 999, this));
+
+    QDoubleValidator* floatValidator = new QDoubleValidator(this);
+    QIntValidator* ageRange = new QIntValidator(0, 999, this);
+    floatValidator->setRange(0,99999,2);
+
+    ui->ageLineEdit->setValidator(ageRange);
+    ui->costLineEdit->setValidator(floatValidator);
+    ui->costPerYearLineEdit->setValidator(floatValidator);
 
     updateOk();
 }

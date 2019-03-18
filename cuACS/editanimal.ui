@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>759</width>
-    <height>529</height>
+    <width>752</width>
+    <height>559</height>
    </rect>
   </property>
   <property name="palette">
@@ -162,7 +162,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
+     <y>70</y>
      <width>711</width>
      <height>431</height>
     </rect>
@@ -852,7 +852,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>470</y>
+     <y>520</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -862,6 +862,27 @@
    </property>
    <property name="standardButtons">
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="titleLabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>669</width>
+     <height>59</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>No Animals are Currently Available</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

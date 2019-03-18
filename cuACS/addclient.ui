@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>886</width>
-    <height>465</height>
+    <width>871</width>
+    <height>452</height>
    </rect>
   </property>
   <property name="palette">
@@ -193,7 +193,7 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>510</x>
      <y>410</y>
      <width>341</width>
      <height>32</height>
@@ -514,7 +514,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salary (thousands/year)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salary $(thousands/year)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
@@ -684,23 +684,6 @@
       </item>
      </layout>
     </item>
-    <item row="8" column="1">
-     <widget class="QLabel" name="childrenLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Number of Children</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QLineEdit" name="childrenLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="1">
      <widget class="QLabel" name="homeTypeLabel">
       <property name="enabled">
@@ -708,16 +691,6 @@
       </property>
       <property name="text">
        <string>Home Type</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="1">
-     <widget class="QLabel" name="budgetLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Budget</string>
       </property>
      </widget>
     </item>
@@ -798,13 +771,6 @@
       </property>
      </widget>
     </item>
-    <item row="11" column="1">
-     <widget class="QLineEdit" name="budgetLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="11" column="2">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -829,6 +795,40 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="childrenLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLabel" name="childrenLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Number of Children</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="budgetLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Budget (in dollars)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QLineEdit" name="budgetLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

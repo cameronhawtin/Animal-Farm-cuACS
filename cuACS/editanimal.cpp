@@ -9,6 +9,14 @@ EditAnimal::EditAnimal(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("Edit an Animal");
 
+    QDoubleValidator* floatValidator = new QDoubleValidator(this);
+    QIntValidator* ageRange = new QIntValidator(0, 999, this);
+    floatValidator->setRange(0,99999,2);
+
+    ui->ageLineEdit->setValidator(ageRange);
+    ui->costLineEdit->setValidator(floatValidator);
+    ui->costPerYearLineEdit->setValidator(floatValidator);
+
     capi = new CuacsAPI();
     updateOk();
 }
@@ -33,8 +41,12 @@ void EditAnimal::setData(int &labelText) {
     int id = passedData;
     for (int i = 0; i < myList.size(); i++){
         if (to_string(myList.at(i)->getId()).compare(to_string(id)) == 0) {
-            //string title = name + " the " + breed;
-            //ui->titleLabel->setText(QString::fromStdString(title));
+
+            string name = myList.at(i)->getName();
+            string breed = myList.at(i)->getBreed();
+            string title = name + " the " + breed;
+
+            ui->titleLabel->setText(QString::fromStdString(title));
             ui->nameLineEdit->setText(QString::fromStdString(myList.at(i)->getName()));
             ui->typeComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getAnimalType()));
             ui->breedComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getBreed()));

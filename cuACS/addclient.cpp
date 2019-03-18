@@ -12,7 +12,15 @@ AddClient::AddClient(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Add a Client");
-    ui->ageLineEdit->setValidator(new QIntValidator(0, 999, this));
+
+    QDoubleValidator* floatValidator = new QDoubleValidator(this);
+    QIntValidator* ageRange = new QIntValidator(0, 999, this);
+    QIntValidator* childrenRange = new QIntValidator(0, 99, this);
+    floatValidator->setRange(0,99999,2);
+
+    ui->ageLineEdit->setValidator(ageRange);
+    ui->childrenLineEdit->setValidator(childrenRange);
+    ui->budgetLineEdit->setValidator(floatValidator);
 
     capi = new CuacsAPI();
     vector<Human*> humansVec = capi->getHumans();
@@ -29,6 +37,13 @@ AddClient::AddClient(QWidget *parent) :
     }
 
     updateOk();
+}
+
+// AddClient Destructor
+AddClient::~AddClient()
+{
+    delete capi;
+    delete ui;
 }
 
 // Checks for all info to be filled to enable the "OK" button
@@ -70,12 +85,7 @@ void AddClient::updateOk()
             ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 
-// AddClient Destructor
-AddClient::~AddClient()
-{
-    delete capi;
-    delete ui;
-}
+
 
 // This function is called when the user presses the "OK" button
 void AddClient::on_buttonBox_accepted()

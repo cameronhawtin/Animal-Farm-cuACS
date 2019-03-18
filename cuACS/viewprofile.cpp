@@ -54,7 +54,7 @@ void ViewProfile::setData(int &labelText) {
     for (int i = 0; i < myList.size(); i++){
         if (to_string(myList.at(i)->getId()).compare(to_string(id)) == 0) {
 
-            string title =  myList.at(i)->getName() + " (ID: " + to_string(id) + ")";
+            string title =  myList.at(i)->getName();
 
             ui->titleLabel->setText(QString::fromStdString(title));
             ui->nameLineEdit->setText(QString::fromStdString(myList.at(i)->getName()));

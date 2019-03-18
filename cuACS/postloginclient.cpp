@@ -6,6 +6,7 @@ PostLoginClient::PostLoginClient(QWidget *parent) :
     ui(new Ui::PostLoginClient)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(332, 171));
     this->setWindowTitle("Homepage - Clients");
 }
 
