@@ -6,6 +6,8 @@ ViewProfile::ViewProfile(QWidget *parent) :
     ui(new Ui::ViewProfile)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(815, 530));
+    this->setWindowTitle("View Your Profile");
 
     ui->nameLineEdit->setReadOnly(true);
     ui->addressLineEdit->setReadOnly(true);

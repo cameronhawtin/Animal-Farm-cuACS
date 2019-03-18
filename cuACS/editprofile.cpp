@@ -6,6 +6,7 @@ EditProfile::EditProfile(QWidget *parent) :
     ui(new Ui::EditProfile)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(871, 539));
     this->setWindowTitle("Edit Your Profile");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);

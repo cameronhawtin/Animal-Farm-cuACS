@@ -9,6 +9,7 @@ ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     ui(new Ui::ViewAnimals)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(1014, 532));
     this->setWindowTitle("View Animals");
 
      ui->editAnimal->setVisible(isStaff);

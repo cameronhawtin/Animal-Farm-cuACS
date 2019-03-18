@@ -6,6 +6,7 @@ ViewClients::ViewClients(QWidget *parent) :
     ui(new Ui::ViewClients)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(1112, 509));
     this->setWindowTitle("View Clients");
 
     ui->nameLineEdit->setReadOnly(true);

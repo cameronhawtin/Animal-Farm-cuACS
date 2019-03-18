@@ -11,6 +11,7 @@ AddClient::AddClient(QWidget *parent) :
     ui(new Ui::AddClient)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(871, 452));
     this->setWindowTitle("Add a Client");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);

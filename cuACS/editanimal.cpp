@@ -7,6 +7,7 @@ EditAnimal::EditAnimal(QWidget *parent) :
     ui(new Ui::EditAnimal)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(752, 559));
     this->setWindowTitle("Edit an Animal");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
