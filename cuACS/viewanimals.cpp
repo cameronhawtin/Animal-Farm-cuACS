@@ -4,13 +4,14 @@
 using namespace std;
 
 //Constructor for ViewAnimals class
-ViewAnimals::ViewAnimals(QWidget *parent) :
+ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     QDialog(parent),
     ui(new Ui::ViewAnimals)
 {
-
     ui->setupUi(this);
     this->setWindowTitle("View Animals");
+
+     ui->editAnimal->setVisible(isStaff);
 
     ui->nameLineEdit->setReadOnly(true);
     ui->typeLineEdit->setReadOnly(true);

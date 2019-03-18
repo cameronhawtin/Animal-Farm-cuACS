@@ -34,7 +34,7 @@ void PostLoginClient::reject()
 void PostLoginClient::on_ViewAnimalsButton_clicked()
 {
     //open view animals interface
-    viewAnimals = new ViewAnimals(this);
+    viewAnimals = new ViewAnimals(this, false);
     viewAnimals->show();
 }
 

@@ -17,7 +17,7 @@ class ViewAnimals : public QDialog
     Q_OBJECT
 
 public:
-    explicit ViewAnimals(QWidget *parent = nullptr);
+    explicit ViewAnimals(QWidget *parent = nullptr, bool isStaff = false);
     ~ViewAnimals();
 
 private slots:
@@ -31,6 +31,7 @@ private:
     CuacsAPI *capi;
     QList<Animal*> myList;
     EditAnimal *editAnimal;
+    bool isStaff;
 };
 
 #endif // VIEWANIMALS_H
