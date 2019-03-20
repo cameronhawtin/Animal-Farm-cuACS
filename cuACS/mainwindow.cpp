@@ -11,8 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(429, 217));
     //QColor cuRED = QColor(200, 16, 46);
-    QPixmap pix (":/icon/icon.png");
-    this->setWindowIcon(pix);
+    QPixmap icon (":/icon/icon.png");
+    this->setWindowIcon(icon);
     capi = new CuacsAPI();
 
     vector<Human*> humansVec = capi->getHumans();
