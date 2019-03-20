@@ -103,4 +103,5 @@ DISTFILES += \
 
 RESOURCES += \
     egyptfont.qrc \
-    logo.qrc
+    logo.qrc \
+    icon.qrc
