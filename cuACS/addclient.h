@@ -44,6 +44,8 @@ private slots:
 
     void on_salaryComboBox_currentIndexChanged(const QString &arg1);
 
+    void on_typePreferenceComboBox_currentIndexChanged(const QString &arg1);
+
     void on_purposeComboBox_currentIndexChanged(const QString &arg1);
 
     void on_homeTypeComboBox_currentIndexChanged(const QString &arg1);

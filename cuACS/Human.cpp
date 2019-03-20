@@ -7,7 +7,7 @@ using namespace std;
 #include "Human.h"
 
 //initializes the data members
-Human::Human(int id, string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
+Human::Human(int id, string name, int age, string gender, string typePreference, string purpose, int attachment, int patience, string homeType,
              string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
              string salary, float budget, string freeTime, string email, string address, string phone)
 {
@@ -15,6 +15,7 @@ Human::Human(int id, string name, int age, string gender, string purpose, int at
     this->name = name;
     this->age = age;
     this->gender = gender;
+    this->typePreference = typePreference;
     this->purpose = purpose;
     this->attachment = attachment;
     this->patience = patience;
@@ -39,21 +40,22 @@ Human::Human(vector<string> state)
     this->name = state.at(1);
     this->age = std::stoi(state.at(2));
     this->gender = state.at(3);
-    this->purpose = state.at(4);
-    this->attachment = std::stoi(state.at(5));
-    this->patience = std::stoi(state.at(6));
-    this->homeType = state.at(7);
-    this->travel = state.at(8);
-    this->allergies = state.at(9);
-    this->noiseTolerance = std::stoi(state.at(10));
-    std::istringstream(state.at(11)) >> this->needFertile;
-    this->numChildren = std::stoi(state.at(12));
-    this->salary = state.at(13);
-    this->budget = std::stof(state.at(14));
-    this->freeTime = state.at(15);
-    this->email = state.at(16);
-    this->phone = state.at(17);
-    this->address = state.at(18);
+    this->typePreference = state.at(4);
+    this->purpose = state.at(5);
+    this->attachment = std::stoi(state.at(6));
+    this->patience = std::stoi(state.at(7));
+    this->homeType = state.at(8);
+    this->travel = state.at(9);
+    this->allergies = state.at(10);
+    this->noiseTolerance = std::stoi(state.at(11));
+    std::istringstream(state.at(12)) >> this->needFertile;
+    this->numChildren = std::stoi(state.at(13));
+    this->salary = state.at(14);
+    this->budget = std::stof(state.at(15));
+    this->freeTime = state.at(16);
+    this->email = state.at(17);
+    this->phone = state.at(18);
+    this->address = state.at(19);
 }
 
 //getters for private data members
@@ -61,6 +63,7 @@ int Human::getId() { return id; }
 string Human::getName() { return name; }
 int Human::getAge() { return age; }
 string Human::getGender() { return gender; }
+string Human::getTypePreference() {return typePreference; }
 string Human::getPurpose() { return purpose; }
 int Human::getAttachment()  { return attachment; }
 int Human::getPatience() { return patience; }
@@ -86,6 +89,7 @@ vector<string>* Human::getState()
         state->push_back(name);
         state->push_back(to_string(age));
         state->push_back(gender);
+        state->push_back(typePreference);
         state->push_back(purpose);
         state->push_back(to_string(attachment));
         state->push_back(to_string(patience));

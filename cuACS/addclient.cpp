@@ -11,7 +11,7 @@ AddClient::AddClient(QWidget *parent) :
     ui(new Ui::AddClient)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(871, 452));
+    //this->setFixedSize(QSize(871, 452));
     this->setWindowTitle("Add a Client");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
@@ -66,6 +66,7 @@ void AddClient::updateOk()
             ui->nameLineEdit->text().isEmpty() ||
             ui->ageLineEdit->text().isEmpty() ||
             ui->sexComboBox->currentText() == "Please Select" ||
+            ui->typePreferenceComboBox->currentText() == "Please Select" ||
             ui->purposeComboBox->currentText() == "Please Select" ||
             ui->attachmentLineEdit->text().isEmpty() ||
             ui->patienceLineEdit->text().isEmpty() ||
@@ -81,14 +82,14 @@ void AddClient::updateOk()
             ui->emailLineEdit->text().isEmpty() ||
             ui->phoneLineEdit->text().isEmpty() ||
             ui->addressLineEdit->text().isEmpty())
-                ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+                ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
         else
-            ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+            ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
 }
 
 
 
-// This function is called when the user presses the "OK" button
+// This function is called when the user presses the "Save" button
 void AddClient::on_buttonBox_accepted()
 {
     //create a string containing all alergies selected
@@ -110,6 +111,7 @@ void AddClient::on_buttonBox_accepted()
     string name = ui->nameLineEdit->text().toStdString();
     int age = ui->ageLineEdit->text().toInt();
     string gender = ui->sexComboBox->currentText().toStdString();
+    string typePreference = ui->typePreferenceComboBox->currentText().toStdString();
     string purpose = ui->purposeComboBox->currentText().toStdString();
     int attachment = ui->attachmentLineEdit->text().toInt();
     int patience = ui->patienceLineEdit->text().toInt();
@@ -129,7 +131,7 @@ void AddClient::on_buttonBox_accepted()
     //capi = new CuacsAPI();
 
     //now give attributes to Client class
-    capi->addHuman(name, age, gender, purpose, attachment, patience, homeType,
+    capi->addHuman(name, age, gender, typePreference, purpose, attachment, patience, homeType,
                    travel, allergies, noiseTolerance, needFertile, numChildren,
                    salary, budget, freeTime, email, phone, address);
 }
@@ -205,6 +207,12 @@ void AddClient::on_salaryComboBox_currentIndexChanged(const QString &arg1)
 {
     updateOk();
 }
+
+void AddClient::on_typePreferenceComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
 
 void AddClient::on_purposeComboBox_currentIndexChanged(const QString &arg1)
 {

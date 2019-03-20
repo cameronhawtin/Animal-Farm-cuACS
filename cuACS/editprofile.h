@@ -21,7 +21,6 @@ public:
     void setData(int &labelText);
     void updateOk();
 
-
 private slots:
     void on_buttonBox_accepted();
     void on_nameLineEdit_cursorPositionChanged(int arg1, int arg2);
@@ -37,6 +36,7 @@ private slots:
     void on_nameLineEdit_textChanged(const QString &arg1);
     void on_sexComboBox_currentIndexChanged(const QString &arg1);
     void on_salaryComboBox_currentIndexChanged(const QString &arg1);
+    void on_typePreferenceComboBox_currentIndexChanged(const QString &arg1);
     void on_purposeComboBox_currentIndexChanged(const QString &arg1);
     void on_homeTypeComboBox_currentIndexChanged(const QString &arg1);
     void on_travelComboBox_currentIndexChanged(const QString &arg1);

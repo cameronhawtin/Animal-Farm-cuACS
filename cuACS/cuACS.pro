@@ -98,7 +98,8 @@ DISTFILES += \
     cuACS.pro.user.50df91b.20 \
     README \
     logo.png \
-    logo.png
+    logo.png \
+    logo.ico
 
 RESOURCES += \
     egyptfont.qrc \

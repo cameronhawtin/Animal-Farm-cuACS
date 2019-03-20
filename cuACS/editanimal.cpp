@@ -156,9 +156,9 @@ void EditAnimal::updateOk()
             || (ui->isCrateTrainedRadioButtonYES->isChecked() == false && ui->isCrateTrainedRadioButtonNO->isChecked() == false)
             || (ui->isHypoallergenicRadioButtonYES->isChecked() == false && ui->isHypoallergenicRadioButtonNO->isChecked() == false)
             || (ui->isNeuteredRadioButtonYES->isChecked() == false && ui->isNeuteredRadioButtonNO->isChecked() == false))
-        ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
     else
-        ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+        ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
 }
 
 void EditAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
@@ -166,18 +166,27 @@ void EditAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
     QStringList list = QStringList();
 
     if (arg1.toLatin1() == "Cat")
-        list << "Please Select" << "Tabby" << "Siamese" << "Persian";
+        list << "Please Select" << "Exotic" << "Ragdoll" << "British Shorthair" << "Persian" << "Maine Coon" << "American Shorthair"
+             << "Scottish Fold" << "Sphynx" << "Devon Rex" << "Abyssinian" << "Oriental" << "Siamese" << "Cornish Rex" << "Norwegian Forest"
+             << "Siberian" << "Birman" << "Russian Blue" << "Bengal" << "Tonkinese" << "Burmese";
     else if (arg1.toLatin1() == "Dog")
-        list << "Please Select" << "Golden Retriever" << "Poodle" << "Bulldog";
+        list << "Please Select" << "Labrador Retriever" << "Golden Retriever" << "German Shepherd" << "French Bulldog"
+             << "English Bulldog" << "Beagle" << "Poodle" << "Rottweiler" << "Yorkshire Terrier" << "German Pointer"
+             << "Boxer" << "Siberian Husky" << "Dachshund" << "Great Dane" << "Pembroke Welsh Corgi" << "Doberman Pinscher"
+             << "Australian Shepherd" << "Miniature Schnauzer" << "Cavalier King Charles Spaniel" << "Shih Tzu";
     else if (arg1.toLatin1() == "Hamster")
-        list << "Please Select" << "Dwarf" << "Winter White" << "Chinese";
+        list << "Please Select" << "Roborovski" << "Dwarf Winter White" << "Hybrid" << "Chinese"
+             << "Dwarf Campbell's Russian" << "Golden";
     else if (arg1.toLatin1() == "Bird")
-        list << "Please Select" << "Parrot" << "Robin" << "Finch";
+        list << "Please Select" << "Canary" << "Budgierigar" << "Finch" << "Cockatiel" << "Quaker Parakeet"
+             << "Pionus Parrot" << "Poicephalus Parrot" << "Amazon" << "Pyrrhura Conure" << "Peach-Faced Lovebird";
     else if (arg1.toLatin1() == "Mouse")
         list << "Please Select" << "Wood" << "Deer" << "Albino";
     else if (arg1.toLatin1() == "Guinea Pig")
-        list << "Please Select" << "American" << "Texel" << "Peruvian";
+        list << "Please Select" << "American" << "Abyssinian" << "Peruvian" << "Silkie" << "Teddy" << "Texel" << "White Crested"
+             << "Rex" << "Himalayan" << "Skinny Pig";
 
+    list.sort();
     ui->breedComboBox->clear();
     ui->breedComboBox->addItems(list);
 
