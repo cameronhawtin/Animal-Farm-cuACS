@@ -74,9 +74,9 @@ void AddAnimal::on_buttonBox_accepted()
     float costPerYear = ui->costPerYearLineEdit->text().toFloat();
     int intelligence = ui->intelligenceLineEdit->text().toInt();
     int cleanliness = ui->cleanlinessLineEdit->text().toInt();
-    bool isCrateTrained;
-    bool isHypoallergenic;
-    bool isNeutered;
+    bool isCrateTrained = false;
+    bool isHypoallergenic = false;
+    bool isNeutered = false;
 
     if (ui->isCrateTrainedRadioButtonYES->isChecked())
         isCrateTrained = true;
@@ -106,27 +106,28 @@ void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
 
 
     if (arg1.toLatin1() == "Cat")
-        list << "Please Select" << "Exotic" << "Ragdoll" << "British Shorthair" << "Persian" << "Maine Coon" << "American Shorthair"
+        list << "Exotic" << "Ragdoll" << "British Shorthair" << "Persian" << "Maine Coon" << "American Shorthair"
              << "Scottish Fold" << "Sphynx" << "Devon Rex" << "Abyssinian" << "Oriental" << "Siamese" << "Cornish Rex" << "Norwegian Forest"
              << "Siberian" << "Birman" << "Russian Blue" << "Bengal" << "Tonkinese" << "Burmese";
     else if (arg1.toLatin1() == "Dog")
-        list << "Please Select" << "Labrador Retriever" << "Golden Retriever" << "German Shepherd" << "French Bulldog"
+        list << "Labrador Retriever" << "Golden Retriever" << "German Shepherd" << "French Bulldog"
              << "English Bulldog" << "Beagle" << "Poodle" << "Rottweiler" << "Yorkshire Terrier" << "German Pointer"
              << "Boxer" << "Siberian Husky" << "Dachshund" << "Great Dane" << "Pembroke Welsh Corgi" << "Doberman Pinscher"
              << "Australian Shepherd" << "Miniature Schnauzer" << "Cavalier King Charles Spaniel" << "Shih Tzu";
     else if (arg1.toLatin1() == "Hamster")
-        list << "Please Select" << "Roborovski" << "Dwarf Winter White" << "Hybrid" << "Chinese"
+        list << "Roborovski" << "Dwarf Winter White" << "Hybrid" << "Chinese"
              << "Dwarf Campbell's Russian" << "Golden";
     else if (arg1.toLatin1() == "Bird")
-        list << "Please Select" << "Canary" << "Budgierigar" << "Finch" << "Cockatiel" << "Quaker Parakeet"
+        list << "Canary" << "Budgierigar" << "Finch" << "Cockatiel" << "Quaker Parakeet"
              << "Pionus Parrot" << "Poicephalus Parrot" << "Amazon" << "Pyrrhura Conure" << "Peach-Faced Lovebird";
     else if (arg1.toLatin1() == "Mouse")
-        list << "Please Select" << "Wood" << "Deer" << "Albino";
+        list << "Wood" << "Deer" << "Albino";
     else if (arg1.toLatin1() == "Guinea Pig")
-        list << "Please Select" << "American" << "Abyssinian" << "Peruvian" << "Silkie" << "Teddy" << "Texel" << "White Crested"
+        list << "American" << "Abyssinian" << "Peruvian" << "Silkie" << "Teddy" << "Texel" << "White Crested"
              << "Rex" << "Himalayan" << "Skinny Pig";
 
     list.sort();
+    list.push_front("Please Select");
     ui->breedComboBox->clear();
     ui->breedComboBox->addItems(list);
 
@@ -134,47 +135,47 @@ void AddAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
 
 }
 
-void AddAnimal::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)
+void AddAnimal::on_nameLineEdit_cursorPositionChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_breedComboBox_currentIndexChanged(const QString &arg1)
+void AddAnimal::on_breedComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_sexComboBox_currentIndexChanged(const QString &arg1)
+void AddAnimal::on_sexComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
+void AddAnimal::on_ageLineEdit_cursorPositionChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_colourComboBox_currentIndexChanged(const QString &arg1)
+void AddAnimal::on_colourComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_sizeComboBox_currentIndexChanged(const QString &arg1)
+void AddAnimal::on_sizeComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_costLineEdit_cursorPositionChanged(int arg1, int arg2)
+void AddAnimal::on_costLineEdit_cursorPositionChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_costPerYearLineEdit_cursorPositionChanged(int arg1, int arg2)
+void AddAnimal::on_energyComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddAnimal::on_energyComboBox_currentIndexChanged(const QString &arg1)
+void AddAnimal::on_costPerYearLineEdit_cursorPositionChanged()
 {
     updateOk();
 }
@@ -229,33 +230,33 @@ void AddAnimal::on_cleanlinessSlider_valueChanged(int value)
     updateOk();
 }
 
-void AddAnimal::on_isCrateTrainedRadioButtonYES_toggled(bool checked)
+void AddAnimal::on_isCrateTrainedRadioButtonYES_toggled()
 {
     updateOk();
 }
 
-void AddAnimal::on_isCrateTrainedRadioButtonNO_toggled(bool checked)
+void AddAnimal::on_isCrateTrainedRadioButtonNO_toggled()
 {
     updateOk();
 }
 
-void AddAnimal::on_isHypoallergenicRadioButtonYES_toggled(bool checked)
+void AddAnimal::on_isHypoallergenicRadioButtonYES_toggled()
 {
     updateOk();
 }
 
-void AddAnimal::on_isHypoallergenicRadioButtonNO_toggled(bool checked)
+void AddAnimal::on_isHypoallergenicRadioButtonNO_toggled()
 {
     updateOk();
 }
 
 
-void AddAnimal::on_isNeuteredRadioButtonYES_toggled(bool checked)
+void AddAnimal::on_isNeuteredRadioButtonYES_toggled()
 {
     updateOk();
 }
 
-void AddAnimal::on_isNeuteredRadioButtonNO_toggled(bool checked)
+void AddAnimal::on_isNeuteredRadioButtonNO_toggled()
 {
     updateOk();
 }

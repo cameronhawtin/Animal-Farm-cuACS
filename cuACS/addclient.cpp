@@ -28,7 +28,7 @@ AddClient::AddClient(QWidget *parent) :
 
     if (humansVec.size() != 0) {
         //Make QList from vector
-        myList.reserve(humansVec.size());
+        myList.reserve(int(humansVec.size()));
         std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
     }
 
@@ -136,12 +136,12 @@ void AddClient::on_buttonBox_accepted()
                    salary, budget, freeTime, email, phone, address);
 }
 
-void AddClient::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)
+void AddClient::on_nameLineEdit_cursorPositionChanged()
 {
     updateOk();
 }
 
-void AddClient::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
+void AddClient::on_ageLineEdit_cursorPositionChanged()
 {
     updateOk();
 }
@@ -168,68 +168,68 @@ void AddClient::on_attachmentSlider_valueChanged(int value)
     updateOk();
 }
 
-void AddClient::on_isNeuteredRadioButtonYES_toggled(bool checked)
+void AddClient::on_isNeuteredRadioButtonYES_toggled()
 {
     updateOk();
 }
 
-void AddClient::on_isNeuteredRadioButtonNO_toggled(bool checked)
+void AddClient::on_isNeuteredRadioButtonNO_toggled()
 {
     updateOk();
 }
 
-void AddClient::on_budgetLineEdit_textChanged(const QString &arg1)
+void AddClient::on_budgetLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_childrenLineEdit_textChanged(const QString &arg1)
+void AddClient::on_childrenLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_ageLineEdit_textChanged(const QString &arg1)
+void AddClient::on_ageLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_nameLineEdit_textChanged(const QString &arg1)
+void AddClient::on_nameLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_sexComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_sexComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddClient::on_salaryComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_salaryComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddClient::on_typePreferenceComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_typePreferenceComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
 
-void AddClient::on_purposeComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_purposeComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddClient::on_homeTypeComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_homeTypeComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddClient::on_travelComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_travelComboBox_currentIndexChanged()
 {
     updateOk();
 }
 
-void AddClient::on_freeTimeComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_freeTimeComboBox_currentIndexChanged()
 {
     updateOk();
 }

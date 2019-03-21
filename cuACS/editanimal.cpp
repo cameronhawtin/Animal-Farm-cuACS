@@ -166,27 +166,28 @@ void EditAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
     QStringList list = QStringList();
 
     if (arg1.toLatin1() == "Cat")
-        list << "Please Select" << "Exotic" << "Ragdoll" << "British Shorthair" << "Persian" << "Maine Coon" << "American Shorthair"
+        list << "Exotic" << "Ragdoll" << "British Shorthair" << "Persian" << "Maine Coon" << "American Shorthair"
              << "Scottish Fold" << "Sphynx" << "Devon Rex" << "Abyssinian" << "Oriental" << "Siamese" << "Cornish Rex" << "Norwegian Forest"
              << "Siberian" << "Birman" << "Russian Blue" << "Bengal" << "Tonkinese" << "Burmese";
     else if (arg1.toLatin1() == "Dog")
-        list << "Please Select" << "Labrador Retriever" << "Golden Retriever" << "German Shepherd" << "French Bulldog"
+        list << "Labrador Retriever" << "Golden Retriever" << "German Shepherd" << "French Bulldog"
              << "English Bulldog" << "Beagle" << "Poodle" << "Rottweiler" << "Yorkshire Terrier" << "German Pointer"
              << "Boxer" << "Siberian Husky" << "Dachshund" << "Great Dane" << "Pembroke Welsh Corgi" << "Doberman Pinscher"
              << "Australian Shepherd" << "Miniature Schnauzer" << "Cavalier King Charles Spaniel" << "Shih Tzu";
     else if (arg1.toLatin1() == "Hamster")
-        list << "Please Select" << "Roborovski" << "Dwarf Winter White" << "Hybrid" << "Chinese"
+        list << "Roborovski" << "Dwarf Winter White" << "Hybrid" << "Chinese"
              << "Dwarf Campbell's Russian" << "Golden";
     else if (arg1.toLatin1() == "Bird")
-        list << "Please Select" << "Canary" << "Budgierigar" << "Finch" << "Cockatiel" << "Quaker Parakeet"
+        list << "Canary" << "Budgierigar" << "Finch" << "Cockatiel" << "Quaker Parakeet"
              << "Pionus Parrot" << "Poicephalus Parrot" << "Amazon" << "Pyrrhura Conure" << "Peach-Faced Lovebird";
     else if (arg1.toLatin1() == "Mouse")
-        list << "Please Select" << "Wood" << "Deer" << "Albino";
+        list << "Wood" << "Deer" << "Albino";
     else if (arg1.toLatin1() == "Guinea Pig")
-        list << "Please Select" << "American" << "Abyssinian" << "Peruvian" << "Silkie" << "Teddy" << "Texel" << "White Crested"
+        list << "American" << "Abyssinian" << "Peruvian" << "Silkie" << "Teddy" << "Texel" << "White Crested"
              << "Rex" << "Himalayan" << "Skinny Pig";
 
     list.sort();
+    list.push_front("Please Select");
     ui->breedComboBox->clear();
     ui->breedComboBox->addItems(list);
 

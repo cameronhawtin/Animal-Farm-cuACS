@@ -36,7 +36,6 @@ SOURCES += \
     viewanimals.cpp \
     addanimal.cpp \
     Animal.cc \
-    CuacsAPI.cc \
     FileOpenException.cc \
     FileStorageManager.cc \
     PathFinder.cc \
@@ -47,7 +46,8 @@ SOURCES += \
     addclient.cpp \
     viewprofile.cpp \
     editprofile.cpp \
-    editanimal.cpp
+    editanimal.cpp \
+    CuacsAPI.cpp
 
 HEADERS += \
         mainwindow.h \

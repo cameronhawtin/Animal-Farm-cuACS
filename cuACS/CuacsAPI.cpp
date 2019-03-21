@@ -79,14 +79,12 @@ CuacsAPI::~CuacsAPI()
 	while(animals->size() > 0){
 		Profile* temp = animals->front();
 		animals->pop_front();
-		delete temp;
 	}
 	delete animals;
 
     while(humans->size() > 0){
         Profile* temp = humans->front();
         humans->pop_front();
-        delete temp;
     }
     delete humans;
 }
