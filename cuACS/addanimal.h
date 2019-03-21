@@ -22,12 +22,12 @@ private slots:
     void updateOk();
     void on_nameLineEdit_cursorPositionChanged();
     void on_typeComboBox_currentIndexChanged(const QString &arg1);
-    void on_breedComboBox_currentIndexChanged();
-    void on_sexComboBox_currentIndexChanged();
+    void on_breedComboBox_currentIndexChanged(int i);
+    void on_sexComboBox_currentIndexChanged(int i);
     void on_ageLineEdit_cursorPositionChanged();
-    void on_colourComboBox_currentIndexChanged();
-    void on_sizeComboBox_currentIndexChanged();
-    void on_energyComboBox_currentIndexChanged();
+    void on_colourComboBox_currentIndexChanged(int i);
+    void on_sizeComboBox_currentIndexChanged(int i);
+    void on_energyComboBox_currentIndexChanged(int i);
 
     void on_costLineEdit_cursorPositionChanged();
     void on_costPerYearLineEdit_cursorPositionChanged();

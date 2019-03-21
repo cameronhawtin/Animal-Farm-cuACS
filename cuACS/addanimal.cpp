@@ -140,12 +140,12 @@ void AddAnimal::on_nameLineEdit_cursorPositionChanged()
     updateOk();
 }
 
-void AddAnimal::on_breedComboBox_currentIndexChanged()
+void AddAnimal::on_breedComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddAnimal::on_sexComboBox_currentIndexChanged()
+void AddAnimal::on_sexComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
@@ -155,12 +155,12 @@ void AddAnimal::on_ageLineEdit_cursorPositionChanged()
     updateOk();
 }
 
-void AddAnimal::on_colourComboBox_currentIndexChanged()
+void AddAnimal::on_colourComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddAnimal::on_sizeComboBox_currentIndexChanged()
+void AddAnimal::on_sizeComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
@@ -170,7 +170,7 @@ void AddAnimal::on_costLineEdit_cursorPositionChanged()
     updateOk();
 }
 
-void AddAnimal::on_energyComboBox_currentIndexChanged()
+void AddAnimal::on_energyComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }

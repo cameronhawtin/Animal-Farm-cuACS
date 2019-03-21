@@ -198,38 +198,38 @@ void AddClient::on_nameLineEdit_textChanged()
     updateOk();
 }
 
-void AddClient::on_sexComboBox_currentIndexChanged()
+void AddClient::on_sexComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_salaryComboBox_currentIndexChanged()
+void AddClient::on_salaryComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_typePreferenceComboBox_currentIndexChanged()
+void AddClient::on_typePreferenceComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
 
-void AddClient::on_purposeComboBox_currentIndexChanged()
+void AddClient::on_purposeComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_homeTypeComboBox_currentIndexChanged()
+void AddClient::on_homeTypeComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_travelComboBox_currentIndexChanged()
+void AddClient::on_travelComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_freeTimeComboBox_currentIndexChanged()
+void AddClient::on_freeTimeComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }

@@ -40,19 +40,19 @@ private slots:
 
     void on_nameLineEdit_textChanged();
 
-    void on_sexComboBox_currentIndexChanged();
+    void on_sexComboBox_currentIndexChanged(int i);
 
-    void on_salaryComboBox_currentIndexChanged();
+    void on_salaryComboBox_currentIndexChanged(int i);
 
-    void on_typePreferenceComboBox_currentIndexChanged();
+    void on_typePreferenceComboBox_currentIndexChanged(int i);
 
-    void on_purposeComboBox_currentIndexChanged();
+    void on_purposeComboBox_currentIndexChanged(int i);
 
-    void on_homeTypeComboBox_currentIndexChanged();
+    void on_homeTypeComboBox_currentIndexChanged(int i);
 
-    void on_travelComboBox_currentIndexChanged();
+    void on_travelComboBox_currentIndexChanged(int i);
 
-    void on_freeTimeComboBox_currentIndexChanged();
+    void on_freeTimeComboBox_currentIndexChanged(int i);
 
 private:
     CuacsAPI *capi;
