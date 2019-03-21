@@ -686,7 +686,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Flat Cost</string>
+       <string>Flat Cost (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -703,7 +703,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Cost per Year</string>
+       <string>Cost per Year (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -896,7 +896,7 @@
  </connections>
  <buttongroups>
   <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

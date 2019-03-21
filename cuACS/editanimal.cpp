@@ -195,22 +195,12 @@ void EditAnimal::on_typeComboBox_currentIndexChanged(const QString &arg1)
 
 }
 
-void EditAnimal::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
 void EditAnimal::on_breedComboBox_currentIndexChanged(const QString &arg1)
 {
     updateOk();
 }
 
 void EditAnimal::on_sexComboBox_currentIndexChanged(const QString &arg1)
-{
-    updateOk();
-}
-
-void EditAnimal::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
 {
     updateOk();
 }
@@ -225,15 +215,6 @@ void EditAnimal::on_sizeComboBox_currentIndexChanged(const QString &arg1)
     updateOk();
 }
 
-void EditAnimal::on_costLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
-void EditAnimal::on_costPerYearLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
 
 void EditAnimal::on_energyComboBox_currentIndexChanged(const QString &arg1)
 {
@@ -317,6 +298,26 @@ void EditAnimal::on_isNeuteredRadioButtonYES_toggled(bool checked)
 }
 
 void EditAnimal::on_isNeuteredRadioButtonNO_toggled(bool checked)
+{
+    updateOk();
+}
+
+void EditAnimal::on_nameLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditAnimal::on_ageLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditAnimal::on_costLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditAnimal::on_costPerYearLineEdit_textChanged(const QString &arg1)
 {
     updateOk();
 }

@@ -136,17 +136,6 @@ void AddClient::on_buttonBox_accepted()
                    salary, budget, freeTime, email, phone, address);
 }
 
-void AddClient::on_nameLineEdit_cursorPositionChanged()
-{
-    updateOk();
-}
-
-void AddClient::on_ageLineEdit_cursorPositionChanged()
-{
-    updateOk();
-}
-
-
 void AddClient::on_patienceSlider_valueChanged(int value)
 {
     QString s = QString::number(value);
@@ -234,3 +223,18 @@ void AddClient::on_freeTimeComboBox_currentIndexChanged(int i)
     updateOk();
 }
 
+
+void AddClient::on_emailLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_addressLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_phoneLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}

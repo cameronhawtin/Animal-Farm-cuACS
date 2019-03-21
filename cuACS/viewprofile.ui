@@ -234,7 +234,7 @@
      <x>20</x>
      <y>90</y>
      <width>771</width>
-     <height>382</height>
+     <height>381</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_24" columnstretch="3,1,1,1">
@@ -260,7 +260,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Budget</string>
+       <string>Budget (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -467,7 +467,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salary (thousands/year)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salary $(thousands/year)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>

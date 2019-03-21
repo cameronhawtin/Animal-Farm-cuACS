@@ -20,17 +20,13 @@ public:
 private slots:
     void on_buttonBox_accepted();
     void updateOk();
-    void on_nameLineEdit_cursorPositionChanged();
     void on_typeComboBox_currentIndexChanged(const QString &arg1);
     void on_breedComboBox_currentIndexChanged(int i);
     void on_sexComboBox_currentIndexChanged(int i);
-    void on_ageLineEdit_cursorPositionChanged();
     void on_colourComboBox_currentIndexChanged(int i);
     void on_sizeComboBox_currentIndexChanged(int i);
     void on_energyComboBox_currentIndexChanged(int i);
 
-    void on_costLineEdit_cursorPositionChanged();
-    void on_costPerYearLineEdit_cursorPositionChanged();
     void on_aggressionSlider_valueChanged(int value);
     void on_attachmentSlider_valueChanged(int value);
     void on_obedienceSlider_valueChanged(int value);
@@ -44,6 +40,14 @@ private slots:
     void on_isHypoallergenicRadioButtonNO_toggled();
     void on_isNeuteredRadioButtonYES_toggled();
     void on_isNeuteredRadioButtonNO_toggled();
+
+    void on_nameLineEdit_textChanged(const QString &arg1);
+
+    void on_costLineEdit_textChanged(const QString &arg1);
+
+    void on_costPerYearLineEdit_textChanged(const QString &arg1);
+
+    void on_ageLineEdit_textChanged(const QString &arg1);
 
 private:
     CuacsAPI *capi;

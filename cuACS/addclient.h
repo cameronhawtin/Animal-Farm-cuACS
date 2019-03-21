@@ -20,8 +20,6 @@ public:
 private slots:
     void on_buttonBox_accepted();
     void updateOk();
-    void on_nameLineEdit_cursorPositionChanged();
-    void on_ageLineEdit_cursorPositionChanged();
     void on_patienceSlider_valueChanged(int value);
 
     void on_irritationSlider_valueChanged(int value);
@@ -53,6 +51,12 @@ private slots:
     void on_travelComboBox_currentIndexChanged(int i);
 
     void on_freeTimeComboBox_currentIndexChanged(int i);
+
+    void on_emailLineEdit_textChanged(const QString &arg1);
+
+    void on_addressLineEdit_textChanged(const QString &arg1);
+
+    void on_phoneLineEdit_textChanged(const QString &arg1);
 
 private:
     CuacsAPI *capi;

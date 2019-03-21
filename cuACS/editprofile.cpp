@@ -185,17 +185,6 @@ void EditProfile::on_buttonBox_accepted()
 
 }
 
-void EditProfile::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
-void EditProfile::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
-
 void EditProfile::on_patienceSlider_valueChanged(int value)
 {
     QString s = QString::number(value);
@@ -223,26 +212,6 @@ void EditProfile::on_isNeuteredRadioButtonYES_toggled(bool checked)
 }
 
 void EditProfile::on_isNeuteredRadioButtonNO_toggled(bool checked)
-{
-    updateOk();
-}
-
-void EditProfile::on_budgetLineEdit_textChanged(const QString &arg1)
-{
-    updateOk();
-}
-
-void EditProfile::on_childrenLineEdit_textChanged(const QString &arg1)
-{
-    updateOk();
-}
-
-void EditProfile::on_ageLineEdit_textChanged(const QString &arg1)
-{
-    updateOk();
-}
-
-void EditProfile::on_nameLineEdit_textChanged(const QString &arg1)
 {
     updateOk();
 }
@@ -283,3 +252,37 @@ void EditProfile::on_freeTimeComboBox_currentIndexChanged(const QString &arg1)
 }
 
 
+void EditProfile::on_emailLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_budgetLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_childrenLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_ageLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_nameLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_addressLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_phoneLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}

@@ -339,7 +339,7 @@
     <item row="3" column="2">
      <widget class="QLabel" name="labelBreed_3">
       <property name="text">
-       <string>Flat Cost</string>
+       <string>Flat Cost (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -349,7 +349,7 @@
     <item row="5" column="2">
      <widget class="QLabel" name="sexLabel_3">
       <property name="text">
-       <string>Cost Per Year</string>
+       <string>Cost Per Year in dollars)</string>
       </property>
      </widget>
     </item>
