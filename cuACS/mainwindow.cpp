@@ -45,7 +45,7 @@ void MainWindow::on_loginButton_clicked()
                hide();
                postLoginClient = new PostLoginClient(this);
                postLoginClient->setData(myList.at(i)->getId());
-               postLoginClient->show();
+               postLoginClient->exec();
            }
    }
 
