@@ -46,6 +46,7 @@ void MainWindow::on_loginButton_clicked()
                postLoginClient = new PostLoginClient(this);
                postLoginClient->setData(myList.at(i)->getId());
                postLoginClient->exec();
+               i = myList.size();
            }
    }
 
