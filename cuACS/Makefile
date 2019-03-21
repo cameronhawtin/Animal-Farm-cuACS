@@ -57,7 +57,6 @@ SOURCES       = main.cpp \
 		viewanimals.cpp \
 		addanimal.cpp \
 		Animal.cc \
-		CuacsAPI.cc \
 		FileStorageManager.cc \
 		PathFinder.cc \
 		PersistentStorageAPI.cc \
@@ -67,8 +66,10 @@ SOURCES       = main.cpp \
 		addclient.cpp \
 		viewprofile.cpp \
 		editprofile.cpp \
-		editanimal.cpp qrc_egyptfont.cpp \
+		editanimal.cpp \
+		CuacsAPI.cpp qrc_egyptfont.cpp \
 		qrc_logo.cpp \
+		qrc_icon.cpp \
 		moc_mainwindow.cpp \
 		moc_postloginstaff.cpp \
 		moc_postloginclient.cpp \
@@ -86,7 +87,6 @@ OBJECTS       = main.o \
 		viewanimals.o \
 		addanimal.o \
 		Animal.o \
-		CuacsAPI.o \
 		FileStorageManager.o \
 		PathFinder.o \
 		PersistentStorageAPI.o \
@@ -97,8 +97,10 @@ OBJECTS       = main.o \
 		viewprofile.o \
 		editprofile.o \
 		editanimal.o \
+		CuacsAPI.o \
 		qrc_egyptfont.o \
 		qrc_logo.o \
+		qrc_icon.o \
 		moc_mainwindow.o \
 		moc_postloginstaff.o \
 		moc_postloginclient.o \
@@ -114,6 +116,7 @@ DIST          = cuACS.pro.user \
 		README \
 		logo.png \
 		logo.png \
+		logo.ico \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -153,12 +156,18 @@ DIST          = cuACS.pro.user \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
@@ -215,7 +224,6 @@ DIST          = cuACS.pro.user \
 		viewanimals.cpp \
 		addanimal.cpp \
 		Animal.cc \
-		CuacsAPI.cc \
 		FileStorageManager.cc \
 		PathFinder.cc \
 		PersistentStorageAPI.cc \
@@ -225,7 +233,8 @@ DIST          = cuACS.pro.user \
 		addclient.cpp \
 		viewprofile.cpp \
 		editprofile.cpp \
-		editanimal.cpp
+		editanimal.cpp \
+		CuacsAPI.cpp
 QMAKE_TARGET  = cuACS
 DESTDIR       = 
 TARGET        = cuACS
@@ -276,12 +285,18 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
@@ -313,6 +328,7 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 		cuACS.pro \
 		egyptfont.qrc \
 		logo.qrc \
+		icon.qrc \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Core.prl
@@ -356,12 +372,18 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
@@ -393,6 +415,7 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 cuACS.pro:
 egyptfont.qrc:
 logo.qrc:
+icon.qrc:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
@@ -410,10 +433,10 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents egyptfont.qrc logo.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents egyptfont.qrc logo.qrc icon.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h CuacsAPI.h Profile.h Serializer.h addclient.h viewclients.h viewprofile.h editprofile.h editanimal.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc CuacsAPI.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui addclient.ui viewclients.ui viewprofile.ui editprofile.ui editanimal.ui $(DISTDIR)/
 
 
@@ -438,9 +461,9 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all: qrc_egyptfont.cpp qrc_logo.cpp
+compiler_rcc_make_all: qrc_egyptfont.cpp qrc_logo.cpp qrc_icon.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_egyptfont.cpp qrc_logo.cpp
+	-$(DEL_FILE) qrc_egyptfont.cpp qrc_logo.cpp qrc_icon.cpp
 qrc_egyptfont.cpp: egyptfont.qrc \
 		/usr/lib/qt5/bin/rcc \
 		EgyptienneRoman.ttf
@@ -450,6 +473,11 @@ qrc_logo.cpp: logo.qrc \
 		/usr/lib/qt5/bin/rcc \
 		logo.png
 	/usr/lib/qt5/bin/rcc -name logo logo.qrc -o qrc_logo.cpp
+
+qrc_icon.cpp: icon.qrc \
+		/usr/lib/qt5/bin/rcc \
+		icon.png
+	/usr/lib/qt5/bin/rcc -name icon icon.qrc -o qrc_icon.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
@@ -728,13 +756,6 @@ Animal.o: Animal.cc Animal.h \
 		Profile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Animal.o Animal.cc
 
-CuacsAPI.o: CuacsAPI.cc CuacsAPI.h \
-		Profile.h \
-		Animal.h \
-		Human.h \
-		PersistentStorageAPI.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CuacsAPI.o CuacsAPI.cc
-
 FileStorageManager.o: FileStorageManager.cc FileStorageManager.h \
 		StorageAdapter.h \
 		FileOpenException.cc
@@ -815,11 +836,21 @@ editanimal.o: editanimal.cpp editanimal.h \
 		viewanimals.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editanimal.o editanimal.cpp
 
+CuacsAPI.o: CuacsAPI.cpp CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CuacsAPI.o CuacsAPI.cpp
+
 qrc_egyptfont.o: qrc_egyptfont.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_egyptfont.o qrc_egyptfont.cpp
 
 qrc_logo.o: qrc_logo.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_logo.o qrc_logo.cpp
+
+qrc_icon.o: qrc_icon.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_icon.o qrc_icon.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

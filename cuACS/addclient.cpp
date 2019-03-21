@@ -11,7 +11,7 @@ AddClient::AddClient(QWidget *parent) :
     ui(new Ui::AddClient)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(871, 452));
+    //this->setFixedSize(QSize(871, 452));
     this->setWindowTitle("Add a Client");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
@@ -28,7 +28,7 @@ AddClient::AddClient(QWidget *parent) :
 
     if (humansVec.size() != 0) {
         //Make QList from vector
-        myList.reserve(humansVec.size());
+        myList.reserve(int(humansVec.size()));
         std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
     }
 
@@ -66,6 +66,7 @@ void AddClient::updateOk()
             ui->nameLineEdit->text().isEmpty() ||
             ui->ageLineEdit->text().isEmpty() ||
             ui->sexComboBox->currentText() == "Please Select" ||
+            ui->typePreferenceComboBox->currentText() == "Please Select" ||
             ui->purposeComboBox->currentText() == "Please Select" ||
             ui->attachmentLineEdit->text().isEmpty() ||
             ui->patienceLineEdit->text().isEmpty() ||
@@ -81,14 +82,14 @@ void AddClient::updateOk()
             ui->emailLineEdit->text().isEmpty() ||
             ui->phoneLineEdit->text().isEmpty() ||
             ui->addressLineEdit->text().isEmpty())
-                ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+                ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
         else
-            ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+            ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
 }
 
 
 
-// This function is called when the user presses the "OK" button
+// This function is called when the user presses the "Save" button
 void AddClient::on_buttonBox_accepted()
 {
     //create a string containing all alergies selected
@@ -110,6 +111,7 @@ void AddClient::on_buttonBox_accepted()
     string name = ui->nameLineEdit->text().toStdString();
     int age = ui->ageLineEdit->text().toInt();
     string gender = ui->sexComboBox->currentText().toStdString();
+    string typePreference = ui->typePreferenceComboBox->currentText().toStdString();
     string purpose = ui->purposeComboBox->currentText().toStdString();
     int attachment = ui->attachmentLineEdit->text().toInt();
     int patience = ui->patienceLineEdit->text().toInt();
@@ -129,21 +131,10 @@ void AddClient::on_buttonBox_accepted()
     //capi = new CuacsAPI();
 
     //now give attributes to Client class
-    capi->addHuman(name, age, gender, purpose, attachment, patience, homeType,
+    capi->addHuman(name, age, gender, typePreference, purpose, attachment, patience, homeType,
                    travel, allergies, noiseTolerance, needFertile, numChildren,
                    salary, budget, freeTime, email, phone, address);
 }
-
-void AddClient::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
-void AddClient::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
 
 void AddClient::on_patienceSlider_valueChanged(int value)
 {
@@ -166,63 +157,84 @@ void AddClient::on_attachmentSlider_valueChanged(int value)
     updateOk();
 }
 
-void AddClient::on_isNeuteredRadioButtonYES_toggled(bool checked)
+void AddClient::on_isNeuteredRadioButtonYES_toggled()
 {
     updateOk();
 }
 
-void AddClient::on_isNeuteredRadioButtonNO_toggled(bool checked)
+void AddClient::on_isNeuteredRadioButtonNO_toggled()
 {
     updateOk();
 }
 
-void AddClient::on_budgetLineEdit_textChanged(const QString &arg1)
+void AddClient::on_budgetLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_childrenLineEdit_textChanged(const QString &arg1)
+void AddClient::on_childrenLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_ageLineEdit_textChanged(const QString &arg1)
+void AddClient::on_ageLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_nameLineEdit_textChanged(const QString &arg1)
+void AddClient::on_nameLineEdit_textChanged()
 {
     updateOk();
 }
 
-void AddClient::on_sexComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_sexComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_salaryComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_salaryComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_purposeComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_typePreferenceComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_homeTypeComboBox_currentIndexChanged(const QString &arg1)
+
+void AddClient::on_purposeComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_travelComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_homeTypeComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
-void AddClient::on_freeTimeComboBox_currentIndexChanged(const QString &arg1)
+void AddClient::on_travelComboBox_currentIndexChanged(int i)
 {
     updateOk();
 }
 
+void AddClient::on_freeTimeComboBox_currentIndexChanged(int i)
+{
+    updateOk();
+}
+
+
+void AddClient::on_emailLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_addressLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddClient::on_phoneLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}

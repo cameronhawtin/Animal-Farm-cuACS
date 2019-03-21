@@ -47,12 +47,12 @@ void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, 
                                isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness), "Animal");
 }
 
-void CuacsAPI::addHuman(string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
+void CuacsAPI::addHuman(string name, int age, string gender, string typePreference, string purpose, int attachment, int patience, string homeType,
                         string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
                         string salary, float budget, string freeTime, string email, string address, string phone)
 {
     availableHumanId = availableHumanId + 1;
-    ps.storeProfile(new Human(availableHumanId, name, age, gender, purpose, attachment, patience, homeType,
+    ps.storeProfile(new Human(availableHumanId, name, age, gender, typePreference, purpose, attachment, patience, homeType,
                               travel, allergies, noiseTolerance, needFertile, numChildren,
                               salary, budget, freeTime, email, address, phone), "Human");
 }
@@ -65,11 +65,11 @@ void CuacsAPI::editAnimal(int id, string name, string animalType, string breed, 
                                isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness), "Animal");
 }
 
-void CuacsAPI::editHuman(int id, string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
+void CuacsAPI::editHuman(int id, string name, int age, string gender, string typePreference, string purpose, int attachment, int patience, string homeType,
                         string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
                         string salary, float budget, string freeTime, string email, string address, string phone)
 {
-    ps.storeProfile(new Human(id, name, age, gender, purpose, attachment, patience, homeType,
+    ps.storeProfile(new Human(id, name, age, gender, typePreference, purpose, attachment, patience, homeType,
                               travel, allergies, noiseTolerance, needFertile, numChildren,
                               salary, budget, freeTime, email, address, phone), "Human");
 }
@@ -79,14 +79,12 @@ CuacsAPI::~CuacsAPI()
 	while(animals->size() > 0){
 		Profile* temp = animals->front();
 		animals->pop_front();
-		delete temp;
 	}
 	delete animals;
 
     while(humans->size() > 0){
         Profile* temp = humans->front();
         humans->pop_front();
-        delete temp;
     }
     delete humans;
 }

@@ -1,0 +1,30 @@
+Team: Animal Farm
+
+Auhtors:
+ - Azim Baghadiya - 101044100
+ - Cameron Hawtin - 101047338
+ - Nicolas Lalonde - 101031228
+ - Nick Simone - 101034935
+
+Description:
+The Carleton University Animal Care System (cuACS) proposes to address this issue by providing a tool that automatically matches together, 
+based on compatibility, shelter animals and the human clients who wish to adopt them. The goal of the cuACS system is to generate an optimal 
+set of matches, where a match consists of an animal available for adoption and a human client who is well suited to adopt it. An optimal set 
+of matches will take into account the best interests of all animals in the shelter, rather than producing a small subset of highly favourable 
+matches and a large number of lesser compatible one.
+
+Launching and operating:
+Navigate to the correct diretory (cuACS) using the "cd" command appropriately.
+1. To compile, write "make". This uses the commands in the Makefile to make an executable called "cuACS"
+2. To run the cuACS system, run the exectuable using the command: "./cuACS".
+3. To login as the shelter staff, enter "Staff" as username and hit 'OK' (Please note that "Staff" is case-sensitive)
+4. To login as a client, enter a client name (ex. "Christine Laurendeau"). These client names can be found when logged in as Staff, through the "View Clients" button. (Please note that these names are case-sensitive)
+5. To exit, hit the close window button on the top right corner
+
+FOR DELIVERABLE 3, PLEASE NOTE: 
+The feature to edit an animal is done through the "View Animals" view when logged in as Staff. There will be a button present to edit the current animal selected; this button will not be available when logged in as a client. 
+
+GitHub Link for the codebase:
+https://github.com/cameronhawtin/COMP-3004
+
+As instructed by the professor, our course cordinator Sean should be able to access this private repository.

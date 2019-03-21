@@ -75,9 +75,9 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     string stringId = to_string(id);
 
     string name, type, breed, sex, colour, size, energy;
-    int age, aggression, attachment, obedience, childrenComfort, loudness, intelligence, cleanliness;
-    bool isCrateTrained, isHypoallergenic, isNeutered;
-    float cost, costPerYear;
+    int age = 0, aggression = 0, attachment = 0, obedience = 0, childrenComfort = 0, loudness = 0, intelligence = 0, cleanliness = 0;
+    bool isCrateTrained = false, isHypoallergenic = false, isNeutered = false;
+    float cost = 0.0, costPerYear = 0.0;
 
     for (int i = 0; i < myList.size(); i++){
         if (to_string(myList.at(i)->getId()).compare(stringId) == 0) {

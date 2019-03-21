@@ -6,7 +6,7 @@ EditProfile::EditProfile(QWidget *parent) :
     ui(new Ui::EditProfile)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(871, 539));
+    //this->setFixedSize(QSize(871, 539));
     this->setWindowTitle("Edit Your Profile");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
@@ -54,6 +54,7 @@ void EditProfile::setData(int &labelText) {
             ui->sexComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getGender()));
             ui->childrenLineEdit->setText(QString::number(myList.at(i)->getNumChildren()));
             ui->salaryComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getSalary()));
+            ui->typePreferenceComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getTypePreference()));
             ui->purposeComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getPurpose()));
             ui->homeTypeComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getHomeType()));
             ui->travelComboBox->setCurrentText(QString::fromStdString(myList.at(i)->getTravel()));
@@ -116,6 +117,7 @@ void EditProfile::updateOk()
             ui->nameLineEdit->text().isEmpty() ||
             ui->ageLineEdit->text().isEmpty() ||
             ui->sexComboBox->currentText() == "Please Select" ||
+            ui->typePreferenceComboBox->currentText() == "Please Select" ||
             ui->purposeComboBox->currentText() == "Please Select" ||
             ui->attachmentLineEdit->text().isEmpty() ||
             ui->patienceLineEdit->text().isEmpty() ||
@@ -131,9 +133,9 @@ void EditProfile::updateOk()
             ui->emailLineEdit->text().isEmpty() ||
             ui->phoneLineEdit->text().isEmpty() ||
             ui->addressLineEdit->text().isEmpty())
-                ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+                ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
         else
-            ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+            ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
 }
 
 void EditProfile::on_buttonBox_accepted()
@@ -156,6 +158,7 @@ void EditProfile::on_buttonBox_accepted()
     string name = ui->nameLineEdit->text().toStdString();
     int age = ui->ageLineEdit->text().toInt();
     string gender = ui->sexComboBox->currentText().toStdString();
+    string typePreference = ui->typePreferenceComboBox->currentText().toStdString();
     string purpose = ui->purposeComboBox->currentText().toStdString();
     int attachment = ui->attachmentLineEdit->text().toInt();
     int patience = ui->patienceLineEdit->text().toInt();
@@ -175,23 +178,12 @@ void EditProfile::on_buttonBox_accepted()
 
 
     //now give attributes to Client class
-    capi->editHuman(passedData, name, age, gender, purpose, attachment, patience, homeType,
+    capi->editHuman(passedData, name, age, gender, typePreference, purpose, attachment, patience, homeType,
                    travel, allergies, noiseTolerance, needFertile, numChildren,
                    salary, budget, freeTime, email, phone, address);
 
 
 }
-
-void EditProfile::on_nameLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
-void EditProfile::on_ageLineEdit_cursorPositionChanged(int arg1, int arg2)
-{
-    updateOk();
-}
-
 
 void EditProfile::on_patienceSlider_valueChanged(int value)
 {
@@ -224,32 +216,17 @@ void EditProfile::on_isNeuteredRadioButtonNO_toggled(bool checked)
     updateOk();
 }
 
-void EditProfile::on_budgetLineEdit_textChanged(const QString &arg1)
-{
-    updateOk();
-}
-
-void EditProfile::on_childrenLineEdit_textChanged(const QString &arg1)
-{
-    updateOk();
-}
-
-void EditProfile::on_ageLineEdit_textChanged(const QString &arg1)
-{
-    updateOk();
-}
-
-void EditProfile::on_nameLineEdit_textChanged(const QString &arg1)
-{
-    updateOk();
-}
-
 void EditProfile::on_sexComboBox_currentIndexChanged(const QString &arg1)
 {
     updateOk();
 }
 
 void EditProfile::on_salaryComboBox_currentIndexChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_typePreferenceComboBox_currentIndexChanged(const QString &arg1)
 {
     updateOk();
 }
@@ -275,3 +252,37 @@ void EditProfile::on_freeTimeComboBox_currentIndexChanged(const QString &arg1)
 }
 
 
+void EditProfile::on_emailLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_budgetLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_childrenLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_ageLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_nameLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_addressLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditProfile::on_phoneLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}

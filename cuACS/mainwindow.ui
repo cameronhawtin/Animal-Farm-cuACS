@@ -132,7 +132,7 @@
        <item>
         <widget class="QLineEdit" name="usernameLineEdit">
          <property name="toolTip">
-          <string/>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To Log in as a 'Client': Enter a client's full name (case sensitive)&lt;/p&gt;&lt;p&gt;To Log in as a 'Staff': Enter &amp;quot;Staff&amp;quot; (case sensitive)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

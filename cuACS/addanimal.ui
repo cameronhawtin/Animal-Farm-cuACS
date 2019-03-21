@@ -179,7 +179,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
    </property>
   </widget>
   <widget class="QWidget" name="gridLayoutWidget">
@@ -737,7 +737,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Flat Cost</string>
+       <string>Flat Cost (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -754,7 +754,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Cost per Year</string>
+       <string>Cost per Year (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -906,8 +906,8 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

@@ -6,7 +6,7 @@ ViewClients::ViewClients(QWidget *parent) :
     ui(new Ui::ViewClients)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(1112, 509));
+    //this->setFixedSize(QSize(1112, 509));
     this->setWindowTitle("View Clients");
 
     ui->nameLineEdit->setReadOnly(true);
@@ -18,6 +18,7 @@ ViewClients::ViewClients(QWidget *parent) :
     ui->childrenLineEdit->setReadOnly(true);
     ui->salaryLineEdit->setReadOnly(true);
     //ui->allergyLineEdit->setReadOnly(true);
+    ui->typePreferenceLineEdit->setReadOnly(true);
     ui->purposeLineEdit->setReadOnly(true);
     ui->homeLineEdit->setReadOnly(true);
     ui->travelLineEdit->setReadOnly(true);
@@ -67,7 +68,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     string stringId = to_string(id);
 
 
-    string name, gender, purpose, homeType, travel, allergies, salary, freeTime, email, address, phone;
+    string name, gender, typePreference, purpose, homeType, travel, allergies, salary, freeTime, email, address, phone;
     int age, attachment, patience, noiseTolerance, numChildren;
     bool needFertile;
     float budget;
@@ -77,6 +78,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
         if (to_string(myList.at(i)->getId()).compare(stringId) == 0) {
             name = myList.at(i)->getName();
             gender = myList.at(i)->getGender();
+            typePreference = myList.at(i)->getTypePreference();
             purpose = myList.at(i)->getPurpose();
             homeType = myList.at(i)->getHomeType();
             travel = myList.at(i)->getTravel();
@@ -110,6 +112,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     ui->childrenLineEdit->setText(QString::number(numChildren));
     ui->salaryLineEdit->setText(QString::fromStdString(salary));
     //ui->allergyLineEdit->setText(QString::fromStdString(allergies));
+    ui->typePreferenceLineEdit->setText(QString::fromStdString(typePreference));
     ui->purposeLineEdit->setText(QString::fromStdString(purpose));
     ui->homeLineEdit->setText(QString::fromStdString(homeType));
     ui->travelLineEdit->setText(QString::fromStdString(travel));

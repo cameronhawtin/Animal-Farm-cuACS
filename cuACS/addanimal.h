@@ -20,17 +20,13 @@ public:
 private slots:
     void on_buttonBox_accepted();
     void updateOk();
-    void on_nameLineEdit_cursorPositionChanged(int arg1, int arg2);
     void on_typeComboBox_currentIndexChanged(const QString &arg1);
-    void on_breedComboBox_currentIndexChanged(const QString &arg1);
-    void on_sexComboBox_currentIndexChanged(const QString &arg1);
-    void on_ageLineEdit_cursorPositionChanged(int arg1, int arg2);
-    void on_colourComboBox_currentIndexChanged(const QString &arg1);
-    void on_sizeComboBox_currentIndexChanged(const QString &arg1);
-    void on_energyComboBox_currentIndexChanged(const QString &arg1);
+    void on_breedComboBox_currentIndexChanged(int i);
+    void on_sexComboBox_currentIndexChanged(int i);
+    void on_colourComboBox_currentIndexChanged(int i);
+    void on_sizeComboBox_currentIndexChanged(int i);
+    void on_energyComboBox_currentIndexChanged(int i);
 
-    void on_costLineEdit_cursorPositionChanged(int arg1, int arg2);
-    void on_costPerYearLineEdit_cursorPositionChanged(int arg1, int arg2);
     void on_aggressionSlider_valueChanged(int value);
     void on_attachmentSlider_valueChanged(int value);
     void on_obedienceSlider_valueChanged(int value);
@@ -38,13 +34,20 @@ private slots:
     void on_loudnessSlider_valueChanged(int value);
     void on_intelligenceSlider_valueChanged(int value);
     void on_cleanlinessSlider_valueChanged(int value);
+    void on_isCrateTrainedRadioButtonYES_toggled();
+    void on_isCrateTrainedRadioButtonNO_toggled();
+    void on_isHypoallergenicRadioButtonYES_toggled();
+    void on_isHypoallergenicRadioButtonNO_toggled();
+    void on_isNeuteredRadioButtonYES_toggled();
+    void on_isNeuteredRadioButtonNO_toggled();
 
-    void on_isCrateTrainedRadioButtonYES_toggled(bool checked);
-    void on_isCrateTrainedRadioButtonNO_toggled(bool checked);
-    void on_isHypoallergenicRadioButtonYES_toggled(bool checked);
-    void on_isHypoallergenicRadioButtonNO_toggled(bool checked);
-    void on_isNeuteredRadioButtonYES_toggled(bool checked);
-    void on_isNeuteredRadioButtonNO_toggled(bool checked);
+    void on_nameLineEdit_textChanged(const QString &arg1);
+
+    void on_costLineEdit_textChanged(const QString &arg1);
+
+    void on_costPerYearLineEdit_textChanged(const QString &arg1);
+
+    void on_ageLineEdit_textChanged(const QString &arg1);
 
 private:
     CuacsAPI *capi;

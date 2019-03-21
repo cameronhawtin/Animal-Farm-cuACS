@@ -11,16 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(429, 217));
     //QColor cuRED = QColor(200, 16, 46);
-
-    capi = new CuacsAPI();
-
-    vector<Human*> humansVec = capi->getHumans();
-
-    if (humansVec.size() != 0) {
-        //Make QList from vector
-        myList.reserve(humansVec.size());
-        std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
-    }
+    QPixmap icon (":/icon/icon.png");
+    this->setWindowIcon(icon);
 }
 
 
@@ -34,6 +26,16 @@ MainWindow::~MainWindow()
 //This function is called when the login button is clicked
 void MainWindow::on_loginButton_clicked()
 {
+    capi = new CuacsAPI();
+
+    vector<Human*> humansVec = capi->getHumans();
+
+    if (humansVec.size() != 0) {
+        //Make QList from vector
+        myList.reserve(humansVec.size());
+        std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
+    }
+
    QString username = ui->usernameLineEdit->text();
 
    bool loggedIn = false;

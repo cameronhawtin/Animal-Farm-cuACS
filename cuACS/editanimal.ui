@@ -686,7 +686,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Flat Cost</string>
+       <string>Flat Cost (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -703,7 +703,7 @@
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Cost per Year</string>
+       <string>Cost per Year (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -834,7 +834,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
    </property>
   </widget>
   <widget class="QLabel" name="titleLabel">
@@ -884,19 +884,19 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>492</x>
-     <y>485</y>
+     <x>533</x>
+     <y>537</y>
     </hint>
     <hint type="destinationlabel">
-     <x>184</x>
-     <y>502</y>
+     <x>183</x>
+     <y>518</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <buttongroups>
+  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

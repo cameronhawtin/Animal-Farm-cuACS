@@ -6,7 +6,7 @@ ViewProfile::ViewProfile(QWidget *parent) :
     ui(new Ui::ViewProfile)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(815, 530));
+    //this->setFixedSize(QSize(815, 530));
     this->setWindowTitle("View Your Profile");
 
     ui->nameLineEdit->setReadOnly(true);
@@ -18,6 +18,7 @@ ViewProfile::ViewProfile(QWidget *parent) :
     ui->childrenLineEdit->setReadOnly(true);
     ui->salaryLineEdit->setReadOnly(true);
     //ui->allergyLineEdit->setReadOnly(true);
+    ui->typePreferenceLineEdit->setReadOnly(true);
     ui->purposeLineEdit->setReadOnly(true);
     ui->homeLineEdit->setReadOnly(true);
     ui->travelLineEdit->setReadOnly(true);
@@ -65,6 +66,7 @@ void ViewProfile::setData(int &labelText) {
             ui->sexLineEdit->setText(QString::fromStdString(myList.at(i)->getGender()));
             ui->childrenLineEdit->setText(QString::number(myList.at(i)->getNumChildren()));
             ui->salaryLineEdit->setText(QString::fromStdString(myList.at(i)->getSalary()));
+            ui->typePreferenceLineEdit->setText(QString::fromStdString(myList.at(i)->getTypePreference()));
             ui->purposeLineEdit->setText(QString::fromStdString(myList.at(i)->getPurpose()));
             ui->homeLineEdit->setText(QString::fromStdString(myList.at(i)->getHomeType()));
             ui->travelLineEdit->setText(QString::fromStdString(myList.at(i)->getTravel()));
