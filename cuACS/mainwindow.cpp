@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QPalette>
@@ -54,11 +54,11 @@ void MainWindow::on_loginButton_clicked()
            postLoginStaff->exec();
        }
 
-       else if (username == "Client") {
-          hide();
-          postLoginClient = new PostLoginClient(this);
-          postLoginClient->show();
-       }
+//       else if (username == "Client") {
+//          hide();
+//          postLoginClient = new PostLoginClient(this);
+//          postLoginClient->show();
+//       }
        else QMessageBox::warning(this, "Invalid Login", "The provided username does not exist");
    }
 }
