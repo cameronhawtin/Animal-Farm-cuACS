@@ -13,8 +13,8 @@ MAKEFILE      = Makefile
 CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC -w $(DEFINES)
-CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT -fPIC -w $(DEFINES)
+CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -56,11 +56,12 @@ SOURCES       = main.cpp \
 		postloginclient.cpp \
 		viewanimals.cpp \
 		addanimal.cpp \
-		Animal.cpp \
-		FileStorageManager.cpp \
-		PathFinder.cpp \
-		PersistentStorageAPI.cpp \
-		Serializer.cpp \
+		Animal.cc \
+		FileOpenException.cc \
+		FileStorageManager.cc \
+		PathFinder.cc \
+		PersistentStorageAPI.cc \
+		Serializer.cc \
 		Human.cpp \
 		viewclients.cpp \
 		addclient.cpp \
@@ -87,6 +88,7 @@ OBJECTS       = main.o \
 		viewanimals.o \
 		addanimal.o \
 		Animal.o \
+		FileOpenException.o \
 		FileStorageManager.o \
 		PathFinder.o \
 		PersistentStorageAPI.o \
@@ -156,12 +158,18 @@ DIST          = cuACS.pro.user \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
@@ -217,11 +225,12 @@ DIST          = cuACS.pro.user \
 		postloginclient.cpp \
 		viewanimals.cpp \
 		addanimal.cpp \
-		Animal.cpp \
-		FileStorageManager.cpp \
-		PathFinder.cpp \
-		PersistentStorageAPI.cpp \
-		Serializer.cpp \
+		Animal.cc \
+		FileOpenException.cc \
+		FileStorageManager.cc \
+		PathFinder.cc \
+		PersistentStorageAPI.cc \
+		Serializer.cc \
 		Human.cpp \
 		viewclients.cpp \
 		addclient.cpp \
@@ -279,12 +288,18 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
@@ -360,12 +375,18 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
@@ -418,7 +439,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents egyptfont.qrc logo.qrc icon.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h CuacsAPI.h Profile.h Serializer.h addclient.h viewclients.h viewprofile.h editprofile.h editanimal.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cpp FileStorageManager.cpp PathFinder.cpp PersistentStorageAPI.cpp Serializer.cpp Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc FileOpenException.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui addclient.ui viewclients.ui viewprofile.ui editprofile.ui editanimal.ui $(DISTDIR)/
 
 
@@ -734,30 +755,23 @@ addanimal.o: addanimal.cpp addanimal.h \
 		editprofile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addanimal.o addanimal.cpp
 
-Animal.o: Animal.cpp Animal.h \
-		Profile.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Animal.o Animal.cpp
+Animal.o: Animal.cc 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Animal.o Animal.cc
 
-FileStorageManager.o: FileStorageManager.cpp FileStorageManager.h \
-		StorageAdapter.h \
-		FileOpenException.cpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o FileStorageManager.o FileStorageManager.cpp
+FileOpenException.o: FileOpenException.cc 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o FileOpenException.o FileOpenException.cc
 
-PathFinder.o: PathFinder.cpp PathFinder.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PathFinder.o PathFinder.cpp
+FileStorageManager.o: FileStorageManager.cc 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o FileStorageManager.o FileStorageManager.cc
 
-PersistentStorageAPI.o: PersistentStorageAPI.cpp PersistentStorageAPI.h \
-		Profile.h \
-		Serializer.h \
-		PathFinder.h \
-		StorageAdapter.h \
-		FileStorageManager.h \
-		Animal.h \
-		Human.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PersistentStorageAPI.o PersistentStorageAPI.cpp
+PathFinder.o: PathFinder.cc 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PathFinder.o PathFinder.cc
 
-Serializer.o: Serializer.cpp Serializer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Serializer.o Serializer.cpp
+PersistentStorageAPI.o: PersistentStorageAPI.cc 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PersistentStorageAPI.o PersistentStorageAPI.cc
+
+Serializer.o: Serializer.cc 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Serializer.o Serializer.cc
 
 Human.o: Human.cpp Human.h \
 		Profile.h
