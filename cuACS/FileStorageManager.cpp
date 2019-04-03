@@ -1,5 +1,5 @@
 #include "FileStorageManager.h"
-#include "FileOpenException.cc"
+#include "FileOpenException.cpp"
 #include <string>
 #include <strstream>
 #include <iostream>

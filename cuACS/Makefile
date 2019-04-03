@@ -56,11 +56,11 @@ SOURCES       = main.cpp \
 		postloginclient.cpp \
 		viewanimals.cpp \
 		addanimal.cpp \
-		Animal.cc \
-		FileStorageManager.cc \
-		PathFinder.cc \
-		PersistentStorageAPI.cc \
-		Serializer.cc \
+		Animal.cpp \
+		FileStorageManager.cpp \
+		PathFinder.cpp \
+		PersistentStorageAPI.cpp \
+		Serializer.cpp \
 		Human.cpp \
 		viewclients.cpp \
 		addclient.cpp \
@@ -217,11 +217,11 @@ DIST          = cuACS.pro.user \
 		postloginclient.cpp \
 		viewanimals.cpp \
 		addanimal.cpp \
-		Animal.cc \
-		FileStorageManager.cc \
-		PathFinder.cc \
-		PersistentStorageAPI.cc \
-		Serializer.cc \
+		Animal.cpp \
+		FileStorageManager.cpp \
+		PathFinder.cpp \
+		PersistentStorageAPI.cpp \
+		Serializer.cpp \
 		Human.cpp \
 		viewclients.cpp \
 		addclient.cpp \
@@ -418,7 +418,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents egyptfont.qrc logo.qrc icon.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h CuacsAPI.h Profile.h Serializer.h addclient.h viewclients.h viewprofile.h editprofile.h editanimal.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cpp FileStorageManager.cpp PathFinder.cpp PersistentStorageAPI.cpp Serializer.cpp Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui addclient.ui viewclients.ui viewprofile.ui editprofile.ui editanimal.ui $(DISTDIR)/
 
 
@@ -734,19 +734,19 @@ addanimal.o: addanimal.cpp addanimal.h \
 		editprofile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addanimal.o addanimal.cpp
 
-Animal.o: Animal.cc Animal.h \
+Animal.o: Animal.cpp Animal.h \
 		Profile.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Animal.o Animal.cc
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Animal.o Animal.cpp
 
-FileStorageManager.o: FileStorageManager.cc FileStorageManager.h \
+FileStorageManager.o: FileStorageManager.cpp FileStorageManager.h \
 		StorageAdapter.h \
-		FileOpenException.cc
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o FileStorageManager.o FileStorageManager.cc
+		FileOpenException.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o FileStorageManager.o FileStorageManager.cpp
 
-PathFinder.o: PathFinder.cc PathFinder.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PathFinder.o PathFinder.cc
+PathFinder.o: PathFinder.cpp PathFinder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PathFinder.o PathFinder.cpp
 
-PersistentStorageAPI.o: PersistentStorageAPI.cc PersistentStorageAPI.h \
+PersistentStorageAPI.o: PersistentStorageAPI.cpp PersistentStorageAPI.h \
 		Profile.h \
 		Serializer.h \
 		PathFinder.h \
@@ -754,10 +754,10 @@ PersistentStorageAPI.o: PersistentStorageAPI.cc PersistentStorageAPI.h \
 		FileStorageManager.h \
 		Animal.h \
 		Human.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PersistentStorageAPI.o PersistentStorageAPI.cc
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PersistentStorageAPI.o PersistentStorageAPI.cpp
 
-Serializer.o: Serializer.cc Serializer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Serializer.o Serializer.cc
+Serializer.o: Serializer.cpp Serializer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Serializer.o Serializer.cpp
 
 Human.o: Human.cpp Human.h \
 		Profile.h
