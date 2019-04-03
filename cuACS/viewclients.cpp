@@ -34,6 +34,7 @@ ViewClients::ViewClients(QWidget *parent) :
     vector<Human*> humansVec = capi->getHumans();
 
     if (humansVec.size() != 0) {
+        sort(humansVec.begin(), humansVec.end(),sortClients);
         //Make QList from vector
         myList.reserve(humansVec.size());
         std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
@@ -49,6 +50,10 @@ ViewClients::~ViewClients()
 {
     delete capi;
     delete ui;
+}
+
+bool ViewClients::sortClients(Human* a, Human* b){
+    return a->getName() < b->getName();
 }
 
 void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)

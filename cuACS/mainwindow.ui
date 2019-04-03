@@ -144,6 +144,9 @@
          <property name="text">
           <string>Sign In</string>
          </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
       </layout>
@@ -193,12 +196,12 @@
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>141</x>
-     <y>67</y>
+     <x>154</x>
+     <y>165</y>
     </hint>
     <hint type="destinationlabel">
-     <x>133</x>
-     <y>91</y>
+     <x>400</x>
+     <y>165</y>
     </hint>
    </hints>
   </connection>

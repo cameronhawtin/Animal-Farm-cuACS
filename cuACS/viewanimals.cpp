@@ -41,13 +41,13 @@ ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     vector<Animal*> animalsVec = capi->getAnimals();
 
     if (animalsVec.size() != 0) {
+        sort(animalsVec.begin(), animalsVec.end(),sortAnimals);
         //Make QList from vector
         myList.reserve(animalsVec.size());
         std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(myList));
-
-        for (int i = 0; i < animalsVec.size(); i++)
+        for (int i = 0; i < myList.size(); i++)
             ui->viewAnimalsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
-            ui->viewAnimalsListWidget->setCurrentRow(0);
+        ui->viewAnimalsListWidget->setCurrentRow(0);
     }
 }
 
@@ -56,6 +56,10 @@ ViewAnimals::~ViewAnimals()
 {
     delete capi;
     delete ui;
+}
+
+bool ViewAnimals::sortAnimals(Animal* a, Animal* b){
+    return a->getName() < b->getName();
 }
 
 //This function updates the fields on the right hand side when the user clicks on an animal in the list widget
