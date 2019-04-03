@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>364</height>
+    <width>321</width>
+    <height>159</height>
    </rect>
   </property>
   <property name="font">
@@ -18,17 +18,76 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QPushButton" name="ViewAnimalsButton">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>100</y>
-     <width>251</width>
-     <height>161</height>
+     <x>20</x>
+     <y>90</y>
+     <width>281</width>
+     <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Egyptienne F</family>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
-    <string>Not yet implemented for deliverable 1</string>
+    <string>View Animals</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ViewProfileButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>131</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Egyptienne F</family>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>View Profile</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="editProfileButton">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>20</y>
+     <width>131</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Egyptienne F</family>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Edit Profile</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

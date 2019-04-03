@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "postloginstaff.h"
 #include "postloginclient.h"
+#include "viewprofile.h"
 #include "CuacsAPI.h"
 
 namespace Ui {
@@ -25,6 +26,7 @@ private:
     Ui::MainWindow *ui;
     PostLoginStaff *postLoginStaff;
     PostLoginClient *postLoginClient;
+    ViewProfile *viewProfile;
     CuacsAPI *capi;
     QList<Human*> myList;
 };

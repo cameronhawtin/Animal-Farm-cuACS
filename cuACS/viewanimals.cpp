@@ -4,13 +4,15 @@
 using namespace std;
 
 //Constructor for ViewAnimals class
-ViewAnimals::ViewAnimals(QWidget *parent) :
+ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     QDialog(parent),
     ui(new Ui::ViewAnimals)
 {
-
     ui->setupUi(this);
+    this->setFixedSize(QSize(1014, 532));
     this->setWindowTitle("View Animals");
+
+     ui->editAnimal->setVisible(isStaff);
 
     ui->nameLineEdit->setReadOnly(true);
     ui->typeLineEdit->setReadOnly(true);
@@ -73,9 +75,9 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     string stringId = to_string(id);
 
     string name, type, breed, sex, colour, size, energy;
-    int age, aggression, attachment, obedience, childrenComfort, loudness, intelligence, cleanliness;
-    bool isCrateTrained, isHypoallergenic, isNeutered;
-    float cost, costPerYear;
+    int age = 0, aggression = 0, attachment = 0, obedience = 0, childrenComfort = 0, loudness = 0, intelligence = 0, cleanliness = 0;
+    bool isCrateTrained = false, isHypoallergenic = false, isNeutered = false;
+    float cost = 0.0, costPerYear = 0.0;
 
     for (int i = 0; i < myList.size(); i++){
         if (to_string(myList.at(i)->getId()).compare(stringId) == 0) {
@@ -130,5 +132,27 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     ui->costPerYearLineEdit->setText(QString::number(costPerYear));
 }
 
+void ViewAnimals::on_editAnimal_clicked()
+{
+    QListWidgetItem *current = ui->viewAnimalsListWidget->currentItem();
+    string selectedString = current->text().toStdString();
 
+    stringstream ss;
+    ss << selectedString;
 
+    string temp;
+    int id = -1;
+    while (!ss.eof()) {
+        ss >> temp;
+        stringstream(temp) >> id;
+    }
+    this->hide();
+    editAnimal = new EditAnimal(this->parentWidget());
+    editAnimal->setData(id);
+    editAnimal->show();
+
+    //this->hide();
+    //EditAnimal editAnimal;
+    //editAnimal.setData(id);
+    //editAnimal.exec();
+}

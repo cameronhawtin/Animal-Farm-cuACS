@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1014</width>
-    <height>540</height>
+    <height>532</height>
    </rect>
   </property>
   <property name="palette">
@@ -145,7 +145,7 @@
      <x>20</x>
      <y>30</y>
      <width>281</width>
-     <height>481</height>
+     <height>441</height>
     </rect>
    </property>
   </widget>
@@ -339,7 +339,7 @@
     <item row="3" column="2">
      <widget class="QLabel" name="labelBreed_3">
       <property name="text">
-       <string>Flat Cost</string>
+       <string>Flat Cost (in dollars)</string>
       </property>
      </widget>
     </item>
@@ -349,7 +349,7 @@
     <item row="5" column="2">
      <widget class="QLabel" name="sexLabel_3">
       <property name="text">
-       <string>Cost Per Year</string>
+       <string>Cost Per Year in dollars)</string>
       </property>
      </widget>
     </item>
@@ -413,7 +413,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    <set>QDialogButtonBox::Close</set>
    </property>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
@@ -442,6 +442,19 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="editAnimal">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>480</y>
+     <width>281</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit Selected Animal</string>
+   </property>
   </widget>
  </widget>
  <resources/>

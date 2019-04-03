@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QPalette>
@@ -9,18 +9,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //this->setFixedSize(QSize(600, 240));
+    this->setFixedSize(QSize(429, 217));
     //QColor cuRED = QColor(200, 16, 46);
-
-    capi = new CuacsAPI();
-
-    vector<Human*> humansVec = capi->getHumans();
-
-    if (humansVec.size() != 0) {
-        //Make QList from vector
-        myList.reserve(humansVec.size());
-        std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
-    }
+    QPixmap icon (":/icon/icon.png");
+    this->setWindowIcon(icon);
 }
 
 
@@ -34,6 +26,16 @@ MainWindow::~MainWindow()
 //This function is called when the login button is clicked
 void MainWindow::on_loginButton_clicked()
 {
+    capi = new CuacsAPI();
+
+    vector<Human*> humansVec = capi->getHumans();
+
+    if (humansVec.size() != 0) {
+        //Make QList from vector
+        myList.reserve(humansVec.size());
+        std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
+    }
+
    QString username = ui->usernameLineEdit->text();
 
    bool loggedIn = false;
@@ -42,9 +44,10 @@ void MainWindow::on_loginButton_clicked()
                loggedIn = true;
                hide();
                postLoginClient = new PostLoginClient(this);
-               postLoginClient->show();
+               postLoginClient->setData(myList.at(i)->getId());
+               postLoginClient->exec();
+               i = myList.size();
            }
-           i = myList.size();
    }
 
    if (loggedIn == false) {
@@ -54,11 +57,11 @@ void MainWindow::on_loginButton_clicked()
            postLoginStaff->exec();
        }
 
-       else if (username == "Client") {
-          hide();
-          postLoginClient = new PostLoginClient(this);
-          postLoginClient->show();
-       }
+//       else if (username == "Client") {
+//          hide();
+//          postLoginClient = new PostLoginClient(this);
+//          postLoginClient->show();
+//       }
        else QMessageBox::warning(this, "Invalid Login", "The provided username does not exist");
    }
 }

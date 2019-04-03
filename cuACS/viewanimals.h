@@ -6,6 +6,7 @@
 #include "CuacsAPI.h"
 #include <QListWidget>
 #include <sstream>
+#include <editanimal.h>
 
 namespace Ui {
 class ViewAnimals;
@@ -16,17 +17,21 @@ class ViewAnimals : public QDialog
     Q_OBJECT
 
 public:
-    explicit ViewAnimals(QWidget *parent = nullptr);
+    explicit ViewAnimals(QWidget *parent = nullptr, bool isStaff = false);
     ~ViewAnimals();
 
 private slots:
 
     void on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
+    void on_editAnimal_clicked();
+
 private:
     Ui::ViewAnimals *ui;
     CuacsAPI *capi;
     QList<Animal*> myList;
+    EditAnimal *editAnimal;
+    bool isStaff;
 };
 
 #endif // VIEWANIMALS_H

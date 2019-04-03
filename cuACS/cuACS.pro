@@ -36,7 +36,6 @@ SOURCES += \
     viewanimals.cpp \
     addanimal.cpp \
     Animal.cc \
-    CuacsAPI.cc \
     FileOpenException.cc \
     FileStorageManager.cc \
     PathFinder.cc \
@@ -45,6 +44,10 @@ SOURCES += \
     Human.cpp \
     viewclients.cpp \
     addclient.cpp \
+    viewprofile.cpp \
+    editprofile.cpp \
+    editanimal.cpp \
+    CuacsAPI.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -65,7 +68,10 @@ HEADERS += \
     Profile.h \
     Serializer.h \
     addclient.h \
-    viewclients.h
+    viewclients.h \
+    viewprofile.h \
+    editprofile.h \
+    editanimal.h
 
 FORMS += \
         mainwindow.ui \
@@ -74,7 +80,10 @@ FORMS += \
     viewanimals.ui \
     addanimal.ui \
     addclient.ui \
-    viewclients.ui
+    viewclients.ui \
+    viewprofile.ui \
+    editprofile.ui \
+    editanimal.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -89,8 +98,10 @@ DISTFILES += \
     cuACS.pro.user.50df91b.20 \
     README \
     logo.png \
-    logo.png
+    logo.png \
+    logo.ico
 
 RESOURCES += \
     egyptfont.qrc \
-    logo.qrc
+    logo.qrc \
+    icon.qrc

@@ -19,7 +19,6 @@ class PostLoginStaff : public QDialog
     Q_OBJECT
 
 public:
-    CuacsAPI * capi;
     explicit PostLoginStaff(QWidget *parent = nullptr);
     ~PostLoginStaff();
 

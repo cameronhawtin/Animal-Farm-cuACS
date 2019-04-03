@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = cuACS1.0.0
-DISTDIR = /home/student/Git/COMP-3004/cuACS/.tmp/cuACS1.0.0
+DISTDIR = /home/cameron/Git/COMP-3004/cuACS/.tmp/cuACS1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -lstdc++fs -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -57,22 +57,29 @@ SOURCES       = main.cpp \
 		viewanimals.cpp \
 		addanimal.cpp \
 		Animal.cc \
-		CuacsAPI.cc \
 		FileStorageManager.cc \
 		PathFinder.cc \
 		PersistentStorageAPI.cc \
 		Serializer.cc \
 		Human.cpp \
 		viewclients.cpp \
-		addclient.cpp qrc_egyptfont.cpp \
+		addclient.cpp \
+		viewprofile.cpp \
+		editprofile.cpp \
+		editanimal.cpp \
+		CuacsAPI.cpp qrc_egyptfont.cpp \
 		qrc_logo.cpp \
+		qrc_icon.cpp \
 		moc_mainwindow.cpp \
 		moc_postloginstaff.cpp \
 		moc_postloginclient.cpp \
 		moc_viewanimals.cpp \
 		moc_addanimal.cpp \
 		moc_addclient.cpp \
-		moc_viewclients.cpp
+		moc_viewclients.cpp \
+		moc_viewprofile.cpp \
+		moc_editprofile.cpp \
+		moc_editanimal.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		postloginstaff.o \
@@ -80,7 +87,6 @@ OBJECTS       = main.o \
 		viewanimals.o \
 		addanimal.o \
 		Animal.o \
-		CuacsAPI.o \
 		FileStorageManager.o \
 		PathFinder.o \
 		PersistentStorageAPI.o \
@@ -88,20 +94,29 @@ OBJECTS       = main.o \
 		Human.o \
 		viewclients.o \
 		addclient.o \
+		viewprofile.o \
+		editprofile.o \
+		editanimal.o \
+		CuacsAPI.o \
 		qrc_egyptfont.o \
 		qrc_logo.o \
+		qrc_icon.o \
 		moc_mainwindow.o \
 		moc_postloginstaff.o \
 		moc_postloginclient.o \
 		moc_viewanimals.o \
 		moc_addanimal.o \
 		moc_addclient.o \
-		moc_viewclients.o
+		moc_viewclients.o \
+		moc_viewprofile.o \
+		moc_editprofile.o \
+		moc_editanimal.o
 DIST          = cuACS.pro.user \
 		cuACS.pro.user.50df91b.20 \
 		README \
 		logo.png \
 		logo.png \
+		logo.ico \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -111,18 +126,6 @@ DIST          = cuACS.pro.user \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3danimation.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dcore.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dextras.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dinput.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dlogic.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquick.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickextras.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickinput.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickrender.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3drender.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
@@ -153,10 +156,6 @@ DIST          = cuACS.pro.user \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -209,21 +208,27 @@ DIST          = cuACS.pro.user \
 		Profile.h \
 		Serializer.h \
 		addclient.h \
-		viewclients.h main.cpp \
+		viewclients.h \
+		viewprofile.h \
+		editprofile.h \
+		editanimal.h main.cpp \
 		mainwindow.cpp \
 		postloginstaff.cpp \
 		postloginclient.cpp \
 		viewanimals.cpp \
 		addanimal.cpp \
 		Animal.cc \
-		CuacsAPI.cc \
 		FileStorageManager.cc \
 		PathFinder.cc \
 		PersistentStorageAPI.cc \
 		Serializer.cc \
 		Human.cpp \
 		viewclients.cpp \
-		addclient.cpp
+		addclient.cpp \
+		viewprofile.cpp \
+		editprofile.cpp \
+		editanimal.cpp \
+		CuacsAPI.cpp
 QMAKE_TARGET  = cuACS
 DESTDIR       = 
 TARGET        = cuACS
@@ -232,7 +237,7 @@ TARGET        = cuACS
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h ui_viewclients.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h ui_viewclients.h ui_viewprofile.h ui_editprofile.h ui_editanimal.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -244,18 +249,6 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3danimation.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dcore.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dextras.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dinput.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dlogic.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquick.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickextras.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickinput.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickrender.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3drender.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
@@ -286,10 +279,6 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -327,6 +316,7 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 		cuACS.pro \
 		egyptfont.qrc \
 		logo.qrc \
+		icon.qrc \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Core.prl
@@ -340,18 +330,6 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3danimation.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dcore.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dextras.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dinput.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dlogic.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquick.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickanimation.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickextras.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickinput.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickrender.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3dquickscene2d.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_3drender.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri:
@@ -382,10 +360,6 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
@@ -423,6 +397,7 @@ Makefile: cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /
 cuACS.pro:
 egyptfont.qrc:
 logo.qrc:
+icon.qrc:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
@@ -440,11 +415,11 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents egyptfont.qrc logo.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents egyptfont.qrc logo.qrc icon.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h CuacsAPI.h Profile.h Serializer.h addclient.h viewclients.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc CuacsAPI.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp viewclients.cpp addclient.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui addclient.ui viewclients.ui $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h CuacsAPI.h Profile.h Serializer.h addclient.h viewclients.h viewprofile.h editprofile.h editanimal.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cc FileStorageManager.cc PathFinder.cc PersistentStorageAPI.cc Serializer.cc Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui addclient.ui viewclients.ui viewprofile.ui editprofile.ui editanimal.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -468,9 +443,9 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all: qrc_egyptfont.cpp qrc_logo.cpp
+compiler_rcc_make_all: qrc_egyptfont.cpp qrc_logo.cpp qrc_icon.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_egyptfont.cpp qrc_logo.cpp
+	-$(DEL_FILE) qrc_egyptfont.cpp qrc_logo.cpp qrc_icon.cpp
 qrc_egyptfont.cpp: egyptfont.qrc \
 		/usr/lib/qt5/bin/rcc \
 		EgyptienneRoman.ttf
@@ -481,15 +456,20 @@ qrc_logo.cpp: logo.qrc \
 		logo.png
 	/usr/lib/qt5/bin/rcc -name logo logo.qrc -o qrc_logo.cpp
 
+qrc_icon.cpp: icon.qrc \
+		/usr/lib/qt5/bin/rcc \
+		icon.png
+	/usr/lib/qt5/bin/rcc -name icon icon.qrc -o qrc_icon.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp moc_addclient.cpp moc_viewclients.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp moc_addclient.cpp moc_viewclients.cpp moc_viewprofile.cpp moc_editprofile.cpp moc_editanimal.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp moc_addclient.cpp moc_viewclients.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_postloginstaff.cpp moc_postloginclient.cpp moc_viewanimals.cpp moc_addanimal.cpp moc_addclient.cpp moc_viewclients.cpp moc_viewprofile.cpp moc_editprofile.cpp moc_editanimal.cpp
 moc_mainwindow.cpp: postloginstaff.h \
 		viewanimals.h \
 		CuacsAPI.h \
@@ -497,14 +477,17 @@ moc_mainwindow.cpp: postloginstaff.h \
 		Animal.h \
 		Human.h \
 		PersistentStorageAPI.h \
+		editanimal.h \
 		viewclients.h \
 		addanimal.h \
 		addclient.h \
 		postloginclient.h \
+		viewprofile.h \
+		editprofile.h \
 		mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 moc_postloginstaff.cpp: viewanimals.h \
 		CuacsAPI.h \
@@ -512,28 +495,39 @@ moc_postloginstaff.cpp: viewanimals.h \
 		Animal.h \
 		Human.h \
 		PersistentStorageAPI.h \
+		editanimal.h \
 		viewclients.h \
 		addanimal.h \
 		addclient.h \
 		postloginstaff.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include postloginstaff.h -o moc_postloginstaff.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include postloginstaff.h -o moc_postloginstaff.cpp
 
-moc_postloginclient.cpp: postloginclient.h \
+moc_postloginclient.cpp: viewanimals.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		editanimal.h \
+		viewprofile.h \
+		editprofile.h \
+		postloginclient.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include postloginclient.h -o moc_postloginclient.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include postloginclient.h -o moc_postloginclient.cpp
 
 moc_viewanimals.cpp: CuacsAPI.h \
 		Profile.h \
 		Animal.h \
 		Human.h \
 		PersistentStorageAPI.h \
+		editanimal.h \
 		viewanimals.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include viewanimals.h -o moc_viewanimals.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include viewanimals.h -o moc_viewanimals.cpp
 
 moc_addanimal.cpp: CuacsAPI.h \
 		Profile.h \
@@ -543,7 +537,7 @@ moc_addanimal.cpp: CuacsAPI.h \
 		addanimal.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include addanimal.h -o moc_addanimal.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include addanimal.h -o moc_addanimal.cpp
 
 moc_addclient.cpp: CuacsAPI.h \
 		Profile.h \
@@ -553,7 +547,7 @@ moc_addclient.cpp: CuacsAPI.h \
 		addclient.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include addclient.h -o moc_addclient.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include addclient.h -o moc_addclient.cpp
 
 moc_viewclients.cpp: CuacsAPI.h \
 		Profile.h \
@@ -563,13 +557,43 @@ moc_viewclients.cpp: CuacsAPI.h \
 		viewclients.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include viewclients.h -o moc_viewclients.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include viewclients.h -o moc_viewclients.cpp
+
+moc_viewprofile.cpp: CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		viewprofile.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include viewprofile.h -o moc_viewprofile.cpp
+
+moc_editprofile.cpp: CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		editprofile.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include editprofile.h -o moc_editprofile.cpp
+
+moc_editanimal.cpp: CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		editanimal.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/cameron/Git/COMP-3004/cuACS -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include editanimal.h -o moc_editanimal.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h ui_viewclients.h
+compiler_uic_make_all: ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h ui_viewclients.h ui_viewprofile.h ui_editprofile.h ui_editanimal.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h ui_viewclients.h
+	-$(DEL_FILE) ui_mainwindow.h ui_postloginstaff.h ui_postloginclient.h ui_viewanimals.h ui_addanimal.h ui_addclient.h ui_viewclients.h ui_viewprofile.h ui_editprofile.h ui_editanimal.h
 ui_mainwindow.h: mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic mainwindow.ui -o ui_mainwindow.h
@@ -598,6 +622,18 @@ ui_viewclients.h: viewclients.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic viewclients.ui -o ui_viewclients.h
 
+ui_viewprofile.h: viewprofile.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic viewprofile.ui -o ui_viewprofile.h
+
+ui_editprofile.h: editprofile.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic editprofile.ui -o ui_editprofile.h
+
+ui_editanimal.h: editanimal.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic editanimal.ui -o ui_editanimal.h
+
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:
@@ -616,10 +652,13 @@ main.o: main.cpp mainwindow.h \
 		Animal.h \
 		Human.h \
 		PersistentStorageAPI.h \
+		editanimal.h \
 		viewclients.h \
 		addanimal.h \
 		addclient.h \
-		postloginclient.h
+		postloginclient.h \
+		viewprofile.h \
+		editprofile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -630,10 +669,13 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		Animal.h \
 		Human.h \
 		PersistentStorageAPI.h \
+		editanimal.h \
 		viewclients.h \
 		addanimal.h \
 		addclient.h \
 		postloginclient.h \
+		viewprofile.h \
+		editprofile.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
@@ -644,6 +686,7 @@ postloginstaff.o: postloginstaff.cpp postloginstaff.h \
 		Animal.h \
 		Human.h \
 		PersistentStorageAPI.h \
+		editanimal.h \
 		viewclients.h \
 		addanimal.h \
 		addclient.h \
@@ -651,6 +694,15 @@ postloginstaff.o: postloginstaff.cpp postloginstaff.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o postloginstaff.o postloginstaff.cpp
 
 postloginclient.o: postloginclient.cpp postloginclient.h \
+		viewanimals.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		editanimal.h \
+		viewprofile.h \
+		editprofile.h \
 		ui_postloginclient.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o postloginclient.o postloginclient.cpp
 
@@ -660,6 +712,7 @@ viewanimals.o: viewanimals.cpp viewanimals.h \
 		Animal.h \
 		Human.h \
 		PersistentStorageAPI.h \
+		editanimal.h \
 		ui_viewanimals.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewanimals.o viewanimals.cpp
 
@@ -673,21 +726,17 @@ addanimal.o: addanimal.cpp addanimal.h \
 		mainwindow.h \
 		postloginstaff.h \
 		viewanimals.h \
+		editanimal.h \
 		viewclients.h \
 		addclient.h \
-		postloginclient.h
+		postloginclient.h \
+		viewprofile.h \
+		editprofile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addanimal.o addanimal.cpp
 
 Animal.o: Animal.cc Animal.h \
 		Profile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Animal.o Animal.cc
-
-CuacsAPI.o: CuacsAPI.cc CuacsAPI.h \
-		Profile.h \
-		Animal.h \
-		Human.h \
-		PersistentStorageAPI.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CuacsAPI.o CuacsAPI.cc
 
 FileStorageManager.o: FileStorageManager.cc FileStorageManager.h \
 		StorageAdapter.h \
@@ -733,16 +782,57 @@ addclient.o: addclient.cpp addclient.h \
 		mainwindow.h \
 		postloginstaff.h \
 		viewanimals.h \
+		editanimal.h \
 		viewclients.h \
 		addanimal.h \
-		postloginclient.h
+		postloginclient.h \
+		viewprofile.h \
+		editprofile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addclient.o addclient.cpp
+
+viewprofile.o: viewprofile.cpp viewprofile.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		ui_viewprofile.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewprofile.o viewprofile.cpp
+
+editprofile.o: editprofile.cpp editprofile.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		ui_editprofile.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editprofile.o editprofile.cpp
+
+editanimal.o: editanimal.cpp editanimal.h \
+		CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h \
+		ui_editanimal.h \
+		viewanimals.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editanimal.o editanimal.cpp
+
+CuacsAPI.o: CuacsAPI.cpp CuacsAPI.h \
+		Profile.h \
+		Animal.h \
+		Human.h \
+		PersistentStorageAPI.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CuacsAPI.o CuacsAPI.cpp
 
 qrc_egyptfont.o: qrc_egyptfont.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_egyptfont.o qrc_egyptfont.cpp
 
 qrc_logo.o: qrc_logo.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_logo.o qrc_logo.cpp
+
+qrc_icon.o: qrc_icon.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_icon.o qrc_icon.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
@@ -764,6 +854,15 @@ moc_addclient.o: moc_addclient.cpp
 
 moc_viewclients.o: moc_viewclients.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_viewclients.o moc_viewclients.cpp
+
+moc_viewprofile.o: moc_viewprofile.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_viewprofile.o moc_viewprofile.cpp
+
+moc_editprofile.o: moc_editprofile.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_editprofile.o moc_editprofile.cpp
+
+moc_editanimal.o: moc_editanimal.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_editanimal.o moc_editanimal.cpp
 
 ####### Install
 

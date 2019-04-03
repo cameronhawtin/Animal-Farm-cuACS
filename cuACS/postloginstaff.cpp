@@ -6,6 +6,7 @@ PostLoginStaff::PostLoginStaff(QWidget *parent) :
     ui(new Ui::PostLoginStaff)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(341, 238));
     this->setWindowTitle("Homepage - Staff");
 }
 
@@ -21,7 +22,7 @@ void PostLoginStaff::reject()
     QMessageBox::StandardButton resBtn = QMessageBox::Yes;
     resBtn = QMessageBox::question( this, "cuACS",
             tr("This action will log you out. Are you sure?\n"),
-            QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+            QMessageBox::No | QMessageBox::Yes,
             QMessageBox::Yes);
 
     if (resBtn == QMessageBox::Yes) {
@@ -44,7 +45,7 @@ void PostLoginStaff::on_AddAnimalButton_clicked()
 void PostLoginStaff::on_ViewAnimalsButton_clicked()
 {
     //open view animals interface
-    viewAnimals = new ViewAnimals(this);
+    viewAnimals = new ViewAnimals(this, true);
     viewAnimals->show();
 }
 

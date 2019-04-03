@@ -6,7 +6,7 @@
 class Human: public Profile
 {
     public:
-        Human(int id, string name, int age, string gender, string purpose, int attachment, int patience, string homeType,
+        Human(int id, string name, int age, string gender, string typePreference, string purpose, int attachment, int patience, string homeType,
               string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
               string salary, float budget, string freeTime, string email, string address, string phone);
         Human(vector<string> statendife);
@@ -14,6 +14,7 @@ class Human: public Profile
         string getName();
         int getAge();
         string getGender();
+        string getTypePreference();
         string getPurpose();
         int getAttachment();
         int getPatience();
@@ -37,6 +38,7 @@ private:
         string name;
         int age;
         string gender;
+        string typePreference;
         string purpose;
         int attachment;
         int patience;
