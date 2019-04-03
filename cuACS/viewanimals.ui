@@ -155,7 +155,7 @@
      <x>320</x>
      <y>80</y>
      <width>671</width>
-     <height>391</height>
+     <height>443</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -421,7 +421,7 @@
     <rect>
      <x>320</x>
      <y>10</y>
-     <width>671</width>
+     <width>676</width>
      <height>61</height>
     </rect>
    </property>
@@ -457,6 +457,30 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>viewAnimalsListWidget</tabstop>
+  <tabstop>nameLineEdit</tabstop>
+  <tabstop>aggressionLineEdit</tabstop>
+  <tabstop>energyLineEdit</tabstop>
+  <tabstop>typeLineEdit</tabstop>
+  <tabstop>attachmentLineEdit</tabstop>
+  <tabstop>costLineEdit</tabstop>
+  <tabstop>breedLineEdit</tabstop>
+  <tabstop>obedienceLineEdit</tabstop>
+  <tabstop>costPerYearLineEdit</tabstop>
+  <tabstop>sexLineEdit</tabstop>
+  <tabstop>cleanlinessLineEdit</tabstop>
+  <tabstop>isHypoallergenicLineEdit</tabstop>
+  <tabstop>ageLineEdit</tabstop>
+  <tabstop>childrenComfortLineEdit</tabstop>
+  <tabstop>isCrateTrainedLineEdit</tabstop>
+  <tabstop>colourLineEdit</tabstop>
+  <tabstop>loudnessLineEdit</tabstop>
+  <tabstop>isNeuteredLineEdit</tabstop>
+  <tabstop>sizeLineEdit</tabstop>
+  <tabstop>intelligenceLineEdit</tabstop>
+  <tabstop>editAnimal</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

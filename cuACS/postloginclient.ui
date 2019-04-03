@@ -91,6 +91,11 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>ViewProfileButton</tabstop>
+  <tabstop>editProfileButton</tabstop>
+  <tabstop>ViewAnimalsButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

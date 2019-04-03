@@ -234,7 +234,7 @@
      <x>20</x>
      <y>90</y>
      <width>771</width>
-     <height>381</height>
+     <height>397</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_24" columnstretch="3,1,1,1">
@@ -564,6 +564,32 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>nameLineEdit</tabstop>
+  <tabstop>childrenLineEdit</tabstop>
+  <tabstop>freeTimeLineEdit</tabstop>
+  <tabstop>emailLineEdit</tabstop>
+  <tabstop>salaryLineEdit</tabstop>
+  <tabstop>budgetLineEdit</tabstop>
+  <tabstop>addressLineEdit</tabstop>
+  <tabstop>typePreferenceLineEdit</tabstop>
+  <tabstop>irritationLineEdit</tabstop>
+  <tabstop>phoneLineEdit</tabstop>
+  <tabstop>purposeLineEdit</tabstop>
+  <tabstop>patienceLineEdit</tabstop>
+  <tabstop>sexLineEdit</tabstop>
+  <tabstop>homeLineEdit</tabstop>
+  <tabstop>attachmentLineEdit</tabstop>
+  <tabstop>ageLineEdit</tabstop>
+  <tabstop>travelLineEdit</tabstop>
+  <tabstop>neuteredLineEdit</tabstop>
+  <tabstop>catAllergyCheckBox</tabstop>
+  <tabstop>dogAllergyCheckBox</tabstop>
+  <tabstop>birdAllergyCheckBox</tabstop>
+  <tabstop>hamsterAllergyCheckBox</tabstop>
+  <tabstop>mouseAllergyCheckBox</tabstop>
+  <tabstop>guineapigAllergyCheckBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

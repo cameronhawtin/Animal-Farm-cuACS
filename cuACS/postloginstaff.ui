@@ -208,6 +208,13 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>AddClientButton</tabstop>
+  <tabstop>ViewClientsButton</tabstop>
+  <tabstop>AddAnimalButton</tabstop>
+  <tabstop>ViewAnimalsButton</tabstop>
+  <tabstop>generateACMButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

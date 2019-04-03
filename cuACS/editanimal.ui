@@ -137,7 +137,7 @@
      <x>20</x>
      <y>70</y>
      <width>711</width>
-     <height>431</height>
+     <height>457</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
@@ -859,6 +859,38 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>nameLineEdit</tabstop>
+  <tabstop>aggressionSlider</tabstop>
+  <tabstop>aggressionLineEdit</tabstop>
+  <tabstop>energyComboBox</tabstop>
+  <tabstop>typeComboBox</tabstop>
+  <tabstop>attachmentSlider</tabstop>
+  <tabstop>attachmentLineEdit</tabstop>
+  <tabstop>costLineEdit</tabstop>
+  <tabstop>breedComboBox</tabstop>
+  <tabstop>obedienceSlider</tabstop>
+  <tabstop>obedienceLineEdit</tabstop>
+  <tabstop>costPerYearLineEdit</tabstop>
+  <tabstop>sexComboBox</tabstop>
+  <tabstop>cleanlinessSlider</tabstop>
+  <tabstop>cleanlinessLineEdit</tabstop>
+  <tabstop>isCrateTrainedRadioButtonYES</tabstop>
+  <tabstop>isCrateTrainedRadioButtonNO</tabstop>
+  <tabstop>ageLineEdit</tabstop>
+  <tabstop>childrenComfortSlider</tabstop>
+  <tabstop>childrenComfortLineEdit</tabstop>
+  <tabstop>isHypoallergenicRadioButtonYES</tabstop>
+  <tabstop>isHypoallergenicRadioButtonNO</tabstop>
+  <tabstop>colourComboBox</tabstop>
+  <tabstop>loudnessSlider</tabstop>
+  <tabstop>loudnessLineEdit</tabstop>
+  <tabstop>isNeuteredRadioButtonYES</tabstop>
+  <tabstop>isNeuteredRadioButtonNO</tabstop>
+  <tabstop>sizeComboBox</tabstop>
+  <tabstop>intelligenceSlider</tabstop>
+  <tabstop>intelligenceLineEdit</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
