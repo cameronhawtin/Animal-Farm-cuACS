@@ -13,10 +13,10 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDial>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QListWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,13 +24,13 @@ class Ui_ViewMatches
 {
 public:
     QDialogButtonBox *buttonBox;
-    QDial *dial;
+    QListWidget *viewAnimalsListWidget;
 
     void setupUi(QDialog *ViewMatches)
     {
         if (ViewMatches->objectName().isEmpty())
             ViewMatches->setObjectName(QStringLiteral("ViewMatches"));
-        ViewMatches->resize(400, 300);
+        ViewMatches->resize(323, 511);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -58,12 +58,12 @@ public:
         ViewMatches->setPalette(palette);
         buttonBox = new QDialogButtonBox(ViewMatches);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(30, 240, 341, 32));
+        buttonBox->setGeometry(QRect(-40, 470, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        dial = new QDial(ViewMatches);
-        dial->setObjectName(QStringLiteral("dial"));
-        dial->setGeometry(QRect(70, 30, 231, 251));
+        viewAnimalsListWidget = new QListWidget(ViewMatches);
+        viewAnimalsListWidget->setObjectName(QStringLiteral("viewAnimalsListWidget"));
+        viewAnimalsListWidget->setGeometry(QRect(20, 20, 281, 431));
 
         retranslateUi(ViewMatches);
         QObject::connect(buttonBox, SIGNAL(accepted()), ViewMatches, SLOT(accept()));
