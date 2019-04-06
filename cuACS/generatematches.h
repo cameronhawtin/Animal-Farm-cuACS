@@ -1,6 +1,7 @@
 #ifndef GENERATEMATCHES_H
 #define GENERATEMATCHES_H
 
+#include <iostream>
 #include "CuacsAPI.h"
 #include <tuple>
 
