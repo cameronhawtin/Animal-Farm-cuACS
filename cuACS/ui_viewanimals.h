@@ -88,7 +88,7 @@ public:
     {
         if (ViewAnimals->objectName().isEmpty())
             ViewAnimals->setObjectName(QStringLiteral("ViewAnimals"));
-        ViewAnimals->resize(1016, 586);
+        ViewAnimals->resize(1016, 551);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -370,11 +370,13 @@ public:
 
         gridLayout->addWidget(lifeExpLineEdit, 12, 0, 1, 1);
 
-        buttonBox = new QDialogButtonBox(ViewAnimals);
+        buttonBox = new QDialogButtonBox(gridLayoutWidget);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(780, 540, 209, 26));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Close);
+
+        gridLayout->addWidget(buttonBox, 16, 2, 1, 1);
+
         horizontalLayoutWidget = new QWidget(ViewAnimals);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(320, 10, 676, 61));

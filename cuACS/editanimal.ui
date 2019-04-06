@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>775</width>
+    <width>783</width>
     <height>577</height>
    </rect>
   </property>
@@ -960,28 +960,38 @@
   <tabstop>nameLineEdit</tabstop>
   <tabstop>aggressionSlider</tabstop>
   <tabstop>aggressionLineEdit</tabstop>
+  <tabstop>loyaltySlider</tabstop>
+  <tabstop>loyaltyLineEdit</tabstop>
   <tabstop>typeComboBox</tabstop>
   <tabstop>attachmentSlider</tabstop>
   <tabstop>attachmentLineEdit</tabstop>
+  <tabstop>energyComboBox</tabstop>
   <tabstop>breedComboBox</tabstop>
   <tabstop>obedienceSlider</tabstop>
   <tabstop>obedienceLineEdit</tabstop>
+  <tabstop>costLineEdit</tabstop>
   <tabstop>sexComboBox</tabstop>
   <tabstop>cleanlinessSlider</tabstop>
   <tabstop>cleanlinessLineEdit</tabstop>
-  <tabstop>isCrateTrainedRadioButtonYES</tabstop>
-  <tabstop>isCrateTrainedRadioButtonNO</tabstop>
+  <tabstop>costPerYearLineEdit</tabstop>
   <tabstop>ageLineEdit</tabstop>
   <tabstop>childrenComfortSlider</tabstop>
   <tabstop>childrenComfortLineEdit</tabstop>
-  <tabstop>isHypoallergenicRadioButtonYES</tabstop>
-  <tabstop>isHypoallergenicRadioButtonNO</tabstop>
+  <tabstop>isCrateTrainedRadioButtonYES</tabstop>
+  <tabstop>isCrateTrainedRadioButtonNO</tabstop>
+  <tabstop>lifeExpLineEdit</tabstop>
   <tabstop>loudnessSlider</tabstop>
   <tabstop>loudnessLineEdit</tabstop>
-  <tabstop>isNeuteredRadioButtonYES</tabstop>
-  <tabstop>isNeuteredRadioButtonNO</tabstop>
+  <tabstop>isHypoallergenicRadioButtonYES</tabstop>
+  <tabstop>isHypoallergenicRadioButtonNO</tabstop>
+  <tabstop>colourComboBox</tabstop>
   <tabstop>intelligenceSlider</tabstop>
   <tabstop>intelligenceLineEdit</tabstop>
+  <tabstop>isNeuteredRadioButtonYES</tabstop>
+  <tabstop>isNeuteredRadioButtonNO</tabstop>
+  <tabstop>sizeComboBox</tabstop>
+  <tabstop>playfulnessSlider</tabstop>
+  <tabstop>playfulnessLineEdit</tabstop>
  </tabstops>
  <resources/>
  <connections>

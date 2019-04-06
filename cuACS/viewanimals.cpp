@@ -9,7 +9,7 @@ ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     ui(new Ui::ViewAnimals)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(1014, 532));
+    this->setFixedSize(QSize(1014, 550));
     this->setWindowTitle("View Animals");
 
     ui->editAnimal->setVisible(isStaff);
@@ -62,7 +62,7 @@ ViewAnimals::~ViewAnimals()
 }
 
 bool ViewAnimals::sortAnimals(Animal* a, Animal* b){
-    return a->getName() < b->getName();
+    return a->getId() < b->getId();
 }
 
 //This function updates the fields on the right hand side when the user clicks on an animal in the list widget

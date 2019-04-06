@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1016</width>
-    <height>586</height>
+    <height>551</height>
    </rect>
   </property>
   <property name="palette">
@@ -436,23 +436,17 @@
     <item row="12" column="0">
      <widget class="QLineEdit" name="lifeExpLineEdit"/>
     </item>
+    <item row="16" column="2">
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Close</set>
+      </property>
+     </widget>
+    </item>
    </layout>
-  </widget>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>540</y>
-     <width>209</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Close</set>
-   </property>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
