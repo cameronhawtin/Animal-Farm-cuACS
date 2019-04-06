@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include "viewanimals.h"
 #include "viewclients.h"
+#include "viewmatches.h"
 #include "addanimal.h"
 #include "addclient.h"
 #include "CuacsAPI.h"
@@ -31,6 +32,8 @@ private slots:
 
     void on_ViewClientsButton_clicked();
 
+    void on_generateACMButton_clicked();
+
     void reject();
 
 private:
@@ -39,6 +42,7 @@ private:
     ViewClients *viewClients;
     AddAnimal *addAnimal;
     AddClient *addClient;
+    ViewMatches *viewMatches;
 };
 
 #endif // POSTLOGINSTAFF_H

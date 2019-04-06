@@ -63,3 +63,9 @@ void PostLoginStaff::on_ViewClientsButton_clicked()
     viewClients->show();
 }
 
+
+void PostLoginStaff::on_generateACMButton_clicked()
+{
+    viewMatches = new ViewMatches(this);
+    viewMatches->show();
+}
