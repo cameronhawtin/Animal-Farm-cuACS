@@ -35,19 +35,20 @@ SOURCES += \
     postloginclient.cpp \
     viewanimals.cpp \
     addanimal.cpp \
-    Animal.cc \
-    FileOpenException.cc \
-    FileStorageManager.cc \
-    PathFinder.cc \
-    PersistentStorageAPI.cc \
-    Serializer.cc \
+    Animal.cpp \
+    FileOpenException.cpp \
+    FileStorageManager.cpp \
+    PathFinder.cpp \
+    PersistentStorageAPI.cpp \
+    Serializer.cpp \
     Human.cpp \
     viewclients.cpp \
     addclient.cpp \
     viewprofile.cpp \
     editprofile.cpp \
     editanimal.cpp \
-    CuacsAPI.cpp
+    CuacsAPI.cpp \
+    viewmatches.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -71,7 +72,8 @@ HEADERS += \
     viewclients.h \
     viewprofile.h \
     editprofile.h \
-    editanimal.h
+    editanimal.h \
+    viewmatches.h
 
 FORMS += \
         mainwindow.ui \
@@ -83,7 +85,8 @@ FORMS += \
     viewclients.ui \
     viewprofile.ui \
     editprofile.ui \
-    editanimal.ui
+    editanimal.ui \
+    viewmatches.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
