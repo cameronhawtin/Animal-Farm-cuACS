@@ -7,7 +7,7 @@ EditAnimal::EditAnimal(QWidget *parent) :
     ui(new Ui::EditAnimal)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(752, 559));
+    this->setFixedSize(QSize(752, 580));
     this->setWindowTitle("Edit an Animal");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
@@ -17,6 +17,7 @@ EditAnimal::EditAnimal(QWidget *parent) :
     ui->ageLineEdit->setValidator(ageRange);
     ui->costLineEdit->setValidator(floatValidator);
     ui->costPerYearLineEdit->setValidator(floatValidator);
+    ui->lifeExpLineEdit->setValidator(ageRange);
 
     capi = new CuacsAPI();
     updateOk();
@@ -71,6 +72,11 @@ void EditAnimal::setData(int &labelText) {
             ui->intelligenceSlider->setValue(myList.at(i)->getIntelligence());
             ui->cleanlinessLineEdit->setText(QString::number(myList.at(i)->getCleanliness()));
             ui->cleanlinessSlider->setValue(myList.at(i)->getCleanliness());
+            ui->playfulnessSlider->setValue(myList.at(i)->getPlayfulness());
+            ui->playfulnessLineEdit->setText(QString::number(myList.at(i)->getPlayfulness()));
+            ui->loyaltySlider->setValue(myList.at(i)->getLoyalty());
+            ui->loyaltyLineEdit->setText(QString::number(myList.at(i)->getLoyalty()));
+            ui->lifeExpLineEdit->setText(QString::number(myList.at(i)->getLifeExpectancy()));
 
             if (myList.at(i)->getIsCrateTrained() == true) ui->isCrateTrainedRadioButtonYES->setChecked(true);
             else ui->isCrateTrainedRadioButtonNO->setChecked(true);
@@ -116,6 +122,9 @@ void EditAnimal::on_buttonBox_accepted()
     float costPerYear = ui->costPerYearLineEdit->text().toFloat();
     int intelligence = ui->intelligenceLineEdit->text().toInt();
     int cleanliness = ui->cleanlinessLineEdit->text().toInt();
+    int playfulness = ui->playfulnessLineEdit->text().toInt();
+    int loyalty = ui->loyaltyLineEdit->text().toInt();;
+    int lifeExp = ui->lifeExpLineEdit->text().toInt();;
     bool isCrateTrained;
     bool isHypoallergenic;
     bool isNeutered;
@@ -135,7 +144,7 @@ void EditAnimal::on_buttonBox_accepted()
 
     //now give attributes to animal class
     capi->editAnimal(passedData, name, type, breed, age, sex, colour, size, aggression, attachment, obedience, energy,
-                    isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness);
+                    isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness, playfulness, loyalty, lifeExp);
 
     //ViewAnimals t;
     //t.setModal(false);
@@ -318,6 +327,30 @@ void EditAnimal::on_costLineEdit_textChanged(const QString &arg1)
 }
 
 void EditAnimal::on_costPerYearLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditAnimal::on_playfulnessSlider_valueChanged(int value)
+{
+    QString s = QString::number(value);
+    ui->playfulnessLineEdit->setText(s);
+    updateOk();
+}
+
+void EditAnimal::on_loyaltySlider_valueChanged(int value)
+{
+    QString s = QString::number(value);
+    ui->loyaltyLineEdit->setText(s);
+    updateOk();
+}
+
+void EditAnimal::on_playfulnessLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void EditAnimal::on_loyaltyLineEdit_textChanged(const QString &arg1)
 {
     updateOk();
 }

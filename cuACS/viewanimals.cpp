@@ -12,7 +12,7 @@ ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     this->setFixedSize(QSize(1014, 532));
     this->setWindowTitle("View Animals");
 
-     ui->editAnimal->setVisible(isStaff);
+    ui->editAnimal->setVisible(isStaff);
 
     ui->nameLineEdit->setReadOnly(true);
     ui->typeLineEdit->setReadOnly(true);
@@ -35,6 +35,9 @@ ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     ui->isHypoallergenicLineEdit->setReadOnly(true);
     ui->isCrateTrainedLineEdit->setReadOnly(true);
     ui->isNeuteredLineEdit->setReadOnly(true);
+    ui->playfulnessLineEdit->setReadOnly(true);
+    ui->loyaltyLineEdit->setReadOnly(true);
+    ui->lifeExpLineEdit->setReadOnly(true);
 
     capi = new CuacsAPI();
 
@@ -79,7 +82,7 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     string stringId = to_string(id);
 
     string name, type, breed, sex, colour, size, energy;
-    int age = 0, aggression = 0, attachment = 0, obedience = 0, childrenComfort = 0, loudness = 0, intelligence = 0, cleanliness = 0;
+    int age = 0, aggression = 0, attachment = 0, obedience = 0, childrenComfort = 0, loudness = 0, intelligence = 0, cleanliness = 0, playfulness = 0, loyalty = 0, lifeExp = 0;
     bool isCrateTrained = false, isHypoallergenic = false, isNeutered = false;
     float cost = 0.0, costPerYear = 0.0;
 
@@ -106,6 +109,9 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
             isNeutered = myList.at(i)->getIsNeutered();
             cost = myList.at(i)->getCost();
             costPerYear = myList.at(i)->getCostPerYear();
+            playfulness = myList.at(i)->getPlayfulness();
+            loyalty = myList.at(i)->getLoyalty();
+            lifeExp = myList.at(i)->getLifeExpectancy();
 
             i = myList.size();
         }
@@ -134,6 +140,9 @@ void ViewAnimals::on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *c
     if (isNeutered == true) ui->isNeuteredLineEdit->setText("Yes"); else ui->isNeuteredLineEdit->setText("No");
     ui->costLineEdit->setText(QString::number(cost));
     ui->costPerYearLineEdit->setText(QString::number(costPerYear));
+    ui->playfulnessLineEdit->setText(QString::number(playfulness));
+    ui->loyaltyLineEdit->setText(QString::number(loyalty));
+    ui->lifeExpLineEdit->setText(QString::number(lifeExp));
 }
 
 void ViewAnimals::on_editAnimal_clicked()

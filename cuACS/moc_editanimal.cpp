@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_EditAnimal_t {
-    QByteArrayData data[29];
-    char stringdata0[860];
+    QByteArrayData data[33];
+    char stringdata0[990];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -59,7 +59,11 @@ QT_MOC_LITERAL(24, 707, 34), // "on_isNeuteredRadioButtonNO_to..."
 QT_MOC_LITERAL(25, 742, 27), // "on_nameLineEdit_textChanged"
 QT_MOC_LITERAL(26, 770, 26), // "on_ageLineEdit_textChanged"
 QT_MOC_LITERAL(27, 797, 27), // "on_costLineEdit_textChanged"
-QT_MOC_LITERAL(28, 825, 34) // "on_costPerYearLineEdit_textCh..."
+QT_MOC_LITERAL(28, 825, 34), // "on_costPerYearLineEdit_textCh..."
+QT_MOC_LITERAL(29, 860, 33), // "on_playfulnessSlider_valueCha..."
+QT_MOC_LITERAL(30, 894, 29), // "on_loyaltySlider_valueChanged"
+QT_MOC_LITERAL(31, 924, 34), // "on_playfulnessLineEdit_textCh..."
+QT_MOC_LITERAL(32, 959, 30) // "on_loyaltyLineEdit_textChanged"
 
     },
     "EditAnimal\0on_buttonBox_accepted\0\0"
@@ -85,7 +89,11 @@ QT_MOC_LITERAL(28, 825, 34) // "on_costPerYearLineEdit_textCh..."
     "on_nameLineEdit_textChanged\0"
     "on_ageLineEdit_textChanged\0"
     "on_costLineEdit_textChanged\0"
-    "on_costPerYearLineEdit_textChanged"
+    "on_costPerYearLineEdit_textChanged\0"
+    "on_playfulnessSlider_valueChanged\0"
+    "on_loyaltySlider_valueChanged\0"
+    "on_playfulnessLineEdit_textChanged\0"
+    "on_loyaltyLineEdit_textChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -95,7 +103,7 @@ static const uint qt_meta_data_EditAnimal[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      24,   14, // methods
+      28,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -103,30 +111,34 @@ static const uint qt_meta_data_EditAnimal[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  134,    2, 0x08 /* Private */,
-       3,    1,  135,    2, 0x08 /* Private */,
-       5,    1,  138,    2, 0x08 /* Private */,
-       6,    1,  141,    2, 0x08 /* Private */,
-       7,    1,  144,    2, 0x08 /* Private */,
-       8,    1,  147,    2, 0x08 /* Private */,
-       9,    1,  150,    2, 0x08 /* Private */,
-      10,    1,  153,    2, 0x08 /* Private */,
-      12,    1,  156,    2, 0x08 /* Private */,
-      13,    1,  159,    2, 0x08 /* Private */,
-      14,    1,  162,    2, 0x08 /* Private */,
-      15,    1,  165,    2, 0x08 /* Private */,
-      16,    1,  168,    2, 0x08 /* Private */,
-      17,    1,  171,    2, 0x08 /* Private */,
-      18,    1,  174,    2, 0x08 /* Private */,
-      20,    1,  177,    2, 0x08 /* Private */,
-      21,    1,  180,    2, 0x08 /* Private */,
-      22,    1,  183,    2, 0x08 /* Private */,
-      23,    1,  186,    2, 0x08 /* Private */,
-      24,    1,  189,    2, 0x08 /* Private */,
-      25,    1,  192,    2, 0x08 /* Private */,
-      26,    1,  195,    2, 0x08 /* Private */,
-      27,    1,  198,    2, 0x08 /* Private */,
-      28,    1,  201,    2, 0x08 /* Private */,
+       1,    0,  154,    2, 0x08 /* Private */,
+       3,    1,  155,    2, 0x08 /* Private */,
+       5,    1,  158,    2, 0x08 /* Private */,
+       6,    1,  161,    2, 0x08 /* Private */,
+       7,    1,  164,    2, 0x08 /* Private */,
+       8,    1,  167,    2, 0x08 /* Private */,
+       9,    1,  170,    2, 0x08 /* Private */,
+      10,    1,  173,    2, 0x08 /* Private */,
+      12,    1,  176,    2, 0x08 /* Private */,
+      13,    1,  179,    2, 0x08 /* Private */,
+      14,    1,  182,    2, 0x08 /* Private */,
+      15,    1,  185,    2, 0x08 /* Private */,
+      16,    1,  188,    2, 0x08 /* Private */,
+      17,    1,  191,    2, 0x08 /* Private */,
+      18,    1,  194,    2, 0x08 /* Private */,
+      20,    1,  197,    2, 0x08 /* Private */,
+      21,    1,  200,    2, 0x08 /* Private */,
+      22,    1,  203,    2, 0x08 /* Private */,
+      23,    1,  206,    2, 0x08 /* Private */,
+      24,    1,  209,    2, 0x08 /* Private */,
+      25,    1,  212,    2, 0x08 /* Private */,
+      26,    1,  215,    2, 0x08 /* Private */,
+      27,    1,  218,    2, 0x08 /* Private */,
+      28,    1,  221,    2, 0x08 /* Private */,
+      29,    1,  224,    2, 0x08 /* Private */,
+      30,    1,  227,    2, 0x08 /* Private */,
+      31,    1,  230,    2, 0x08 /* Private */,
+      32,    1,  233,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -151,6 +163,10 @@ static const uint qt_meta_data_EditAnimal[] = {
     QMetaType::Void, QMetaType::Bool,   19,
     QMetaType::Void, QMetaType::QString,    4,
     QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::Int,   11,
     QMetaType::Void, QMetaType::QString,    4,
     QMetaType::Void, QMetaType::QString,    4,
 
@@ -187,6 +203,10 @@ void EditAnimal::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 21: _t->on_ageLineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 22: _t->on_costLineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 23: _t->on_costPerYearLineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 24: _t->on_playfulnessSlider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 25: _t->on_loyaltySlider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 26: _t->on_playfulnessLineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 27: _t->on_loyaltyLineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -217,13 +237,13 @@ int EditAnimal::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 24)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 24;
+        _id -= 28;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 24)
+        if (_id < 28)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 24;
+        _id -= 28;
     }
     return _id;
 }

@@ -563,7 +563,7 @@ public:
          << QApplication::translate("AddClient", "1 - 2 Weeks", Q_NULLPTR)
          << QApplication::translate("AddClient", "3 - 4 Weeks", Q_NULLPTR)
          << QApplication::translate("AddClient", "2 - 3 Months", Q_NULLPTR)
-         << QApplication::translate("AddClient", "4 - 6 months", Q_NULLPTR)
+         << QApplication::translate("AddClient", "4 - 6 Months", Q_NULLPTR)
          << QApplication::translate("AddClient", "Constant Travel", Q_NULLPTR)
         );
         allergicLabel->setText(QApplication::translate("AddClient", "Allergies", Q_NULLPTR));
