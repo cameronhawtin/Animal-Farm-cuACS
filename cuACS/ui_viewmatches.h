@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDial>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
@@ -23,17 +24,46 @@ class Ui_ViewMatches
 {
 public:
     QDialogButtonBox *buttonBox;
+    QDial *dial;
 
     void setupUi(QDialog *ViewMatches)
     {
         if (ViewMatches->objectName().isEmpty())
             ViewMatches->setObjectName(QStringLiteral("ViewMatches"));
         ViewMatches->resize(400, 300);
+        QPalette palette;
+        QBrush brush(QColor(200, 16, 46, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        QBrush brush1(QColor(0, 0, 0, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush1);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
+        QBrush brush2(QColor(255, 255, 255, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush2);
+        palette.setBrush(QPalette::Active, QPalette::Highlight, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Highlight, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush2);
+        QBrush brush3(QColor(145, 145, 145, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::Highlight, brush3);
+        ViewMatches->setPalette(palette);
         buttonBox = new QDialogButtonBox(ViewMatches);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(30, 240, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        dial = new QDial(ViewMatches);
+        dial->setObjectName(QStringLiteral("dial"));
+        dial->setGeometry(QRect(70, 30, 231, 251));
 
         retranslateUi(ViewMatches);
         QObject::connect(buttonBox, SIGNAL(accepted()), ViewMatches, SLOT(accept()));
