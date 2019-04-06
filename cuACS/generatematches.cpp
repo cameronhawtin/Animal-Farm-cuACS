@@ -83,39 +83,96 @@ float GenerateMatches::getScore(Human* human, Animal* animal) {
 
     int AttachmentFreetime;
     if (human->getFreeTime() == "0 - 1")
-        animal->getAttachment() * 0;
+        AttachmentFreetime = animal->getAttachment() * 0;
     else if (human->getFreeTime() == "1 - 2")
-        animal->getAttachment() * 3;
+        AttachmentFreetime = animal->getAttachment() * 3;
     else if (human->getFreeTime() == "3 - 4")
-        animal->getAttachment() * 6;
+        AttachmentFreetime = animal->getAttachment() * 6;
     else if (human->getFreeTime() == "5+")
-        animal->getAttachment() * 10;
+        AttachmentFreetime = animal->getAttachment() * 10;
 
-    int ObidiencePatience = human->getPatience() * animal->getObedience();
+    int ObediencePatience = human->getPatience() * animal->getObedience();
 
     int LoudnessHometype;
     if (human->getHomeType() == "Apartment")
-        animal->getLoudness() * 1;
+        LoudnessHometype = animal->getLoudness() * 1;
     else if (human->getHomeType() == "Condo")
-        animal->getLoudness() * 3;
+        LoudnessHometype = animal->getLoudness() * 3;
     else if (human->getHomeType() == "Small House")
-        animal->getLoudness() * 5;
+        LoudnessHometype = animal->getLoudness() * 5;
     else if (human->getHomeType() == "Medium House")
-        animal->getLoudness() * 7;
+        LoudnessHometype = animal->getLoudness() * 7;
     else
-        animal->getLoudness() * 10;
+        LoudnessHometype = animal->getLoudness() * 10;
+
+    int CostBudget;
+    if (human->getBudget() <= animal->getCost())
+        CostBudget = 100;
+    else
+        CostBudget = 0;
+
+    int EnergyHometype;
+    if (human->getHomeType() == "Apartment" && animal->getEnergy() == "High")
+        EnergyHometype = 10;
+    else if ((human->getHomeType() == "Condo" && animal->getEnergy() == "High") ||
+             (human->getHomeType() == "Apartment" && animal->getEnergy() == "Medium"))
+        EnergyHometype = 30;
+    else if ((human->getHomeType() == "Small House" && animal->getEnergy() == "High") ||
+             (human->getHomeType() == "Condo" && animal->getEnergy() == "Medium"))
+        EnergyHometype = 50;
+    else if (human->getHomeType() == "Medium House" && animal->getEnergy() == "High")
+        EnergyHometype = 70;
+    else
+        EnergyHometype = 100;
+
+    int CleanlinessFreetime;
+    if (human->getFreeTime() == "0 - 1")
+        CleanlinessFreetime = 1 * animal->getCleanliness();
+    else if (human->getFreeTime() == "1 - 2")
+        CleanlinessFreetime = 3 * animal->getCleanliness();
+    else if (human->getFreeTime() == "2 - 3")
+        CleanlinessFreetime = 5 * animal->getCleanliness();
+    else if (human->getFreeTime() == "3 - 4")
+        CleanlinessFreetime = 7 * animal->getCleanliness();
+    else if (human->getFreeTime() == "5+")
+        CleanlinessFreetime = 10 * animal->getCleanliness();
+    else printf("oops");
+
+    int CratetrainedPatience;
+    if (animal->getIsCrateTrained()) {
+        if (human->getPatience() > 5)
+            CratetrainedPatience = 2 * human->getPatience();
+        else
+            CratetrainedPatience = 5 * human->getPatience();
+    }
+    else if (!animal->getIsCrateTrained()) {
+        if (human->getPatience() > 5)
+            CratetrainedPatience = 10 * human->getPatience();
+        else
+            CratetrainedPatience = 1 * human->getPatience();
+    }
+    else printf("oops");
+
+    int NeuteredBudget;
+    if (animal->getIsNeutered())
+        NeuteredBudget = 50;
+    else if (!animal->getIsNeutered()) {
+        if (human->getBudget() - animal->getCost() > 250)
+            NeuteredBudget = 100;
+        else
+            NeuteredBudget = 0;
+    }
+    else printf("oops");
 
 
-
-
-
-
-    int obedienceMatch;
-    int energyMatch;
-    int crateMatch;
-    int allergenMatch;
-
-
-
-
+    int MaintenanceSalary;
+    if ((human->getSalary() == "0 - 30" && animal->getCostPerYear() < 30)   ||
+        (human->getSalary() == "30 - 50" && animal->getCostPerYear() < 75)  ||
+        (human->getSalary() == "50 - 70" && animal->getCostPerYear() < 200) ||
+        (human->getSalary() == "70 - 90" && animal->getCostPerYear() < 400) ||
+        (human->getSalary() == "90 - 110" && animal->getCostPerYear() < 600)||
+        (human->getSalary() == "110 - 130" && animal->getCostPerYear() < 1000))
+        MaintenanceSalary = 100;
+    else
+        MaintenanceSalary = 0;
 }
