@@ -8,7 +8,7 @@ class Animal: public Profile
     public:
         Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size,
                int aggression, int attachment, int obedience, string energy, bool isCrateTrained, bool isHypoallergenic,
-               bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness);
+               bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness, int playfulness, int loyalty, int lifeExp);
 		Animal(vector<string> statendife);
 		int getId();
 		string getName();
@@ -32,6 +32,9 @@ class Animal: public Profile
         float getCostPerYear();
         int getIntelligence();
         int getCleanliness();
+        int getPlayfulness();
+        int getLoyalty();
+        int getLifeExpectancy();
 
 		vector<string>* getState();
 
@@ -58,6 +61,9 @@ class Animal: public Profile
         float costPerYear;
         int intelligence;
         int cleanliness;
+        int playfulness;
+        int loyalty;
+        int lifeExp;
 };
 
 #endif

@@ -53,7 +53,7 @@ ViewClients::~ViewClients()
 }
 
 bool ViewClients::sortClients(Human* a, Human* b){
-    return a->getName() < b->getName();
+    return a->getId() < b->getId();
 }
 
 void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)

@@ -90,7 +90,7 @@ public:
     {
         if (AddClient->objectName().isEmpty())
             AddClient->setObjectName(QStringLiteral("AddClient"));
-        AddClient->resize(871, 456);
+        AddClient->resize(871, 473);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -125,7 +125,7 @@ public:
         AddClient->setFont(font);
         buttonBox = new QDialogButtonBox(AddClient);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(500, 410, 341, 32));
+        buttonBox->setGeometry(QRect(510, 430, 341, 32));
         buttonBox->setFont(font);
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
@@ -563,7 +563,7 @@ public:
          << QApplication::translate("AddClient", "1 - 2 Weeks", Q_NULLPTR)
          << QApplication::translate("AddClient", "3 - 4 Weeks", Q_NULLPTR)
          << QApplication::translate("AddClient", "2 - 3 Months", Q_NULLPTR)
-         << QApplication::translate("AddClient", "4 - 6 months", Q_NULLPTR)
+         << QApplication::translate("AddClient", "4 - 6 Months", Q_NULLPTR)
          << QApplication::translate("AddClient", "Constant Travel", Q_NULLPTR)
         );
         allergicLabel->setText(QApplication::translate("AddClient", "Allergies", Q_NULLPTR));

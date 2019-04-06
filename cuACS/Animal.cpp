@@ -10,7 +10,7 @@ using namespace std;
 //initializes the data members
 Animal::Animal(int id, string name, string animalType, string breed, int age, string gender, string color, string size,
                int aggression, int attachment, int obedience, string energy, bool isCrateTrained, bool isHypoallergenic,
-               bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness)
+               bool isNeutered, int childrenComfort, int loudness, float cost, float costPerYear, int intelligence, int cleanliness, int playfulness, int loyalty, int lifeExp)
 {
 	this->id = id;
 	this->name = name;
@@ -34,6 +34,9 @@ Animal::Animal(int id, string name, string animalType, string breed, int age, st
     this->costPerYear = costPerYear;
     this->intelligence = intelligence;
     this->cleanliness = cleanliness;
+    this->playfulness = playfulness;
+    this->loyalty = loyalty;
+    this->lifeExp = lifeExp;
 }
 
 //constructor to set state
@@ -63,6 +66,9 @@ Animal::Animal(vector<string> state)
     this->costPerYear = std::stof(state.at(18));
     this->intelligence = std::stoi(state.at(19));
     this->cleanliness = std::stoi(state.at(20));
+    this->playfulness = std::stoi(state.at(21));
+    this->loyalty = std::stoi(state.at(22));
+    this->lifeExp = std::stoi(state.at(23));
 }
 
 //getters for private data memebers
@@ -88,6 +94,9 @@ float Animal::getCost() { return cost; }
 float Animal::getCostPerYear() { return costPerYear; }
 int Animal::getIntelligence() { return intelligence; }
 int Animal::getCleanliness() { return cleanliness; }
+int Animal::getPlayfulness() { return playfulness; }
+int Animal::getLoyalty() { return loyalty; }
+int Animal::getLifeExpectancy() { return lifeExp; }
 
 //returns the state of the Animal in a vector of string
 vector<string>* Animal::getState()
@@ -115,6 +124,9 @@ vector<string>* Animal::getState()
     state->push_back(to_string(costPerYear));
     state->push_back(to_string(intelligence));
     state->push_back(to_string(cleanliness));
+    state->push_back(to_string(playfulness));
+    state->push_back(to_string(loyalty));
+    state->push_back(to_string(lifeExp));
 
 	return state;
 }

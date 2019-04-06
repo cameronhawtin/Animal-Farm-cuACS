@@ -33,10 +33,19 @@ public:
     QDialogButtonBox *buttonBox;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
+    QLabel *labelColour_2;
+    QHBoxLayout *horizontalLayout;
+    QRadioButton *isCrateTrainedRadioButtonYES;
+    QRadioButton *isCrateTrainedRadioButtonNO;
+    QLineEdit *costPerYearLineEdit;
+    QHBoxLayout *horizontalLayout_2;
+    QRadioButton *isHypoallergenicRadioButtonYES;
+    QRadioButton *isHypoallergenicRadioButtonNO;
+    QLabel *playLabel;
+    QLabel *aggressionLabel;
     QHBoxLayout *horizontalLayout_11;
     QSlider *cleanlinessSlider;
     QLineEdit *cleanlinessLineEdit;
-    QLabel *aggressionLabel;
     QLabel *typeLabel;
     QHBoxLayout *horizontalLayout_4;
     QSlider *attachmentSlider;
@@ -45,7 +54,6 @@ public:
     QLineEdit *nameLineEdit;
     QLabel *aggressionLabel_2;
     QLabel *nameLabel;
-    QLabel *labelColour;
     QHBoxLayout *horizontalLayout_9;
     QSlider *loudnessSlider;
     QLineEdit *loudnessLineEdit;
@@ -65,43 +73,45 @@ public:
     QLabel *labelBreed_2;
     QComboBox *breedComboBox;
     QLabel *ageLabel_3;
-    QComboBox *colourComboBox;
     QHBoxLayout *horizontalLayout_10;
     QSlider *intelligenceSlider;
     QLineEdit *intelligenceLineEdit;
     QLabel *ageLabel;
-    QComboBox *sizeComboBox;
-    QLabel *sizeLabel;
     QLineEdit *ageLineEdit;
     QLabel *sexLabel;
     QComboBox *sexComboBox;
-    QLabel *energyLabel;
-    QComboBox *energyComboBox;
-    QLabel *labelBreed_3;
-    QLineEdit *costLineEdit;
-    QLabel *sexLabel_3;
-    QLineEdit *costPerYearLineEdit;
-    QLabel *labelColour_2;
-    QHBoxLayout *horizontalLayout;
-    QRadioButton *isCrateTrainedRadioButtonYES;
-    QRadioButton *isCrateTrainedRadioButtonNO;
     QLabel *ageLabel_2;
-    QHBoxLayout *horizontalLayout_2;
-    QRadioButton *isHypoallergenicRadioButtonYES;
-    QRadioButton *isHypoallergenicRadioButtonNO;
-    QLabel *sizeLabel_2;
+    QLabel *sexLabel_3;
     QHBoxLayout *horizontalLayout_3;
     QRadioButton *isNeuteredRadioButtonYES;
     QRadioButton *isNeuteredRadioButtonNO;
+    QLabel *sizeLabel_2;
+    QComboBox *energyComboBox;
+    QLineEdit *costLineEdit;
+    QLabel *labelBreed_3;
+    QLabel *energyLabel;
+    QHBoxLayout *horizontalLayout_12;
+    QSlider *playfulnessSlider;
+    QLineEdit *playfulnessLineEdit;
+    QComboBox *sizeComboBox;
+    QLabel *sizeLabel;
+    QComboBox *colourComboBox;
+    QLabel *labelColour;
+    QLabel *lifeExpectancyLabel;
+    QLineEdit *lifeExpectancyLineEdit;
+    QLabel *loyaltyLabel;
+    QHBoxLayout *horizontalLayout_7;
+    QSlider *loyaltySlider;
+    QLineEdit *loyaltyLineEdit;
+    QButtonGroup *buttonGroup_2;
     QButtonGroup *buttonGroup_3;
     QButtonGroup *buttonGroup;
-    QButtonGroup *buttonGroup_2;
 
     void setupUi(QDialog *AddAnimal)
     {
         if (AddAnimal->objectName().isEmpty())
             AddAnimal->setObjectName(QStringLiteral("AddAnimal"));
-        AddAnimal->resize(752, 510);
+        AddAnimal->resize(752, 558);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -137,16 +147,78 @@ public:
         buttonBox = new QDialogButtonBox(AddAnimal);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setEnabled(true);
-        buttonBox->setGeometry(QRect(390, 470, 341, 32));
+        buttonBox->setGeometry(QRect(400, 500, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
         gridLayoutWidget = new QWidget(AddAnimal);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(20, 20, 728, 457));
+        gridLayoutWidget->setGeometry(QRect(20, 20, 728, 481));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setHorizontalSpacing(12);
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        labelColour_2 = new QLabel(gridLayoutWidget);
+        labelColour_2->setObjectName(QStringLiteral("labelColour_2"));
+        labelColour_2->setEnabled(true);
+
+        gridLayout->addWidget(labelColour_2, 8, 2, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        isCrateTrainedRadioButtonYES = new QRadioButton(gridLayoutWidget);
+        buttonGroup = new QButtonGroup(AddAnimal);
+        buttonGroup->setObjectName(QStringLiteral("buttonGroup"));
+        buttonGroup->addButton(isCrateTrainedRadioButtonYES);
+        isCrateTrainedRadioButtonYES->setObjectName(QStringLiteral("isCrateTrainedRadioButtonYES"));
+
+        horizontalLayout->addWidget(isCrateTrainedRadioButtonYES);
+
+        isCrateTrainedRadioButtonNO = new QRadioButton(gridLayoutWidget);
+        buttonGroup->addButton(isCrateTrainedRadioButtonNO);
+        isCrateTrainedRadioButtonNO->setObjectName(QStringLiteral("isCrateTrainedRadioButtonNO"));
+
+        horizontalLayout->addWidget(isCrateTrainedRadioButtonNO);
+
+
+        gridLayout->addLayout(horizontalLayout, 9, 2, 1, 1);
+
+        costPerYearLineEdit = new QLineEdit(gridLayoutWidget);
+        costPerYearLineEdit->setObjectName(QStringLiteral("costPerYearLineEdit"));
+        costPerYearLineEdit->setEnabled(true);
+
+        gridLayout->addWidget(costPerYearLineEdit, 7, 2, 1, 1);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        isHypoallergenicRadioButtonYES = new QRadioButton(gridLayoutWidget);
+        buttonGroup_2 = new QButtonGroup(AddAnimal);
+        buttonGroup_2->setObjectName(QStringLiteral("buttonGroup_2"));
+        buttonGroup_2->addButton(isHypoallergenicRadioButtonYES);
+        isHypoallergenicRadioButtonYES->setObjectName(QStringLiteral("isHypoallergenicRadioButtonYES"));
+
+        horizontalLayout_2->addWidget(isHypoallergenicRadioButtonYES);
+
+        isHypoallergenicRadioButtonNO = new QRadioButton(gridLayoutWidget);
+        buttonGroup_2->addButton(isHypoallergenicRadioButtonNO);
+        isHypoallergenicRadioButtonNO->setObjectName(QStringLiteral("isHypoallergenicRadioButtonNO"));
+
+        horizontalLayout_2->addWidget(isHypoallergenicRadioButtonNO);
+
+
+        gridLayout->addLayout(horizontalLayout_2, 11, 2, 1, 1);
+
+        playLabel = new QLabel(gridLayoutWidget);
+        playLabel->setObjectName(QStringLiteral("playLabel"));
+        playLabel->setEnabled(true);
+
+        gridLayout->addWidget(playLabel, 14, 1, 1, 1);
+
+        aggressionLabel = new QLabel(gridLayoutWidget);
+        aggressionLabel->setObjectName(QStringLiteral("aggressionLabel"));
+        aggressionLabel->setEnabled(true);
+
+        gridLayout->addWidget(aggressionLabel, 0, 1, 1, 1);
+
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setSpacing(12);
         horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
@@ -169,12 +241,6 @@ public:
         horizontalLayout_11->setStretch(1, 2);
 
         gridLayout->addLayout(horizontalLayout_11, 7, 1, 1, 1);
-
-        aggressionLabel = new QLabel(gridLayoutWidget);
-        aggressionLabel->setObjectName(QStringLiteral("aggressionLabel"));
-        aggressionLabel->setEnabled(true);
-
-        gridLayout->addWidget(aggressionLabel, 0, 1, 1, 1);
 
         typeLabel = new QLabel(gridLayoutWidget);
         typeLabel->setObjectName(QStringLiteral("typeLabel"));
@@ -228,12 +294,6 @@ public:
         nameLabel->setEnabled(true);
 
         gridLayout->addWidget(nameLabel, 0, 0, 1, 1);
-
-        labelColour = new QLabel(gridLayoutWidget);
-        labelColour->setObjectName(QStringLiteral("labelColour"));
-        labelColour->setEnabled(true);
-
-        gridLayout->addWidget(labelColour, 10, 0, 1, 1);
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setSpacing(12);
@@ -369,12 +429,6 @@ public:
 
         gridLayout->addWidget(ageLabel_3, 12, 1, 1, 1);
 
-        colourComboBox = new QComboBox(gridLayoutWidget);
-        colourComboBox->setObjectName(QStringLiteral("colourComboBox"));
-        colourComboBox->setEnabled(true);
-
-        gridLayout->addWidget(colourComboBox, 11, 0, 1, 1);
-
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setSpacing(12);
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
@@ -404,18 +458,6 @@ public:
 
         gridLayout->addWidget(ageLabel, 8, 0, 1, 1);
 
-        sizeComboBox = new QComboBox(gridLayoutWidget);
-        sizeComboBox->setObjectName(QStringLiteral("sizeComboBox"));
-        sizeComboBox->setEnabled(true);
-
-        gridLayout->addWidget(sizeComboBox, 13, 0, 1, 1);
-
-        sizeLabel = new QLabel(gridLayoutWidget);
-        sizeLabel->setObjectName(QStringLiteral("sizeLabel"));
-        sizeLabel->setEnabled(true);
-
-        gridLayout->addWidget(sizeLabel, 12, 0, 1, 1);
-
         ageLineEdit = new QLineEdit(gridLayoutWidget);
         ageLineEdit->setObjectName(QStringLiteral("ageLineEdit"));
         ageLineEdit->setEnabled(true);
@@ -434,97 +476,17 @@ public:
 
         gridLayout->addWidget(sexComboBox, 7, 0, 1, 1);
 
-        energyLabel = new QLabel(gridLayoutWidget);
-        energyLabel->setObjectName(QStringLiteral("energyLabel"));
-        energyLabel->setEnabled(true);
+        ageLabel_2 = new QLabel(gridLayoutWidget);
+        ageLabel_2->setObjectName(QStringLiteral("ageLabel_2"));
+        ageLabel_2->setEnabled(true);
 
-        gridLayout->addWidget(energyLabel, 0, 2, 1, 1);
-
-        energyComboBox = new QComboBox(gridLayoutWidget);
-        energyComboBox->setObjectName(QStringLiteral("energyComboBox"));
-        energyComboBox->setEnabled(true);
-
-        gridLayout->addWidget(energyComboBox, 1, 2, 1, 1);
-
-        labelBreed_3 = new QLabel(gridLayoutWidget);
-        labelBreed_3->setObjectName(QStringLiteral("labelBreed_3"));
-        labelBreed_3->setEnabled(true);
-
-        gridLayout->addWidget(labelBreed_3, 2, 2, 1, 1);
-
-        costLineEdit = new QLineEdit(gridLayoutWidget);
-        costLineEdit->setObjectName(QStringLiteral("costLineEdit"));
-        costLineEdit->setEnabled(true);
-
-        gridLayout->addWidget(costLineEdit, 3, 2, 1, 1);
+        gridLayout->addWidget(ageLabel_2, 10, 2, 1, 1);
 
         sexLabel_3 = new QLabel(gridLayoutWidget);
         sexLabel_3->setObjectName(QStringLiteral("sexLabel_3"));
         sexLabel_3->setEnabled(true);
 
-        gridLayout->addWidget(sexLabel_3, 4, 2, 1, 1);
-
-        costPerYearLineEdit = new QLineEdit(gridLayoutWidget);
-        costPerYearLineEdit->setObjectName(QStringLiteral("costPerYearLineEdit"));
-        costPerYearLineEdit->setEnabled(true);
-
-        gridLayout->addWidget(costPerYearLineEdit, 5, 2, 1, 1);
-
-        labelColour_2 = new QLabel(gridLayoutWidget);
-        labelColour_2->setObjectName(QStringLiteral("labelColour_2"));
-        labelColour_2->setEnabled(true);
-
-        gridLayout->addWidget(labelColour_2, 6, 2, 1, 1);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        isCrateTrainedRadioButtonYES = new QRadioButton(gridLayoutWidget);
-        buttonGroup = new QButtonGroup(AddAnimal);
-        buttonGroup->setObjectName(QStringLiteral("buttonGroup"));
-        buttonGroup->addButton(isCrateTrainedRadioButtonYES);
-        isCrateTrainedRadioButtonYES->setObjectName(QStringLiteral("isCrateTrainedRadioButtonYES"));
-
-        horizontalLayout->addWidget(isCrateTrainedRadioButtonYES);
-
-        isCrateTrainedRadioButtonNO = new QRadioButton(gridLayoutWidget);
-        buttonGroup->addButton(isCrateTrainedRadioButtonNO);
-        isCrateTrainedRadioButtonNO->setObjectName(QStringLiteral("isCrateTrainedRadioButtonNO"));
-
-        horizontalLayout->addWidget(isCrateTrainedRadioButtonNO);
-
-
-        gridLayout->addLayout(horizontalLayout, 7, 2, 1, 1);
-
-        ageLabel_2 = new QLabel(gridLayoutWidget);
-        ageLabel_2->setObjectName(QStringLiteral("ageLabel_2"));
-        ageLabel_2->setEnabled(true);
-
-        gridLayout->addWidget(ageLabel_2, 8, 2, 1, 1);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        isHypoallergenicRadioButtonYES = new QRadioButton(gridLayoutWidget);
-        buttonGroup_2 = new QButtonGroup(AddAnimal);
-        buttonGroup_2->setObjectName(QStringLiteral("buttonGroup_2"));
-        buttonGroup_2->addButton(isHypoallergenicRadioButtonYES);
-        isHypoallergenicRadioButtonYES->setObjectName(QStringLiteral("isHypoallergenicRadioButtonYES"));
-
-        horizontalLayout_2->addWidget(isHypoallergenicRadioButtonYES);
-
-        isHypoallergenicRadioButtonNO = new QRadioButton(gridLayoutWidget);
-        buttonGroup_2->addButton(isHypoallergenicRadioButtonNO);
-        isHypoallergenicRadioButtonNO->setObjectName(QStringLiteral("isHypoallergenicRadioButtonNO"));
-
-        horizontalLayout_2->addWidget(isHypoallergenicRadioButtonNO);
-
-
-        gridLayout->addLayout(horizontalLayout_2, 9, 2, 1, 1);
-
-        sizeLabel_2 = new QLabel(gridLayoutWidget);
-        sizeLabel_2->setObjectName(QStringLiteral("sizeLabel_2"));
-        sizeLabel_2->setEnabled(true);
-
-        gridLayout->addWidget(sizeLabel_2, 10, 2, 1, 1);
+        gridLayout->addWidget(sexLabel_3, 6, 2, 1, 1);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -543,20 +505,135 @@ public:
         horizontalLayout_3->addWidget(isNeuteredRadioButtonNO);
 
 
-        gridLayout->addLayout(horizontalLayout_3, 11, 2, 1, 1);
+        gridLayout->addLayout(horizontalLayout_3, 13, 2, 1, 1);
+
+        sizeLabel_2 = new QLabel(gridLayoutWidget);
+        sizeLabel_2->setObjectName(QStringLiteral("sizeLabel_2"));
+        sizeLabel_2->setEnabled(true);
+
+        gridLayout->addWidget(sizeLabel_2, 12, 2, 1, 1);
+
+        energyComboBox = new QComboBox(gridLayoutWidget);
+        energyComboBox->setObjectName(QStringLiteral("energyComboBox"));
+        energyComboBox->setEnabled(true);
+
+        gridLayout->addWidget(energyComboBox, 3, 2, 1, 1);
+
+        costLineEdit = new QLineEdit(gridLayoutWidget);
+        costLineEdit->setObjectName(QStringLiteral("costLineEdit"));
+        costLineEdit->setEnabled(true);
+
+        gridLayout->addWidget(costLineEdit, 5, 2, 1, 1);
+
+        labelBreed_3 = new QLabel(gridLayoutWidget);
+        labelBreed_3->setObjectName(QStringLiteral("labelBreed_3"));
+        labelBreed_3->setEnabled(true);
+
+        gridLayout->addWidget(labelBreed_3, 4, 2, 1, 1);
+
+        energyLabel = new QLabel(gridLayoutWidget);
+        energyLabel->setObjectName(QStringLiteral("energyLabel"));
+        energyLabel->setEnabled(true);
+
+        gridLayout->addWidget(energyLabel, 2, 2, 1, 1);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setSpacing(12);
+        horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
+        playfulnessSlider = new QSlider(gridLayoutWidget);
+        playfulnessSlider->setObjectName(QStringLiteral("playfulnessSlider"));
+        playfulnessSlider->setMaximum(10);
+        playfulnessSlider->setPageStep(2);
+        playfulnessSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_12->addWidget(playfulnessSlider);
+
+        playfulnessLineEdit = new QLineEdit(gridLayoutWidget);
+        playfulnessLineEdit->setObjectName(QStringLiteral("playfulnessLineEdit"));
+        playfulnessLineEdit->setEnabled(false);
+        playfulnessLineEdit->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_12->addWidget(playfulnessLineEdit);
+
+        horizontalLayout_12->setStretch(0, 10);
+        horizontalLayout_12->setStretch(1, 2);
+
+        gridLayout->addLayout(horizontalLayout_12, 15, 1, 1, 1);
+
+        sizeComboBox = new QComboBox(gridLayoutWidget);
+        sizeComboBox->setObjectName(QStringLiteral("sizeComboBox"));
+        sizeComboBox->setEnabled(true);
+
+        gridLayout->addWidget(sizeComboBox, 15, 0, 1, 1);
+
+        sizeLabel = new QLabel(gridLayoutWidget);
+        sizeLabel->setObjectName(QStringLiteral("sizeLabel"));
+        sizeLabel->setEnabled(true);
+
+        gridLayout->addWidget(sizeLabel, 14, 0, 1, 1);
+
+        colourComboBox = new QComboBox(gridLayoutWidget);
+        colourComboBox->setObjectName(QStringLiteral("colourComboBox"));
+        colourComboBox->setEnabled(true);
+
+        gridLayout->addWidget(colourComboBox, 13, 0, 1, 1);
+
+        labelColour = new QLabel(gridLayoutWidget);
+        labelColour->setObjectName(QStringLiteral("labelColour"));
+        labelColour->setEnabled(true);
+
+        gridLayout->addWidget(labelColour, 12, 0, 1, 1);
+
+        lifeExpectancyLabel = new QLabel(gridLayoutWidget);
+        lifeExpectancyLabel->setObjectName(QStringLiteral("lifeExpectancyLabel"));
+        lifeExpectancyLabel->setEnabled(true);
+
+        gridLayout->addWidget(lifeExpectancyLabel, 10, 0, 1, 1);
+
+        lifeExpectancyLineEdit = new QLineEdit(gridLayoutWidget);
+        lifeExpectancyLineEdit->setObjectName(QStringLiteral("lifeExpectancyLineEdit"));
+        lifeExpectancyLineEdit->setEnabled(true);
+
+        gridLayout->addWidget(lifeExpectancyLineEdit, 11, 0, 1, 1);
+
+        loyaltyLabel = new QLabel(gridLayoutWidget);
+        loyaltyLabel->setObjectName(QStringLiteral("loyaltyLabel"));
+        loyaltyLabel->setEnabled(true);
+
+        gridLayout->addWidget(loyaltyLabel, 0, 2, 1, 1);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setSpacing(12);
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        loyaltySlider = new QSlider(gridLayoutWidget);
+        loyaltySlider->setObjectName(QStringLiteral("loyaltySlider"));
+        loyaltySlider->setMaximum(10);
+        loyaltySlider->setPageStep(2);
+        loyaltySlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_7->addWidget(loyaltySlider);
+
+        loyaltyLineEdit = new QLineEdit(gridLayoutWidget);
+        loyaltyLineEdit->setObjectName(QStringLiteral("loyaltyLineEdit"));
+        loyaltyLineEdit->setEnabled(false);
+        loyaltyLineEdit->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_7->addWidget(loyaltyLineEdit);
+
+        horizontalLayout_7->setStretch(0, 10);
+        horizontalLayout_7->setStretch(1, 2);
+
+        gridLayout->addLayout(horizontalLayout_7, 1, 2, 1, 1);
 
         QWidget::setTabOrder(nameLineEdit, aggressionSlider);
         QWidget::setTabOrder(aggressionSlider, aggressionLineEdit);
-        QWidget::setTabOrder(aggressionLineEdit, energyComboBox);
-        QWidget::setTabOrder(energyComboBox, typeComboBox);
+        QWidget::setTabOrder(aggressionLineEdit, typeComboBox);
         QWidget::setTabOrder(typeComboBox, attachmentSlider);
         QWidget::setTabOrder(attachmentSlider, attachmentLineEdit);
-        QWidget::setTabOrder(attachmentLineEdit, costLineEdit);
-        QWidget::setTabOrder(costLineEdit, breedComboBox);
+        QWidget::setTabOrder(attachmentLineEdit, breedComboBox);
         QWidget::setTabOrder(breedComboBox, obedienceSlider);
         QWidget::setTabOrder(obedienceSlider, obedienceLineEdit);
-        QWidget::setTabOrder(obedienceLineEdit, costPerYearLineEdit);
-        QWidget::setTabOrder(costPerYearLineEdit, sexComboBox);
+        QWidget::setTabOrder(obedienceLineEdit, sexComboBox);
         QWidget::setTabOrder(sexComboBox, cleanlinessSlider);
         QWidget::setTabOrder(cleanlinessSlider, cleanlinessLineEdit);
         QWidget::setTabOrder(cleanlinessLineEdit, isCrateTrainedRadioButtonYES);
@@ -566,13 +643,11 @@ public:
         QWidget::setTabOrder(childrenComfortSlider, childrenComfortLineEdit);
         QWidget::setTabOrder(childrenComfortLineEdit, isHypoallergenicRadioButtonYES);
         QWidget::setTabOrder(isHypoallergenicRadioButtonYES, isHypoallergenicRadioButtonNO);
-        QWidget::setTabOrder(isHypoallergenicRadioButtonNO, colourComboBox);
-        QWidget::setTabOrder(colourComboBox, loudnessSlider);
+        QWidget::setTabOrder(isHypoallergenicRadioButtonNO, loudnessSlider);
         QWidget::setTabOrder(loudnessSlider, loudnessLineEdit);
         QWidget::setTabOrder(loudnessLineEdit, isNeuteredRadioButtonYES);
         QWidget::setTabOrder(isNeuteredRadioButtonYES, isNeuteredRadioButtonNO);
-        QWidget::setTabOrder(isNeuteredRadioButtonNO, sizeComboBox);
-        QWidget::setTabOrder(sizeComboBox, intelligenceSlider);
+        QWidget::setTabOrder(isNeuteredRadioButtonNO, intelligenceSlider);
         QWidget::setTabOrder(intelligenceSlider, intelligenceLineEdit);
 
         retranslateUi(AddAnimal);
@@ -585,12 +660,17 @@ public:
     void retranslateUi(QDialog *AddAnimal)
     {
         AddAnimal->setWindowTitle(QApplication::translate("AddAnimal", "Dialog", Q_NULLPTR));
+        labelColour_2->setText(QApplication::translate("AddAnimal", "Hypoallergenic", Q_NULLPTR));
+        isCrateTrainedRadioButtonYES->setText(QApplication::translate("AddAnimal", "Yes", Q_NULLPTR));
+        isCrateTrainedRadioButtonNO->setText(QApplication::translate("AddAnimal", "No", Q_NULLPTR));
+        isHypoallergenicRadioButtonYES->setText(QApplication::translate("AddAnimal", "Yes", Q_NULLPTR));
+        isHypoallergenicRadioButtonNO->setText(QApplication::translate("AddAnimal", "No", Q_NULLPTR));
+        playLabel->setText(QApplication::translate("AddAnimal", "<html><head/><body><p>Playfulness Level (Out of 10)</p></body></html>", Q_NULLPTR));
         aggressionLabel->setText(QApplication::translate("AddAnimal", "Aggression Level (Out of 10)", Q_NULLPTR));
         typeLabel->setText(QApplication::translate("AddAnimal", "Type", Q_NULLPTR));
         attachmentLabel->setText(QApplication::translate("AddAnimal", "Attachment Level (Out of 10)", Q_NULLPTR));
         aggressionLabel_2->setText(QApplication::translate("AddAnimal", "Comfort with Children (Out of 10)", Q_NULLPTR));
         nameLabel->setText(QApplication::translate("AddAnimal", "Name", Q_NULLPTR));
-        labelColour->setText(QApplication::translate("AddAnimal", "Colour", Q_NULLPTR));
         typeComboBox->clear();
         typeComboBox->insertItems(0, QStringList()
          << QApplication::translate("AddAnimal", "Please Select", Q_NULLPTR)
@@ -610,23 +690,7 @@ public:
          << QApplication::translate("AddAnimal", "Please Select a Type", Q_NULLPTR)
         );
         ageLabel_3->setText(QApplication::translate("AddAnimal", "Intelligence Level (Out of 10)", Q_NULLPTR));
-        colourComboBox->clear();
-        colourComboBox->insertItems(0, QStringList()
-         << QApplication::translate("AddAnimal", "Please Select", Q_NULLPTR)
-         << QApplication::translate("AddAnimal", "Black", Q_NULLPTR)
-         << QApplication::translate("AddAnimal", "White", Q_NULLPTR)
-         << QApplication::translate("AddAnimal", "Brown", Q_NULLPTR)
-         << QApplication::translate("AddAnimal", "Grey", Q_NULLPTR)
-        );
-        ageLabel->setText(QApplication::translate("AddAnimal", "Age", Q_NULLPTR));
-        sizeComboBox->clear();
-        sizeComboBox->insertItems(0, QStringList()
-         << QApplication::translate("AddAnimal", "Please Select", Q_NULLPTR)
-         << QApplication::translate("AddAnimal", "Small", Q_NULLPTR)
-         << QApplication::translate("AddAnimal", "Medium", Q_NULLPTR)
-         << QApplication::translate("AddAnimal", "Large", Q_NULLPTR)
-        );
-        sizeLabel->setText(QApplication::translate("AddAnimal", "Size", Q_NULLPTR));
+        ageLabel->setText(QApplication::translate("AddAnimal", "Age (Years)", Q_NULLPTR));
         sexLabel->setText(QApplication::translate("AddAnimal", "Sex", Q_NULLPTR));
         sexComboBox->clear();
         sexComboBox->insertItems(0, QStringList()
@@ -634,7 +698,11 @@ public:
          << QApplication::translate("AddAnimal", "Male", Q_NULLPTR)
          << QApplication::translate("AddAnimal", "Female", Q_NULLPTR)
         );
-        energyLabel->setText(QApplication::translate("AddAnimal", "Energy Level", Q_NULLPTR));
+        ageLabel_2->setText(QApplication::translate("AddAnimal", "Crate Trained", Q_NULLPTR));
+        sexLabel_3->setText(QApplication::translate("AddAnimal", "Cost per Year (in dollars)", Q_NULLPTR));
+        isNeuteredRadioButtonYES->setText(QApplication::translate("AddAnimal", "Yes", Q_NULLPTR));
+        isNeuteredRadioButtonNO->setText(QApplication::translate("AddAnimal", "No", Q_NULLPTR));
+        sizeLabel_2->setText(QApplication::translate("AddAnimal", "Neutered/Spayed", Q_NULLPTR));
         energyComboBox->clear();
         energyComboBox->insertItems(0, QStringList()
          << QApplication::translate("AddAnimal", "Please Select", Q_NULLPTR)
@@ -643,16 +711,26 @@ public:
          << QApplication::translate("AddAnimal", "High", Q_NULLPTR)
         );
         labelBreed_3->setText(QApplication::translate("AddAnimal", "Flat Cost (in dollars)", Q_NULLPTR));
-        sexLabel_3->setText(QApplication::translate("AddAnimal", "Cost per Year (in dollars)", Q_NULLPTR));
-        labelColour_2->setText(QApplication::translate("AddAnimal", "Hypoallergenic", Q_NULLPTR));
-        isCrateTrainedRadioButtonYES->setText(QApplication::translate("AddAnimal", "Yes", Q_NULLPTR));
-        isCrateTrainedRadioButtonNO->setText(QApplication::translate("AddAnimal", "No", Q_NULLPTR));
-        ageLabel_2->setText(QApplication::translate("AddAnimal", "Crate Trained", Q_NULLPTR));
-        isHypoallergenicRadioButtonYES->setText(QApplication::translate("AddAnimal", "Yes", Q_NULLPTR));
-        isHypoallergenicRadioButtonNO->setText(QApplication::translate("AddAnimal", "No", Q_NULLPTR));
-        sizeLabel_2->setText(QApplication::translate("AddAnimal", "Neutered/Spayed", Q_NULLPTR));
-        isNeuteredRadioButtonYES->setText(QApplication::translate("AddAnimal", "Yes", Q_NULLPTR));
-        isNeuteredRadioButtonNO->setText(QApplication::translate("AddAnimal", "No", Q_NULLPTR));
+        energyLabel->setText(QApplication::translate("AddAnimal", "Energy Level", Q_NULLPTR));
+        sizeComboBox->clear();
+        sizeComboBox->insertItems(0, QStringList()
+         << QApplication::translate("AddAnimal", "Please Select", Q_NULLPTR)
+         << QApplication::translate("AddAnimal", "Small", Q_NULLPTR)
+         << QApplication::translate("AddAnimal", "Medium", Q_NULLPTR)
+         << QApplication::translate("AddAnimal", "Large", Q_NULLPTR)
+        );
+        sizeLabel->setText(QApplication::translate("AddAnimal", "Size", Q_NULLPTR));
+        colourComboBox->clear();
+        colourComboBox->insertItems(0, QStringList()
+         << QApplication::translate("AddAnimal", "Please Select", Q_NULLPTR)
+         << QApplication::translate("AddAnimal", "Black", Q_NULLPTR)
+         << QApplication::translate("AddAnimal", "White", Q_NULLPTR)
+         << QApplication::translate("AddAnimal", "Brown", Q_NULLPTR)
+         << QApplication::translate("AddAnimal", "Grey", Q_NULLPTR)
+        );
+        labelColour->setText(QApplication::translate("AddAnimal", "Colour", Q_NULLPTR));
+        lifeExpectancyLabel->setText(QApplication::translate("AddAnimal", "<html><head/><body><p>Life Expectancy (Years Remaining)</p></body></html>", Q_NULLPTR));
+        loyaltyLabel->setText(QApplication::translate("AddAnimal", "<html><head/><body><p>Loyalty Level (Out of 10)</p></body></html>", Q_NULLPTR));
     } // retranslateUi
 
 };
