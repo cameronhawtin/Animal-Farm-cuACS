@@ -68,7 +68,8 @@ SOURCES       = main.cpp \
 		editprofile.cpp \
 		editanimal.cpp \
 		CuacsAPI.cpp \
-		viewmatches.cpp qrc_egyptfont.cpp \
+		viewmatches.cpp \
+		generatematches.cpp qrc_egyptfont.cpp \
 		qrc_logo.cpp \
 		qrc_icon.cpp \
 		moc_mainwindow.cpp \
@@ -101,6 +102,7 @@ OBJECTS       = main.o \
 		editanimal.o \
 		CuacsAPI.o \
 		viewmatches.o \
+		generatematches.o \
 		qrc_egyptfont.o \
 		qrc_logo.o \
 		qrc_icon.o \
@@ -216,7 +218,8 @@ DIST          = cuACS.pro.user \
 		viewprofile.h \
 		editprofile.h \
 		editanimal.h \
-		viewmatches.h main.cpp \
+		viewmatches.h \
+		generatematches.h main.cpp \
 		mainwindow.cpp \
 		postloginstaff.cpp \
 		postloginclient.cpp \
@@ -234,7 +237,8 @@ DIST          = cuACS.pro.user \
 		editprofile.cpp \
 		editanimal.cpp \
 		CuacsAPI.cpp \
-		viewmatches.cpp
+		viewmatches.cpp \
+		generatematches.cpp
 QMAKE_TARGET  = cuACS
 DESTDIR       = 
 TARGET        = cuACS
@@ -423,8 +427,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents egyptfont.qrc logo.qrc icon.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h CuacsAPI.h Profile.h Serializer.h addclient.h viewclients.h viewprofile.h editprofile.h editanimal.h viewmatches.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cpp FileStorageManager.cpp PathFinder.cpp PersistentStorageAPI.cpp Serializer.cpp Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp viewmatches.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h postloginstaff.h postloginclient.h viewanimals.h addanimal.h Animal.h CuacsAPI.h FileStorageManager.h PathFinder.h PersistentStorageAPI.h Profile.h Serializer.h StorageAdapter.h Human.h CuacsAPI.h Profile.h Serializer.h addclient.h viewclients.h viewprofile.h editprofile.h editanimal.h viewmatches.h generatematches.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp postloginstaff.cpp postloginclient.cpp viewanimals.cpp addanimal.cpp Animal.cpp FileStorageManager.cpp PathFinder.cpp PersistentStorageAPI.cpp Serializer.cpp Human.cpp viewclients.cpp addclient.cpp viewprofile.cpp editprofile.cpp editanimal.cpp CuacsAPI.cpp viewmatches.cpp generatematches.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui postloginstaff.ui postloginclient.ui viewanimals.ui addanimal.ui addclient.ui viewclients.ui viewprofile.ui editprofile.ui editanimal.ui viewmatches.ui $(DISTDIR)/
 
 
@@ -485,6 +489,7 @@ moc_mainwindow.cpp: postloginstaff.h \
 		PersistentStorageAPI.h \
 		editanimal.h \
 		viewclients.h \
+		viewmatches.h \
 		addanimal.h \
 		addclient.h \
 		postloginclient.h \
@@ -503,6 +508,7 @@ moc_postloginstaff.cpp: viewanimals.h \
 		PersistentStorageAPI.h \
 		editanimal.h \
 		viewclients.h \
+		viewmatches.h \
 		addanimal.h \
 		addclient.h \
 		postloginstaff.h \
@@ -669,6 +675,7 @@ main.o: main.cpp mainwindow.h \
 		PersistentStorageAPI.h \
 		editanimal.h \
 		viewclients.h \
+		viewmatches.h \
 		addanimal.h \
 		addclient.h \
 		postloginclient.h \
@@ -686,6 +693,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		PersistentStorageAPI.h \
 		editanimal.h \
 		viewclients.h \
+		viewmatches.h \
 		addanimal.h \
 		addclient.h \
 		postloginclient.h \
@@ -703,6 +711,7 @@ postloginstaff.o: postloginstaff.cpp postloginstaff.h \
 		PersistentStorageAPI.h \
 		editanimal.h \
 		viewclients.h \
+		viewmatches.h \
 		addanimal.h \
 		addclient.h \
 		ui_postloginstaff.h
@@ -743,6 +752,7 @@ addanimal.o: addanimal.cpp addanimal.h \
 		viewanimals.h \
 		editanimal.h \
 		viewclients.h \
+		viewmatches.h \
 		addclient.h \
 		postloginclient.h \
 		viewprofile.h \
@@ -799,6 +809,7 @@ addclient.o: addclient.cpp addclient.h \
 		viewanimals.h \
 		editanimal.h \
 		viewclients.h \
+		viewmatches.h \
 		addanimal.h \
 		postloginclient.h \
 		viewprofile.h \
@@ -843,6 +854,14 @@ CuacsAPI.o: CuacsAPI.cpp CuacsAPI.h \
 viewmatches.o: viewmatches.cpp viewmatches.h \
 		ui_viewmatches.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewmatches.o viewmatches.cpp
+
+generatematches.o: generatematches.cpp generatematches.h \
+		Animal.h \
+		Profile.h \
+		Human.h \
+		CuacsAPI.h \
+		PersistentStorageAPI.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o generatematches.o generatematches.cpp
 
 qrc_egyptfont.o: qrc_egyptfont.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_egyptfont.o qrc_egyptfont.cpp

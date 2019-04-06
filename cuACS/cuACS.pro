@@ -48,7 +48,8 @@ SOURCES += \
     editprofile.cpp \
     editanimal.cpp \
     CuacsAPI.cpp \
-    viewmatches.cpp
+    viewmatches.cpp \
+    generatematches.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -73,7 +74,8 @@ HEADERS += \
     viewprofile.h \
     editprofile.h \
     editanimal.h \
-    viewmatches.h
+    viewmatches.h \
+    generatematches.h
 
 FORMS += \
         mainwindow.ui \

@@ -85,7 +85,7 @@ public:
         ViewClientsButton->setAutoDefault(true);
         generateACMButton = new QPushButton(PostLoginStaff);
         generateACMButton->setObjectName(QStringLiteral("generateACMButton"));
-        generateACMButton->setEnabled(false);
+        generateACMButton->setEnabled(true);
         generateACMButton->setGeometry(QRect(20, 180, 301, 41));
         QWidget::setTabOrder(AddClientButton, ViewClientsButton);
         QWidget::setTabOrder(ViewClientsButton, AddAnimalButton);
