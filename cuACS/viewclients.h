@@ -6,6 +6,7 @@
 #include "CuacsAPI.h"
 #include <QListWidget>
 #include <sstream>
+#include <QFontDatabase>
 
 namespace Ui {
 class ViewClients;

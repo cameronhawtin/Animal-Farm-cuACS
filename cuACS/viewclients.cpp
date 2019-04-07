@@ -8,6 +8,9 @@ ViewClients::ViewClients(QWidget *parent) :
     ui->setupUi(this);
     //this->setFixedSize(QSize(1112, 509));
     this->setWindowTitle("View Clients");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     capi = new CuacsAPI();
 

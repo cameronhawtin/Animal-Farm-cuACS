@@ -158,6 +158,7 @@
   <property name="font">
    <font>
     <family>Egyptienne F</family>
+    <pointsize>11</pointsize>
     <weight>75</weight>
     <bold>true</bold>
    </font>

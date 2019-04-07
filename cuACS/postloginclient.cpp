@@ -8,6 +8,9 @@ PostLoginClient::PostLoginClient(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(321, 159));
     this->setWindowTitle("Homepage - Clients");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 }
 
 // PostLoginClient destructor

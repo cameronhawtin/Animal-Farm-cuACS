@@ -5,6 +5,7 @@
 #include "generatematches.h"
 #include <tuple>
 #include <iostream>
+#include <QFontDatabase>
 
 namespace Ui {
 class ViewMatches;

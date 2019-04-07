@@ -6,6 +6,7 @@
 #include "postloginclient.h"
 #include "viewprofile.h"
 #include "CuacsAPI.h"
+#include <QFontDatabase>
 
 namespace Ui {
 class MainWindow;

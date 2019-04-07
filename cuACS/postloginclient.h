@@ -5,6 +5,7 @@
 #include <viewanimals.h>
 #include <viewprofile.h>
 #include <editprofile.h>
+#include <QFontDatabase>
 
 namespace Ui {
 class PostLoginClient;

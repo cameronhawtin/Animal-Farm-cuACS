@@ -104,8 +104,8 @@ public:
     QLineEdit *loyaltyLineEdit;
     QDialogButtonBox *buttonBox;
     QButtonGroup *buttonGroup_3;
-    QButtonGroup *buttonGroup;
     QButtonGroup *buttonGroup_2;
+    QButtonGroup *buttonGroup;
 
     void setupUi(QDialog *AddAnimal)
     {
@@ -143,6 +143,7 @@ public:
         AddAnimal->setPalette(palette);
         QFont font;
         font.setFamily(QStringLiteral("Egyptienne F"));
+        font.setPointSize(11);
         AddAnimal->setFont(font);
         gridLayoutWidget = new QWidget(AddAnimal);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));

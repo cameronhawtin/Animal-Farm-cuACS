@@ -8,6 +8,9 @@ EditProfile::EditProfile(QWidget *parent) :
     ui->setupUi(this);
     //this->setFixedSize(QSize(871, 539));
     this->setWindowTitle("Edit Your Profile");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
     QIntValidator* ageRange = new QIntValidator(0, 999, this);

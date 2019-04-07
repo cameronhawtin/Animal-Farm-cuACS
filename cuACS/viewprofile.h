@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "CuacsAPI.h"
 #include <iostream>
+#include <QFontDatabase>
 
 namespace Ui {
 class ViewProfile;

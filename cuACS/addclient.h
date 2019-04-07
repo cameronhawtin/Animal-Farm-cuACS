@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QPushButton>
 #include "CuacsAPI.h"
+#include <QFontDatabase>
 
 namespace Ui {
 class AddClient;

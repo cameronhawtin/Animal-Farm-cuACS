@@ -7,6 +7,7 @@
 #include <QListWidget>
 #include <sstream>
 #include <editanimal.h>
+#include <QFontDatabase>
 
 namespace Ui {
 class ViewAnimals;

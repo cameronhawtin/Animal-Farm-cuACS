@@ -114,6 +114,7 @@ public:
         ViewClients->setPalette(palette);
         QFont font;
         font.setFamily(QStringLiteral("Egyptienne F"));
+        font.setPointSize(11);
         font.setBold(true);
         font.setWeight(75);
         ViewClients->setFont(font);

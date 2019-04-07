@@ -8,6 +8,9 @@ ViewProfile::ViewProfile(QWidget *parent) :
     ui->setupUi(this);
     //this->setFixedSize(QSize(815, 530));
     this->setWindowTitle("View Your Profile");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     ui->nameLineEdit->setReadOnly(true);
     ui->addressLineEdit->setReadOnly(true);

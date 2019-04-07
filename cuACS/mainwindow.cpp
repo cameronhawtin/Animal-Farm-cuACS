@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //QColor cuRED = QColor(200, 16, 46);
     QPixmap icon (":/icon/icon.png");
     this->setWindowIcon(icon);
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 }
 
 

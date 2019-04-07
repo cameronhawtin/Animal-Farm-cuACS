@@ -8,6 +8,9 @@ PostLoginStaff::PostLoginStaff(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(341, 238));
     this->setWindowTitle("Homepage - Staff");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 }
 
 // PostLoginStaff Destructor

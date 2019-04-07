@@ -5,6 +5,7 @@
 #include <iostream>
 #include <QPushButton>
 #include <CuacsAPI.h>
+#include <QFontDatabase>
 
 
 namespace Ui {

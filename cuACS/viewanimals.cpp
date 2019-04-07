@@ -11,6 +11,9 @@ ViewAnimals::ViewAnimals(QWidget *parent, bool isStaff) :
     ui->setupUi(this);
     this->setFixedSize(QSize(1014, 550));
     this->setWindowTitle("View Animals");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     ui->editAnimal->setVisible(isStaff);
 

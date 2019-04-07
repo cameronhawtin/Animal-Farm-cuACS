@@ -9,6 +9,7 @@
 #include "addanimal.h"
 #include "addclient.h"
 #include "CuacsAPI.h"
+#include <QFontDatabase>
 
 
 namespace Ui {
