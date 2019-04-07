@@ -41,6 +41,12 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     int totalScore;
     int e=-1;
 
+    int TypeType;
+    if (human->getTypePreference() == animal->getAnimalType())
+        TypeType = 100;
+    else
+        TypeType = 0;
+
     int AllergiesAllergies;
     if ((human->getAllergies().find("Cat")!=std::string::npos && animal->getAnimalType() == "Cat" && animal->getIsHypoallergenic() == false)        ||
         (human->getAllergies().find("Dog")!=std::string::npos && animal->getAnimalType() == "Dog" && animal->getIsHypoallergenic() == false)        ||
@@ -229,7 +235,8 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
 
 
 
-    totalScore = AllergiesAllergies*150 +
+    totalScore = TypeType*225 +
+    AllergiesAllergies*150 +
     ChildrenChildren*140 +
     NeuteredNeutered*130 +
     AggressionPurpose*125 +
