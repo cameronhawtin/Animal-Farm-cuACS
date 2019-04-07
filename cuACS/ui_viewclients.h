@@ -29,7 +29,6 @@ QT_BEGIN_NAMESPACE
 class Ui_ViewClients
 {
 public:
-    QDialogButtonBox *buttonBox;
     QListWidget *viewClientsListWidget;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
@@ -76,6 +75,7 @@ public:
     QCheckBox *catAllergyCheckBox;
     QLabel *purposeLabel;
     QCheckBox *hamsterAllergyCheckBox;
+    QDialogButtonBox *buttonBox;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout_3;
     QLabel *titleLabel;
@@ -115,11 +115,6 @@ public:
         QFont font;
         font.setFamily(QStringLiteral("Egyptienne F"));
         ViewClients->setFont(font);
-        buttonBox = new QDialogButtonBox(ViewClients);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(750, 460, 341, 32));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Close);
         viewClientsListWidget = new QListWidget(ViewClients);
         viewClientsListWidget->setObjectName(QStringLiteral("viewClientsListWidget"));
         viewClientsListWidget->setGeometry(QRect(20, 20, 281, 461));
@@ -374,6 +369,13 @@ public:
 
         gridLayout->addWidget(hamsterAllergyCheckBox, 6, 3, 1, 1);
 
+        buttonBox = new QDialogButtonBox(gridLayoutWidget);
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Close);
+
+        gridLayout->addWidget(buttonBox, 11, 3, 1, 1);
+
         gridLayout->setColumnStretch(0, 3);
         horizontalLayoutWidget = new QWidget(ViewClients);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
@@ -416,7 +418,6 @@ public:
         QWidget::setTabOrder(mouseAllergyCheckBox, guineapigAllergyCheckBox);
 
         retranslateUi(ViewClients);
-        QObject::connect(buttonBox, SIGNAL(accepted()), ViewClients, SLOT(accept()));
         QObject::connect(buttonBox, SIGNAL(rejected()), ViewClients, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(ViewClients);

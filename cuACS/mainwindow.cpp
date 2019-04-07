@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete capi;
 }
 
 //This function is called when the login button is clicked
@@ -55,6 +54,7 @@ void MainWindow::on_loginButton_clicked()
            hide();
            postLoginStaff = new PostLoginStaff(this);
            postLoginStaff->exec();
+           loggedIn = true;
        }
 
 //       else if (username == "Client") {
@@ -64,4 +64,6 @@ void MainWindow::on_loginButton_clicked()
 //       }
        else QMessageBox::warning(this, "Invalid Login", "The provided username does not exist");
    }
+   if (loggedIn)
+       delete capi;
 }
