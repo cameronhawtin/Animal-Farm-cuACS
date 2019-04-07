@@ -48,162 +48,162 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     int totalScore;
     int e=-1;
 
-    int TypeType;
+    int typeType;
     if (human->getTypePreference() == animal->getAnimalType())
-        TypeType = 100;
+        typeType = 100;
     else
-        TypeType = 0;
+        typeType = 0;
 
-    int AllergiesAllergies;
+    int allergiesAllergies;
     if ((human->getAllergies().find("Cat")!=std::string::npos && animal->getAnimalType() == "Cat" && animal->getIsHypoallergenic() == false)        ||
         (human->getAllergies().find("Dog")!=std::string::npos && animal->getAnimalType() == "Dog" && animal->getIsHypoallergenic() == false)        ||
         (human->getAllergies().find("Bird")!=std::string::npos && animal->getAnimalType() == "Bird" && animal->getIsHypoallergenic() == false)      ||
         (human->getAllergies().find("Hamster")!=std::string::npos && animal->getAnimalType() == "Hamster" && animal->getIsHypoallergenic() == false)||
         (human->getAllergies().find("Mouse")!=std::string::npos && animal->getAnimalType() == "Mouse" && animal->getIsHypoallergenic() == false)    ||
         (human->getAllergies().find("Guineapig")!=std::string::npos && animal->getAnimalType() == "Guinea Pig" && animal->getIsHypoallergenic() == false) )
-            AllergiesAllergies = 0;
-    else AllergiesAllergies = 100;
+            allergiesAllergies = 0;
+    else allergiesAllergies = 100;
 
-    int ChildrenChildren = human->getNumChildren() * animal->getChildrenComfort() * 2;
+    int childrenChildren = human->getNumChildren() * animal->getChildrenComfort() * 2;
 
-    int NeuteredNeutered;
+    int neuteredNeutered;
     if (human->getNeedFertile() && animal->getIsNeutered())
-        NeuteredNeutered = 100;
+        neuteredNeutered = 100;
 
     else if (!human->getNeedFertile())
-        NeuteredNeutered = 50;
+        neuteredNeutered = 50;
     else
-        NeuteredNeutered = 0;
+        neuteredNeutered = 0;
 
-    int AggressionPurpose;
+    int aggressionPurpose;
     try {
         if (human->getPurpose() == "Guard" || human->getPurpose() == "Hunting")
-            AggressionPurpose = animal->getAggression()*10;
+            aggressionPurpose = animal->getAggression()*10;
 
         else if (human->getPurpose() == "Companion" || human->getPurpose() == "Gift")
-            AggressionPurpose = animal->getAggression()*5;
+            aggressionPurpose = animal->getAggression()*5;
 
         else if (human->getPurpose() == "Breeding" || human->getPurpose() == "Disability")
-            AggressionPurpose = animal->getAggression()*1;
+            aggressionPurpose = animal->getAggression()*1;
         else throw e;
     }
     catch (int e) {
         std::cout << "AggressionPurpose error";
     }
 
-    int AttachmentAttachment = human->getAttachment() * animal->getAttachment();
+    int attachmentAttachment = human->getAttachment() * animal->getAttachment();
 
-    int CrateTravel;
+    int crateTravel;
     // this can be improved if someone has the time
     if (human->getTravel() == "No Travel" || animal->getIsCrateTrained())
-        CrateTravel = 100;
+        crateTravel = 100;
     else if (human->getTravel() != "No Travel" && !animal->getIsCrateTrained())
-        CrateTravel = 0;
+        crateTravel = 0;
     else {
-        CrateTravel = 100;
+        crateTravel = 100;
     }
 
-    int IntelligencePurpose;
+    int intelligencePurpose;
     try {
         if (human->getPurpose() == "Disability" || human->getPurpose() == "Hunting")
-            AggressionPurpose = animal->getIntelligence()*10;
+            intelligencePurpose = animal->getIntelligence()*10;
 
         else if (human->getPurpose() == "Companion" || human->getPurpose() == "Guard")
-            AggressionPurpose = animal->getIntelligence()*5;
+            intelligencePurpose = animal->getIntelligence()*5;
 
         else if (human->getPurpose() == "Breeding" || human->getPurpose() == "Gift")
-            AggressionPurpose = animal->getIntelligence()*1;
+            intelligencePurpose = animal->getIntelligence()*1;
         else throw e;
     }
     catch (int e) {
         std::cout << "IntelligencePurpose error";
     }
 
-    int AttachmentFreetime;
+    int attachmentFreetime;
     if (human->getFreeTime() == "0 - 1")
-        AttachmentFreetime = animal->getAttachment() * 0;
+        attachmentFreetime = animal->getAttachment() * 0;
     else if (human->getFreeTime() == "1 - 2")
-        AttachmentFreetime = animal->getAttachment() * 3;
+        attachmentFreetime = animal->getAttachment() * 3;
     else if (human->getFreeTime() == "3 - 4")
-        AttachmentFreetime = animal->getAttachment() * 6;
+        attachmentFreetime = animal->getAttachment() * 6;
     else if (human->getFreeTime() == "5+")
-        AttachmentFreetime = animal->getAttachment() * 10;
+        attachmentFreetime = animal->getAttachment() * 10;
 
-    int ObediencePatience = human->getPatience() * animal->getObedience();
+    int obediencePatience = human->getPatience() * animal->getObedience();
 
-    int LoudnessHometype;
+    int loudnessHometype;
     if (human->getHomeType() == "Apartment")
-        LoudnessHometype = animal->getLoudness() * 1;
+        loudnessHometype = animal->getLoudness() * 1;
     else if (human->getHomeType() == "Condo")
-        LoudnessHometype = animal->getLoudness() * 3;
+        loudnessHometype = animal->getLoudness() * 3;
     else if (human->getHomeType() == "Small House")
-        LoudnessHometype = animal->getLoudness() * 5;
+        loudnessHometype = animal->getLoudness() * 5;
     else if (human->getHomeType() == "Medium House")
-        LoudnessHometype = animal->getLoudness() * 7;
+        loudnessHometype = animal->getLoudness() * 7;
     else
-        LoudnessHometype = animal->getLoudness() * 10;
+        loudnessHometype = animal->getLoudness() * 10;
 
-    int CostBudget;
+    int costBudget;
     if (human->getBudget() <= animal->getCost())
-        CostBudget = 100;
+        costBudget = 100;
     else
-        CostBudget = 0;
+        costBudget = 0;
 
-    int EnergyHometype;
+    int energyHometype;
     if (human->getHomeType() == "Apartment" && animal->getEnergy() == "High")
-        EnergyHometype = 10;
+        energyHometype = 10;
     else if ((human->getHomeType() == "Condo" && animal->getEnergy() == "High") ||
              (human->getHomeType() == "Apartment" && animal->getEnergy() == "Medium"))
-        EnergyHometype = 30;
+        energyHometype = 30;
     else if ((human->getHomeType() == "Small House" && animal->getEnergy() == "High") ||
              (human->getHomeType() == "Condo" && animal->getEnergy() == "Medium"))
-        EnergyHometype = 50;
+        energyHometype = 50;
     else if (human->getHomeType() == "Medium House" && animal->getEnergy() == "High")
-        EnergyHometype = 70;
+        energyHometype = 70;
     else
-        EnergyHometype = 100;
+        energyHometype = 100;
 
-    int CleanlinessFreetime;
+    int cleanlinessFreetime;
     if (human->getFreeTime() == "0 - 1")
-        CleanlinessFreetime = 1 * animal->getCleanliness();
+        cleanlinessFreetime = 1 * animal->getCleanliness();
     else if (human->getFreeTime() == "1 - 2")
-        CleanlinessFreetime = 3 * animal->getCleanliness();
+        cleanlinessFreetime = 3 * animal->getCleanliness();
     else if (human->getFreeTime() == "2 - 3")
-        CleanlinessFreetime = 5 * animal->getCleanliness();
+        cleanlinessFreetime = 5 * animal->getCleanliness();
     else if (human->getFreeTime() == "3 - 4")
-        CleanlinessFreetime = 7 * animal->getCleanliness();
+        cleanlinessFreetime = 7 * animal->getCleanliness();
     else if (human->getFreeTime() == "5+")
-        CleanlinessFreetime = 10 * animal->getCleanliness();
+        cleanlinessFreetime = 10 * animal->getCleanliness();
     else printf("oops");
 
-    int CratetrainedPatience;
+    int cratetrainedPatience;
     if (animal->getIsCrateTrained()) {
         if (human->getPatience() > 5)
-            CratetrainedPatience = 2 * human->getPatience();
+            cratetrainedPatience = 2 * human->getPatience();
         else
-            CratetrainedPatience = 5 * human->getPatience();
+            cratetrainedPatience = 5 * human->getPatience();
     }
     else if (!animal->getIsCrateTrained()) {
         if (human->getPatience() > 5)
-            CratetrainedPatience = 10 * human->getPatience();
+            cratetrainedPatience = 10 * human->getPatience();
         else
-            CratetrainedPatience = 1 * human->getPatience();
+            cratetrainedPatience = 1 * human->getPatience();
     }
     else printf("oops");
 
-    int NeuteredBudget;
+    int neuteredBudget;
     if (animal->getIsNeutered())
-        NeuteredBudget = 50;
+        neuteredBudget = 50;
     else if (!animal->getIsNeutered()) {
         if (human->getBudget() - animal->getCost() > 250)
-            NeuteredBudget = 100;
+            neuteredBudget = 100;
         else
-            NeuteredBudget = 0;
+            neuteredBudget = 0;
     }
     else printf("oops");
 
     // this can be improved
-    int MaintenanceSalary;
+    int maintenanceSalary;
     if ((human->getSalary() == "0 - 30" && animal->getCostPerYear() < 30)       ||
         (human->getSalary() == "30 - 50" && animal->getCostPerYear() < 75)      ||
         (human->getSalary() == "50 - 70" && animal->getCostPerYear() < 200)     ||
@@ -211,58 +211,58 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         (human->getSalary() == "90 - 110" && animal->getCostPerYear() < 600)    ||
         (human->getSalary() == "110 - 130" && animal->getCostPerYear() < 1000)  ||
         (human->getSalary() == "130+"))
-        MaintenanceSalary = 100;
+        maintenanceSalary = 100;
     else
-        MaintenanceSalary = 0;
+        maintenanceSalary = 0;
 
 
-    int CleanlinessPatience = human->getPatience() * animal->getCleanliness();
+    int cleanlinessPatience = human->getPatience() * animal->getCleanliness();
 
-    int AggressionPatience = human->getPatience() * animal->getAggression();
+    int aggressionPatience = human->getPatience() * animal->getAggression();
 
-    int CleanlinessSalary;
+    int cleanlinessSalary;
     if (human->getSalary() == "0 - 30")
-        CleanlinessSalary = 1 * animal->getCleanliness();
+        cleanlinessSalary = 1 * animal->getCleanliness();
     else if (human->getSalary() == "30 - 50")
-        CleanlinessSalary = 3 * animal->getCleanliness();
+        cleanlinessSalary = 3 * animal->getCleanliness();
     else if (human->getSalary() == "50 - 70")
-        CleanlinessSalary = 5 * animal->getCleanliness();
+        cleanlinessSalary = 5 * animal->getCleanliness();
     else if (human->getSalary() == "70 - 90")
-        CleanlinessSalary = 7 * animal->getCleanliness();
+        cleanlinessSalary = 7 * animal->getCleanliness();
     else if (human->getSalary() == "90 - 110")
-        CleanlinessSalary = 8 * animal->getCleanliness();
+        cleanlinessSalary = 8 * animal->getCleanliness();
     else if (human->getSalary() == "110 - 130")
-        CleanlinessSalary = 9 * animal->getCleanliness();
+        cleanlinessSalary = 9 * animal->getCleanliness();
     else if (human->getSalary() == "130+")
-        CleanlinessSalary = 10 * animal->getCleanliness();
+        cleanlinessSalary = 10 * animal->getCleanliness();
     else printf("oops");
 
 
-    int ChildrenPatience = human->getPatience() * animal->getChildrenComfort();
+    int childrenPatience = human->getPatience() * animal->getChildrenComfort();
 
 
 
-    totalScore = TypeType*225 +
-    AllergiesAllergies*150 +
-    ChildrenChildren*140 +
-    NeuteredNeutered*130 +
-    AggressionPurpose*125 +
-    AttachmentAttachment*120 +
-    CrateTravel*118 +
-    IntelligencePurpose*110 +
-    AttachmentFreetime*70 +
-    ObediencePatience*63 +
-    LoudnessHometype*58 +
-    CostBudget*57 +
-    EnergyHometype*55 +
-    CleanlinessFreetime*53 +
-    CratetrainedPatience*50 +
-    NeuteredBudget*48 +
-    MaintenanceSalary*45 +
-    CleanlinessPatience*43 +
-    AggressionPatience*40 +
-    CleanlinessSalary*30 +
-    ChildrenChildren*20;
+    totalScore = typeType*225 +
+    allergiesAllergies*150 +
+    childrenChildren*140 +
+    neuteredNeutered*130 +
+    aggressionPurpose*125 +
+    attachmentAttachment*120 +
+    crateTravel*118 +
+    intelligencePurpose*110 +
+    attachmentFreetime*70 +
+    obediencePatience*63 +
+    loudnessHometype*58 +
+    costBudget*57 +
+    energyHometype*55 +
+    cleanlinessFreetime*53 +
+    cratetrainedPatience*50 +
+    neuteredBudget*48 +
+    maintenanceSalary*45 +
+    cleanlinessPatience*43 +
+    aggressionPatience*40 +
+    cleanlinessSalary*30 +
+    childrenChildren*20;
 
     cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
 
