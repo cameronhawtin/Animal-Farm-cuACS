@@ -94,7 +94,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     int attachmentAttachment = human->getAttachment() * animal->getAttachment();
 
     int crateTravel;
-    // this can be improved if someone has the time
+    // this can be improved
     if (human->getTravel() == "No Travel" || animal->getIsCrateTrained())
         crateTravel = 100;
     else if (human->getTravel() != "No Travel" && !animal->getIsCrateTrained())
