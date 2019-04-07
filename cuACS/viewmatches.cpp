@@ -6,6 +6,8 @@ ViewMatches::ViewMatches(QWidget *parent) :
     ui(new Ui::ViewMatches)
 {
     ui->setupUi(this);
+    gm = new GenerateMatches();
+    gm->getAllScores();
 }
 
 ViewMatches::~ViewMatches()

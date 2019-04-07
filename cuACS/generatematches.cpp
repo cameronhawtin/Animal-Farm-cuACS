@@ -3,8 +3,22 @@
 GenerateMatches::GenerateMatches()
 {
     capi = new CuacsAPI();
+
     vector<Human*> humansVec = capi->getHumans();
+
+    if (humansVec.size() != 0) {
+        //Make QList from vector
+        animalList.reserve(humansVec.size());
+        std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(humanList));
+    }
+
     vector<Animal*> animalsVec = capi->getAnimals();
+
+    if (animalsVec.size() != 0) {
+        //Make QList from vector
+        animalList.reserve(animalsVec.size());
+        std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(animalList));
+    }
 }
 
 vector <tuple <Human*, Animal*>> GenerateMatches::getMatches()
@@ -13,7 +27,18 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches()
     //match = make_tuple('a', 10, 15.5);
 }
 
-float GenerateMatches::getScore(Human* human, Animal* animal) {
+vector <tuple <Human*, Animal*, float>> GenerateMatches::getAllScores() {
+    for (int i = 0; i < humanList.size(); i++) {
+        for (int j = 0; j < animalList.size(); j++) {
+            score = getScore(humanList.at(i), animalList.at(j));
+            scores.push_back(score);
+        }
+    }
+    return scores;
+}
+
+tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* animal) {
+    int totalScore;
     int e=-1;
 
     int AllergiesAllergies;
@@ -26,7 +51,7 @@ float GenerateMatches::getScore(Human* human, Animal* animal) {
             AllergiesAllergies = 0;
     else AllergiesAllergies = 100;
 
-    int childrenMatch = human->getNumChildren() * animal->getChildrenComfort() * 2;
+    int ChildrenChildren = human->getNumChildren() * animal->getChildrenComfort() * 2;
 
     int NeuteredNeutered;
     if (human->getNeedFertile() && animal->getIsNeutered())
@@ -164,15 +189,68 @@ float GenerateMatches::getScore(Human* human, Animal* animal) {
     }
     else printf("oops");
 
-
+    // this can be improved
     int MaintenanceSalary;
-    if ((human->getSalary() == "0 - 30" && animal->getCostPerYear() < 30)   ||
-        (human->getSalary() == "30 - 50" && animal->getCostPerYear() < 75)  ||
-        (human->getSalary() == "50 - 70" && animal->getCostPerYear() < 200) ||
-        (human->getSalary() == "70 - 90" && animal->getCostPerYear() < 400) ||
-        (human->getSalary() == "90 - 110" && animal->getCostPerYear() < 600)||
-        (human->getSalary() == "110 - 130" && animal->getCostPerYear() < 1000))
+    if ((human->getSalary() == "0 - 30" && animal->getCostPerYear() < 30)       ||
+        (human->getSalary() == "30 - 50" && animal->getCostPerYear() < 75)      ||
+        (human->getSalary() == "50 - 70" && animal->getCostPerYear() < 200)     ||
+        (human->getSalary() == "70 - 90" && animal->getCostPerYear() < 400)     ||
+        (human->getSalary() == "90 - 110" && animal->getCostPerYear() < 600)    ||
+        (human->getSalary() == "110 - 130" && animal->getCostPerYear() < 1000)  ||
+        (human->getSalary() == "130+"))
         MaintenanceSalary = 100;
     else
         MaintenanceSalary = 0;
+
+
+    int CleanlinessPatience = human->getPatience() * animal->getCleanliness();
+
+    int AggressionPatience = human->getPatience() * animal->getAggression();
+
+    int CleanlinessSalary;
+    if (human->getSalary() == "0 - 30")
+        CleanlinessSalary = 1 * animal->getCleanliness();
+    else if (human->getSalary() == "30 - 50")
+        CleanlinessSalary = 3 * animal->getCleanliness();
+    else if (human->getSalary() == "50 - 70")
+        CleanlinessSalary = 5 * animal->getCleanliness();
+    else if (human->getSalary() == "70 - 90")
+        CleanlinessSalary = 7 * animal->getCleanliness();
+    else if (human->getSalary() == "90 - 110")
+        CleanlinessSalary = 8 * animal->getCleanliness();
+    else if (human->getSalary() == "110 - 130")
+        CleanlinessSalary = 9 * animal->getCleanliness();
+    else if (human->getSalary() == "130+")
+        CleanlinessSalary = 10 * animal->getCleanliness();
+    else printf("oops");
+
+
+    int ChildrenPatience = human->getPatience() * animal->getChildrenComfort();
+
+
+
+    totalScore = AllergiesAllergies*150 +
+    ChildrenChildren*140 +
+    NeuteredNeutered*130 +
+    AggressionPurpose*125 +
+    AttachmentAttachment*120 +
+    CrateTravel*118 +
+    IntelligencePurpose*110 +
+    AttachmentFreetime*70 +
+    ObediencePatience*63 +
+    LoudnessHometype*58 +
+    CostBudget*57 +
+    EnergyHometype*55 +
+    CleanlinessFreetime*53 +
+    CratetrainedPatience*50 +
+    NeuteredBudget*48 +
+    MaintenanceSalary*45 +
+    CleanlinessPatience*43 +
+    AggressionPatience*40 +
+    CleanlinessSalary*30 +
+    ChildrenChildren*20;
+
+    cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
+
+    return make_tuple(human, animal, log(totalScore));
 }

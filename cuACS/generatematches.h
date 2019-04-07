@@ -1,24 +1,26 @@
 #ifndef GENERATEMATCHES_H
 #define GENERATEMATCHES_H
 
+#include <QDialog>
 #include <iostream>
 #include "CuacsAPI.h"
 #include <tuple>
+#include <math.h>
 
 class GenerateMatches
 {
 public:
     GenerateMatches();
     vector<tuple<Human*, Animal*>> getMatches();
-    float getScore(Human*, Animal*);
+    tuple <Human*, Animal*, float> getScore(Human*, Animal*);
 
+    vector<tuple<Human *, Animal *, float> > getAllScores();
 private:
-    CuacsAPI * capi;
-    vector<tuple<Human*, Animal*>> matches;
-    tuple<Human*, Animal*> match;
-
-    int HypoallergenicAllergies = 150;
-    int GoodwithchildrenNumchildren = 140;
+    vector<tuple<Human*, Animal*, float>> scores;
+    tuple<Human*, Animal*, float> score;
+    CuacsAPI *capi;
+    QList<Human*> humanList;
+    QList<Animal*> animalList;
 };
 
 #endif // GENERATEMATCHES_H

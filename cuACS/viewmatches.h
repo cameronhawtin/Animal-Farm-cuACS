@@ -2,6 +2,7 @@
 #define VIEWMATCHES_H
 
 #include <QDialog>
+#include "generatematches.h"
 
 namespace Ui {
 class ViewMatches;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::ViewMatches *ui;
+    GenerateMatches *gm;
 };
 
 #endif // VIEWMATCHES_H
