@@ -30,7 +30,7 @@ public:
     {
         if (ViewMatches->objectName().isEmpty())
             ViewMatches->setObjectName(QStringLiteral("ViewMatches"));
-        ViewMatches->resize(464, 511);
+        ViewMatches->resize(461, 511);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -63,7 +63,7 @@ public:
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         viewMatchesListWidget = new QListWidget(ViewMatches);
         viewMatchesListWidget->setObjectName(QStringLiteral("viewMatchesListWidget"));
-        viewMatchesListWidget->setGeometry(QRect(20, 20, 421, 431));
+        viewMatchesListWidget->setGeometry(QRect(20, 20, 421, 441));
 
         retranslateUi(ViewMatches);
         QObject::connect(buttonBox, SIGNAL(accepted()), ViewMatches, SLOT(accept()));

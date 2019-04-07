@@ -965,28 +965,38 @@
   <tabstop>nameLineEdit</tabstop>
   <tabstop>aggressionSlider</tabstop>
   <tabstop>aggressionLineEdit</tabstop>
+  <tabstop>loyaltySlider</tabstop>
+  <tabstop>loyaltyLineEdit</tabstop>
   <tabstop>typeComboBox</tabstop>
   <tabstop>attachmentSlider</tabstop>
   <tabstop>attachmentLineEdit</tabstop>
+  <tabstop>energyComboBox</tabstop>
   <tabstop>breedComboBox</tabstop>
   <tabstop>obedienceSlider</tabstop>
   <tabstop>obedienceLineEdit</tabstop>
+  <tabstop>costLineEdit</tabstop>
   <tabstop>sexComboBox</tabstop>
   <tabstop>cleanlinessSlider</tabstop>
   <tabstop>cleanlinessLineEdit</tabstop>
-  <tabstop>isCrateTrainedRadioButtonYES</tabstop>
-  <tabstop>isCrateTrainedRadioButtonNO</tabstop>
+  <tabstop>costPerYearLineEdit</tabstop>
   <tabstop>ageLineEdit</tabstop>
   <tabstop>childrenComfortSlider</tabstop>
   <tabstop>childrenComfortLineEdit</tabstop>
-  <tabstop>isHypoallergenicRadioButtonYES</tabstop>
-  <tabstop>isHypoallergenicRadioButtonNO</tabstop>
+  <tabstop>isCrateTrainedRadioButtonYES</tabstop>
+  <tabstop>isCrateTrainedRadioButtonNO</tabstop>
+  <tabstop>lifeExpectancyLineEdit</tabstop>
   <tabstop>loudnessSlider</tabstop>
   <tabstop>loudnessLineEdit</tabstop>
-  <tabstop>isNeuteredRadioButtonYES</tabstop>
-  <tabstop>isNeuteredRadioButtonNO</tabstop>
+  <tabstop>isHypoallergenicRadioButtonYES</tabstop>
+  <tabstop>isHypoallergenicRadioButtonNO</tabstop>
+  <tabstop>colourComboBox</tabstop>
   <tabstop>intelligenceSlider</tabstop>
   <tabstop>intelligenceLineEdit</tabstop>
+  <tabstop>isNeuteredRadioButtonYES</tabstop>
+  <tabstop>isNeuteredRadioButtonNO</tabstop>
+  <tabstop>sizeComboBox</tabstop>
+  <tabstop>playfulnessSlider</tabstop>
+  <tabstop>playfulnessLineEdit</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -1025,7 +1035,7 @@
  </connections>
  <buttongroups>
   <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

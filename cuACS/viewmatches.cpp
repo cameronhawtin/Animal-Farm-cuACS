@@ -6,9 +6,13 @@ ViewMatches::ViewMatches(QWidget *parent) :
     ui(new Ui::ViewMatches)
 {
     ui->setupUi(this);
+    this->setFixedSize(QSize(461, 511));
+    this->setWindowTitle("Matches");
+    ui->viewMatchesListWidget->addItem("Generating Matches...");
     gm = new GenerateMatches();
     scores = gm->getAllScores();
     matches = gm->getMatches(scores);
+    ui->viewMatchesListWidget->clear();
     populateUI(matches);
 }
 

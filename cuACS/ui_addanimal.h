@@ -104,8 +104,8 @@ public:
     QLineEdit *loyaltyLineEdit;
     QDialogButtonBox *buttonBox;
     QButtonGroup *buttonGroup_3;
-    QButtonGroup *buttonGroup_2;
     QButtonGroup *buttonGroup;
+    QButtonGroup *buttonGroup_2;
 
     void setupUi(QDialog *AddAnimal)
     {
@@ -629,28 +629,38 @@ public:
 
         QWidget::setTabOrder(nameLineEdit, aggressionSlider);
         QWidget::setTabOrder(aggressionSlider, aggressionLineEdit);
-        QWidget::setTabOrder(aggressionLineEdit, typeComboBox);
+        QWidget::setTabOrder(aggressionLineEdit, loyaltySlider);
+        QWidget::setTabOrder(loyaltySlider, loyaltyLineEdit);
+        QWidget::setTabOrder(loyaltyLineEdit, typeComboBox);
         QWidget::setTabOrder(typeComboBox, attachmentSlider);
         QWidget::setTabOrder(attachmentSlider, attachmentLineEdit);
-        QWidget::setTabOrder(attachmentLineEdit, breedComboBox);
+        QWidget::setTabOrder(attachmentLineEdit, energyComboBox);
+        QWidget::setTabOrder(energyComboBox, breedComboBox);
         QWidget::setTabOrder(breedComboBox, obedienceSlider);
         QWidget::setTabOrder(obedienceSlider, obedienceLineEdit);
-        QWidget::setTabOrder(obedienceLineEdit, sexComboBox);
+        QWidget::setTabOrder(obedienceLineEdit, costLineEdit);
+        QWidget::setTabOrder(costLineEdit, sexComboBox);
         QWidget::setTabOrder(sexComboBox, cleanlinessSlider);
         QWidget::setTabOrder(cleanlinessSlider, cleanlinessLineEdit);
-        QWidget::setTabOrder(cleanlinessLineEdit, isCrateTrainedRadioButtonYES);
-        QWidget::setTabOrder(isCrateTrainedRadioButtonYES, isCrateTrainedRadioButtonNO);
-        QWidget::setTabOrder(isCrateTrainedRadioButtonNO, ageLineEdit);
+        QWidget::setTabOrder(cleanlinessLineEdit, costPerYearLineEdit);
+        QWidget::setTabOrder(costPerYearLineEdit, ageLineEdit);
         QWidget::setTabOrder(ageLineEdit, childrenComfortSlider);
         QWidget::setTabOrder(childrenComfortSlider, childrenComfortLineEdit);
-        QWidget::setTabOrder(childrenComfortLineEdit, isHypoallergenicRadioButtonYES);
-        QWidget::setTabOrder(isHypoallergenicRadioButtonYES, isHypoallergenicRadioButtonNO);
-        QWidget::setTabOrder(isHypoallergenicRadioButtonNO, loudnessSlider);
+        QWidget::setTabOrder(childrenComfortLineEdit, isCrateTrainedRadioButtonYES);
+        QWidget::setTabOrder(isCrateTrainedRadioButtonYES, isCrateTrainedRadioButtonNO);
+        QWidget::setTabOrder(isCrateTrainedRadioButtonNO, lifeExpectancyLineEdit);
+        QWidget::setTabOrder(lifeExpectancyLineEdit, loudnessSlider);
         QWidget::setTabOrder(loudnessSlider, loudnessLineEdit);
-        QWidget::setTabOrder(loudnessLineEdit, isNeuteredRadioButtonYES);
-        QWidget::setTabOrder(isNeuteredRadioButtonYES, isNeuteredRadioButtonNO);
-        QWidget::setTabOrder(isNeuteredRadioButtonNO, intelligenceSlider);
+        QWidget::setTabOrder(loudnessLineEdit, isHypoallergenicRadioButtonYES);
+        QWidget::setTabOrder(isHypoallergenicRadioButtonYES, isHypoallergenicRadioButtonNO);
+        QWidget::setTabOrder(isHypoallergenicRadioButtonNO, colourComboBox);
+        QWidget::setTabOrder(colourComboBox, intelligenceSlider);
         QWidget::setTabOrder(intelligenceSlider, intelligenceLineEdit);
+        QWidget::setTabOrder(intelligenceLineEdit, isNeuteredRadioButtonYES);
+        QWidget::setTabOrder(isNeuteredRadioButtonYES, isNeuteredRadioButtonNO);
+        QWidget::setTabOrder(isNeuteredRadioButtonNO, sizeComboBox);
+        QWidget::setTabOrder(sizeComboBox, playfulnessSlider);
+        QWidget::setTabOrder(playfulnessSlider, playfulnessLineEdit);
 
         retranslateUi(AddAnimal);
         QObject::connect(buttonBox, SIGNAL(accepted()), AddAnimal, SLOT(accept()));
