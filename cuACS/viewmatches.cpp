@@ -27,7 +27,4 @@ void ViewMatches::populateUI(vector <tuple <Human*, Animal*>> matches) {
 
         ui->viewMatchesListWidget->addItem(humanName + " (ID: " + humanID + ") matches with " + animalName + " (ID: " + animalID + ")");
     }
-
-    get<0>(matches.at(0))->getName();
-    get<1>(matches.at(0))->getName();
 }
