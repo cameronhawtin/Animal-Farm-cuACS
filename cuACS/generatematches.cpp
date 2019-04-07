@@ -21,7 +21,7 @@ GenerateMatches::GenerateMatches()
     }
 }
 
-vector <tuple <Human*, Animal*>> GenerateMatches::getMatches()
+vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(tuple <Human*, Animal*, float>)
 {
 
     //match = make_tuple('a', 10, 15.5);

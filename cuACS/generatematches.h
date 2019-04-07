@@ -11,13 +11,16 @@ class GenerateMatches
 {
 public:
     GenerateMatches();
-    vector<tuple<Human*, Animal*>> getMatches();
+    vector<tuple<Human*, Animal*>> getMatches(tuple <Human*, Animal*, float>);
     tuple <Human*, Animal*, float> getScore(Human*, Animal*);
 
     vector<tuple<Human *, Animal *, float> > getAllScores();
 private:
-    vector<tuple<Human*, Animal*, float>> scores;
     tuple<Human*, Animal*, float> score;
+    vector<tuple<Human*, Animal*, float>> scores;
+    tuple<Human*, Animal*> match;
+    vector<tuple<Human*, Animal*>> matches;
+
     CuacsAPI *capi;
     QList<Human*> humanList;
     QList<Animal*> animalList;
