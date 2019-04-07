@@ -1,4 +1,4 @@
-#include "viewmatches.h"
+﻿#include "viewmatches.h"
 #include "ui_viewmatches.h"
 
 ViewMatches::ViewMatches(QWidget *parent) :
@@ -7,10 +7,16 @@ ViewMatches::ViewMatches(QWidget *parent) :
 {
     ui->setupUi(this);
     gm = new GenerateMatches();
-    gm->getAllScores();
+    scores = gm->getAllScores();
+    matches = gm->getMatches(scores);
+    populateUI(matches);
 }
 
 ViewMatches::~ViewMatches()
 {
     delete ui;
+}
+
+void ViewMatches::populateUI(vector <tuple <Human*, Animal*>>) {
+
 }

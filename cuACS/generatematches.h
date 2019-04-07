@@ -11,7 +11,7 @@ class GenerateMatches
 {
 public:
     GenerateMatches();
-    vector<tuple<Human*, Animal*>> getMatches(tuple <Human*, Animal*, float>);
+    vector<tuple<Human*, Animal*>> getMatches(vector<tuple <Human*, Animal*, float>>);
     tuple <Human*, Animal*, float> getScore(Human*, Animal*);
 
     vector<tuple<Human *, Animal *, float> > getAllScores();
