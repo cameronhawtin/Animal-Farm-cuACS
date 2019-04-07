@@ -104,15 +104,15 @@ public:
     QLineEdit *lifeExpLineEdit;
     QDialogButtonBox *buttonBox;
     QLabel *titleLabel;
-    QButtonGroup *buttonGroup_2;
     QButtonGroup *buttonGroup_3;
+    QButtonGroup *buttonGroup_2;
     QButtonGroup *buttonGroup;
 
     void setupUi(QDialog *EditAnimal)
     {
         if (EditAnimal->objectName().isEmpty())
             EditAnimal->setObjectName(QStringLiteral("EditAnimal"));
-        EditAnimal->resize(783, 577);
+        EditAnimal->resize(783, 542);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -612,12 +612,14 @@ public:
 
         gridLayout_2->addWidget(lifeExpLineEdit, 11, 0, 1, 1);
 
-        buttonBox = new QDialogButtonBox(EditAnimal);
+        buttonBox = new QDialogButtonBox(gridLayoutWidget);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setEnabled(true);
-        buttonBox->setGeometry(QRect(410, 530, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
+
+        gridLayout_2->addWidget(buttonBox, 15, 2, 1, 1);
+
         titleLabel = new QLabel(EditAnimal);
         titleLabel->setObjectName(QStringLiteral("titleLabel"));
         titleLabel->setGeometry(QRect(40, 10, 669, 59));

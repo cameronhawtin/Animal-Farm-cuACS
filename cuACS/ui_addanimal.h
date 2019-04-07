@@ -30,7 +30,6 @@ QT_BEGIN_NAMESPACE
 class Ui_AddAnimal
 {
 public:
-    QDialogButtonBox *buttonBox;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QLabel *labelColour_2;
@@ -103,15 +102,16 @@ public:
     QHBoxLayout *horizontalLayout_7;
     QSlider *loyaltySlider;
     QLineEdit *loyaltyLineEdit;
-    QButtonGroup *buttonGroup_2;
+    QDialogButtonBox *buttonBox;
     QButtonGroup *buttonGroup_3;
+    QButtonGroup *buttonGroup_2;
     QButtonGroup *buttonGroup;
 
     void setupUi(QDialog *AddAnimal)
     {
         if (AddAnimal->objectName().isEmpty())
             AddAnimal->setObjectName(QStringLiteral("AddAnimal"));
-        AddAnimal->resize(752, 558);
+        AddAnimal->resize(764, 511);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -144,12 +144,6 @@ public:
         QFont font;
         font.setFamily(QStringLiteral("Egyptienne F"));
         AddAnimal->setFont(font);
-        buttonBox = new QDialogButtonBox(AddAnimal);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setEnabled(true);
-        buttonBox->setGeometry(QRect(400, 500, 341, 32));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
         gridLayoutWidget = new QWidget(AddAnimal);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(20, 20, 728, 481));
@@ -624,6 +618,14 @@ public:
         horizontalLayout_7->setStretch(1, 2);
 
         gridLayout->addLayout(horizontalLayout_7, 1, 2, 1, 1);
+
+        buttonBox = new QDialogButtonBox(gridLayoutWidget);
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setEnabled(true);
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
+
+        gridLayout->addWidget(buttonBox, 15, 2, 1, 1);
 
         QWidget::setTabOrder(nameLineEdit, aggressionSlider);
         QWidget::setTabOrder(aggressionSlider, aggressionLineEdit);

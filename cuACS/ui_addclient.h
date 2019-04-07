@@ -31,7 +31,6 @@ QT_BEGIN_NAMESPACE
 class Ui_AddClient
 {
 public:
-    QDialogButtonBox *buttonBox;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QComboBox *typePreferenceComboBox;
@@ -85,12 +84,13 @@ public:
     QLabel *attachmentLabel;
     QLabel *childrenLabel;
     QLineEdit *childrenLineEdit;
+    QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *AddClient)
     {
         if (AddClient->objectName().isEmpty())
             AddClient->setObjectName(QStringLiteral("AddClient"));
-        AddClient->resize(871, 473);
+        AddClient->resize(907, 435);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -123,15 +123,9 @@ public:
         QFont font;
         font.setFamily(QStringLiteral("Egyptienne F"));
         AddClient->setFont(font);
-        buttonBox = new QDialogButtonBox(AddClient);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(510, 430, 341, 32));
-        buttonBox->setFont(font);
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
         gridLayoutWidget = new QWidget(AddClient);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(20, 20, 831, 405));
+        gridLayoutWidget->setGeometry(QRect(20, 20, 871, 405));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setHorizontalSpacing(20);
@@ -445,7 +439,18 @@ public:
 
         gridLayout->addWidget(childrenLineEdit, 1, 1, 1, 1);
 
-        gridLayout->setColumnStretch(0, 1);
+        buttonBox = new QDialogButtonBox(gridLayoutWidget);
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setFont(font);
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
+
+        gridLayout->addWidget(buttonBox, 11, 3, 1, 1);
+
+        gridLayout->setColumnStretch(0, 5);
+        gridLayout->setColumnStretch(1, 1);
+        gridLayout->setColumnStretch(2, 1);
+        gridLayout->setColumnStretch(3, 1);
         QWidget::setTabOrder(nameLineEdit, childrenLineEdit);
         QWidget::setTabOrder(childrenLineEdit, freeTimeComboBox);
         QWidget::setTabOrder(freeTimeComboBox, emailLineEdit);

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>871</width>
-    <height>508</height>
+    <height>491</height>
    </rect>
   </property>
   <property name="palette">
@@ -131,27 +131,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>460</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Egyptienne F</family>
-    </font>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
-   </property>
-  </widget>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
@@ -161,7 +140,7 @@
      <height>403</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout" columnstretch="3,0,0,0">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="5,1,1,1">
     <property name="horizontalSpacing">
      <number>20</number>
     </property>
@@ -313,16 +292,16 @@
     <item row="11" column="2">
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QRadioButton" name="isNeuteredRadioButtonYES">
+       <widget class="QRadioButton" name="isNeuteredRadioButtonNO">
         <property name="text">
-         <string>Yes</string>
+         <string>No</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="isNeuteredRadioButtonNO">
+       <widget class="QRadioButton" name="isNeuteredRadioButtonYES">
         <property name="text">
-         <string>No</string>
+         <string>Yes</string>
         </property>
        </widget>
       </item>
@@ -811,6 +790,21 @@
       </property>
      </widget>
     </item>
+    <item row="11" column="3">
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="font">
+       <font>
+        <family>Egyptienne F</family>
+       </font>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QLabel" name="titleLabel">
@@ -856,7 +850,6 @@
   <tabstop>attachmentLineEdit</tabstop>
   <tabstop>ageLineEdit</tabstop>
   <tabstop>travelComboBox</tabstop>
-  <tabstop>isNeuteredRadioButtonYES</tabstop>
   <tabstop>isNeuteredRadioButtonNO</tabstop>
   <tabstop>catAllergyCheckBox</tabstop>
   <tabstop>dogAllergyCheckBox</tabstop>

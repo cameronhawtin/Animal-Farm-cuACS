@@ -31,7 +31,6 @@ QT_BEGIN_NAMESPACE
 class Ui_EditProfile
 {
 public:
-    QDialogButtonBox *buttonBox;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QLabel *labelPatience;
@@ -50,8 +49,8 @@ public:
     QLineEdit *nameLineEdit;
     QLabel *nameLabel;
     QHBoxLayout *horizontalLayout_3;
-    QRadioButton *isNeuteredRadioButtonYES;
     QRadioButton *isNeuteredRadioButtonNO;
+    QRadioButton *isNeuteredRadioButtonYES;
     QLineEdit *ageLineEdit;
     QHBoxLayout *horizontalLayout_9;
     QSlider *attachmentSlider;
@@ -85,13 +84,14 @@ public:
     QCheckBox *hamsterAllergyCheckBox;
     QCheckBox *mouseAllergyCheckBox;
     QCheckBox *guineapigAllergyCheckBox;
+    QDialogButtonBox *buttonBox;
     QLabel *titleLabel;
 
     void setupUi(QDialog *EditProfile)
     {
         if (EditProfile->objectName().isEmpty())
             EditProfile->setObjectName(QStringLiteral("EditProfile"));
-        EditProfile->resize(871, 508);
+        EditProfile->resize(871, 491);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -116,14 +116,6 @@ public:
         brush4.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Disabled, QPalette::Highlight, brush4);
         EditProfile->setPalette(palette);
-        buttonBox = new QDialogButtonBox(EditProfile);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(510, 460, 341, 32));
-        QFont font;
-        font.setFamily(QStringLiteral("Egyptienne F"));
-        buttonBox->setFont(font);
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
         gridLayoutWidget = new QWidget(EditProfile);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(20, 70, 831, 403));
@@ -226,15 +218,15 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        isNeuteredRadioButtonYES = new QRadioButton(gridLayoutWidget);
-        isNeuteredRadioButtonYES->setObjectName(QStringLiteral("isNeuteredRadioButtonYES"));
-
-        horizontalLayout_3->addWidget(isNeuteredRadioButtonYES);
-
         isNeuteredRadioButtonNO = new QRadioButton(gridLayoutWidget);
         isNeuteredRadioButtonNO->setObjectName(QStringLiteral("isNeuteredRadioButtonNO"));
 
         horizontalLayout_3->addWidget(isNeuteredRadioButtonNO);
+
+        isNeuteredRadioButtonYES = new QRadioButton(gridLayoutWidget);
+        isNeuteredRadioButtonYES->setObjectName(QStringLiteral("isNeuteredRadioButtonYES"));
+
+        horizontalLayout_3->addWidget(isNeuteredRadioButtonYES);
 
 
         gridLayout->addLayout(horizontalLayout_3, 11, 2, 1, 1);
@@ -440,7 +432,20 @@ public:
 
         gridLayout->addWidget(guineapigAllergyCheckBox, 8, 3, 1, 1);
 
-        gridLayout->setColumnStretch(0, 3);
+        buttonBox = new QDialogButtonBox(gridLayoutWidget);
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        QFont font;
+        font.setFamily(QStringLiteral("Egyptienne F"));
+        buttonBox->setFont(font);
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
+
+        gridLayout->addWidget(buttonBox, 11, 3, 1, 1);
+
+        gridLayout->setColumnStretch(0, 5);
+        gridLayout->setColumnStretch(1, 1);
+        gridLayout->setColumnStretch(2, 1);
+        gridLayout->setColumnStretch(3, 1);
         titleLabel = new QLabel(EditProfile);
         titleLabel->setObjectName(QStringLiteral("titleLabel"));
         titleLabel->setGeometry(QRect(40, 10, 769, 59));
@@ -467,8 +472,7 @@ public:
         QWidget::setTabOrder(attachmentSlider, attachmentLineEdit);
         QWidget::setTabOrder(attachmentLineEdit, ageLineEdit);
         QWidget::setTabOrder(ageLineEdit, travelComboBox);
-        QWidget::setTabOrder(travelComboBox, isNeuteredRadioButtonYES);
-        QWidget::setTabOrder(isNeuteredRadioButtonYES, isNeuteredRadioButtonNO);
+        QWidget::setTabOrder(travelComboBox, isNeuteredRadioButtonNO);
         QWidget::setTabOrder(isNeuteredRadioButtonNO, catAllergyCheckBox);
         QWidget::setTabOrder(catAllergyCheckBox, dogAllergyCheckBox);
         QWidget::setTabOrder(dogAllergyCheckBox, birdAllergyCheckBox);
@@ -500,8 +504,8 @@ public:
         ageLabel->setText(QApplication::translate("EditProfile", "Age", Q_NULLPTR));
         addressLabel->setText(QApplication::translate("EditProfile", "Address", Q_NULLPTR));
         nameLabel->setText(QApplication::translate("EditProfile", "Name", Q_NULLPTR));
-        isNeuteredRadioButtonYES->setText(QApplication::translate("EditProfile", "Yes", Q_NULLPTR));
         isNeuteredRadioButtonNO->setText(QApplication::translate("EditProfile", "No", Q_NULLPTR));
+        isNeuteredRadioButtonYES->setText(QApplication::translate("EditProfile", "Yes", Q_NULLPTR));
         sexLabel->setText(QApplication::translate("EditProfile", "Sex", Q_NULLPTR));
         attachmentLabel->setText(QApplication::translate("EditProfile", "Attachment Level (Out of 10)", Q_NULLPTR));
         freeTimeLabel->setText(QApplication::translate("EditProfile", "Free Time per Day (hours)", Q_NULLPTR));
