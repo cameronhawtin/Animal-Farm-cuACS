@@ -114,6 +114,8 @@ public:
         ViewClients->setPalette(palette);
         QFont font;
         font.setFamily(QStringLiteral("Egyptienne F"));
+        font.setBold(true);
+        font.setWeight(75);
         ViewClients->setFont(font);
         viewClientsListWidget = new QListWidget(ViewClients);
         viewClientsListWidget->setObjectName(QStringLiteral("viewClientsListWidget"));
