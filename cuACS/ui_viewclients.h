@@ -133,6 +133,7 @@ public:
 
         attachmentLineEdit_2 = new QLineEdit(gridLayoutWidget);
         attachmentLineEdit_2->setObjectName(QStringLiteral("attachmentLineEdit_2"));
+        attachmentLineEdit_2->setReadOnly(true);
 
         gridLayout->addWidget(attachmentLineEdit_2, 9, 2, 1, 1);
 
@@ -144,22 +145,26 @@ public:
 
         homeLineEdit = new QLineEdit(gridLayoutWidget);
         homeLineEdit->setObjectName(QStringLiteral("homeLineEdit"));
+        homeLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(homeLineEdit, 9, 1, 1, 1);
 
         purposeLineEdit = new QLineEdit(gridLayoutWidget);
         purposeLineEdit->setObjectName(QStringLiteral("purposeLineEdit"));
+        purposeLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(purposeLineEdit, 7, 1, 1, 1);
 
         irritationLineEdit = new QLineEdit(gridLayoutWidget);
         irritationLineEdit->setObjectName(QStringLiteral("irritationLineEdit"));
+        irritationLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(irritationLineEdit, 5, 2, 1, 1);
 
         childrenLineEdit = new QLineEdit(gridLayoutWidget);
         childrenLineEdit->setObjectName(QStringLiteral("childrenLineEdit"));
         childrenLineEdit->setEnabled(true);
+        childrenLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(childrenLineEdit, 1, 1, 1, 1);
 
@@ -171,6 +176,7 @@ public:
 
         freeTimeLineEdit = new QLineEdit(gridLayoutWidget);
         freeTimeLineEdit->setObjectName(QStringLiteral("freeTimeLineEdit"));
+        freeTimeLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(freeTimeLineEdit, 1, 2, 1, 1);
 
@@ -182,6 +188,7 @@ public:
 
         neuteredLineEdit = new QLineEdit(gridLayoutWidget);
         neuteredLineEdit->setObjectName(QStringLiteral("neuteredLineEdit"));
+        neuteredLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(neuteredLineEdit, 11, 2, 1, 1);
 
@@ -199,6 +206,7 @@ public:
 
         salaryLineEdit = new QLineEdit(gridLayoutWidget);
         salaryLineEdit->setObjectName(QStringLiteral("salaryLineEdit"));
+        salaryLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(salaryLineEdit, 3, 1, 1, 1);
 
@@ -210,17 +218,20 @@ public:
 
         sexLineEdit_2 = new QLineEdit(gridLayoutWidget);
         sexLineEdit_2->setObjectName(QStringLiteral("sexLineEdit_2"));
+        sexLineEdit_2->setReadOnly(true);
 
         gridLayout->addWidget(sexLineEdit_2, 9, 0, 1, 1);
 
         patienceLineEdit = new QLineEdit(gridLayoutWidget);
         patienceLineEdit->setObjectName(QStringLiteral("patienceLineEdit"));
+        patienceLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(patienceLineEdit, 7, 2, 1, 1);
 
         ageLineEdit_2 = new QLineEdit(gridLayoutWidget);
         ageLineEdit_2->setObjectName(QStringLiteral("ageLineEdit_2"));
         ageLineEdit_2->setEnabled(true);
+        ageLineEdit_2->setReadOnly(true);
 
         gridLayout->addWidget(ageLineEdit_2, 11, 0, 1, 1);
 
@@ -232,11 +243,13 @@ public:
 
         addressLineEdit = new QLineEdit(gridLayoutWidget);
         addressLineEdit->setObjectName(QStringLiteral("addressLineEdit"));
+        addressLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(addressLineEdit, 5, 0, 1, 1);
 
         nameLineEdit = new QLineEdit(gridLayoutWidget);
         nameLineEdit->setObjectName(QStringLiteral("nameLineEdit"));
+        nameLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(nameLineEdit, 1, 0, 1, 1);
 
@@ -267,6 +280,7 @@ public:
         emailLineEdit = new QLineEdit(gridLayoutWidget);
         emailLineEdit->setObjectName(QStringLiteral("emailLineEdit"));
         emailLineEdit->setEnabled(true);
+        emailLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(emailLineEdit, 3, 0, 1, 1);
 
@@ -285,6 +299,7 @@ public:
         budgetLineEdit = new QLineEdit(gridLayoutWidget);
         budgetLineEdit->setObjectName(QStringLiteral("budgetLineEdit"));
         budgetLineEdit->setEnabled(true);
+        budgetLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(budgetLineEdit, 3, 2, 1, 1);
 
@@ -302,6 +317,7 @@ public:
 
         phoneLineEdit = new QLineEdit(gridLayoutWidget);
         phoneLineEdit->setObjectName(QStringLiteral("phoneLineEdit"));
+        phoneLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(phoneLineEdit, 7, 0, 1, 1);
 
@@ -331,11 +347,13 @@ public:
 
         travelLineEdit = new QLineEdit(gridLayoutWidget);
         travelLineEdit->setObjectName(QStringLiteral("travelLineEdit"));
+        travelLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(travelLineEdit, 11, 1, 1, 1);
 
         typePreferenceLineEdit = new QLineEdit(gridLayoutWidget);
         typePreferenceLineEdit->setObjectName(QStringLiteral("typePreferenceLineEdit"));
+        typePreferenceLineEdit->setReadOnly(true);
 
         gridLayout->addWidget(typePreferenceLineEdit, 5, 1, 1, 1);
 

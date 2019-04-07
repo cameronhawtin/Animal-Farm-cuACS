@@ -9,26 +9,6 @@ ViewClients::ViewClients(QWidget *parent) :
     //this->setFixedSize(QSize(1112, 509));
     this->setWindowTitle("View Clients");
 
-    ui->nameLineEdit->setReadOnly(true);
-    ui->addressLineEdit->setReadOnly(true);
-    ui->phoneLineEdit->setReadOnly(true);
-    ui->emailLineEdit->setReadOnly(true);
-    ui->ageLineEdit_2->setReadOnly(true);
-    ui->sexLineEdit_2->setReadOnly(true);
-    ui->childrenLineEdit->setReadOnly(true);
-    ui->salaryLineEdit->setReadOnly(true);
-    //ui->allergyLineEdit->setReadOnly(true);
-    ui->typePreferenceLineEdit->setReadOnly(true);
-    ui->purposeLineEdit->setReadOnly(true);
-    ui->homeLineEdit->setReadOnly(true);
-    ui->travelLineEdit->setReadOnly(true);
-    ui->freeTimeLineEdit->setReadOnly(true);
-    ui->budgetLineEdit->setReadOnly(true);
-    ui->irritationLineEdit->setReadOnly(true);
-    ui->patienceLineEdit->setReadOnly(true);
-    ui->attachmentLineEdit_2->setReadOnly(true);
-    ui->neuteredLineEdit->setReadOnly(true);
-
     capi = new CuacsAPI();
 
     vector<Human*> humansVec = capi->getHumans();

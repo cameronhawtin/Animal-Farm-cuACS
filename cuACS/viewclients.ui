@@ -197,7 +197,11 @@
      </widget>
     </item>
     <item row="9" column="2">
-     <widget class="QLineEdit" name="attachmentLineEdit_2"/>
+     <widget class="QLineEdit" name="attachmentLineEdit_2">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="8" column="3">
      <widget class="QCheckBox" name="guineapigAllergyCheckBox">
@@ -210,17 +214,32 @@
      </widget>
     </item>
     <item row="9" column="1">
-     <widget class="QLineEdit" name="homeLineEdit"/>
+     <widget class="QLineEdit" name="homeLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="7" column="1">
-     <widget class="QLineEdit" name="purposeLineEdit"/>
+     <widget class="QLineEdit" name="purposeLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="5" column="2">
-     <widget class="QLineEdit" name="irritationLineEdit"/>
+     <widget class="QLineEdit" name="irritationLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="1" column="1">
      <widget class="QLineEdit" name="childrenLineEdit">
       <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
        <bool>true</bool>
       </property>
      </widget>
@@ -236,7 +255,11 @@
      </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QLineEdit" name="freeTimeLineEdit"/>
+     <widget class="QLineEdit" name="freeTimeLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="7" column="3">
      <widget class="QCheckBox" name="mouseAllergyCheckBox">
@@ -249,7 +272,11 @@
      </widget>
     </item>
     <item row="11" column="2">
-     <widget class="QLineEdit" name="neuteredLineEdit"/>
+     <widget class="QLineEdit" name="neuteredLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="8" column="0">
      <widget class="QLabel" name="sexLabel_4">
@@ -272,7 +299,11 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="salaryLineEdit"/>
+     <widget class="QLineEdit" name="salaryLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="4" column="3">
      <widget class="QCheckBox" name="dogAllergyCheckBox">
@@ -285,14 +316,25 @@
      </widget>
     </item>
     <item row="9" column="0">
-     <widget class="QLineEdit" name="sexLineEdit_2"/>
+     <widget class="QLineEdit" name="sexLineEdit_2">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="7" column="2">
-     <widget class="QLineEdit" name="patienceLineEdit"/>
+     <widget class="QLineEdit" name="patienceLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="11" column="0">
      <widget class="QLineEdit" name="ageLineEdit_2">
       <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
        <bool>true</bool>
       </property>
      </widget>
@@ -308,10 +350,18 @@
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QLineEdit" name="addressLineEdit"/>
+     <widget class="QLineEdit" name="addressLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QLineEdit" name="nameLineEdit"/>
+     <widget class="QLineEdit" name="nameLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="10" column="0">
      <widget class="QLabel" name="ageLabel_7">
@@ -358,6 +408,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="0" column="0">
@@ -385,6 +438,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="4" column="0">
@@ -408,7 +464,11 @@
      </widget>
     </item>
     <item row="7" column="0">
-     <widget class="QLineEdit" name="phoneLineEdit"/>
+     <widget class="QLineEdit" name="phoneLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="4" column="2">
      <widget class="QLabel" name="irritationLabel">
@@ -451,10 +511,18 @@
      </widget>
     </item>
     <item row="11" column="1">
-     <widget class="QLineEdit" name="travelLineEdit"/>
+     <widget class="QLineEdit" name="travelLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QLineEdit" name="typePreferenceLineEdit"/>
+     <widget class="QLineEdit" name="typePreferenceLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="6" column="2">
      <widget class="QLabel" name="labelPatience">

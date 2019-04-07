@@ -90,7 +90,7 @@ public:
     {
         if (AddClient->objectName().isEmpty())
             AddClient->setObjectName(QStringLiteral("AddClient"));
-        AddClient->resize(907, 435);
+        AddClient->resize(907, 441);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);

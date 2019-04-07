@@ -167,6 +167,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="13" column="1">
@@ -184,20 +187,35 @@
      </widget>
     </item>
     <item row="6" column="0">
-     <widget class="QLineEdit" name="breedLineEdit"/>
+     <widget class="QLineEdit" name="breedLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="6" column="1">
-     <widget class="QLineEdit" name="obedienceLineEdit"/>
+     <widget class="QLineEdit" name="obedienceLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="10" column="0">
      <widget class="QLineEdit" name="ageLineEdit">
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QLineEdit" name="attachmentLineEdit"/>
+     <widget class="QLineEdit" name="attachmentLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="5" column="0">
      <widget class="QLabel" name="labelBreed">
@@ -218,13 +236,24 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="8" column="1">
-     <widget class="QLineEdit" name="cleanlinessLineEdit"/>
+     <widget class="QLineEdit" name="cleanlinessLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="4" column="0">
-     <widget class="QLineEdit" name="typeLineEdit"/>
+     <widget class="QLineEdit" name="typeLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="5" column="1">
      <widget class="QLabel" name="labelBreed_2">
@@ -234,7 +263,11 @@
      </widget>
     </item>
     <item row="14" column="1">
-     <widget class="QLineEdit" name="intelligenceLineEdit"/>
+     <widget class="QLineEdit" name="intelligenceLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="nameLabel">
@@ -244,7 +277,11 @@
      </widget>
     </item>
     <item row="8" column="0">
-     <widget class="QLineEdit" name="sexLineEdit"/>
+     <widget class="QLineEdit" name="sexLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="11" column="1">
      <widget class="QLabel" name="ageLabel_2">
@@ -256,6 +293,9 @@
     <item row="12" column="1">
      <widget class="QLineEdit" name="loudnessLineEdit">
       <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
        <bool>true</bool>
       </property>
      </widget>
@@ -286,6 +326,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="9" column="1">
@@ -314,6 +357,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="13" column="2">
@@ -326,6 +372,9 @@
     <item row="12" column="2">
      <widget class="QLineEdit" name="isCrateTrainedLineEdit">
       <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
        <bool>true</bool>
       </property>
      </widget>
@@ -342,6 +391,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="9" column="2">
@@ -352,7 +404,11 @@
      </widget>
     </item>
     <item row="8" column="2">
-     <widget class="QLineEdit" name="costPerYearLineEdit"/>
+     <widget class="QLineEdit" name="costPerYearLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="7" column="2">
      <widget class="QLabel" name="sexLabel_3">
@@ -362,7 +418,11 @@
      </widget>
     </item>
     <item row="6" column="2">
-     <widget class="QLineEdit" name="costLineEdit"/>
+     <widget class="QLineEdit" name="costLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="5" column="2">
      <widget class="QLabel" name="labelBreed_3">
@@ -374,6 +434,9 @@
     <item row="4" column="2">
      <widget class="QLineEdit" name="energyLineEdit">
       <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
        <bool>true</bool>
       </property>
      </widget>
@@ -397,6 +460,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="16" column="1">
@@ -404,10 +470,17 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="16" column="0">
-     <widget class="QLineEdit" name="sizeLineEdit"/>
+     <widget class="QLineEdit" name="sizeLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="15" column="0">
      <widget class="QLabel" name="sizeLabel">
@@ -417,7 +490,11 @@
      </widget>
     </item>
     <item row="14" column="0">
-     <widget class="QLineEdit" name="colourLineEdit"/>
+     <widget class="QLineEdit" name="colourLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="13" column="0">
      <widget class="QLabel" name="labelColour">
@@ -434,7 +511,11 @@
      </widget>
     </item>
     <item row="12" column="0">
-     <widget class="QLineEdit" name="lifeExpLineEdit"/>
+     <widget class="QLineEdit" name="lifeExpLineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="16" column="2">
      <widget class="QDialogButtonBox" name="buttonBox">
