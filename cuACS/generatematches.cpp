@@ -75,7 +75,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     else
         neuteredNeutered = 0;
 
-    int aggressionPurpose;
+    int aggressionPurpose = 0;
     try {
         if (human->getPurpose() == "Guard" || human->getPurpose() == "Hunting")
             aggressionPurpose = animal->getAggression()*10;
@@ -103,7 +103,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         crateTravel = 100;
     }
 
-    int intelligencePurpose;
+    int intelligencePurpose = 0;
     try {
         if (human->getPurpose() == "Disability" || human->getPurpose() == "Hunting")
             intelligencePurpose = animal->getIntelligence()*10;
@@ -126,8 +126,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         attachmentFreetime = animal->getAttachment() * 3;
     else if (human->getFreeTime() == "3 - 4")
         attachmentFreetime = animal->getAttachment() * 6;
-    else if (human->getFreeTime() == "5+")
-        attachmentFreetime = animal->getAttachment() * 10;
+    else attachmentFreetime = animal->getAttachment() * 10;
 
     int obediencePatience = human->getPatience() * animal->getObedience();
 
@@ -172,9 +171,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         cleanlinessFreetime = 5 * animal->getCleanliness();
     else if (human->getFreeTime() == "3 - 4")
         cleanlinessFreetime = 7 * animal->getCleanliness();
-    else if (human->getFreeTime() == "5+")
-        cleanlinessFreetime = 10 * animal->getCleanliness();
-    else printf("oops");
+    else cleanlinessFreetime = 10 * animal->getCleanliness();
 
     int cratetrainedPatience;
     if (animal->getIsCrateTrained()) {
@@ -183,24 +180,22 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         else
             cratetrainedPatience = 5 * human->getPatience();
     }
-    else if (!animal->getIsCrateTrained()) {
+    else {
         if (human->getPatience() > 5)
             cratetrainedPatience = 10 * human->getPatience();
         else
             cratetrainedPatience = 1 * human->getPatience();
     }
-    else printf("oops");
 
     int neuteredBudget;
     if (animal->getIsNeutered())
         neuteredBudget = 50;
-    else if (!animal->getIsNeutered()) {
+    else {
         if (human->getBudget() - animal->getCost() > 250)
             neuteredBudget = 100;
         else
             neuteredBudget = 0;
     }
-    else printf("oops");
 
     // this can be improved
     int maintenanceSalary;
@@ -233,9 +228,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         cleanlinessSalary = 8 * animal->getCleanliness();
     else if (human->getSalary() == "110 - 130")
         cleanlinessSalary = 9 * animal->getCleanliness();
-    else if (human->getSalary() == "130+")
-        cleanlinessSalary = 10 * animal->getCleanliness();
-    else printf("oops");
+    else cleanlinessSalary = 10 * animal->getCleanliness();
 
 
     int childrenPatience = human->getPatience() * animal->getChildrenComfort();
@@ -262,7 +255,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     cleanlinessPatience*43 +
     aggressionPatience*40 +
     cleanlinessSalary*30 +
-    childrenChildren*20;
+    childrenPatience*20;
 
     cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
 

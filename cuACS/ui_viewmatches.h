@@ -60,13 +60,12 @@ public:
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(100, 470, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        buttonBox->setStandardButtons(QDialogButtonBox::Close);
         viewMatchesListWidget = new QListWidget(ViewMatches);
         viewMatchesListWidget->setObjectName(QStringLiteral("viewMatchesListWidget"));
         viewMatchesListWidget->setGeometry(QRect(20, 20, 421, 441));
 
         retranslateUi(ViewMatches);
-        QObject::connect(buttonBox, SIGNAL(accepted()), ViewMatches, SLOT(accept()));
         QObject::connect(buttonBox, SIGNAL(rejected()), ViewMatches, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(ViewMatches);
