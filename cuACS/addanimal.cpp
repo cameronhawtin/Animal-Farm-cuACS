@@ -11,7 +11,7 @@ AddAnimal::AddAnimal(QWidget *parent) :
     ui(new Ui::AddAnimal)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(752, 540));
+    this->setFixedSize(QSize(764, 511));
     this->setWindowTitle("Add an Animal");
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
