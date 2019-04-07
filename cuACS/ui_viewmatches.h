@@ -24,13 +24,13 @@ class Ui_ViewMatches
 {
 public:
     QDialogButtonBox *buttonBox;
-    QListWidget *viewAnimalsListWidget;
+    QListWidget *viewMatchesListWidget;
 
     void setupUi(QDialog *ViewMatches)
     {
         if (ViewMatches->objectName().isEmpty())
             ViewMatches->setObjectName(QStringLiteral("ViewMatches"));
-        ViewMatches->resize(323, 511);
+        ViewMatches->resize(464, 511);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -58,12 +58,12 @@ public:
         ViewMatches->setPalette(palette);
         buttonBox = new QDialogButtonBox(ViewMatches);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(-40, 470, 341, 32));
+        buttonBox->setGeometry(QRect(100, 470, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        viewAnimalsListWidget = new QListWidget(ViewMatches);
-        viewAnimalsListWidget->setObjectName(QStringLiteral("viewAnimalsListWidget"));
-        viewAnimalsListWidget->setGeometry(QRect(20, 20, 281, 431));
+        viewMatchesListWidget = new QListWidget(ViewMatches);
+        viewMatchesListWidget->setObjectName(QStringLiteral("viewMatchesListWidget"));
+        viewMatchesListWidget->setGeometry(QRect(20, 20, 421, 431));
 
         retranslateUi(ViewMatches);
         QObject::connect(buttonBox, SIGNAL(accepted()), ViewMatches, SLOT(accept()));

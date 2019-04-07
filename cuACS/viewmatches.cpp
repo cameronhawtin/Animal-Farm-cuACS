@@ -17,6 +17,17 @@ ViewMatches::~ViewMatches()
     delete ui;
 }
 
-void ViewMatches::populateUI(vector <tuple <Human*, Animal*>>) {
+void ViewMatches::populateUI(vector <tuple <Human*, Animal*>> matches) {
 
+    for (int i=0; i<matches.size(); i++) {
+        QString humanName = QString::fromStdString(get<0>(matches.at(i))->getName());
+        QString humanID = QString::number(get<0>(matches.at(i))->getId());
+        QString animalName = QString::fromStdString(get<1>(matches.at(i))->getName());
+        QString animalID = QString::number(get<1>(matches.at(i))->getId());
+
+        ui->viewMatchesListWidget->addItem(humanName + " (ID: " + humanID + ") matches with " + animalName + " (ID: " + animalID + ")");
+    }
+
+    get<0>(matches.at(0))->getName();
+    get<1>(matches.at(0))->getName();
 }
