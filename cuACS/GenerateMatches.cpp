@@ -108,7 +108,7 @@ vector <tuple <Human*, Animal*, float>> GenerateMatches::getAllScores() {
     return scores;
 }
 
-tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* animal, string summary) {
+tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* animal, string& summary) {
     int totalScore;
     int e=-1;
 
@@ -344,7 +344,27 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
 
     cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
 
-    summary = "Matching Summary (pair scoring percentages): \n Type Preference: " + typeType + "%\n Allergies: " + allergiesAllergies + "%\n ";
+    summary = string("Matching Summary (pair scoring percentages): \n Type Preference: ") + to_string(typeType) +
+            "%\n Allergies: " + to_string(allergiesAllergies) +
+            "%\n Children: " + to_string(childrenChildren) +
+            "%\n Neutered/Spayed: " + to_string(neuteredNeutered) +
+            "%\n Aggression/Purpose " + to_string(aggressionPurpose) +
+            "%\n Attachment: " + to_string(attachmentAttachment) +
+            "%\n Crate Trained/Travel: " + to_string(crateTravel) +
+            "%\n Intelligence/Purpose: " + to_string(intelligencePurpose) +
+            "%\n Attachment/Free Time: " + to_string(attachmentFreetime) +
+            "%\n Obedience/Patience: " + to_string(obediencePatience) +
+            "%\n Loudness/Home Type: " + to_string(loudnessHometype) +
+            "%\n Cost/Budget: " + to_string(costBudget) +
+            "%\n Energy/Home Type: " + to_string(energyHometype) +
+            "%\n Cleanliness/Free Time: " + to_string(cleanlinessFreetime) +
+            "%\n Crate Trained/Patience: " + to_string(cratetrainedPatience) +
+            "%\n Neutered/Budget: " + to_string(neuteredBudget) +
+            "%\n Maintenance/Salary: " + to_string(attachmentAttachment) +
+            "%\n Cleanliness/Patience: " + to_string(cleanlinessPatience) +
+            "%\n Aggression/Patience: " + to_string(aggressionPatience) +
+            "%\n Cleanliness/Salary: " + to_string(cleanlinessSalary) +
+            "%\n Comfort with Children/Patience: " + to_string(childrenPatience);
 
     return make_tuple(human, animal, totalScore);
 }
