@@ -21,13 +21,14 @@ GenerateMatches::GenerateMatches()
     }
 }
 
+
 vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroups(vector<tuple <Human*, Animal*, float>> scoredPairs)
 {
      map<string, vector <tuple <Human*, Animal*, float>>> map;
 
      //using indices to iterate over the vector
      for(std::vector<tuple <Human*, Animal*, float>>::size_type i = 0; i != scoredPairs.size(); i++) {
-         /* std::cout << v[i]; ... */
+         //std::cout << v[i]; ...
 
          string humanPref = get<0>(scoredPairs[i])->getTypePreference();
          string animalType = get<1>(scoredPairs[i])->getAnimalType();
@@ -36,6 +37,7 @@ vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroup
          //also note that strcmp takes a char array
          if(strcmp(humanPref.c_str(), animalType.c_str()) == 0)
          {
+
              //if the map doesn't contain this animalType
              if(map.find(humanPref) != map.end())
              {
@@ -60,6 +62,7 @@ vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroup
      }
      return result;
 }
+
 vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human*, Animal*, float>> scoredPairs)
 {
 
@@ -80,8 +83,8 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
         }
         matches.push_back(maxTuple);
     }
-    /*
 
+    /*
     // temp code -- added by Cam/Simone and commented for now
     match = make_tuple(humanList.at(0), animalList.at(0));
     matches.push_back(match);

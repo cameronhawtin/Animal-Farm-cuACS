@@ -22,9 +22,6 @@ private:
     tuple<Human*, Animal*> match;
     vector<tuple<Human*, Animal*>> matches;
 
-    tuple<Human*, Animal*, float> group;
-    vector<tuple<Human*, Animal*, float>> subGroups;
-
     CuacsAPI *capi;
     QList<Human*> humanList;
     QList<Animal*> animalList;
