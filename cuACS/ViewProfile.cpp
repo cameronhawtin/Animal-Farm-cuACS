@@ -80,7 +80,7 @@ void ViewProfile::setData(int &labelText) {
             ui->attachmentLineEdit->setText(QString::number(myList.at(i)->getAttachment()));
             ui->addressLineEdit->setText(QString::fromStdString(myList.at(i)->getAddress()));
             ui->phoneLineEdit->setText(QString::fromStdString(myList.at(i)->getPhoneNumber()));
-            if (myList.at(i)->getNeedFertile())
+            if (myList.at(i)->getNeedNeutered())
                 ui->neuteredLineEdit->setText("Yes");
             else
                 ui->neuteredLineEdit->setText("No");

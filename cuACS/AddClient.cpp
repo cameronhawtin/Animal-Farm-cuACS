@@ -122,7 +122,7 @@ void AddClient::on_buttonBox_accepted()
     string travel = ui->travelComboBox->currentText().toStdString();
     //string allergies = ui->allergicComboBox->currentText().toStdString();
     int noiseTolerance = ui->irritationLineEdit->text().toInt();
-    bool needFertile = ui->isNeuteredRadioButtonYES->isChecked();
+    bool needNeutered = ui->isNeuteredRadioButtonYES->isChecked();
     int numChildren = ui->childrenLineEdit->text().toInt();
     string salary = ui->salaryComboBox->currentText().toStdString();
     float budget = ui->budgetLineEdit->text().toFloat();
@@ -135,7 +135,7 @@ void AddClient::on_buttonBox_accepted()
 
     //now give attributes to Client class
     capi->addHuman(name, age, gender, typePreference, purpose, attachment, patience, homeType,
-                   travel, allergies, noiseTolerance, needFertile, numChildren,
+                   travel, allergies, noiseTolerance, needNeutered, numChildren,
                    salary, budget, freeTime, email, phone, address);
 }
 

@@ -11,6 +11,7 @@ ViewMatches::ViewMatches(QWidget *parent) :
     int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
     QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
     this->setFont(egyptienne);
+
     ui->viewMatchesListWidget->addItem("Generating Matches...");
     gm = new GenerateMatches();
     scores = gm->getAllScores();

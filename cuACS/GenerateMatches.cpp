@@ -131,10 +131,10 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     int childrenChildren = human->getNumChildren() * animal->getChildrenComfort() * 2;
 
     int neuteredNeutered;
-    if (human->getNeedFertile() && animal->getIsNeutered())
+    if (human->getNeedNeutered() && animal->getIsNeutered())
         neuteredNeutered = 100;
 
-    else if (!human->getNeedFertile())
+    else if (!human->getNeedNeutered())
         neuteredNeutered = 50;
     else
         neuteredNeutered = 0;

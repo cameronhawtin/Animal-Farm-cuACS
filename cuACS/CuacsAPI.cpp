@@ -48,12 +48,12 @@ void CuacsAPI::addAnimal(string name, string animalType, string breed, int age, 
 }
 
 void CuacsAPI::addHuman(string name, int age, string gender, string typePreference, string purpose, int attachment, int patience, string homeType,
-                        string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
+                        string travel, string allergies, int noiseTolerance, bool needNeutered, int numChildren,
                         string salary, float budget, string freeTime, string email, string address, string phone)
 {
     availableHumanId = availableHumanId + 1;
     ps.storeProfile(new Human(availableHumanId, name, age, gender, typePreference, purpose, attachment, patience, homeType,
-                              travel, allergies, noiseTolerance, needFertile, numChildren,
+                              travel, allergies, noiseTolerance, needNeutered, numChildren,
                               salary, budget, freeTime, email, address, phone), "Human");
 }
 
@@ -66,11 +66,11 @@ void CuacsAPI::editAnimal(int id, string name, string animalType, string breed, 
 }
 
 void CuacsAPI::editHuman(int id, string name, int age, string gender, string typePreference, string purpose, int attachment, int patience, string homeType,
-                        string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
+                        string travel, string allergies, int noiseTolerance, bool needNeutered, int numChildren,
                         string salary, float budget, string freeTime, string email, string address, string phone)
 {
     ps.storeProfile(new Human(id, name, age, gender, typePreference, purpose, attachment, patience, homeType,
-                              travel, allergies, noiseTolerance, needFertile, numChildren,
+                              travel, allergies, noiseTolerance, needNeutered, numChildren,
                               salary, budget, freeTime, email, address, phone), "Human");
 }
 

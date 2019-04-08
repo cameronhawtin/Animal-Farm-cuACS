@@ -58,7 +58,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
 
     string name, gender, typePreference, purpose, homeType, travel, allergies, salary, freeTime, email, address, phone;
     int age, attachment, patience, noiseTolerance, numChildren;
-    bool needFertile;
+    bool needNeutered;
     float budget;
 
 
@@ -83,7 +83,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
             noiseTolerance = myList.at(i)->getNoiseTolerance();
             numChildren = myList.at(i)->getNumChildren();
 
-            needFertile = myList.at(i)->getNeedFertile();
+            needNeutered = myList.at(i)->getNeedNeutered();
             budget = myList.at(i)->getBudget();
 
             i = myList.size();
@@ -111,7 +111,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     ui->attachmentLineEdit_2->setText(QString::number(attachment));
     ui->addressLineEdit->setText(QString::fromStdString(address));
     ui->phoneLineEdit->setText(QString::fromStdString(phone));
-    if (needFertile)
+    if (needNeutered)
         ui->neuteredLineEdit->setText("Yes");
     else
         ui->neuteredLineEdit->setText("No");

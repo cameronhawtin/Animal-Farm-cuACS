@@ -8,7 +8,7 @@ using namespace std;
 
 //initializes the data members
 Human::Human(int id, string name, int age, string gender, string typePreference, string purpose, int attachment, int patience, string homeType,
-             string travel, string allergies, int noiseTolerance, bool needFertile, int numChildren,
+             string travel, string allergies, int noiseTolerance, bool needNeutered, int numChildren,
              string salary, float budget, string freeTime, string email, string address, string phone)
 {
     this->id = id;
@@ -23,7 +23,7 @@ Human::Human(int id, string name, int age, string gender, string typePreference,
     this->travel = travel;
     this->allergies = allergies;
     this->noiseTolerance = noiseTolerance;
-    this->needFertile = needFertile;
+    this->needNeutered = needNeutered;
     this->numChildren = numChildren;
     this->salary = salary;
     this->budget = budget;
@@ -48,7 +48,7 @@ Human::Human(vector<string> state)
     this->travel = state.at(9);
     this->allergies = state.at(10);
     this->noiseTolerance = std::stoi(state.at(11));
-    std::istringstream(state.at(12)) >> this->needFertile;
+    std::istringstream(state.at(12)) >> this->needNeutered;
     this->numChildren = std::stoi(state.at(13));
     this->salary = state.at(14);
     this->budget = std::stof(state.at(15));
@@ -71,7 +71,7 @@ string Human::getHomeType() { return homeType; }
 string Human::getTravel() { return travel; }
 string Human::getAllergies() { return allergies; }
 int Human::getNoiseTolerance() { return noiseTolerance; }
-bool Human::getNeedFertile() { return needFertile; }
+bool Human::getNeedNeutered() { return needNeutered; }
 int Human::getNumChildren() { return numChildren; }
 string Human::getSalary() { return salary; }
 float Human::getBudget() { return budget; }
@@ -97,7 +97,7 @@ vector<string>* Human::getState()
         state->push_back(travel);
         state->push_back(allergies);
         state->push_back(to_string(noiseTolerance));
-        state->push_back(to_string(needFertile));
+        state->push_back(to_string(needNeutered));
         state->push_back(to_string(numChildren));
         state->push_back(salary);
         state->push_back(to_string(budget));
