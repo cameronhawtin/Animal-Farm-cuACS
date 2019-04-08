@@ -98,20 +98,21 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
 }
 
 vector <tuple <Human*, Animal*, float>> GenerateMatches::getAllScores() {
+    string summary;
     for (int i = 0; i < humanList.size(); i++) {
         for (int j = 0; j < animalList.size(); j++) {
-            score = getScore(humanList.at(i), animalList.at(j));
+            score = getScore(humanList.at(i), animalList.at(j), summary);
             scores.push_back(score);
         }
     }
     return scores;
 }
 
-tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* animal) {
+tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* animal, string summary) {
     int totalScore;
     int e=-1;
 
-    //Type/Allergies are dependent on both animal and client
+    //Matching client allergies with animals type/if the animal is hypoallergenic
     int allergiesAllergies;
     if ((human->getAllergies().find("Cat")!=std::string::npos && animal->getAnimalType() == "Cat" && animal->getIsHypoallergenic() == false)        ||
         (human->getAllergies().find("Dog")!=std::string::npos && animal->getAnimalType() == "Dog" && animal->getIsHypoallergenic() == false)        ||
@@ -122,23 +123,27 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
             allergiesAllergies = 0;
     else allergiesAllergies = 100;
 
+    //Matching client type preference with the type of the animal
     int typeType;
     if (human->getTypePreference() == animal->getAnimalType())
         typeType = 100;
     else
         typeType = 0;
 
+    //Matching the number of children of the client with the animals comfort with children
     int childrenChildren = human->getNumChildren() * animal->getChildrenComfort() * 2;
+    if (childrenChildren > 100) childrenChildren = 100;
 
+    //Matching the clients need for a neutered animal with the animal being neutered or not
     int neuteredNeutered;
     if (human->getNeedNeutered() && animal->getIsNeutered())
         neuteredNeutered = 100;
-
     else if (!human->getNeedNeutered())
         neuteredNeutered = 50;
     else
         neuteredNeutered = 0;
 
+    //Matching the purpose that the client will be using the animal for with the aggression of the animal
     int aggressionPurpose = 0;
     try {
         if (human->getPurpose() == "Guard" || human->getPurpose() == "Hunting")
@@ -155,63 +160,74 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         std::cout << "AggressionPurpose error";
     }
 
+    //Matching the attachment of the animal with the attachment of the client
     int attachmentAttachment = human->getAttachment() * animal->getAttachment();
 
+    //Matching the travel time of the client with the crate training of the animal
     int crateTravel;
-    // this can be improved
     if (human->getTravel() == "No Travel" || animal->getIsCrateTrained())
         crateTravel = 100;
-    else if (human->getTravel() != "No Travel" && !animal->getIsCrateTrained())
-        crateTravel = 0;
+    else if (human->getTravel() == "1 - 2 Weeks" && !animal->getIsCrateTrained())
+        crateTravel = 40;
+    else if (human->getTravel() == "3 - 4 Weeks" && !animal->getIsCrateTrained())
+        crateTravel = 20;
     else {
-        crateTravel = 100;
+        crateTravel = 0;
     }
 
+    //Matching the intelligence of the animal with the clients purpose for adoption
     int intelligencePurpose = 0;
-    try {
+    try{
         if (human->getPurpose() == "Disability" || human->getPurpose() == "Hunting")
             intelligencePurpose = animal->getIntelligence()*10;
 
         else if (human->getPurpose() == "Companion" || human->getPurpose() == "Guard")
-            intelligencePurpose = animal->getIntelligence()*5;
+            intelligencePurpose = 50;
 
         else if (human->getPurpose() == "Breeding" || human->getPurpose() == "Gift")
-            intelligencePurpose = animal->getIntelligence()*1;
+            intelligencePurpose = (10 - animal->getIntelligence())*10;
         else throw e;
     }
     catch (int e) {
         std::cout << "IntelligencePurpose error";
     }
+    if (intelligencePurpose < 0) intelligencePurpose = 0;
+    if (intelligencePurpose > 100) intelligencePurpose = 100;
 
+    //Matching the attachment of the animal with the free time of the client
     int attachmentFreetime;
     if (human->getFreeTime() == "0 - 1")
-        attachmentFreetime = animal->getAttachment() * 0;
+        attachmentFreetime = (10 - animal->getAttachment()) * 10;
     else if (human->getFreeTime() == "1 - 2")
-        attachmentFreetime = animal->getAttachment() * 3;
+        attachmentFreetime = (10 - animal->getAttachment()) * 7;
     else if (human->getFreeTime() == "3 - 4")
-        attachmentFreetime = animal->getAttachment() * 6;
+        attachmentFreetime = animal->getAttachment() * 7;
     else attachmentFreetime = animal->getAttachment() * 10;
 
-    int obediencePatience = human->getPatience() * animal->getObedience();
+    //Matching the obedience of the animal with the patience of the client
+    int obediencePatience = (10 - human->getPatience()) * animal->getObedience();
 
+    //Matching the loudness of the animal with the home type of the client
     int loudnessHometype;
     if (human->getHomeType() == "Apartment")
-        loudnessHometype = animal->getLoudness() * 1;
+        loudnessHometype = (10 - animal->getLoudness()) * 10;
     else if (human->getHomeType() == "Condo")
-        loudnessHometype = animal->getLoudness() * 3;
+        loudnessHometype = (10 - animal->getLoudness()) * 7;
     else if (human->getHomeType() == "Small House")
-        loudnessHometype = animal->getLoudness() * 5;
+        loudnessHometype = 50;
     else if (human->getHomeType() == "Medium House")
         loudnessHometype = animal->getLoudness() * 7;
     else
         loudnessHometype = animal->getLoudness() * 10;
 
+    //Matching the cost of the animal with the clients budget
     int costBudget;
     if (human->getBudget() <= animal->getCost())
         costBudget = 100;
     else
         costBudget = 0;
 
+    //Matching the energy of the animal with the home type of the client
     int energyHometype;
     if (human->getHomeType() == "Apartment" && animal->getEnergy() == "High")
         energyHometype = 10;
@@ -226,23 +242,25 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     else
         energyHometype = 100;
 
+    //Matching the cleanliness of the animal with the free time of the client
     int cleanlinessFreetime;
     if (human->getFreeTime() == "0 - 1")
-        cleanlinessFreetime = 1 * animal->getCleanliness();
+        cleanlinessFreetime = 10 * animal->getCleanliness();
     else if (human->getFreeTime() == "1 - 2")
-        cleanlinessFreetime = 3 * animal->getCleanliness();
-    else if (human->getFreeTime() == "2 - 3")
-        cleanlinessFreetime = 5 * animal->getCleanliness();
-    else if (human->getFreeTime() == "3 - 4")
         cleanlinessFreetime = 7 * animal->getCleanliness();
-    else cleanlinessFreetime = 10 * animal->getCleanliness();
+    else if (human->getFreeTime() == "2 - 3")
+        cleanlinessFreetime = 50;
+    else if (human->getFreeTime() == "3 - 4")
+        cleanlinessFreetime = 7 * (10 - animal->getCleanliness());
+    else cleanlinessFreetime = 10 * (10 - animal->getCleanliness());
 
+    //Matching the create training of the animal with the patience of the client
     int cratetrainedPatience;
     if (animal->getIsCrateTrained()) {
         if (human->getPatience() > 5)
             cratetrainedPatience = 2 * human->getPatience();
         else
-            cratetrainedPatience = 5 * human->getPatience();
+            cratetrainedPatience = 10 * human->getPatience();
     }
     else {
         if (human->getPatience() > 5)
@@ -251,6 +269,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
             cratetrainedPatience = 1 * human->getPatience();
     }
 
+    //Matching the clients budget with the need for the animal to be neutered
     int neuteredBudget;
     if (animal->getIsNeutered())
         neuteredBudget = 50;
@@ -261,7 +280,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
             neuteredBudget = 0;
     }
 
-    // this can be improved
+    //Matching the maintenence cost of the animal with the salary of the client
     int maintenanceSalary;
     if ((human->getSalary() == "0 - 30" && animal->getCostPerYear() < 30)       ||
         (human->getSalary() == "30 - 50" && animal->getCostPerYear() < 75)      ||
@@ -275,29 +294,31 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         maintenanceSalary = 0;
 
 
-    int cleanlinessPatience = human->getPatience() * animal->getCleanliness();
+    //Matching the cleanliness of the animal with the patience of the client
+    int cleanlinessPatience = (10 - human->getPatience()) * animal->getCleanliness();
 
+    //Matching the aggression of the animal with the patience of the client
     int aggressionPatience = human->getPatience() * animal->getAggression();
 
+    //Matching the cleanliness of the animal with the salary of the client
     int cleanlinessSalary;
     if (human->getSalary() == "0 - 30")
-        cleanlinessSalary = 1 * animal->getCleanliness();
+        cleanlinessSalary = 10 * animal->getCleanliness();
     else if (human->getSalary() == "30 - 50")
-        cleanlinessSalary = 3 * animal->getCleanliness();
+        cleanlinessSalary = 7 * animal->getCleanliness();
     else if (human->getSalary() == "50 - 70")
         cleanlinessSalary = 5 * animal->getCleanliness();
     else if (human->getSalary() == "70 - 90")
-        cleanlinessSalary = 7 * animal->getCleanliness();
+        cleanlinessSalary = 7 * (10 - animal->getCleanliness());
     else if (human->getSalary() == "90 - 110")
-        cleanlinessSalary = 8 * animal->getCleanliness();
+        cleanlinessSalary = 8 * (10 - animal->getCleanliness());
     else if (human->getSalary() == "110 - 130")
-        cleanlinessSalary = 9 * animal->getCleanliness();
-    else cleanlinessSalary = 10 * animal->getCleanliness();
+        cleanlinessSalary = 9 * (10 - animal->getCleanliness());
+    else cleanlinessSalary = 10 * (10 - animal->getCleanliness());
 
 
-    int childrenPatience = human->getPatience() * animal->getChildrenComfort();
-
-
+    //Matching the patience of the client with the animals comfort with children
+    int childrenPatience = human->getPatience() * (10 - animal->getChildrenComfort());
 
     totalScore = typeType*225 +
     allergiesAllergies*150 +
@@ -322,6 +343,8 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     childrenPatience*20;
 
     cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
+
+    summary = "Matching Summary (pair scoring percentages): \n Type Preference: " + typeType + "%\n Allergies: " + allergiesAllergies + "%\n ";
 
     return make_tuple(human, animal, totalScore);
 }
