@@ -6,7 +6,7 @@ ViewClients::ViewClients(QWidget *parent) :
     ui(new Ui::ViewClients)
 {
     ui->setupUi(this);
-    //this->setFixedSize(QSize(1112, 509));
+    this->setFixedSize(QSize(1124, 507));
     this->setWindowTitle("View Clients");
     int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
     QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);

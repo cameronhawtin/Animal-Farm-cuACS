@@ -6,7 +6,7 @@ EditProfile::EditProfile(QWidget *parent) :
     ui(new Ui::EditProfile)
 {
     ui->setupUi(this);
-    //this->setFixedSize(QSize(871, 539));
+    this->setFixedSize(QSize(871, 491));
     this->setWindowTitle("Edit Your Profile");
     int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
     QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
