@@ -1,4 +1,4 @@
-#include "postloginstaff.h"
+#include "PostLoginStaff.h"
 #include "ui_postloginstaff.h"
 
 PostLoginStaff::PostLoginStaff(QWidget *parent) :

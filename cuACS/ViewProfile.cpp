@@ -1,4 +1,4 @@
-#include "viewprofile.h"
+#include "ViewProfile.h"
 #include "ui_viewprofile.h"
 
 ViewProfile::ViewProfile(QWidget *parent) :

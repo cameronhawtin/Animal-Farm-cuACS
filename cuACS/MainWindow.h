@@ -2,9 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "postloginstaff.h"
-#include "postloginclient.h"
-#include "viewprofile.h"
+#include "PostLoginStaff.h"
+#include "PostLoginClient.h"
+#include "ViewProfile.h"
 #include "CuacsAPI.h"
 #include <QFontDatabase>
 

@@ -52,11 +52,6 @@ SOURCES += \
     ViewProfile.cpp
 
 HEADERS += \
-        mainwindow.h \
-    postloginstaff.h \
-    postloginclient.h \
-    viewanimals.h \
-    addanimal.h \
     Animal.h \
     CuacsAPI.h \
     FileStorageManager.h \
@@ -69,13 +64,18 @@ HEADERS += \
     CuacsAPI.h \
     Profile.h \
     Serializer.h \
-    addclient.h \
-    viewclients.h \
-    viewprofile.h \
-    editprofile.h \
-    editanimal.h \
-    viewmatches.h \
-    generatematches.h
+    ViewProfile.h \
+    ViewMatches.h \
+    ViewClients.h \
+    ViewAnimals.h \
+    PostLoginStaff.h \
+    PostLoginClient.h \
+    MainWindow.h \
+    GenerateMatches.h \
+    EditProfile.h \
+    EditAnimal.h \
+    AddClient.h \
+    AddAnimal.h
 
 FORMS += \
         mainwindow.ui \

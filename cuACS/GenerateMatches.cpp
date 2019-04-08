@@ -1,4 +1,4 @@
-﻿#include "generatematches.h"
+﻿#include "GenerateMatches.h"
 
 GenerateMatches::GenerateMatches()
 {

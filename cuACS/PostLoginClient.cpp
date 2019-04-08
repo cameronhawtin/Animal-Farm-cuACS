@@ -1,4 +1,4 @@
-#include "postloginclient.h"
+#include "PostLoginClient.h"
 #include "ui_postloginclient.h"
 
 PostLoginClient::PostLoginClient(QWidget *parent) :

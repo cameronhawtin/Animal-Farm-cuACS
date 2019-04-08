@@ -6,7 +6,7 @@
 #include "CuacsAPI.h"
 #include <QListWidget>
 #include <sstream>
-#include <editanimal.h>
+#include <EditAnimal.h>
 #include <QFontDatabase>
 
 namespace Ui {

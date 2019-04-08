@@ -2,7 +2,7 @@
 #define VIEWMATCHES_H
 
 #include <QDialog>
-#include "generatematches.h"
+#include "GenerateMatches.h"
 #include <tuple>
 #include <iostream>
 #include <QFontDatabase>

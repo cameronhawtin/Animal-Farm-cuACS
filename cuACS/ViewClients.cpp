@@ -1,4 +1,4 @@
-#include "viewclients.h"
+#include "ViewClients.h"
 #include "ui_viewclients.h"
 
 ViewClients::ViewClients(QWidget *parent) :

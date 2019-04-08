@@ -1,4 +1,4 @@
-#include "editprofile.h"
+#include "EditProfile.h"
 #include "ui_editprofile.h"
 
 EditProfile::EditProfile(QWidget *parent) :

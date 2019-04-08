@@ -1,4 +1,4 @@
-﻿#include "viewmatches.h"
+﻿#include "ViewMatches.h"
 #include "ui_viewmatches.h"
 
 ViewMatches::ViewMatches(QWidget *parent) :

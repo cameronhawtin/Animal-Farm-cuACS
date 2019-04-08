@@ -1,7 +1,7 @@
-﻿#include "addanimal.h"
+﻿#include "AddAnimal.h"
 #include "ui_addanimal.h"
 #include "CuacsAPI.h"
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include <iostream>
 
 using namespace std;

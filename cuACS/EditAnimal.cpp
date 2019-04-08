@@ -1,6 +1,6 @@
-#include "editanimal.h"
+#include "EditAnimal.h"
 #include "ui_editanimal.h"
-#include <viewanimals.h>
+#include <ViewAnimals.h>
 
 EditAnimal::EditAnimal(QWidget *parent) :
     QDialog(parent),

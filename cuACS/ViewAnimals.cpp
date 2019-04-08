@@ -1,4 +1,4 @@
-#include "viewanimals.h"
+#include "ViewAnimals.h"
 #include "ui_viewanimals.h"
 
 using namespace std;

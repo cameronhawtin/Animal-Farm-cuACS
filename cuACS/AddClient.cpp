@@ -1,7 +1,7 @@
-#include "addclient.h"
+#include "AddClient.h"
 #include "ui_addclient.h"
 #include "CuacsAPI.h"
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include <iostream>
 
 using namespace std;

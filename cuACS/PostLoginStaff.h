@@ -3,11 +3,11 @@
 
 #include <QDialog>
 #include <QMessageBox>
-#include "viewanimals.h"
-#include "viewclients.h"
-#include "viewmatches.h"
-#include "addanimal.h"
-#include "addclient.h"
+#include "ViewAnimals.h"
+#include "ViewClients.h"
+#include "ViewMatches.h"
+#include "AddAnimal.h"
+#include "AddClient.h"
 #include "CuacsAPI.h"
 #include <QFontDatabase>
 
