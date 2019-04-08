@@ -30,11 +30,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    postloginstaff.cpp \
-    postloginclient.cpp \
-    viewanimals.cpp \
-    addanimal.cpp \
     Animal.cpp \
     FileOpenException.cpp \
     FileStorageManager.cpp \
@@ -42,14 +37,19 @@ SOURCES += \
     PersistentStorageAPI.cpp \
     Serializer.cpp \
     Human.cpp \
-    viewclients.cpp \
-    addclient.cpp \
-    viewprofile.cpp \
-    editprofile.cpp \
-    editanimal.cpp \
     CuacsAPI.cpp \
-    viewmatches.cpp \
-    generatematches.cpp
+    PostLoginStaff.cpp \
+    PostLoginClient.cpp \
+    MainWindow.cpp \
+    EditProfile.cpp \
+    EditAnimal.cpp \
+    AddClient.cpp \
+    AddAnimal.cpp \
+    GenerateMatches.cpp \
+    ViewAnimals.cpp \
+    ViewClients.cpp \
+    ViewMatches.cpp \
+    ViewProfile.cpp
 
 HEADERS += \
         mainwindow.h \
