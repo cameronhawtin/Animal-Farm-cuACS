@@ -63,6 +63,45 @@ vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroup
      return result;
 }
 
+vector <vector <float>> GenerateMatches:: preProcess(vector <vector <float>> vscores) {
+    float totalSum = 0;
+    float devSum = 0;
+    float stdDeviation;
+    float stdDeviationAboveMean;
+    float max = 0;
+
+    float mean;
+
+    for (int i=0; i<vscores.size(); i++) {
+        for (int j=0; j<vscores.at(i).size(); j++) {
+            totalSum+=vscores.at(i).at(j);
+            if (vscores.at(i).at(j) > max) {
+                max = vscores.at(i).at(j);
+            }
+        }
+    }
+
+    mean = totalSum/vscores.size();
+
+    for (int i=0; i<vscores.size(); i++) {
+        for (int j=0; j<vscores.at(i).size(); j++) {
+            devSum+=pow(((vscores.at(i).at(j))-mean), 2);
+        }
+    }
+    stdDeviation = sqrt(devSum/vscores.size());
+    stdDeviationAboveMean = mean+stdDeviation;
+
+    for (int i=0; i<vscores.size(); i++) {
+        for (int j=0; j<vscores.at(i).size(); j++) {
+            if (vscores.at(i).at(j) < stdDeviationAboveMean) {
+                vscores.at(i).at(j) = -(max);
+            }
+        }
+    }
+
+    return vscores;
+}
+
 vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human*, Animal*, float>> scoredPairs)
 {
 

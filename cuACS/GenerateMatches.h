@@ -14,8 +14,8 @@ public:
     GenerateMatches();
     vector<tuple<Human*, Animal*>> getMatches(vector<tuple <Human*, Animal*, float>>);
     tuple <Human*, Animal*, float> getScore(Human*, Animal*, string&);
-
     vector<tuple<Human *, Animal *, float> > getAllScores();
+    vector<vector<float>> preProcess(vector <vector <float>>);
 private:
     tuple<Human*, Animal*, float> score;
     vector<tuple<Human*, Animal*, float>> scores;
