@@ -111,12 +111,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     int totalScore;
     int e=-1;
 
-    int typeType;
-    if (human->getTypePreference() == animal->getAnimalType())
-        typeType = 100;
-    else
-        typeType = 0;
-
+    //Type/Allergies are dependent on both animal and client
     int allergiesAllergies;
     if ((human->getAllergies().find("Cat")!=std::string::npos && animal->getAnimalType() == "Cat" && animal->getIsHypoallergenic() == false)        ||
         (human->getAllergies().find("Dog")!=std::string::npos && animal->getAnimalType() == "Dog" && animal->getIsHypoallergenic() == false)        ||
@@ -126,6 +121,12 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
         (human->getAllergies().find("Guineapig")!=std::string::npos && animal->getAnimalType() == "Guinea Pig" && animal->getIsHypoallergenic() == false) )
             allergiesAllergies = 0;
     else allergiesAllergies = 100;
+
+    int typeType;
+    if (human->getTypePreference() == animal->getAnimalType())
+        typeType = 100;
+    else
+        typeType = 0;
 
     int childrenChildren = human->getNumChildren() * animal->getChildrenComfort() * 2;
 
@@ -322,5 +323,5 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
 
     cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
 
-    return make_tuple(human, animal, log(totalScore));
+    return make_tuple(human, animal, totalScore);
 }
