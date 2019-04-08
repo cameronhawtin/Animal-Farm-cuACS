@@ -21,16 +21,76 @@ GenerateMatches::GenerateMatches()
     }
 }
 
-vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human*, Animal*, float>>)
+vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroups(vector<tuple <Human*, Animal*, float>> scoredPairs)
+{
+     map<string, vector <tuple <Human*, Animal*, float>>> map;
+
+     //using indices to iterate over the vector
+     for(std::vector<tuple <Human*, Animal*, float>>::size_type i = 0; i != scoredPairs.size(); i++) {
+         /* std::cout << v[i]; ... */
+
+         string humanPref = get<0>(scoredPairs[i])->getTypePreference();
+         string animalType = get<1>(scoredPairs[i])->getAnimalType();
+
+         //if the human's preference and the animal's type match
+         //also note that strcmp takes a char array
+         if(strcmp(humanPref.c_str(), animalType.c_str()) == 0)
+         {
+             //if the map doesn't contain this animalType
+             if(map.find(humanPref) != map.end())
+             {
+                 vector<tuple <Human*, Animal*, float>> tempVector =  vector<tuple <Human*, Animal*, float>>();
+                 tuple<Human*, Animal*, float> tempTuple = make_tuple(get<0>(scoredPairs[i]), get<1>(scoredPairs[i]), get<2>(scoredPairs[i]));
+                 tempVector.push_back(tempTuple);
+                 map[humanPref] = tempVector;
+             }
+             else
+             {
+                 tuple<Human*, Animal*,float> tempTuple = make_tuple(get<0>(scoredPairs[i]), get<1>(scoredPairs[i]), get<2>(scoredPairs[i]));
+                 map[humanPref].push_back(tempTuple);
+             }
+         }
+     }
+
+     vector<vector <tuple <Human*, Animal*, float>>> result;
+     //looping through the unsorted map to make a vector of subgrups
+     for (const auto & [ key, value ] : map) {
+         //cout << key << ": " << value << endl;
+         result.push_back(value);
+     }
+     return result;
+}
+vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human*, Animal*, float>> scoredPairs)
 {
 
-    // temp code
+    vector<vector<tuple<Human*, Animal*, float>>> subGroups = this->generateSubGroups(scoredPairs);
+
+    //iterating over the subgroups using their indices
+    for(std::vector<tuple <Human*, Animal*, float>>::size_type i = 0; i != subGroups.size(); i++) {
+        float maxScore = 0;
+        tuple<Human*, Animal*> maxTuple;
+        //for each subgroup, pick the best scored pair
+        for(std::vector<tuple <Human*, Animal*, float>>::size_type j = 0; j != subGroups[i].size(); j++) {
+            tuple<Human*, Animal*, float> tempTuple = subGroups[i][j];
+            //if the current pair's score is greater than the maxScore for the current subgroup
+            if(get<2>(tempTuple) > maxScore){
+                maxScore = get<2>(tempTuple);
+                maxTuple = make_tuple(get<0>(tempTuple),get<1>(tempTuple));
+            }
+        }
+        matches.push_back(maxTuple);
+    }
+    /*
+
+    // temp code -- added by Cam/Simone and commented for now
     match = make_tuple(humanList.at(0), animalList.at(0));
     matches.push_back(match);
     match = make_tuple(humanList.at(1), animalList.at(1));
     matches.push_back(match);
     match = make_tuple(humanList.at(2), animalList.at(2));
     matches.push_back(match);
+    */
+
     return matches;
 }
 

@@ -1,6 +1,7 @@
 #ifndef GENERATEMATCHES_H
 #define GENERATEMATCHES_H
 
+#include <string.h>
 #include <QDialog>
 #include <iostream>
 #include "CuacsAPI.h"
@@ -21,9 +22,14 @@ private:
     tuple<Human*, Animal*> match;
     vector<tuple<Human*, Animal*>> matches;
 
+    tuple<Human*, Animal*, float> group;
+    vector<tuple<Human*, Animal*, float>> subGroups;
+
     CuacsAPI *capi;
     QList<Human*> humanList;
     QList<Animal*> animalList;
+
+    vector<vector<tuple <Human*, Animal*, float>>> generateSubGroups(vector<tuple <Human*, Animal*, float>>);
 };
 
 #endif // GENERATEMATCHES_H
