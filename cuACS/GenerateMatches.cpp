@@ -159,6 +159,7 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
                 }
                 matches.push_back(match);
             }
+            delete optimize;
 
         }
 
