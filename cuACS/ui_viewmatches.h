@@ -16,6 +16,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,12 +26,13 @@ class Ui_ViewMatches
 public:
     QDialogButtonBox *buttonBox;
     QListWidget *viewMatchesListWidget;
+    QLabel *summaryLabel;
 
     void setupUi(QDialog *ViewMatches)
     {
         if (ViewMatches->objectName().isEmpty())
             ViewMatches->setObjectName(QStringLiteral("ViewMatches"));
-        ViewMatches->resize(522, 511);
+        ViewMatches->resize(1055, 524);
         QPalette palette;
         QBrush brush(QColor(200, 16, 46, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -58,12 +60,19 @@ public:
         ViewMatches->setPalette(palette);
         buttonBox = new QDialogButtonBox(ViewMatches);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(160, 470, 341, 32));
+        buttonBox->setGeometry(QRect(700, 480, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Close);
         viewMatchesListWidget = new QListWidget(ViewMatches);
         viewMatchesListWidget->setObjectName(QStringLiteral("viewMatchesListWidget"));
         viewMatchesListWidget->setGeometry(QRect(20, 20, 481, 441));
+        summaryLabel = new QLabel(ViewMatches);
+        summaryLabel->setObjectName(QStringLiteral("summaryLabel"));
+        summaryLabel->setGeometry(QRect(560, 20, 481, 441));
+        QFont font;
+        font.setPointSize(11);
+        summaryLabel->setFont(font);
+        summaryLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         retranslateUi(ViewMatches);
         QObject::connect(buttonBox, SIGNAL(rejected()), ViewMatches, SLOT(reject()));
@@ -74,6 +83,7 @@ public:
     void retranslateUi(QDialog *ViewMatches)
     {
         ViewMatches->setWindowTitle(QApplication::translate("ViewMatches", "Dialog", Q_NULLPTR));
+        summaryLabel->setText(QApplication::translate("ViewMatches", "<html><head/><body><p><span style=\" color:#C8102E;\">Matching Summary (pair scoring percentages)</span></p></body></html>", Q_NULLPTR));
     } // retranslateUi
 
 };
