@@ -126,36 +126,36 @@ vector<int>* Optimize::subsetMinus(vector<int> *clientSubset, int minus){
 }
 
 
-int main()
-{
-  float row1[] = {4, 2, 8, 3};
-  float row2[] = {5, 6, 2, 9};
-  float row3[] = {7, 1, 4, 8};
-  float row4[] = {8, 6, 4, 2};
-  vector<float> r1 = vector<float>(row1, row1 + sizeof(row1) / sizeof(float));
-  vector<float> r2 = vector<float>(row2, row2 + sizeof(row2) / sizeof(float));
-  vector<float> r3 = vector<float>(row3, row3 + sizeof(row3) / sizeof(float));
-  vector<float> r4 = vector<float>(row4, row4 + sizeof(row4) / sizeof(float));
+//int main()
+//{
+//  float row1[] = {4, 2, 8, 3};
+//  float row2[] = {5, 6, 2, 9};
+//  float row3[] = {7, 1, 4, 8};
+//  float row4[] = {8, 6, 4, 2};
+//  vector<float> r1 = vector<float>(row1, row1 + sizeof(row1) / sizeof(float));
+//  vector<float> r2 = vector<float>(row2, row2 + sizeof(row2) / sizeof(float));
+//  vector<float> r3 = vector<float>(row3, row3 + sizeof(row3) / sizeof(float));
+//  vector<float> r4 = vector<float>(row4, row4 + sizeof(row4) / sizeof(float));
 
-  vector<vector<float>> test;
-  test.push_back(r1);
-  test.push_back(r2);
-  test.push_back(r3);
-  test.push_back(r4);
+//  vector<vector<float>> test;
+//  test.push_back(r1);
+//  test.push_back(r2);
+//  test.push_back(r3);
+//  test.push_back(r4);
 
-  //int cl[] = {0, 1, 2, 3};
-  //vector<int> clients = vector<int>(cl, cl + sizeof(cl)/ sizeof(int));
+//  //int cl[] = {0, 1, 2, 3};
+//  //vector<int> clients = vector<int>(cl, cl + sizeof(cl)/ sizeof(int));
 
-  Optimize *op = new Optimize(test);
-  vector<int>* matching = op->getMatching();
-  for(int i = 0; i < matching->size(); i++){
-    cout << matching->at(i) << "\n";
-  }
-  //cout << op->getMaxSubsetValue(clients);
+//  Optimize *op = new Optimize(test);
+//  vector<int>* matching = op->getMatching();
+//  for(int i = 0; i < matching->size(); i++){
+//    cout << matching->at(i) << "\n";
+//  }
+//  //cout << op->getMaxSubsetValue(clients);
 
-  //for(int i = 0; i < clients->size(); i++){
-  //  cout << i << ":" << op->subsetPairListMap->at(op->getSubsetKey(clients))->at(i)<<"\n";
-  //}
-  delete op;
-  return 0;
-}
+//  //for(int i = 0; i < clients->size(); i++){
+//  //  cout << i << ":" << op->subsetPairListMap->at(op->getSubsetKey(clients))->at(i)<<"\n";
+//  //}
+//  delete op;
+//  return 0;
+//}
