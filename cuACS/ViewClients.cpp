@@ -26,7 +26,6 @@ ViewClients::ViewClients(QWidget *parent) :
             ui->viewClientsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
         ui->viewClientsListWidget->setCurrentRow(0);
     }
-
 }
 
 ViewClients::~ViewClients()
