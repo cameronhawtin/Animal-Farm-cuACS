@@ -8,7 +8,7 @@ GenerateMatches::GenerateMatches()
 
     if (humansVec.size() != 0) {
         //Make QList from vector
-        animalList.reserve(humansVec.size());
+        humanList.reserve(humansVec.size());
         std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(humanList));
     }
 
