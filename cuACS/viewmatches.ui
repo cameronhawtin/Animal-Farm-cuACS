@@ -184,30 +184,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="summaryLabel">
-   <property name="geometry">
-    <rect>
-     <x>535</x>
-     <y>115</y>
-     <width>480</width>
-     <height>580</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#C8102E;&quot;&gt;Matching Summary (pair scoring percentages)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
@@ -229,7 +205,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QTableView" name="tableView">
+  <widget class="QListWidget" name="summaryListWidget">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -239,11 +215,6 @@
     </rect>
    </property>
   </widget>
-  <zorder>tableView</zorder>
-  <zorder>buttonBox</zorder>
-  <zorder>viewMatchesListWidget</zorder>
-  <zorder>summaryLabel</zorder>
-  <zorder>titleLabel</zorder>
  </widget>
  <resources/>
  <connections>

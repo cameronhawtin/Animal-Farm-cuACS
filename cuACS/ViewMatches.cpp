@@ -14,6 +14,7 @@ ViewMatches::ViewMatches(QWidget *parent) :
 
     ui->viewMatchesListWidget->addItem("Generating Matches...");
     gm = new GenerateMatches();
+    summary = new vector<string>();
     scores = gm->getAllScores();
     matches = gm->getMatches(scores);
     ui->viewMatchesListWidget->clear();
@@ -22,6 +23,8 @@ ViewMatches::ViewMatches(QWidget *parent) :
 
 ViewMatches::~ViewMatches()
 {
+    delete gm;
+    delete summary;
     delete ui;
 }
 
@@ -39,7 +42,16 @@ void ViewMatches::populateUI(vector <tuple <Human*, Animal*>> matches) {
 
 void ViewMatches::on_viewMatchesListWidget_currentRowChanged(int currentRow)
 {
-    string summary;
+    summary->clear();
+    QList<string> summaryList;
+    ui->summaryListWidget->clear();
     gm->getScore(get<0>(matches.at(currentRow)), get<1>(matches.at(currentRow)), summary);
-    ui->summaryLabel->setText(QString::fromStdString(summary));
+    if (summary->size() != 0) {
+            //Make QList from vector
+            summaryList.reserve(summary->size());
+            std::copy(summary->begin(), summary->end(), std::back_inserter(summaryList));
+    }
+    for (int i = 0; i < summary->size(); i++){
+        ui->summaryListWidget->addItem(QString::fromStdString(summaryList.at(i)));
+    }
 }

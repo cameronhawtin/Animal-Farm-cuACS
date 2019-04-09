@@ -28,6 +28,7 @@ private:
     GenerateMatches *gm;
     vector <tuple <Human*, Animal*, float>> scores;
     vector <tuple <Human*, Animal*>> matches;
+    vector <string>* summary;
 };
 
 #endif // VIEWMATCHES_H

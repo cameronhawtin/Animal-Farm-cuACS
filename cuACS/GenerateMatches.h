@@ -13,7 +13,7 @@ class GenerateMatches
 public:
     GenerateMatches();
     vector<tuple<Human*, Animal*>> getMatches(vector<tuple <Human*, Animal*, float>>);
-    tuple <Human*, Animal*, float> getScore(Human*, Animal*, string&);
+    tuple <Human*, Animal*, float> getScore(Human*, Animal*, vector<string>*);
     vector<tuple<Human *, Animal *, float> > getAllScores();
     vector<vector<float>> preProcess(vector <vector <float>>);
 private:
