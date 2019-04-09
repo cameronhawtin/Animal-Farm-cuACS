@@ -1,15 +1,13 @@
 #include "Optimize.h"
 
-//vector<vector<float>> scoreTable;
-//unordered_map<string, float> subsetMaxMap;
-//init has "Sub-" = 0 for max, empty vector for pairlist
-//unordered_map<string, *vector<pair<int, int>>> subsetPairListMap;
 Optimize::Optimize(vector<vector<float>> sc){
   //convert to pointer of pointer
+
   scoreTable = new vector<vector<float>*>();
   for(int i = 0; i < sc.size(); i++){
     scoreTable->push_back(new vector<float>(sc[i]));
   }
+
   subsetMaxMap = new unordered_map<string, float>;
   (*subsetMaxMap)["Sub-"] = 0;
   subsetPairListMap = new unordered_map<string, vector<int>*>();
@@ -24,34 +22,16 @@ Optimize::~Optimize(){
 vector<int>* Optimize::getMatching(){
 
   vector<vector<int>*> *combinations = getCombinations(scoreTable->size(), scoreTable->at(0)->size());
-  cout << "outputting combinations\n";
-  for(int i = 0; i < combinations->size(); i++){
-    vector<int>* vec = combinations->at(i);
-    for(int j = 0; j < vec->size(); j++){
-      cout << " " << vec->at(j) << " ";
-    }
-    cout << "\n";
-  }
-  cout<< "comb done \n";
-
-
 
   string maxCombKey;
   float maxCombScore = numeric_limits<float>::min();
   for(int i = 0; i < combinations->size(); i++){
-
     float curvalue = getMaxSubsetValue(combinations->at(i));
     if (curvalue > maxCombScore){
       maxCombScore = curvalue;
       maxCombKey = getSubsetKey(combinations->at(i));
     }
   }
-  cout << "outputting final indices\n";
-  for(int i = 0; i < subsetPairListMap->at(maxCombKey)->size(); i++){
-
-    cout << subsetPairListMap->at(maxCombKey)->at(i) <<"\n";
-  }
-  cout<< "indices done \n";
   return subsetPairListMap->at(maxCombKey);
 }
 
@@ -92,21 +72,17 @@ float Optimize::getMaxSubsetValue(vector<int> *clientSubset){
   string key = getSubsetKey(clientSubset);
   int animalIndex = clientSubset->size() - 1;
   if (subsetMaxMap->count(key) > 0){
-
-
     return subsetMaxMap->at(key);
   }else{
-
-    float max = numeric_limits<float>::min();// initialize max to minimum value so first value will always be used
+    float max = -numeric_limits<float>::max();// initialize max to minimum value so first value will always be used
     float score;
-    int clientIndex;
-    int maxClientIndex;
+    int clientIndex = -1;
+    int maxClientIndex = -1;
 
     //vector<pair<int, int>> new
     for(int i = 0; i < clientSubset->size(); i++){
       clientIndex = clientSubset->at(i);
       vector<int> *smaller = subsetMinus(clientSubset, clientIndex);
-      cout << "1. goes here............!!!" << endl;
       score = scoreTable->at(animalIndex)->at(clientIndex) + getMaxSubsetValue(smaller);
       if(score > max){
         max = score;
@@ -114,15 +90,12 @@ float Optimize::getMaxSubsetValue(vector<int> *clientSubset){
       }
       delete smaller;
     }
-
     (*subsetMaxMap)[key] = max;
     //add vector
     vector<int> test = * subsetPairListMap->at(getSubsetKey(subsetMinus(clientSubset, maxClientIndex)));
-
     vector<int> *indices = new vector<int>(test);
     indices->push_back(maxClientIndex);
     (*subsetPairListMap)[key] = indices;
-
     return max;
   }
 }

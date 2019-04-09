@@ -79,7 +79,7 @@ vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroup
 }
 
 vector <vector <float>> GenerateMatches:: preProcess(vector <vector <float>> vscores) {
-    int numValues=0;
+    /*int numValues=0;
     float totalSum = 0;
     float devSum = 0;
     float stdDeviation;
@@ -113,7 +113,7 @@ vector <vector <float>> GenerateMatches:: preProcess(vector <vector <float>> vsc
                 vscores.at(i).at(j) = -(max);
             }
         }
-    }
+    }*/
 
     return vscores;
 }
@@ -155,11 +155,7 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
 
             Optimize* optimize = new Optimize(*unoptimizedScoresMatrix);
 
-            //cout << "reaches here........." << endl;
-
             vector<int>* matchingIndices = optimize->getMatching();
-
-
 
             for(std::vector<tuple <Human*, Animal*, float>>::size_type k = 0; k != matchingIndices->size(); k++) {
                 if(!flipped)
@@ -170,9 +166,9 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
                     match = make_tuple(localListOfHumans->at(matchingIndices->at(k)), localListOfAnimals->at(k));
                 }
 
-                matches.push_back(match);
-                delete optimize;
+                matches.push_back(match); 
             }
+            delete optimize;
         }
         return matches;
 }
