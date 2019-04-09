@@ -359,6 +359,40 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     //Matching the patience of the client with the animals comfort with children
     int childrenPatience = human->getPatience() * (10 - animal->getChildrenComfort());
 
+    //Matching the free time of the client with the playfulness of the animal
+    int playfulnessFreetime;
+    if (human->getFreeTime() == "0 - 1")
+        playfulnessFreetime = 10 * (10 - animal->getPlayfulness());
+    else if (human->getFreeTime() == "1 - 2")
+        playfulnessFreetime = 7 * (10 - animal->getPlayfulness());
+    else if (human->getFreeTime() == "2 - 3")
+        playfulnessFreetime = 50;
+    else if (human->getFreeTime() == "3 - 4")
+        playfulnessFreetime = 7 * animal->getPlayfulness();
+    else playfulnessFreetime = 10 * animal->getPlayfulness();
+
+    //Matching the purpose with the loyalty of the animal
+    int loyaltyPurpose;
+    try {
+        if (human->getPurpose() == "Guard" || human->getPurpose() == "Hunting" || human->getPurpose() == "Companion" || human->getPurpose() == "Disability")
+            aggressionPurpose = animal->getLoyalty() * 10;
+        else
+            aggressionPurpose = (10 - animal->getLoyalty()) * 10;
+    }
+    catch (int e) {
+        std::cout << "AggressionPurpose error";
+    }
+
+    //Matching the age of the client with the life expectancy of the animal
+    int lifeExpectancyAge = 0;
+    if ((human->getAge() + animal->getLifeExpectancy() > 100) && (animal->getLifeExpectancy() > 5))
+        lifeExpectancyAge = 0;
+    else if ((human->getAge() + animal->getLifeExpectancy() > 80) && (animal->getLifeExpectancy() > 5))
+        lifeExpectancyAge = 50;
+    else
+        lifeExpectancyAge = 100;
+
+    //max score = 1905, out of 190500
     totalScore = typeType*225 +
     allergiesAllergies*150 +
     childrenChildren*140 +
@@ -367,43 +401,54 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     attachmentAttachment*120 +
     crateTravel*118 +
     intelligencePurpose*110 +
+    loyaltyPurpose*80 +
     attachmentFreetime*70 +
     obediencePatience*63 +
     loudnessHometype*58 +
     costBudget*57 +
     energyHometype*55 +
     cleanlinessFreetime*53 +
+    playfulnessFreetime*50 +
     cratetrainedPatience*50 +
     neuteredBudget*48 +
     maintenanceSalary*45 +
     cleanlinessPatience*43 +
     aggressionPatience*40 +
     cleanlinessSalary*30 +
+    lifeExpectancyAge*25 +
     childrenPatience*20;
 
     cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
+    int percentScore = (int)round((((float)totalScore)/190500)*150);
 
-    summary = string("Matching Summary (pair scoring percentages): \n Type Preference: ") + to_string(typeType) +
-            "%\n Allergies: " + to_string(allergiesAllergies) +
-            "%\n Children: " + to_string(childrenChildren) +
-            "%\n Neutered/Spayed: " + to_string(neuteredNeutered) +
-            "%\n Aggression/Purpose " + to_string(aggressionPurpose) +
-            "%\n Attachment: " + to_string(attachmentAttachment) +
-            "%\n Crate Trained/Travel: " + to_string(crateTravel) +
-            "%\n Intelligence/Purpose: " + to_string(intelligencePurpose) +
-            "%\n Attachment/Free Time: " + to_string(attachmentFreetime) +
-            "%\n Obedience/Patience: " + to_string(obediencePatience) +
-            "%\n Loudness/Home Type: " + to_string(loudnessHometype) +
-            "%\n Cost/Budget: " + to_string(costBudget) +
-            "%\n Energy/Home Type: " + to_string(energyHometype) +
-            "%\n Cleanliness/Free Time: " + to_string(cleanlinessFreetime) +
-            "%\n Crate Trained/Patience: " + to_string(cratetrainedPatience) +
-            "%\n Neutered/Budget: " + to_string(neuteredBudget) +
-            "%\n Maintenance/Salary: " + to_string(attachmentAttachment) +
-            "%\n Cleanliness/Patience: " + to_string(cleanlinessPatience) +
-            "%\n Aggression/Patience: " + to_string(aggressionPatience) +
-            "%\n Cleanliness/Salary: " + to_string(cleanlinessSalary) +
-            "%\n Comfort with Children/Patience: " + to_string(childrenPatience) + "%";
+    summary = string("Matching Summary (pair scoring percentages): \n Type Preference: ") + to_string(typeType) + "% (Weighted at 12%)" +
+            "\n Allergies: " + to_string(allergiesAllergies) + "% (Weighted at 8%)" +
+            "\n Children: " + to_string(childrenChildren) + "% (Weighted at 7%)" +
+            "\n Neutered/Spayed: " + to_string(neuteredNeutered) + "% (Weighted at 7%)" +
+            "\n Aggression/Purpose " + to_string(aggressionPurpose) + "% (Weighted at 7%)" +
+            "\n Attachment: " + to_string(attachmentAttachment) + "% (Weighted at 6%)" +
+            "\n Crate Trained/Travel: " + to_string(crateTravel) + "% (Weighted at 6%)" +
+            "\n Intelligence/Purpose: " + to_string(intelligencePurpose) + "% (Weighted at 6%)" +
+            "\n Loyalty/Purpose: " + to_string(loyaltyPurpose) + "% (Weighted at 4%)" +
+            "\n Attachment/Free Time: " + to_string(attachmentFreetime) + "% (Weighted at 4%)" +
+            "\n Obedience/Patience: " + to_string(obediencePatience) + "% (Weighted at 3%)" +
+            "\n Loudness/Home Type: " + to_string(loudnessHometype) + "% (Weighted at 3%)" +
+            "\n Cost/Budget: " + to_string(costBudget) + "% (Weighted at 3%)" +
+            "\n Energy/Home Type: " + to_string(energyHometype) + "% (Weighted at 3%)" +
+            "\n Cleanliness/Free Time: " + to_string(cleanlinessFreetime) + "% (Weighted at 3%)" +
+            "\n Playfulness/Free Time: " + to_string(playfulnessFreetime) + "% (Weighted at 3%)" +
+            "\n Crate Trained/Patience: " + to_string(cratetrainedPatience) + "% (Weighted at 3%)" +
+            "\n Neutered/Budget: " + to_string(neuteredBudget) + "% (Weighted at 3%)" +
+            "\n Maintenance/Salary: " + to_string(maintenanceSalary) + "% (Weighted at 2%)" +
+            "\n Cleanliness/Patience: " + to_string(cleanlinessPatience) + "% (Weighted at 2%)" +
+            "\n Aggression/Patience: " + to_string(aggressionPatience) + "% (Weighted at 2%)" +
+            "\n Cleanliness/Salary: " + to_string(cleanlinessSalary) + "% (Weighted at 2%)" +
+            "\n Life Expectancy/Age: " + to_string(lifeExpectancyAge) + "% (Weighted at 1%)" +
+            "\n Comfort with Children/Patience: " + to_string(childrenPatience) + "% (Weighted at 1%)" +
+            "\nTotal: " + to_string(percentScore) + "%";
+
+    if (percentScore > 100)
+        summary += " Excellent Match!";
 
     return make_tuple(human, animal, totalScore);
 }

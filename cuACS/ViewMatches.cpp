@@ -6,7 +6,7 @@ ViewMatches::ViewMatches(QWidget *parent) :
     ui(new Ui::ViewMatches)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(1055, 524));
+    this->setFixedSize(QSize(1030, 750));
     this->setWindowTitle("Matches");
     int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
     QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
