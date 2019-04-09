@@ -19,6 +19,18 @@ GenerateMatches::GenerateMatches()
         animalList.reserve(animalsVec.size());
         std::copy(animalsVec.begin(), animalsVec.end(), std::back_inserter(animalList));
     }
+
+    scoresMatrix = new vector<vector<float>>();
+    listOfHumans = new vector<Human*>();
+    listOfAnimals  = new vector<Animal*>();
+}
+
+GenerateMatches::~GenerateMatches()
+{
+    delete capi;
+    delete scoresMatrix;
+    delete listOfHumans;
+    delete listOfAnimals;
 }
 
 
@@ -105,6 +117,21 @@ vector <vector <float>> GenerateMatches:: preProcess(vector <vector <float>> vsc
 vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human*, Animal*, float>> scoredPairs)
 {
 
+        vector<tuple <Human*, Animal*, float>> unoptimized;
+
+        //represent the scores as a matrix
+        Utils::makeMatrix(scoredPairs, listOfHumans, listOfAnimals, scoresMatrix);
+
+        vector<vector<float>> processedMatrix = preProcess(*scoresMatrix);
+
+        /*
+        for(std::vector<vector<float>>::size_type k = 0; k != processedMatrix.size(); k++) {
+
+        }
+        */
+
+        vector<vector<tuple<Human*, Animal*, float>>> subGroups = this->generateSubGroups(scoredPairs);
+    /*
     vector<vector<tuple<Human*, Animal*, float>>> subGroups = this->generateSubGroups(scoredPairs);
 
     //iterating over the subgroups using their indices
@@ -122,8 +149,9 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
         }
         matches.push_back(maxTuple);
     }
+    */
 
-    /*
+
     // temp code -- added by Cam/Simone and commented for now
     match = make_tuple(humanList.at(0), animalList.at(0));
     matches.push_back(match);
@@ -131,7 +159,8 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
     matches.push_back(match);
     match = make_tuple(humanList.at(2), animalList.at(2));
     matches.push_back(match);
-    */
+
+
 
     return matches;
 }
@@ -418,8 +447,11 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     lifeExpectancyAge*25 +
     childrenPatience*20;
 
+    /*
     cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
+    */
     int percentScore = (int)round((((float)totalScore)/190500)*150);
+
 
     summary->push_back(string("Matching Summary (pair scoring percentages):"));
     summary->push_back(string(" Type Preference: ") + to_string(typeType) + "% (Weighted at 12%)");
@@ -453,3 +485,5 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
 
     return make_tuple(human, animal, totalScore);
 }
+
+

@@ -5,6 +5,7 @@
 #include <QDialog>
 #include <iostream>
 #include "CuacsAPI.h"
+#include "Utils.h"
 #include <tuple>
 #include <math.h>
 
@@ -12,6 +13,7 @@ class GenerateMatches
 {
 public:
     GenerateMatches();
+    ~GenerateMatches();
     vector<tuple<Human*, Animal*>> getMatches(vector<tuple <Human*, Animal*, float>>);
     tuple <Human*, Animal*, float> getScore(Human*, Animal*, vector<string>*);
     vector<tuple<Human *, Animal *, float> > getAllScores();
@@ -27,6 +29,10 @@ private:
     QList<Animal*> animalList;
 
     vector<vector<tuple <Human*, Animal*, float>>> generateSubGroups(vector<tuple <Human*, Animal*, float>>);
+
+    vector<vector<float>>* scoresMatrix;
+    vector<Human*>* listOfHumans;
+    vector<Animal*>* listOfAnimals;
 };
 
 #endif // GENERATEMATCHES_H
