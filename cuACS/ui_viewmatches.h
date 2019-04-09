@@ -77,7 +77,13 @@ public:
         summaryListWidget = new QListWidget(ViewMatches);
         new QListWidgetItem(summaryListWidget);
         summaryListWidget->setObjectName(QStringLiteral("summaryListWidget"));
+        summaryListWidget->setEnabled(false);
         summaryListWidget->setGeometry(QRect(530, 110, 480, 580));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush);
+        summaryListWidget->setPalette(palette1);
 
         retranslateUi(ViewMatches);
         QObject::connect(buttonBox, SIGNAL(rejected()), ViewMatches, SLOT(reject()));
