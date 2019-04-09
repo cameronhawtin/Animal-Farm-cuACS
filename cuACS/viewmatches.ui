@@ -214,6 +214,11 @@
      <height>580</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>Matching Summary (pair scoring percentages):</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
