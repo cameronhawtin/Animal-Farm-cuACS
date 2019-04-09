@@ -183,13 +183,13 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
     */
 
 
-    // temp code -- added by Cam/Simone and commented for now
-    match = make_tuple(humanList.at(0), animalList.at(0));
-    matches.push_back(match);
-    match = make_tuple(humanList.at(1), animalList.at(1));
-    matches.push_back(match);
-    match = make_tuple(humanList.at(2), animalList.at(2));
-    matches.push_back(match);
+//    // temp code -- added by Cam/Simone and commented for now
+//    match = make_tuple(humanList.at(0), animalList.at(0));
+//    matches.push_back(match);
+//    match = make_tuple(humanList.at(1), animalList.at(1));
+//    matches.push_back(match);
+//    match = make_tuple(humanList.at(2), animalList.at(2));
+//    matches.push_back(match);
 
 
 

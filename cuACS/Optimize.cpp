@@ -24,24 +24,13 @@ Optimize::~Optimize(){
 vector<int>* Optimize::getMatching(){
 
   vector<vector<int>*> *combinations = getCombinations(scoreTable->size(), scoreTable->at(0)->size());
-  for(int i = 0; i < combinations->size(); i++){
-    vector<int>* vec = combinations->at(i);
-    for(int j = 0; j < vec->size(); j++){
-      cout << " " << vec->at(j) << " ";
-    }
-    cout << "\n";
-  }
-
 
   string maxCombKey;
   float maxCombScore = numeric_limits<float>::min();
-  cout << "test1\n";
   for(int i = 0; i < combinations->size(); i++){
-    cout << "test2:" << i << "\n";
     float curvalue = getMaxSubsetValue(combinations->at(i));
     if (curvalue > maxCombScore){
       maxCombScore = curvalue;
-      cout << "test2.1:" << i << "\n";
       maxCombKey = getSubsetKey(combinations->at(i));
     }
   }
@@ -53,7 +42,7 @@ vector<vector<int>*>* Optimize::getCombinations(int choose, int from){
   vector<int> combination;
   vector<vector<int>*> combinations;
   for (int i = 0; i < from; i++){
-    fromvec.push_back(i+1);
+    fromvec.push_back(i);
   }
   combinationsRecursive(0, choose, combination, fromvec, combinations);
   return new vector<vector<int>*> (combinations);
@@ -74,7 +63,6 @@ void Optimize::combinationsRecursive(int n, int m, vector<int> &combination, vec
 string Optimize::getSubsetKey(vector<int> *clientSubset){
   string ret = "Sub-";
   for(int i = 0; i < clientSubset->size(); i++){
-    cout << "test3:" << i << "\n";
     ret = ret + to_string(clientSubset->at(i)) + "-";
   }
   return ret;
@@ -95,7 +83,6 @@ float Optimize::getMaxSubsetValue(vector<int> *clientSubset){
 
     //vector<pair<int, int>> new
     for(int i = 0; i < clientSubset->size(); i++){
-      cout << "test4:" << i << "\n";
       clientIndex = clientSubset->at(i);
       vector<int> *smaller = subsetMinus(clientSubset, clientIndex);
       score = scoreTable->at(animalIndex)->at(clientIndex) + getMaxSubsetValue(smaller);
