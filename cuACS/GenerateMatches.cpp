@@ -455,6 +455,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
 
 
     summary->push_back(string("Matching Summary (pair scoring percentages):"));
+    summary->push_back(string("______________________________________________________________"));
     summary->push_back(string(" Type Preference: ") + to_string(typeType) + "% (Weighted at 12%)");
     summary->push_back(string(" Allergies: ") + to_string(allergiesAllergies) + "% (Weighted at 8%)");
     summary->push_back(string(" Children: ") + to_string(childrenChildren) + "% (Weighted at 7%)");
@@ -479,6 +480,12 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     summary->push_back(string(" Cleanliness/Salary: ") + to_string(cleanlinessSalary) + "% (Weighted at 2%)");
     summary->push_back(string(" Life Expectancy/Age: ") + to_string(lifeExpectancyAge) + "% (Weighted at 1%)");
     summary->push_back(string(" Comfort with Children/Patience: ") + to_string(childrenPatience) + "% (Weighted at 1%)");
+    summary->push_back(string(" "));
+    summary->push_back(string(" "));
+    summary->push_back(string(" "));
+    summary->push_back(string(" "));
+    summary->push_back(string(" "));
+
     if (percentScore < 100)
         summary->push_back(string("Overall Matching Score: ") + to_string(percentScore) + "%");
     else
