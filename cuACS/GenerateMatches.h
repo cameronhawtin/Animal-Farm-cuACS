@@ -5,6 +5,7 @@
 #include <QDialog>
 #include <iostream>
 #include "CuacsAPI.h"
+#include "Optimize.h"
 #include "Utils.h"
 #include <tuple>
 #include <math.h>

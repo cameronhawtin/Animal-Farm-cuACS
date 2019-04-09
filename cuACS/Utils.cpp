@@ -68,3 +68,21 @@ int Utils::indexOfHuman(vector<Human*> humanList, Human* findHuman)
     }
         return -1;
 }
+
+void Utils::transpose(vector<vector<float> > &b)
+{
+    if (b.size() == 0)
+        return;
+
+    vector<vector<float> > trans_vec(b[0].size(), vector<float>());
+
+    for (int i = 0; i < b.size(); i++)
+    {
+        for (int j = 0; j < b[i].size(); j++)
+        {
+            trans_vec[j].push_back(b[i][j]);
+        }
+    }
+
+    b = trans_vec;    // <--- reassign here
+}

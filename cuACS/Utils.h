@@ -11,6 +11,7 @@ class Utils
 {
     public:
         static void makeMatrix(vector<tuple<Human*, Animal*, float>>, vector<Human*>*, vector<Animal*>*, vector<vector<float>>*);
+        static void transpose(vector<vector<float>>&);
 
     private:
         static int indexOfAnimal(vector<Animal*>, Animal*);

@@ -118,7 +118,7 @@ vector <vector <float>> GenerateMatches:: preProcess(vector <vector <float>> vsc
 vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human*, Animal*, float>> scoredPairs)
 {
 
-        vector<tuple <Human*, Animal*, float>> unoptimized;
+
 
         //represent the scores as a matrix
         Utils::makeMatrix(scoredPairs, listOfHumans, listOfAnimals, scoresMatrix);
@@ -132,6 +132,36 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
         */
 
         vector<vector<tuple<Human*, Animal*, float>>> subGroups = this->generateSubGroups(scoredPairs);
+
+        for(std::vector<tuple <Human*, Animal*, float>>::size_type i = 0; i != subGroups.size(); i++) {
+            vector<vector<float>>* unoptimizedScoresMatrix = new vector<vector<float>>();
+            vector<Human*>* localListOfHumans = new vector<Human*>();
+            vector<Animal*>* localListOfAnimals = new vector<Animal*>();
+            Utils::makeMatrix(subGroups[i], localListOfHumans, localListOfAnimals, unoptimizedScoresMatrix);
+            bool flipped = false;
+
+            if(unoptimizedScoresMatrix->size() > unoptimizedScoresMatrix->at(0).size())
+            {
+                Utils::transpose(*unoptimizedScoresMatrix);
+                flipped = true;
+            }
+
+            Optimize* optimize = new Optimize(*unoptimizedScoresMatrix);
+            vector<int>* matchingIndices = optimize->getMatching();
+
+            for(std::vector<tuple <Human*, Animal*, float>>::size_type k = 0; k != matchingIndices->size(); k++) {
+                if(!flipped)
+                {
+                    match = make_tuple(localListOfHumans->at(k), localListOfAnimals->at(matchingIndices->at(k)));
+                }
+                else {
+                    match = make_tuple(localListOfHumans->at(matchingIndices->at(k)), localListOfAnimals->at(k));
+                }
+                matches.push_back(match);
+            }
+
+        }
+
     /*
     vector<vector<tuple<Human*, Animal*, float>>> subGroups = this->generateSubGroups(scoredPairs);
 

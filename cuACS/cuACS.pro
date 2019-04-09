@@ -50,7 +50,8 @@ SOURCES += \
     ViewClients.cpp \
     ViewMatches.cpp \
     ViewProfile.cpp \
-    Utils.cpp
+    Utils.cpp \
+    Optimize.cpp
 
 HEADERS += \
     Animal.h \
@@ -77,7 +78,8 @@ HEADERS += \
     EditAnimal.h \
     AddClient.h \
     AddAnimal.h \
-    Utils.h
+    Utils.h \
+    Optimize.h
 
 FORMS += \
         mainwindow.ui \
