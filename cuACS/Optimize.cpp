@@ -32,6 +32,7 @@ vector<int>* Optimize::getMatching(){
       maxCombKey = getSubsetKey(combinations->at(i));
     }
   }
+  delete combinations;
   return subsetPairListMap->at(maxCombKey);
 }
 
@@ -79,7 +80,6 @@ float Optimize::getMaxSubsetValue(vector<int> *clientSubset){
     int clientIndex = -1;
     int maxClientIndex = -1;
 
-    //vector<pair<int, int>> new
     for(int i = 0; i < clientSubset->size(); i++){
       clientIndex = clientSubset->at(i);
       vector<int> *smaller = subsetMinus(clientSubset, clientIndex);
@@ -91,11 +91,12 @@ float Optimize::getMaxSubsetValue(vector<int> *clientSubset){
       delete smaller;
     }
     (*subsetMaxMap)[key] = max;
-    //add vector
-    vector<int> test = * subsetPairListMap->at(getSubsetKey(subsetMinus(clientSubset, maxClientIndex)));
+    vector<int>* subsetMin = subsetMinus(clientSubset, maxClientIndex);
+    vector<int> test = * subsetPairListMap->at(getSubsetKey(subsetMin));
     vector<int> *indices = new vector<int>(test);
     indices->push_back(maxClientIndex);
     (*subsetPairListMap)[key] = indices;
+    delete subsetMin;
     return max;
   }
 }

@@ -41,7 +41,6 @@ vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroup
 
      //using indices to iterate over the vector
      for(std::vector<tuple <Human*, Animal*, float>>::size_type i = 0; i != scoredPairs.size(); i++) {
-         //std::cout << v[i]; ...
 
          string humanPref = get<0>(scoredPairs[i])->getTypePreference();
          string animalType = get<1>(scoredPairs[i])->getAnimalType();
@@ -72,14 +71,13 @@ vector<vector<tuple <Human*, Animal*, float>>> GenerateMatches::generateSubGroup
      vector<vector <tuple <Human*, Animal*, float>>> result;
      //looping through the unsorted map to make a vector of subgrups
      for (const auto & [ key, value ] : map) {
-         //cout << key << ": " << value << endl;
          result.push_back(value);
      }
      return result;
 }
 
 vector <vector <float>> GenerateMatches:: preProcess(vector <vector <float>> vscores) {
-    /*int numValues=0;
+    int numValues=0;
     float totalSum = 0;
     float devSum = 0;
     float stdDeviation;
@@ -113,7 +111,7 @@ vector <vector <float>> GenerateMatches:: preProcess(vector <vector <float>> vsc
                 vscores.at(i).at(j) = -(max);
             }
         }
-    }*/
+    }
 
     return vscores;
 }
@@ -123,8 +121,6 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
         //represent the scores as a matrix
         Utils::makeMatrix(scoredPairs, listOfHumans, listOfAnimals, scoresMatrix);
 
-        //cout << "scored pairs size............... " << scoresMatrix.size() << endl;
-
         vector<vector<float>>* processedMatrix = new vector<vector<float>>(preProcess(*scoresMatrix));
         vector<tuple<Human*, Animal*, float>> opt;
 
@@ -132,7 +128,6 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
 
         for(std::vector<tuple <Human*, Animal*, float>>::size_type k = 0; k != processedMatrix->size(); k++) {
             for(std::vector<tuple <Human*, Animal*, float>>::size_type j = 0; j != processedMatrix->at(k).size(); j++) {
-                //opt.push_back(make_tuple()
                 opt.push_back(make_tuple(listOfHumans->at(k), listOfAnimals->at(j), processedMatrix->at(k).at(j)));
             }
         }
@@ -166,10 +161,17 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
                     match = make_tuple(localListOfHumans->at(matchingIndices->at(k)), localListOfAnimals->at(k));
                 }
 
-                matches.push_back(match); 
+                matches.push_back(match);
             }
             delete optimize;
+            delete unoptimizedScoresMatrix;
+            delete localListOfHumans;
+            delete localListOfAnimals;
+            delete matchingIndices;
         }
+
+        delete processedMatrix;
+
         return matches;
 }
 
@@ -455,11 +457,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     lifeExpectancyAge*25 +
     childrenPatience*20;
 
-    /*
-    cout << human->getName() << " and " << animal->getName() << " return a score of " << totalScore << " and an adjusted score of " << log(totalScore) << endl;
-    */
     int percentScore = (int)round((((float)totalScore)/190500)*150);
-
 
     summary->push_back(string("Matching Summary (pair scoring percentages):"));
     summary->push_back(string("______________________________________________________________"));
@@ -500,5 +498,3 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
 
     return make_tuple(human, animal, totalScore);
 }
-
-
