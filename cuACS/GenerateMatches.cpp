@@ -480,9 +480,9 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
     summary->push_back(string(" Life Expectancy/Age: ") + to_string(lifeExpectancyAge) + "% (Weighted at 1%)");
     summary->push_back(string(" Comfort with Children/Patience: ") + to_string(childrenPatience) + "% (Weighted at 1%)");
     if (percentScore < 100)
-        summary->push_back(string("Total: ") + to_string(percentScore) + "%");
+        summary->push_back(string("Overall Matching Score: ") + to_string(percentScore) + "%");
     else
-        summary->push_back(string("Total: ") + to_string(percentScore) + "% Excellent Match!");
+        summary->push_back(string("Overall Matching Score: ") + to_string(percentScore) + "% Excellent Match!");
 
     return make_tuple(human, animal, totalScore);
 }
