@@ -18,13 +18,16 @@ class Optimize
                 Optimize(vector<vector<float>>);
                 ~Optimize();
                 vector<int> *getMatching();
-                float getMaxSubsetValue(vector<int>*);//client list
+
         private:
+                float getMaxSubsetValue(vector<int>*);//client list
                 unordered_map<string, float> *subsetMaxMap;
                 unordered_map<string, vector<int>*> *subsetPairListMap;
                 vector<vector<float>*> *scoreTable;
                 string getSubsetKey(vector<int>*);
                 vector<int>* subsetMinus(vector<int>*, int);
+                void combinationsRecursive(int, int, vector<int>&, vector<int>&, vector<vector<int>*>&);
+                vector<vector<int>*>* getCombinations(int, int);
 };
 
 #endif
