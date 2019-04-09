@@ -20,6 +20,9 @@ public:
     ~ViewMatches();
 
     void populateUI(vector <tuple <Human*, Animal*>>);
+private slots:
+    void on_viewMatchesListWidget_currentRowChanged(int currentRow);
+
 private:
     Ui::ViewMatches *ui;
     GenerateMatches *gm;

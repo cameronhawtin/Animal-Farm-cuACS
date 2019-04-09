@@ -6,7 +6,7 @@ ViewMatches::ViewMatches(QWidget *parent) :
     ui(new Ui::ViewMatches)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(522, 511));
+    this->setFixedSize(QSize(1055, 524));
     this->setWindowTitle("Matches");
     int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
     QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
@@ -35,4 +35,11 @@ void ViewMatches::populateUI(vector <tuple <Human*, Animal*>> matches) {
 
         ui->viewMatchesListWidget->addItem(humanName + " (ID: " + humanID + ") matches with " + animalName + " (ID: " + animalID + ")");
     }
+}
+
+void ViewMatches::on_viewMatchesListWidget_currentRowChanged(int currentRow)
+{
+    string summary;
+    gm->getScore(get<0>(matches.at(currentRow)), get<1>(matches.at(currentRow)), summary);
+    ui->summaryLabel->setText(QString::fromStdString(summary));
 }

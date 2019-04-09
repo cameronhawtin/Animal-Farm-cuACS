@@ -222,7 +222,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
 
     //Matching the cost of the animal with the clients budget
     int costBudget;
-    if (human->getBudget() <= animal->getCost())
+    if (human->getBudget() >= animal->getCost())
         costBudget = 100;
     else
         costBudget = 0;
@@ -364,7 +364,7 @@ tuple <Human*, Animal*, float> GenerateMatches::getScore(Human* human, Animal* a
             "%\n Cleanliness/Patience: " + to_string(cleanlinessPatience) +
             "%\n Aggression/Patience: " + to_string(aggressionPatience) +
             "%\n Cleanliness/Salary: " + to_string(cleanlinessSalary) +
-            "%\n Comfort with Children/Patience: " + to_string(childrenPatience);
+            "%\n Comfort with Children/Patience: " + to_string(childrenPatience) + "%";
 
     return make_tuple(human, animal, totalScore);
 }
