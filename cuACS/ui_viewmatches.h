@@ -27,6 +27,7 @@ public:
     QDialogButtonBox *buttonBox;
     QListWidget *viewMatchesListWidget;
     QLabel *summaryLabel;
+    QLabel *titleLabel;
 
     void setupUi(QDialog *ViewMatches)
     {
@@ -65,14 +66,21 @@ public:
         buttonBox->setStandardButtons(QDialogButtonBox::Close);
         viewMatchesListWidget = new QListWidget(ViewMatches);
         viewMatchesListWidget->setObjectName(QStringLiteral("viewMatchesListWidget"));
-        viewMatchesListWidget->setGeometry(QRect(20, 20, 481, 441));
+        viewMatchesListWidget->setGeometry(QRect(20, 130, 481, 331));
         summaryLabel = new QLabel(ViewMatches);
         summaryLabel->setObjectName(QStringLiteral("summaryLabel"));
-        summaryLabel->setGeometry(QRect(560, 20, 481, 441));
+        summaryLabel->setGeometry(QRect(540, 130, 481, 331));
         QFont font;
         font.setPointSize(11);
         summaryLabel->setFont(font);
         summaryLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        titleLabel = new QLabel(ViewMatches);
+        titleLabel->setObjectName(QStringLiteral("titleLabel"));
+        titleLabel->setGeometry(QRect(8, 30, 1041, 59));
+        QFont font1;
+        font1.setPointSize(24);
+        titleLabel->setFont(font1);
+        titleLabel->setAlignment(Qt::AlignCenter);
 
         retranslateUi(ViewMatches);
         QObject::connect(buttonBox, SIGNAL(rejected()), ViewMatches, SLOT(reject()));
@@ -84,6 +92,7 @@ public:
     {
         ViewMatches->setWindowTitle(QApplication::translate("ViewMatches", "Dialog", Q_NULLPTR));
         summaryLabel->setText(QApplication::translate("ViewMatches", "<html><head/><body><p><span style=\" color:#C8102E;\">Matching Summary (pair scoring percentages)</span></p></body></html>", Q_NULLPTR));
+        titleLabel->setText(QApplication::translate("ViewMatches", "<html><head/><body><p>cuACS ACM Results</p></body></html>", Q_NULLPTR));
     } // retranslateUi
 
 };
