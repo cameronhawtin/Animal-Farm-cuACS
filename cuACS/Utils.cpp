@@ -2,7 +2,7 @@
 
 void Utils::makeMatrix(vector<tuple<Human*, Animal*, float>> scoredPairs, vector<Human*>* humans, vector<Animal*>* animals, vector<vector<float>>* result)
 {
-       //iterate over the vector to get each tuple
+        //iterate over the vector to get each tuple
        for(std::vector<tuple <Human*, Animal*, float>>::size_type j = 0; j != scoredPairs.size(); j++) {
 
            //extract the Human and Client fromt the tuple
@@ -17,16 +17,13 @@ void Utils::makeMatrix(vector<tuple<Human*, Animal*, float>> scoredPairs, vector
            {
                humans->push_back(currentHuman);
                humanIndex = humans->size()-1;
+               result->push_back(vector<float>());
            }
            //if the current animal doesn't exist in the list of animals
            if(animalIndex == -1)
            {
                animals->push_back(currentAnimal);
                animalIndex = animals->size()-1;
-           }
-
-           if(humanIndex == (humans->size()-1)){
-               result->push_back(vector<float>());
            }
 
            //in case of bugs: check here
@@ -38,7 +35,8 @@ void Utils::makeMatrix(vector<tuple<Human*, Animal*, float>> scoredPairs, vector
            result->at(humanIndex).at(animalIndex) = get<2>(scoredPairs[j]);
        }
 
-       /* -- just prints the results
+       // -- just prints the results
+       /*
        for(std::vector<tuple <float>>::size_type f = 0; f != result->size(); f++) {
            for(std::vector<tuple <float>>::size_type c = 0; c != result->at(f).size(); c++) {
                cout << result->at(f).at(c) << " | ";
@@ -47,6 +45,8 @@ void Utils::makeMatrix(vector<tuple<Human*, Animal*, float>> scoredPairs, vector
            cout << endl;
        }
        */
+
+
 }
 
 
