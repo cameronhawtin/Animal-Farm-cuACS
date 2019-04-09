@@ -35,10 +35,11 @@ vector<int>* Optimize::getMatching(){
   cout<< "comb done \n";
 
 
+
   string maxCombKey;
   float maxCombScore = numeric_limits<float>::min();
   for(int i = 0; i < combinations->size(); i++){
-    cout << "i is: " <<i << endl;
+
     float curvalue = getMaxSubsetValue(combinations->at(i));
     if (curvalue > maxCombScore){
       maxCombScore = curvalue;

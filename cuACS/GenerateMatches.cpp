@@ -170,11 +170,9 @@ vector <tuple <Human*, Animal*>> GenerateMatches::getMatches(vector<tuple <Human
                     match = make_tuple(localListOfHumans->at(matchingIndices->at(k)), localListOfAnimals->at(k));
                 }
 
-
                 matches.push_back(match);
                 delete optimize;
             }
-
         }
         return matches;
 }
