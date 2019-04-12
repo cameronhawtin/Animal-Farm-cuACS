@@ -6,6 +6,7 @@
 #include "CuacsAPI.h"
 #include <QListWidget>
 #include <sstream>
+#include <QFontDatabase>
 
 namespace Ui {
 class ViewClients;
@@ -19,6 +20,7 @@ public:
     explicit ViewClients(QWidget *parent = nullptr);
     ~ViewClients();
 
+    static bool sortClients(Human *a, Human *b);
 private slots:
     void on_viewClientsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 

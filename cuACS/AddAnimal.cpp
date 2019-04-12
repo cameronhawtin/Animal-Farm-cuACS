@@ -1,7 +1,7 @@
-﻿#include "addanimal.h"
+﻿#include "AddAnimal.h"
 #include "ui_addanimal.h"
 #include "CuacsAPI.h"
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include <iostream>
 
 using namespace std;
@@ -11,8 +11,11 @@ AddAnimal::AddAnimal(QWidget *parent) :
     ui(new Ui::AddAnimal)
 {
     ui->setupUi(this);
-    this->setFixedSize(QSize(752, 510));
+    this->setFixedSize(QSize(764, 511));
     this->setWindowTitle("Add an Animal");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
     QIntValidator* ageRange = new QIntValidator(0, 999, this);
@@ -21,6 +24,7 @@ AddAnimal::AddAnimal(QWidget *parent) :
     ui->ageLineEdit->setValidator(ageRange);
     ui->costLineEdit->setValidator(floatValidator);
     ui->costPerYearLineEdit->setValidator(floatValidator);
+    ui->lifeExpectancyLineEdit->setValidator(ageRange);
 
     updateOk();
 }
@@ -39,7 +43,10 @@ void AddAnimal::updateOk()
             || ui->costPerYearLineEdit->text().isEmpty() || ui->intelligenceLineEdit->text().isEmpty()
             || (ui->isCrateTrainedRadioButtonYES->isChecked() == false && ui->isCrateTrainedRadioButtonNO->isChecked() == false)
             || (ui->isHypoallergenicRadioButtonYES->isChecked() == false && ui->isHypoallergenicRadioButtonNO->isChecked() == false)
-            || (ui->isNeuteredRadioButtonYES->isChecked() == false && ui->isNeuteredRadioButtonNO->isChecked() == false))
+            || (ui->isNeuteredRadioButtonYES->isChecked() == false && ui->isNeuteredRadioButtonNO->isChecked() == false)
+            || ui->playfulnessLineEdit->text().isEmpty()
+            || ui->loyaltyLineEdit->text().isEmpty()
+            || ui->lifeExpectancyLineEdit->text().isEmpty())
         ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
     else
         ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
@@ -78,6 +85,10 @@ void AddAnimal::on_buttonBox_accepted()
     bool isHypoallergenic = false;
     bool isNeutered = false;
 
+    int playfulness = ui->playfulnessLineEdit->text().toInt();
+    int loyalty = ui->loyaltyLineEdit->text().toInt();
+    int lifeExp = ui->lifeExpectancyLineEdit->text().toInt();
+
     if (ui->isCrateTrainedRadioButtonYES->isChecked())
         isCrateTrained = true;
     else if (ui->isCrateTrainedRadioButtonNO->isChecked())
@@ -95,7 +106,7 @@ void AddAnimal::on_buttonBox_accepted()
 
     //now give attributes to animal class
     capi->addAnimal(name, type, breed, age, sex, colour, size, aggression, attachment, obedience, energy,
-                    isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness);
+                    isCrateTrained, isHypoallergenic, isNeutered, childrenComfort, loudness, cost, costPerYear, intelligence, cleanliness, playfulness, loyalty, lifeExp);
 
 }
 
@@ -257,6 +268,30 @@ void AddAnimal::on_costPerYearLineEdit_textChanged(const QString &arg1)
 }
 
 void AddAnimal::on_ageLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddAnimal::on_playfulnessSlider_valueChanged(int value)
+{
+    QString s = QString::number(value);
+    ui->playfulnessLineEdit->setText(s);
+    updateOk();
+}
+
+void AddAnimal::on_loyaltySlider_valueChanged(int value)
+{
+    QString s = QString::number(value);
+    ui->loyaltyLineEdit->setText(s);
+    updateOk();
+}
+
+void AddAnimal::on_playfulnessLineEdit_textChanged(const QString &arg1)
+{
+    updateOk();
+}
+
+void AddAnimal::on_loyaltyLineEdit_textChanged(const QString &arg1)
 {
     updateOk();
 }

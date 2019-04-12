@@ -1,4 +1,4 @@
-#include "viewclients.h"
+#include "ViewClients.h"
 #include "ui_viewclients.h"
 
 ViewClients::ViewClients(QWidget *parent) :
@@ -6,34 +6,18 @@ ViewClients::ViewClients(QWidget *parent) :
     ui(new Ui::ViewClients)
 {
     ui->setupUi(this);
-    //this->setFixedSize(QSize(1112, 509));
+    this->setFixedSize(QSize(1124, 507));
     this->setWindowTitle("View Clients");
-
-    ui->nameLineEdit->setReadOnly(true);
-    ui->addressLineEdit->setReadOnly(true);
-    ui->phoneLineEdit->setReadOnly(true);
-    ui->emailLineEdit->setReadOnly(true);
-    ui->ageLineEdit_2->setReadOnly(true);
-    ui->sexLineEdit_2->setReadOnly(true);
-    ui->childrenLineEdit->setReadOnly(true);
-    ui->salaryLineEdit->setReadOnly(true);
-    //ui->allergyLineEdit->setReadOnly(true);
-    ui->typePreferenceLineEdit->setReadOnly(true);
-    ui->purposeLineEdit->setReadOnly(true);
-    ui->homeLineEdit->setReadOnly(true);
-    ui->travelLineEdit->setReadOnly(true);
-    ui->freeTimeLineEdit->setReadOnly(true);
-    ui->budgetLineEdit->setReadOnly(true);
-    ui->irritationLineEdit->setReadOnly(true);
-    ui->patienceLineEdit->setReadOnly(true);
-    ui->attachmentLineEdit_2->setReadOnly(true);
-    ui->neuteredLineEdit->setReadOnly(true);
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     capi = new CuacsAPI();
 
     vector<Human*> humansVec = capi->getHumans();
 
     if (humansVec.size() != 0) {
+        sort(humansVec.begin(), humansVec.end(),sortClients);
         //Make QList from vector
         myList.reserve(humansVec.size());
         std::copy(humansVec.begin(), humansVec.end(), std::back_inserter(myList));
@@ -42,13 +26,16 @@ ViewClients::ViewClients(QWidget *parent) :
             ui->viewClientsListWidget->addItem(QString::fromStdString(myList.at(i)->getName()) + " (ID: " + QString::number(myList.at(i)->getId()) + ")");
         ui->viewClientsListWidget->setCurrentRow(0);
     }
-
 }
 
 ViewClients::~ViewClients()
 {
     delete capi;
     delete ui;
+}
+
+bool ViewClients::sortClients(Human* a, Human* b){
+    return a->getId() < b->getId();
 }
 
 void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
@@ -70,7 +57,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
 
     string name, gender, typePreference, purpose, homeType, travel, allergies, salary, freeTime, email, address, phone;
     int age, attachment, patience, noiseTolerance, numChildren;
-    bool needFertile;
+    bool needNeutered;
     float budget;
 
 
@@ -95,7 +82,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
             noiseTolerance = myList.at(i)->getNoiseTolerance();
             numChildren = myList.at(i)->getNumChildren();
 
-            needFertile = myList.at(i)->getNeedFertile();
+            needNeutered = myList.at(i)->getNeedNeutered();
             budget = myList.at(i)->getBudget();
 
             i = myList.size();
@@ -123,7 +110,7 @@ void ViewClients::on_viewClientsListWidget_currentItemChanged(QListWidgetItem *c
     ui->attachmentLineEdit_2->setText(QString::number(attachment));
     ui->addressLineEdit->setText(QString::fromStdString(address));
     ui->phoneLineEdit->setText(QString::fromStdString(phone));
-    if (needFertile)
+    if (needNeutered)
         ui->neuteredLineEdit->setText("Yes");
     else
         ui->neuteredLineEdit->setText("No");

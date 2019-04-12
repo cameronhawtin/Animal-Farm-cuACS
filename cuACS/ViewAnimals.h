@@ -6,7 +6,8 @@
 #include "CuacsAPI.h"
 #include <QListWidget>
 #include <sstream>
-#include <editanimal.h>
+#include <EditAnimal.h>
+#include <QFontDatabase>
 
 namespace Ui {
 class ViewAnimals;
@@ -20,6 +21,7 @@ public:
     explicit ViewAnimals(QWidget *parent = nullptr, bool isStaff = false);
     ~ViewAnimals();
 
+    static bool sortAnimals(Animal *a, Animal *b);
 private slots:
 
     void on_viewAnimalsListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);

@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QPushButton>
 #include "CuacsAPI.h"
+#include <QFontDatabase>
 
 namespace Ui {
 class AddAnimal;
@@ -48,6 +49,14 @@ private slots:
     void on_costPerYearLineEdit_textChanged(const QString &arg1);
 
     void on_ageLineEdit_textChanged(const QString &arg1);
+
+    void on_playfulnessSlider_valueChanged(int value);
+
+    void on_loyaltySlider_valueChanged(int value);
+
+    void on_playfulnessLineEdit_textChanged(const QString &arg1);
+
+    void on_loyaltyLineEdit_textChanged(const QString &arg1);
 
 private:
     CuacsAPI *capi;

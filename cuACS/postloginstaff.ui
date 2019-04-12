@@ -126,7 +126,7 @@
     <string>Add Animal</string>
    </property>
    <property name="autoDefault">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="ViewAnimalsButton">
@@ -150,7 +150,7 @@
     <string>View Animals</string>
    </property>
    <property name="autoDefault">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="AddClientButton">
@@ -169,7 +169,7 @@
     <string>Add Client</string>
    </property>
    <property name="autoDefault">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="ViewClientsButton">
@@ -188,12 +188,12 @@
     <string>View Clients</string>
    </property>
    <property name="autoDefault">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="generateACMButton">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -208,6 +208,13 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>AddClientButton</tabstop>
+  <tabstop>ViewClientsButton</tabstop>
+  <tabstop>AddAnimalButton</tabstop>
+  <tabstop>ViewAnimalsButton</tabstop>
+  <tabstop>generateACMButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

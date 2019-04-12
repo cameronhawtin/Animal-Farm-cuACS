@@ -39,7 +39,7 @@
     <string>View Animals</string>
    </property>
    <property name="autoDefault">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="ViewProfileButton">
@@ -63,7 +63,7 @@
     <string>View Profile</string>
    </property>
    <property name="autoDefault">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="editProfileButton">
@@ -87,10 +87,15 @@
     <string>Edit Profile</string>
    </property>
    <property name="autoDefault">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>ViewProfileButton</tabstop>
+  <tabstop>editProfileButton</tabstop>
+  <tabstop>ViewAnimalsButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

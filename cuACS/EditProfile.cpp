@@ -1,4 +1,4 @@
-#include "editprofile.h"
+#include "EditProfile.h"
 #include "ui_editprofile.h"
 
 EditProfile::EditProfile(QWidget *parent) :
@@ -6,8 +6,11 @@ EditProfile::EditProfile(QWidget *parent) :
     ui(new Ui::EditProfile)
 {
     ui->setupUi(this);
-    //this->setFixedSize(QSize(871, 539));
+    this->setFixedSize(QSize(871, 491));
     this->setWindowTitle("Edit Your Profile");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
     QIntValidator* ageRange = new QIntValidator(0, 999, this);
@@ -68,7 +71,7 @@ void EditProfile::setData(int &labelText) {
             ui->attachmentSlider->setValue(myList.at(i)->getAttachment());
             ui->addressLineEdit->setText(QString::fromStdString(myList.at(i)->getAddress()));
             ui->phoneLineEdit->setText(QString::fromStdString(myList.at(i)->getPhoneNumber()));
-            if (myList.at(i)->getNeedFertile())
+            if (myList.at(i)->getNeedNeutered())
                 ui->isNeuteredRadioButtonYES->setChecked(true);
             else
                 ui->isNeuteredRadioButtonNO->setChecked(true);
@@ -166,7 +169,7 @@ void EditProfile::on_buttonBox_accepted()
     string travel = ui->travelComboBox->currentText().toStdString();
     //string allergies = ui->allergicComboBox->currentText().toStdString();
     int noiseTolerance = ui->irritationLineEdit->text().toInt();
-    bool needFertile = ui->isNeuteredRadioButtonYES->isChecked();
+    bool needNeutered = ui->isNeuteredRadioButtonYES->isChecked();
     int numChildren = ui->childrenLineEdit->text().toInt();
     string salary = ui->salaryComboBox->currentText().toStdString();
     float budget = ui->budgetLineEdit->text().toFloat();
@@ -179,7 +182,7 @@ void EditProfile::on_buttonBox_accepted()
 
     //now give attributes to Client class
     capi->editHuman(passedData, name, age, gender, typePreference, purpose, attachment, patience, homeType,
-                   travel, allergies, noiseTolerance, needFertile, numChildren,
+                   travel, allergies, noiseTolerance, needNeutered, numChildren,
                    salary, budget, freeTime, email, phone, address);
 
 

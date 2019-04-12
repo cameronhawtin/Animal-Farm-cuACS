@@ -3,11 +3,13 @@
 
 #include <QDialog>
 #include <QMessageBox>
-#include "viewanimals.h"
-#include "viewclients.h"
-#include "addanimal.h"
-#include "addclient.h"
+#include "ViewAnimals.h"
+#include "ViewClients.h"
+#include "ViewMatches.h"
+#include "AddAnimal.h"
+#include "AddClient.h"
 #include "CuacsAPI.h"
+#include <QFontDatabase>
 
 
 namespace Ui {
@@ -31,6 +33,8 @@ private slots:
 
     void on_ViewClientsButton_clicked();
 
+    void on_generateACMButton_clicked();
+
     void reject();
 
 private:
@@ -39,6 +43,7 @@ private:
     ViewClients *viewClients;
     AddAnimal *addAnimal;
     AddClient *addClient;
+    ViewMatches *viewMatches;
 };
 
 #endif // POSTLOGINSTAFF_H

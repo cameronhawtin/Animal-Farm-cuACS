@@ -30,31 +30,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    postloginstaff.cpp \
-    postloginclient.cpp \
-    viewanimals.cpp \
-    addanimal.cpp \
-    Animal.cc \
-    FileOpenException.cc \
-    FileStorageManager.cc \
-    PathFinder.cc \
-    PersistentStorageAPI.cc \
-    Serializer.cc \
+    Animal.cpp \
+    FileOpenException.cpp \
+    FileStorageManager.cpp \
+    PathFinder.cpp \
+    PersistentStorageAPI.cpp \
+    Serializer.cpp \
     Human.cpp \
-    viewclients.cpp \
-    addclient.cpp \
-    viewprofile.cpp \
-    editprofile.cpp \
-    editanimal.cpp \
-    CuacsAPI.cpp
+    CuacsAPI.cpp \
+    PostLoginStaff.cpp \
+    PostLoginClient.cpp \
+    MainWindow.cpp \
+    EditProfile.cpp \
+    EditAnimal.cpp \
+    AddClient.cpp \
+    AddAnimal.cpp \
+    GenerateMatches.cpp \
+    ViewAnimals.cpp \
+    ViewClients.cpp \
+    ViewMatches.cpp \
+    ViewProfile.cpp \
+    Utils.cpp \
+    Optimize.cpp
 
 HEADERS += \
-        mainwindow.h \
-    postloginstaff.h \
-    postloginclient.h \
-    viewanimals.h \
-    addanimal.h \
     Animal.h \
     CuacsAPI.h \
     FileStorageManager.h \
@@ -67,11 +66,20 @@ HEADERS += \
     CuacsAPI.h \
     Profile.h \
     Serializer.h \
-    addclient.h \
-    viewclients.h \
-    viewprofile.h \
-    editprofile.h \
-    editanimal.h
+    ViewProfile.h \
+    ViewMatches.h \
+    ViewClients.h \
+    ViewAnimals.h \
+    PostLoginStaff.h \
+    PostLoginClient.h \
+    MainWindow.h \
+    GenerateMatches.h \
+    EditProfile.h \
+    EditAnimal.h \
+    AddClient.h \
+    AddAnimal.h \
+    Utils.h \
+    Optimize.h
 
 FORMS += \
         mainwindow.ui \
@@ -83,7 +91,8 @@ FORMS += \
     viewclients.ui \
     viewprofile.ui \
     editprofile.ui \
-    editanimal.ui
+    editanimal.ui \
+    viewmatches.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

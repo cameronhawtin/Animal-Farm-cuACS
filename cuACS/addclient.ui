@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>871</width>
-    <height>456</height>
+    <width>907</width>
+    <height>441</height>
    </rect>
   </property>
   <property name="palette">
@@ -163,37 +163,16 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>410</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Egyptienne F</family>
-    </font>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
-   </property>
-  </widget>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>831</width>
-     <height>384</height>
+     <width>871</width>
+     <height>405</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout" columnstretch="1,0,0,0">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="5,1,1,1">
     <property name="horizontalSpacing">
      <number>20</number>
     </property>
@@ -757,7 +736,7 @@
       </item>
       <item>
        <property name="text">
-        <string>4 - 6 months</string>
+        <string>4 - 6 Months</string>
        </property>
       </item>
       <item>
@@ -843,9 +822,54 @@
       </property>
      </widget>
     </item>
+    <item row="11" column="3">
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="font">
+       <font>
+        <family>Egyptienne F</family>
+       </font>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>nameLineEdit</tabstop>
+  <tabstop>childrenLineEdit</tabstop>
+  <tabstop>freeTimeComboBox</tabstop>
+  <tabstop>emailLineEdit</tabstop>
+  <tabstop>salaryComboBox</tabstop>
+  <tabstop>budgetLineEdit</tabstop>
+  <tabstop>addressLineEdit</tabstop>
+  <tabstop>typePreferenceComboBox</tabstop>
+  <tabstop>irritationSlider</tabstop>
+  <tabstop>irritationLineEdit</tabstop>
+  <tabstop>phoneLineEdit</tabstop>
+  <tabstop>purposeComboBox</tabstop>
+  <tabstop>patienceSlider</tabstop>
+  <tabstop>patienceLineEdit</tabstop>
+  <tabstop>sexComboBox</tabstop>
+  <tabstop>homeTypeComboBox</tabstop>
+  <tabstop>attachmentSlider</tabstop>
+  <tabstop>attachmentLineEdit</tabstop>
+  <tabstop>ageLineEdit</tabstop>
+  <tabstop>travelComboBox</tabstop>
+  <tabstop>isNeuteredRadioButtonYES</tabstop>
+  <tabstop>isNeuteredRadioButtonNO</tabstop>
+  <tabstop>catAllergyCheckBox</tabstop>
+  <tabstop>dogAllergyCheckBox</tabstop>
+  <tabstop>birdAllergyCheckBox</tabstop>
+  <tabstop>hamsterAllergyCheckBox</tabstop>
+  <tabstop>mouseAllergyCheckBox</tabstop>
+  <tabstop>guineapigAllergyCheckBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

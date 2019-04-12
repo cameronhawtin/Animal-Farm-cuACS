@@ -5,6 +5,7 @@
 #include "CuacsAPI.h"
 #include "iostream"
 #include <QPushButton>
+#include <QFontDatabase>
 
 namespace Ui {
 class EditProfile;

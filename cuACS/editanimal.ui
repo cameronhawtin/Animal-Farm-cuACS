@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>752</width>
-    <height>559</height>
+    <width>783</width>
+    <height>542</height>
    </rect>
   </property>
   <property name="palette">
@@ -136,14 +136,122 @@
     <rect>
      <x>20</x>
      <y>70</y>
-     <width>711</width>
-     <height>431</height>
+     <width>740</width>
+     <height>457</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <property name="horizontalSpacing">
      <number>12</number>
     </property>
+    <item row="13" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_20">
+      <item>
+       <widget class="QRadioButton" name="isNeuteredRadioButtonYES">
+        <property name="text">
+         <string>Yes</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="isNeuteredRadioButtonNO">
+        <property name="text">
+         <string>No</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="energyLabel_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Energy Level</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="2">
+     <widget class="QLabel" name="sizeLabel_4">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Neutered/Spayed</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QLabel" name="ageLabel_6">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Crate Trained</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="typeLabel_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLabel" name="labelColour_5">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Cleanliness Level (Out of 10)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_18">
+      <item>
+       <widget class="QRadioButton" name="isCrateTrainedRadioButtonYES">
+        <property name="text">
+         <string>Yes</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="isCrateTrainedRadioButtonNO">
+        <property name="text">
+         <string>No</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="attachmentLabel_3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Attachment Level (Out of 10)</string>
+      </property>
+     </widget>
+    </item>
     <item row="7" column="1">
      <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="10,2">
       <property name="spacing">
@@ -174,6 +282,80 @@
       </item>
      </layout>
     </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="nameLabel_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLineEdit" name="costLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2">
+     <widget class="QLabel" name="labelColour_6">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Hypoallergenic</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLineEdit" name="ageLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="sexLabel_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Sex</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="10,2">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QSlider" name="obedienceSlider">
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>2</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="obedienceLineEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="1">
      <widget class="QLabel" name="aggressionLabel_3">
       <property name="enabled">
@@ -184,13 +366,67 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="typeLabel_2">
+    <item row="11" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="10,2">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QSlider" name="loudnessSlider">
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>2</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="loudnessLineEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="7" column="2">
+     <widget class="QLineEdit" name="costPerYearLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QLabel" name="sexLabel_4">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Type</string>
+       <string>Cost per Year (in dollars)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="nameLineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="aggressionLabel_4">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Comfort with Children (Out of 10)</string>
       </property>
      </widget>
     </item>
@@ -224,60 +460,13 @@
       </item>
      </layout>
     </item>
-    <item row="2" column="1">
-     <widget class="QLabel" name="attachmentLabel_3">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Attachment Level (Out of 10)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="nameLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLabel" name="aggressionLabel_4">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Comfort with Children (Out of 10)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="nameLabel_2">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="labelColour_4">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Colour</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="10,2">
+    <item row="13" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="10,2">
       <property name="spacing">
        <number>12</number>
       </property>
       <item>
-       <widget class="QSlider" name="loudnessSlider">
+       <widget class="QSlider" name="intelligenceSlider">
         <property name="maximum">
          <number>10</number>
         </property>
@@ -290,7 +479,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="loudnessLineEdit">
+       <widget class="QLineEdit" name="intelligenceLineEdit">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -300,6 +489,80 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="ageLabel_5">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Age</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QComboBox" name="sexComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Please Select</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Male</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Female</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QComboBox" name="breedComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Please Select a Type</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QLabel" name="ageLabel_4">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Intelligence Level (Out of 10)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="1">
+     <widget class="QLabel" name="ageLabel_8">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Playfulness Level (Out of 10)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="ageLabel_7">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Loyalty Level (Out of 10)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
     </item>
     <item row="3" column="0">
      <widget class="QComboBox" name="typeComboBox">
@@ -353,76 +616,6 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
-     <widget class="QLabel" name="labelColour_5">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Cleanliness Level (Out of 10)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="10,2">
-      <property name="spacing">
-       <number>12</number>
-      </property>
-      <item>
-       <widget class="QSlider" name="obedienceSlider">
-        <property name="maximum">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>2</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="obedienceLineEdit">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="9" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="10,2">
-      <property name="spacing">
-       <number>12</number>
-      </property>
-      <item>
-       <widget class="QSlider" name="childrenComfortSlider">
-        <property name="maximum">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>2</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="childrenComfortLineEdit">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="1" column="1">
      <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="10,2">
       <property name="spacing">
@@ -473,29 +666,195 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QComboBox" name="breedComboBox">
+    <item row="9" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="10,2">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QSlider" name="childrenComfortSlider">
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>2</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="childrenComfortLineEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="11" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_19">
+      <item>
+       <widget class="QRadioButton" name="isHypoallergenicRadioButtonYES">
+        <property name="text">
+         <string>Yes</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="isHypoallergenicRadioButtonNO">
+        <property name="text">
+         <string>No</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="2">
+     <widget class="QComboBox" name="energyComboBox">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <item>
        <property name="text">
-        <string>Please Select a Type</string>
+        <string>Please Select</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Low</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Medium</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>High</string>
        </property>
       </item>
      </widget>
     </item>
-    <item row="12" column="1">
-     <widget class="QLabel" name="ageLabel_4">
+    <item row="4" column="2">
+     <widget class="QLabel" name="labelBreed_6">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Intelligence Level (Out of 10)</string>
+       <string>Flat Cost (in dollars)</string>
       </property>
      </widget>
     </item>
-    <item row="11" column="0">
+    <item row="15" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="10,2">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QSlider" name="playfulnessSlider">
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>2</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="playfulnessLineEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="10,2">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QSlider" name="loyaltySlider">
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>2</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="loyaltyLineEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="15" column="0">
+     <widget class="QComboBox" name="sizeComboBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Please Select</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Small</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Medium</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Large</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="14" column="0">
+     <widget class="QLabel" name="sizeLabel_3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Size</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0">
      <widget class="QComboBox" name="colourComboBox">
       <property name="enabled">
        <bool>true</bool>
@@ -527,315 +886,47 @@
       </item>
      </widget>
     </item>
-    <item row="13" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="10,2">
-      <property name="spacing">
-       <number>12</number>
-      </property>
-      <item>
-       <widget class="QSlider" name="intelligenceSlider">
-        <property name="maximum">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>2</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="intelligenceLineEdit">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="8" column="0">
-     <widget class="QLabel" name="ageLabel_5">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Age</string>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="0">
-     <widget class="QComboBox" name="sizeComboBox">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>Please Select</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Small</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Medium</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Large</string>
-       </property>
-      </item>
-     </widget>
-    </item>
     <item row="12" column="0">
-     <widget class="QLabel" name="sizeLabel_3">
+     <widget class="QLabel" name="labelColour_4">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Size</string>
+       <string>Colour</string>
       </property>
      </widget>
     </item>
-    <item row="9" column="0">
-     <widget class="QLineEdit" name="ageLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="sexLabel_2">
+    <item row="10" column="0">
+     <widget class="QLabel" name="ageLabel_9">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Sex</string>
+       <string>Life Expectancy (Years Remaining)</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QComboBox" name="sexComboBox">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>Please Select</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Male</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Female</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLabel" name="energyLabel_2">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Energy Level</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QComboBox" name="energyComboBox">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>Please Select</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Low</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Medium</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>High</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QLabel" name="labelBreed_6">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Flat Cost (in dollars)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="QLineEdit" name="costLineEdit">
+    <item row="11" column="0">
+     <widget class="QLineEdit" name="lifeExpLineEdit">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="QLabel" name="sexLabel_4">
+    <item row="15" column="2">
+     <widget class="QDialogButtonBox" name="buttonBox">
       <property name="enabled">
        <bool>true</bool>
       </property>
-      <property name="text">
-       <string>Cost per Year (in dollars)</string>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
       </property>
      </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QLineEdit" name="costPerYearLineEdit">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QLabel" name="labelColour_6">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Hypoallergenic</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_18">
-      <item>
-       <widget class="QRadioButton" name="isCrateTrainedRadioButtonYES">
-        <property name="text">
-         <string>Yes</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup_3</string>
-        </attribute>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="isCrateTrainedRadioButtonNO">
-        <property name="text">
-         <string>No</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup_3</string>
-        </attribute>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="8" column="2">
-     <widget class="QLabel" name="ageLabel_6">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Crate Trained</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_19">
-      <item>
-       <widget class="QRadioButton" name="isHypoallergenicRadioButtonYES">
-        <property name="text">
-         <string>Yes</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="isHypoallergenicRadioButtonNO">
-        <property name="text">
-         <string>No</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="10" column="2">
-     <widget class="QLabel" name="sizeLabel_4">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Neutered/Spayed</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_20">
-      <item>
-       <widget class="QRadioButton" name="isNeuteredRadioButtonYES">
-        <property name="text">
-         <string>Yes</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup_2</string>
-        </attribute>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="isNeuteredRadioButtonNO">
-        <property name="text">
-         <string>No</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup_2</string>
-        </attribute>
-       </widget>
-      </item>
-     </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>520</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
-   </property>
   </widget>
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
@@ -859,6 +950,43 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>nameLineEdit</tabstop>
+  <tabstop>aggressionSlider</tabstop>
+  <tabstop>aggressionLineEdit</tabstop>
+  <tabstop>loyaltySlider</tabstop>
+  <tabstop>loyaltyLineEdit</tabstop>
+  <tabstop>typeComboBox</tabstop>
+  <tabstop>attachmentSlider</tabstop>
+  <tabstop>attachmentLineEdit</tabstop>
+  <tabstop>energyComboBox</tabstop>
+  <tabstop>breedComboBox</tabstop>
+  <tabstop>obedienceSlider</tabstop>
+  <tabstop>obedienceLineEdit</tabstop>
+  <tabstop>costLineEdit</tabstop>
+  <tabstop>sexComboBox</tabstop>
+  <tabstop>cleanlinessSlider</tabstop>
+  <tabstop>cleanlinessLineEdit</tabstop>
+  <tabstop>costPerYearLineEdit</tabstop>
+  <tabstop>ageLineEdit</tabstop>
+  <tabstop>childrenComfortSlider</tabstop>
+  <tabstop>childrenComfortLineEdit</tabstop>
+  <tabstop>isCrateTrainedRadioButtonYES</tabstop>
+  <tabstop>isCrateTrainedRadioButtonNO</tabstop>
+  <tabstop>lifeExpLineEdit</tabstop>
+  <tabstop>loudnessSlider</tabstop>
+  <tabstop>loudnessLineEdit</tabstop>
+  <tabstop>isHypoallergenicRadioButtonYES</tabstop>
+  <tabstop>isHypoallergenicRadioButtonNO</tabstop>
+  <tabstop>colourComboBox</tabstop>
+  <tabstop>intelligenceSlider</tabstop>
+  <tabstop>intelligenceLineEdit</tabstop>
+  <tabstop>isNeuteredRadioButtonYES</tabstop>
+  <tabstop>isNeuteredRadioButtonNO</tabstop>
+  <tabstop>sizeComboBox</tabstop>
+  <tabstop>playfulnessSlider</tabstop>
+  <tabstop>playfulnessLineEdit</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -896,7 +1024,7 @@
  </connections>
  <buttongroups>
   <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

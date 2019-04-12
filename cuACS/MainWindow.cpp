@@ -1,4 +1,4 @@
-﻿#include "mainwindow.h"
+﻿#include "MainWindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QPalette>
@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //QColor cuRED = QColor(200, 16, 46);
     QPixmap icon (":/icon/icon.png");
     this->setWindowIcon(icon);
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 }
 
 
@@ -20,7 +23,6 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete capi;
 }
 
 //This function is called when the login button is clicked
@@ -55,6 +57,7 @@ void MainWindow::on_loginButton_clicked()
            hide();
            postLoginStaff = new PostLoginStaff(this);
            postLoginStaff->exec();
+           loggedIn = true;
        }
 
 //       else if (username == "Client") {
@@ -64,4 +67,6 @@ void MainWindow::on_loginButton_clicked()
 //       }
        else QMessageBox::warning(this, "Invalid Login", "The provided username does not exist");
    }
+   if (loggedIn)
+       delete capi;
 }

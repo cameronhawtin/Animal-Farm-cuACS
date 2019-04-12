@@ -1,6 +1,6 @@
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include "CuacsAPI.h"
-#include "addanimal.h"
+#include "AddAnimal.h"
 #include <QApplication>
 #include <QLabel>
 #include <QFontDatabase>

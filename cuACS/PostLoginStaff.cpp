@@ -1,4 +1,4 @@
-#include "postloginstaff.h"
+#include "PostLoginStaff.h"
 #include "ui_postloginstaff.h"
 
 PostLoginStaff::PostLoginStaff(QWidget *parent) :
@@ -8,6 +8,9 @@ PostLoginStaff::PostLoginStaff(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(341, 238));
     this->setWindowTitle("Homepage - Staff");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 }
 
 // PostLoginStaff Destructor
@@ -63,3 +66,9 @@ void PostLoginStaff::on_ViewClientsButton_clicked()
     viewClients->show();
 }
 
+
+void PostLoginStaff::on_generateACMButton_clicked()
+{
+    viewMatches = new ViewMatches(this);
+    viewMatches->show();
+}

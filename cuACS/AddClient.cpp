@@ -1,7 +1,7 @@
-#include "addclient.h"
+#include "AddClient.h"
 #include "ui_addclient.h"
 #include "CuacsAPI.h"
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include <iostream>
 
 using namespace std;
@@ -11,8 +11,11 @@ AddClient::AddClient(QWidget *parent) :
     ui(new Ui::AddClient)
 {
     ui->setupUi(this);
-    //this->setFixedSize(QSize(871, 452));
+    this->setFixedSize(QSize(907, 441));
     this->setWindowTitle("Add a Client");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     QDoubleValidator* floatValidator = new QDoubleValidator(this);
     QIntValidator* ageRange = new QIntValidator(0, 999, this);
@@ -119,7 +122,7 @@ void AddClient::on_buttonBox_accepted()
     string travel = ui->travelComboBox->currentText().toStdString();
     //string allergies = ui->allergicComboBox->currentText().toStdString();
     int noiseTolerance = ui->irritationLineEdit->text().toInt();
-    bool needFertile = ui->isNeuteredRadioButtonYES->isChecked();
+    bool needNeutered = ui->isNeuteredRadioButtonYES->isChecked();
     int numChildren = ui->childrenLineEdit->text().toInt();
     string salary = ui->salaryComboBox->currentText().toStdString();
     float budget = ui->budgetLineEdit->text().toFloat();
@@ -132,7 +135,7 @@ void AddClient::on_buttonBox_accepted()
 
     //now give attributes to Client class
     capi->addHuman(name, age, gender, typePreference, purpose, attachment, patience, homeType,
-                   travel, allergies, noiseTolerance, needFertile, numChildren,
+                   travel, allergies, noiseTolerance, needNeutered, numChildren,
                    salary, budget, freeTime, email, phone, address);
 }
 

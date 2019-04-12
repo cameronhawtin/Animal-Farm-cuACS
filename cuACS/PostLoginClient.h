@@ -2,9 +2,10 @@
 #define POSTLOGINCLIENT_H
 #include <QMessageBox>
 #include <QDialog>
-#include <viewanimals.h>
-#include <viewprofile.h>
-#include <editprofile.h>
+#include <ViewAnimals.h>
+#include <ViewProfile.h>
+#include <EditProfile.h>
+#include <QFontDatabase>
 
 namespace Ui {
 class PostLoginClient;

@@ -1,4 +1,4 @@
-#include "viewprofile.h"
+#include "ViewProfile.h"
 #include "ui_viewprofile.h"
 
 ViewProfile::ViewProfile(QWidget *parent) :
@@ -6,8 +6,11 @@ ViewProfile::ViewProfile(QWidget *parent) :
     ui(new Ui::ViewProfile)
 {
     ui->setupUi(this);
-    //this->setFixedSize(QSize(815, 530));
+    this->setFixedSize(QSize(811, 524));
     this->setWindowTitle("View Your Profile");
+    int id = QFontDatabase::addApplicationFont ( ":/fonts/EgyptienneRoman.ttf" );
+    QFont egyptienne(QFontDatabase::applicationFontFamilies(id).at(0), 11);
+    this->setFont(egyptienne);
 
     ui->nameLineEdit->setReadOnly(true);
     ui->addressLineEdit->setReadOnly(true);
@@ -77,7 +80,7 @@ void ViewProfile::setData(int &labelText) {
             ui->attachmentLineEdit->setText(QString::number(myList.at(i)->getAttachment()));
             ui->addressLineEdit->setText(QString::fromStdString(myList.at(i)->getAddress()));
             ui->phoneLineEdit->setText(QString::fromStdString(myList.at(i)->getPhoneNumber()));
-            if (myList.at(i)->getNeedFertile())
+            if (myList.at(i)->getNeedNeutered())
                 ui->neuteredLineEdit->setText("Yes");
             else
                 ui->neuteredLineEdit->setText("No");
